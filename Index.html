@@ -3,446 +3,254 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Bootstrap</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" 
+    href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" 
+    integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" 
     crossorigin="anonymous"
-    >
-  <link rel="stylesheet" media="mediatype and|not|only (expressions)" href="print.css">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  >
+  <style>
+    body {
+      font-family: sans-serif;
+    }
+
+    hr{
+      background-color: black;
+      height: 0.px;
+    }
+
+    table{
+      border-bottom: 2px solid slategrey;
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    .contact-info {
+      margin: 10px 0;
+    }
+
+    .country-code {
+      display: inline-block;
+      width: 45%;
+    }
+
+    .gst {
+      display: inline-block;
+    }
+
+    .heading { 
+      border-top: 18px solid black;
+      border-left: 15px solid black;
+    }
+
+    .heading h2 {
+      font-size: 35px;
+      font-weight: 400;
+      margin-top: 30px;
+      margin-bottom: 0;
+      padding: 10px 0;
+    }
+
+    .image-logo {
+      float: right;
+    }
+
+    .main-templet {
+      margin: 40px;
+    }
+
+    .mobile-no {
+      display: inline-block;
+      width: 13%;
+    }
+
+    .name-and-address {
+      margin: 20px 0;
+    }
+
+    .recipient-info {
+      margin: 40px 0;
+      padding-bottom: 20px;
+    }
+    .section {
+      align-items: center;
+      border-top: 2px solid slategrey;
+      border-bottom: 2px solid slategrey;;
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 0 20px 0;
+    }
+    .service-provider-information {
+      display: inline-block;
+      margin-top: 40px;
+      padding-top: 40px;
+    }
+
+    .service-address{
+      margin: 20px 0 10px;
+      font-size: 22px;
+      font-weight: 500;
+    }
+
+
+    tr.table-border {
+      border-bottom: 2px solid slategrey;; 
+      margin: 5px 0;
+    }
+
+    tr.table-border td {
+      height: 35px;
+    }
+
+    .templet {
+      font-size: 18px;
+      margin: 0 30px;
+    }
+
+    .wallet-id {
+      display: inline-block;
+    }
+  </style>
 </head>
 <body>
-  <div class="templet-main">
-    <div class="container-fluid-sm py-2" id="head">
-      <div class="container header px-0">
-        <div class="d-inline-block my-1 py-3" id="logo">
-          <img src="logo.png" class="img-fluid" width="185px" height="62px" alt="">
-        </div>
-        <div class="float-lg-right my-0" id="header-card">
-          <img src="header_card.jpg" class="img-fluid" width="750px" height="100px" alt="">
-        </div>
-      </div>
-    </div> 
-    <!--box-1.2-->
-    <div class="navbar py-4 my-3" id="top-nav"> 
-      <div class="container px-0">
-        <ul class="nav"> 
-          <li class="nav-item">
-            <a class="nav-link" href="#" p">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#" p">Category</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#" p">About</a>
-          </li>
-          <li class="nav-item">
-              <a class="nav-link" href="#" p">Latest News</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#" p">Contact</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown" href="#" role="button" id="dropdownbtn">Pages</a>
-              <ul class="dropdown-menu">
-                <li>
-                  <a class="dropdown-item" href="#">Element</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="#">Blog</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="#">Blog Details</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="#">Category Details</a>
-                </li>
-              </ul>
-          </li>
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <span class="fa fa-search" id="search-icon"></span>
-            </a>
-          </li>
-        </ul>
-      </div>  
-    </div>
-    <!--trending-now-->
-    <div class="container px-0 py-2 my-3" id="mid-i-a">
-      <h3 class="d-inline-block">
-        <span class="bg-danger text-white px-3  py-2 rounded" id="mid-i-a-trend">TRENDING NOW</span>
-        <span class="px-3" id="mid-i-a-bangladesh">Bangladesh dolor sit amet, C-</span>
-      </h3>
-    </div>
-    <!--middle-block-->
-    <div class="container-fluid" id="middle">
-      <div class="container border-bottom p-0" id="mid-at-top">
-        <!--left-->
-        <div class="d-inline-block m-0 p-0" id="mid-left">
-          <!--trending-top-->
-          <div class="trending-top my-4">
-            <div class="trend-image">
-              <img src="trending_top.jpg" class="trending-top-image" height="400px" width="765px" alt="">
-              <div class="overlay"></div>
-              <div class="trend-text">
-                <strong class="text-dark px-4 py-2 rounded" id="trend-button">APPETIZERS</strong>
-                <p class="my-4" id="trend-txt">
-                  <b>Welcome To The Best Model Winner Contest At Look of the Year</b>
-                </p>
-              </div>
-            </div>  
-          </div>
-          <!--mid-bottom-->
-          <div class="d-inline-block my-2" id="trending-bottom">
-            <div class="d-flex justify-content-between" id="trending-bottom-container">
-              <div class="px-0 mx-0" id="trending-bottom-a">
-                <img src="trending_bottom1.jpg" height="160px" width="240px" alt="">
-                <div class="mt-2 py-4">
-                  <div class="d-inline-block">
-                    <p class="trend-tag-a" id="middle-a">LIFESTYPLE</p>
-                  </div>
-                  <div class="trend-tag">
-                    <p>Get the Illusions of Fuller Lashes by "Mascng."</p>
-                  </div>
-                </div>
-              </div>
-              <div class="px-0 mx-0" id="trending-bottom-a">
-                <img src="trending_bottom2.jpg" height="160px" width="240px" alt="">
-                <div class="mt-2 py-4">
-                  <div class="d-inline-block">
-                    <p class="trend-tag-a" id="middle-b">SPORTS</p>
-                  </div>
-                  <div class="trend-tag">
-                    <p>Get the Illusions of Fuller Lashes by "Mascng."</p>
-                  </div>
-                </div> 
-              </div>
-              <div class="px-0 mx-0" id="trending-bottom-a">
-                <img src="trending_bottom3.jpg" height="160px" width="240px" alt="">
-                <div class="mt-2 py-4">
-                  <div class="d-inline-block">
-                    <p class="trend-tag-a" id="middle-c">TRAVELS</p>
-                  </div>
-                  <div class="trend-tag">
-                    <p>Welcome To The Best Model Winner Contest</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!--middle right-->
-        <div class="float-lg-right " id="mid-right">
-          <div class="mid-right-block">
-            <div class="border-bottom py-4" id="right1">
-              <div class="d-inline-block">
-                <img src="right1.jpg" height="100px" width="120px" alt="">
-              </div>
-              <div class="float-lg-right" id="mascng">
-                <div class="d-inline-block">
-                  <p class="trend-tag-a" id="middle-a">CONCERT</p>
-                </div>
-                <div class="trend-tag">
-                  <p>Welcome To The Best Model Winner Contest</p>
-                </div>
-              </div>
-            </div>
-            <div class="border-bottom py-4" id="right1">
-              <div class="d-inline-block">
-                <img src="right2.jpg" height="100px" width="120px" alt="">
-              </div>
-              <div class="float-lg-right" id="mascng">
-                <div class="d-inline-block">
-                  <p class="trend-tag-a" id="middle-c">SEA BEACH</p>
-                </div>
-                <div class="trend-tag">
-                  <p>Welcome To The Best Model Winner Contest</p>
-                </div>
-              </div>
-            </div>
-            <div class="border-bottom py-4" id="right1">
-              <div class="d-inline-block">
-                <img src="right3.jpg" height="100px" width="120px" alt="">
-              </div>
-              <div class="float-lg-right" id="mascng">
-                <div class="d-inline-block">
-                  <p class="trend-tag-a" id="middle-b">BIKE SHOW</p>
-                </div>
-                <div class="trend-tag">
-                  <p>Welcome To The Best Model Winner Contest</p>
-                </div>
-              </div>
-            </div>
-            <div class="border-bottom py-4" id="right1">
-              <div class="d-inline-block">
-                <img src="right4.jpg" height="100px" width="120px" alt="">
-              </div>
-              <div class="float-lg-right" id="mascng">
-                <div class="d-inline-block">
-                  <p class="trend-tag-a" id="middle-g">CONTEST</p>
-                </div>
-                <div class="trend-tag">
-                  <p>Welcome To The Best Model Winner Contest</p>
-                </div>
-              </div>
-            </div>
-            <div class="py-4">
-              <div class="d-inline-block">
-                <img src="right5.jpg" height="100px" width="120px" alt="">
-              </div>
-              <div class="float-lg-right" id="mascng">
-                <div class="d-inline-block">
-                  <p class="trend-tag-a" id="middle-a">SKEPING</p>
-                </div>
-                <div class="trend-tag">
-                  <p>Welcome To The Best Model Winner Contest</p>
-                </div>
-              </div>  
-            </div>
-            </div>
-        </div>
+  <div class="main-templet">
+    <!--heading-->
+    <div class="heading">
+      <center>
+        <h2>TAX INVOICE</h2>
+      </center>
+      <div class="image-logo">
+        <img id="logo" src="https://img1.wsimg.com/isteam/ip/93567e05-69d4-460e-bf90-d609034601db/Logo%20RGB(Black)-01.png/:/rs=w:182,h:200,cg:true,m/cr=w:182,h:200/qt=q:100/ll" height="140px">
       </div>
     </div>
-      <!--Weekly top-->
-    <div class="border-bottom container my-2 py-3 px-0" id="weekly">
-      <div class="my-2 py-2" id="weekly-head">
-        <div class="d-inline-block" id="weekly-head-heading">
-          <h3 class="font-weight-bold">Weekly Top News</h3>
-        </div>
-        <div class="d-inline-block" id="weekly-head-icons">
-          <div class="mx-1 d-inline-block">
-            <span class="fa fa-circle" id="weekly-head-icons-circle"></span>
-          </div>
-          <div class="d-inline-block m-1 text-danger text-r">
-            <span class="fa fa-minus fa-3x" id="weekly-head-icons-minus"></span>
-          </div>
-          <div class="d-inline-block m-1">
-            <span class="fa fa-circle" id="weekly-head-icons-circle"></span>
-          </div>
-          <div class="d-inline-block m-1">
-            <span class="fa fa-circle" id="weekly-head-icons-circle"></span>
-          </div>
+      <!--service provider information-->
+    <div class="templet">  
+      <div class="service-provider-information">
+        <div style="margin: 40px 0 10px; font-size: 20px; font-weight: 500; line-height: 25px; letter-spacing: 1px;">
+          <p style="margin-bottom: 0;">4C4AL Private Limited<br>
+            Address: C-804, Oceanus Monarda, Jail Road, Kasavanahalli, Bengaluru, Karnataka 56003
+            <div style="display: inline-block; width: 60%; margin: 0;">CIN: U52335KA2022PTC158803</div>
+            GST No: 29AABCZ9188Q1Z0<br>
+            E-mail - <a style="color: rgb(27 113 195 / 91%)" href="mailto: support@bragbox.io"> support@bragbox.io</a><br> <!--it will direct you to mail address as well-->
+            Place of supply: Karnataka
+          </p>
         </div>
       </div>
-      <div class="container px-0">
-        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <div class="row active">
-                <div class="col-lg-4">
-                  <img src="weeklyNews1.jpg" id="new1" alt="img1">
-                  <div class="bg-white d-inline-block p-3  py-2 rounded" id="weekly-box">
-                    <div class="d-inline-block my-2">
-                      <button class="px-2 border border-0 btn-outline-light text-dark" id="middle-a">
-                        <small><b>STRIKE</b></small>
-                      </button>
-                    </div>
-                    <div class="my-2" id="news-txt"><b>Welcome To The Best Model Winner Contest</b>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-4">
-                  <img src="weeklyNews3.jpg" alt="abc">
-                </div>
-                <div class="col-lg-4">
-                  <img  src="weeklyNews1.jpg" alt="img1">
-                </div>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="row">
-                <div class="col-lg-4">
-                  <div class="carousal-item">  
-                    <img src="weeklyNews1.jpg" id="new1" alt="img1">
-                    <div class="bg-white d-inline-block p-3 rounded" id="weekly-box">
-                      <div class="d-inline-block my-2">
-                        <button class="px-2 border border-0 btn-outline-light text-dark" id="middle-a">
-                          <small><b>STRIKE</b></small>
-                        </button>
-                      </div>
-                      <div class="my-2" id="news-txt"><b>Welcome To The Best Model Winner Contest</b>
-                      </div>
-                    </div>
-                  </div>
-                </div>  
-                <div class="col-lg-4">
-                  <div class="carousal-item">
-                    <img src="weeklyNews3.jpg" alt="abc">
-                  </div>
-                </div>
-                <div class="col-lg-4">
-                  <div class="carousal-item">
-                    <img src="weeklyNews1.jpg"  alt="img1">
-                  </div>
-                </div>
-              </div>
-            </div>
-            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="sr-only">Next</span>
-            </a>
-          </div>
+      <!--section-->
+      <div class="section">
+        <div>Invoice No. <span><</span>Invoice No<span>></span></div> <!--<div>Invoice No. <span class='fas fa-greater-than'></span>Invoice No</div>-->
+        <div>Order No. <span><</span>Order No<span>></span></div>
+        <div style="margin-right: 40px; padding-right: 20px;">Date <span><</span>DD/MM/YYYY<span>></span> </div>
+      </div>
+      <div class="recipient-info">
+        <div class="billed-to">Billed to:</div>
+        <div class="name-and-address">
+          <div>Name <span><</span>Name<span>></span> <span><</span>Surname<span>></span></div>
+          <div class="address">Address: &nbsp;<span><</span>Address<span>></span> </Address></div>
+        </div>
+        <div class="contact-info">
+          <div class="mobile-no">Mobile No.</div>
+          <div class="country-code"> <span><</span> Country code<span>></span> <span><</span>Number<span>></span></div>
+          <div class="wallet-id">Wallet Id. <span><</span>Number<span>></span></div>
         </div>
       </div>
+      <table>
+        <thead style="height: 40px;">
+          <tr class="table-border">
+            <td style="width: 20%;">Item Name</td>
+            <td style="width: 20%;">From Date/Time</td>
+            <td style="width: 15%;">To Date/Time</td>
+            <td style="width: 13%;">Price/day</td>
+            <td style="width: 22%;">No of days</td>
+            <td>Total</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <span><</span> Item Name<span>></span>
+            </td>
+            <td>
+              <span><</span> DD/MM/YYYY<span>></span>
+            </td>
+            <td>
+              <span><</span> DD/MM/YYYY<span>></span>
+            </td>
+            <td><span><</span> Amount<span>></span></td>
+            <td><span><</span> Days<span>></span></td>
+            <td><span><</span> Amount<span>></span></td>
+          </tr>
+          <tr>
+            <td><span><</span>Item code<span>></span></td>
+            <td><span><</span>Time<span>></span></td>
+            <td><span><</span>Time<span>></span></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><span><</span>Discount<span>></span></td>
+            <td></td>
+            <td><span><</span> Amount<span>></span></td>
+          </tr>
+          <tr style="height: 23px;">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Amount Paid</td>
+            <td></td>
+            <td><span><</span>Amount<span>></span></td>
+          </tr>
+        </tbody>
+      </table>
+      <p>GST Details</p>
+      <div style="height: 65px; border-bottom: 2px solid dimgrey">
+        <ol style="list-style: none; padding: 0; margin: 0; display: inline-block; width: 18%; position: relative; top: -22px;">
+          <li>Item Name</li>
+          <li><span><</span>Item Name<span>></span></li>
+          <li style="height: 21px;"></li>                                     <!--not working-->
+        </ol>
+        <ol style="list-style: none; margin: 0; padding: 0; display: inline-block; width: 12%;">
+          <li style="display: flex; justify-content: center;">Retail Price Value</li>
+          <li style="display: flex; justify-content: center; height: 21px;"></li>
+          <li style="display: flex; justify-content: center;"><span><</span>Amount<span>></span></li>
+        </ol>
+        <ol style="list-style: none; margin: 0; display: inline-block; width: 15%;">
+          <li style="display: flex; justify-content: center;">CGST</li>
+          <li style="display: flex; justify-content: center;">9%</li>
+          <li style="display: flex; justify-content: center;"><span><</span>Amount<span>></span></li>
+        </ol>
+        <ol style="list-style: none; margin: 0; display: inline-block; width: 13%; padding: 0;">
+          <li style="display: flex; justify-content: center;">SGST</li>
+          <li style="display: flex; justify-content: center;">9%</li>
+          <li style="display: flex; justify-content: center;"><span><</span>Amount<span>></span></li>
+        </ol>
+        <ol style="list-style: none; margin: 0; display: inline-block;">
+          <li style="display: flex; justify-content: center;">IGST</li>
+          <li style="display: flex; justify-content: center;">9%</li>
+          <li style="display: flex; justify-content: center;"><span><</span>Amount<span>></span></li>
+        </ol>
+      </div>
+      <p style="line-height: 35px;">This is a computer-generated invoice and does not require signature.
+        <br>For details about Terms & Conditions, Refund and Cancellation policy please visit www.bragbox.io.
+      </p>
+      <footer style="position: absolute; width: 88%;">
+        <center style="position: relative; top: 700px; border-bottom: 15px solid black; border-right: 15px solid black;">
+          <p style="padding: 25px 0; margin: 0;">4C4AL Private Limited: C-804, Oceanus Monarda, Jail Road, Kasavanahalli, Bengaluru, Karnataka 560035</p>
+        </center>
+      </footer>
     </div>
-    <!--footer-->
-    <div class="container my-3 px-0 py-2" id="footer">
-      <div class="d-inline-block" id="footer-left">
-        <div class="my-3 py-2" id="footer-nav">
-          <div class="d-inline-block" id="nav-left">
-            <h4 class="font-weight-bold">What's New</h4>
-          </div>
-          <ul class="float-right bg-light nav"> 
-            <li class="nav-item">
-              <a class="nav-link text-danger" href="#" p">All</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-muted" href="#" p">lifestyle</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-muted" href="#" p">Travel</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-muted" href="#" p">Fashion</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-muted" href="#" p">Sports</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-muted" href="#" p">Technology</a>
-            </li>
-          </ul>
-        </div>
-        <div class="footer-news">
-          <div class="d-flex justify-content-between pb-3" id="footer-news-top">
-            <div class=" mb-1 pd-2" id="news-content">
-              <div class="super-news">
-                <img src="whatNews1.jpg" width="360px" height="335px" class="whatnews" alt="">
-              </div>
-              <div class="bg-white d-inline-block py-2 rounded-right" id="news-box">
-                <div class="d-inline-block my-3">
-                  <button class="px-3 border border-0 btn-outline-light text-dark" id="middle-a">
-                    <small><b>NIGHT PARTY</b></small>
-                  </button>
-                </div>
-                <div class="my-2" id="news-txt">
-                  <b>Welcome To The Best Model Winner Contest</b>
-                </div>
-              </div>
-            </div>
-            <div id="news-content">
-              <div class="super-news">
-                <img src="whatNews2.jpg" width="360px" height="335px" class="whatnews" alt="">
-              </div>
-              <div class="bg-white d-inline-block py-2 rounded-right" id="news-box">
-                <div class="d-inline-block my-3">
-                  <button class="px-3 border border-0 btn-outline-light text-dark" id="middle-a">
-                    <small><b>NIGHT PARTY</b></small>
-                  </button>
-                </div>
-                <div class="my-2" id="news-txt">
-                  <b>Welcome To The Best Model Winner Contest</b>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="d-flex justify-content-between pt-3" id="footer-news-top">
-            <div class="mb-1 pd-2" id="news-content">
-              <div class="super-news">
-                <img src="whatNews3.jpg" width="360px" height="335px" class="whatnews" alt="">
-              </div>
-              <div class="bg-white d-inline-block py-2 rounded-right" id="news-box">
-                <div class="d-inline-block my-3">
-                  <button class="px-3 border border-0 text-dark" id="middle-a">
-                    <small><b>NIGHT PARTY</b></small>
-                  </button>
-                </div>
-                <div class="my-2" id="news-txt">
-                  <b>Welcome To The Best Model Winner Contest</b>
-                </div>
-              </div>
-            </div>
-            <div class="mb-1 pd-2" id="news-content">
-              <div class="super-news">
-                <img src="whatNews4.jpg" width="360px" height="335px" class="whatnews" alt="">
-              </div>
-              <div class="bg-white d-inline-block py-2 rounded-right" id="news-box">
-                <div class="d-inline-block my-3">
-                  <button class="px-3 border border-0 btn-outline-light text-dark" id="middle-a">
-                    <small><b>NIGHT PARTY</b></small>
-                  </button>
-                </div>
-                <div class="my-2" id="news-txt">
-                  <b>Welcome To The Best Model Winner Contest</b>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!--footer-right-->
-      <div class="float-right pl-2" id="footer-right">
-        <div class="my-2 py-3"><h4 class="font-weight-bold">Follow Us</h4></div>
-        <div id="application">
-          <div id="app-l">
-            <div class="d-inline-block border border-1 rounded p-2" id="app-content">
-              <div class="d-inline-block p-1" id="super-app">
-                <img src="icon-fb.png" height="29px" width="29px" alt="">
-              </div>
-              <div class="float-right p-1" id="app-box">
-                <div class="fan-count">8045</div>
-                <div class="fans">Fans</div>
-              </div>
-            </div>
-            <div class="border border-1 float-right rounded p-2" id="app-content">
-              <div class="d-inline-block p-1" id="super-app"><img src="icon-tw.png" height="29px" width="29px" alt=""></div>
-              <div class="float-right p-1" id="app-box">
-                <div class="fan-count">8045</div>
-                <div class="fans">Fans</div>
-              </div>
-            </div>
-          </div>
-          <div class="my-2 pb-5" id="app-r">
-            <div class="border border-1 d-inline-block rounded p-2" id="app-content">
-              <div class="d-inline-block p-1" id="super-app">
-                <img src="icon-ins.png" height="29px" width="29px" alt="">
-              </div>
-              <div class="float-right p-1" id="app-box">
-                <div class="fan-count">8045</div>
-                <div class="fans">Fans</div>
-              </div>
-            </div>
-            <div class="border border-1 float-right rounded p-2" id="app-content">
-              <div class="d-inline-block p-1" id="super-app">
-                <img src="icon-yo.png" height="29px" width="29px" alt="">
-              </div>
-              <div class="float-right p-1" id="app-box">
-                <div class="fan-count">8045</div>
-                <div class="fans">Fans</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="p-3" id="news-card">
-          <img src="news_card.jpg" class="mx-auto d-block" width="248px" height="590px" alt="">
-        </div>
-      </div>  
-    </div>
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" 
-    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" 
-    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" 
-    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
+    
   </div>
 </body>
 </html>
