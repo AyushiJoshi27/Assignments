@@ -14,7 +14,6 @@
     body {
       font-family: sans-serif;
       letter-spacing: 1px;
-      height: 988px;
     }
 
     table {
@@ -23,13 +22,8 @@
     }
 
     footer {
-      margin-left: 30px;
-      height: 950px;
-      width: 96%; 
-    }
-
-    #item-name{
-      align-items: left;
+      margin: 0 40px;
+      height: 950px; 
     }
 
     .r-address {
@@ -42,7 +36,7 @@
     .ser-address {
       display: inline-block;
       font-style: normal;
-      font-size: 18px;
+      font-size: 20px;
       margin-bottom: 10px;
     }
 
@@ -62,11 +56,15 @@
 
     .country-code {
       display: inline-block;
-      width: 45%;
+      width: 48%;
+    }
+
+    .customer-time {
+      width: 14%;
     }
 
     .details-item {
-      width: 21.6%;
+      width: 20.5%;
     }
 
     .details-blank {
@@ -78,20 +76,21 @@
       padding-right: 20px;
     }
 
-    .gst-table  {
-      width: 80%;
-    }
-
     .gst-content {
       border-bottom:2px solid darkslategrey;
       width: 100%;
     }
 
+    .footer-content {
+      margin: 0 30px;
+    }
+
     .footer-b {
-      position: relative; 
-      top: 800px; 
       border-bottom: 15px solid black; 
       border-right: 15px solid black;
+      margin-right: 20px;
+      position: relative; 
+      top: 800px; 
     }
 
     .footer-b p {
@@ -101,12 +100,15 @@
 
     .footer-t {
       line-height: 35px; 
+      margin: 20px 0;
       position: absolute;
+      width: 80%;
     }
 
     .heading { 
       border-top: 18px solid black;
       border-left: 15px solid black;
+      margin-top: 40px;
     }
 
     .heading h2 {
@@ -123,7 +125,9 @@
     }
 
     .main-templet {
-      margin: 40px;
+      font-size: 17px;
+      margin: 0 40px;
+      padding-right: 20px;
     }
 
     .mobile-no {
@@ -136,7 +140,7 @@
     }
 
     .no-days {
-      width: 20.5%;
+      width: 21%;
     }
 
     .other-items {
@@ -166,6 +170,14 @@
       line-height: 22px;
     }
 
+    .td-cgst {
+      width: 14%;
+    }
+
+    .td-name {
+      width: 18%;
+    }
+
     tr.table-border td {
       height: 35px;
     }
@@ -188,8 +200,8 @@
       </center>
       <div class="image-logo">
         <img id="logo" 
-            src="https://img1.wsimg.com/isteam/ip/93567e05-69d4-460e-bf90-d609034601db/Logo%20RGB(Black)-01.png/:/rs=w:182,h:200,cg:true,m/cr=w:182,h:200/qt=q:100/ll"
-            height="140px"
+          src="https://img1.wsimg.com/isteam/ip/93567e05-69d4-460e-bf90-d609034601db/Logo%20RGB(Black)-01.png/:/rs=w:182,h:200,cg:true,m/cr=w:182,h:200/qt=q:100/ll"
+          height="140px"
         >
       </div>
     </div>
@@ -213,7 +225,7 @@
         <div class="billed-to">Billed to:</div>
         <div class="name-and-address">
           <div>Name <span><</span>Name<span>></span><span><</span>Surname<span>></span></div>
-          <div class="re-address">Address: &nbsp;<span><</span>Address<span>></span></div>
+          <div class="re-address">Address:<span> <</span>Address<span>></span></div>
         </div>
         <div class="contact-info">
           <div class="mobile-no">Mobile No.</div>
@@ -227,8 +239,8 @@
           <tr class="table-border">
             <td class="details-item">Item Name</td>
             <td class="details-item">From Date/Time</td>
-            <td>To Date/Time</td>
-            <td>Price/day</td>
+            <td class="customer-time">To Date/Time</td>
+            <td class="customer-day">Price/day</td>
             <td class="no-days">No of days</td>
             <td>Total</td>
           </tr>
@@ -251,7 +263,7 @@
           <tr>
             <td><span><</span>Item code<span>></span></td>
             <td><span><</span>Time<span>></span></td>
-            <td><span><</span>Time<span>></span></td>
+            <td><span><</span>Time<span>></span></td> 
           </tr>
           <tr>
             <td></td>
@@ -282,23 +294,25 @@
       <!--GST table dertails-->
       <p>GST Details</p>  
       <div class="gst-content">
-        <table class="gst-table">
+        <table>
           <thead>
             <tr>
-              <td id="item-name">Item Name</td>
-              <td class="other-items">Retail Price Value</td>
-              <td class="other-items">CGST</td>
-              <td class="other-items">SGST</td>
-              <td class="other-items">IGST</td>
+              <td class="td-name">Item Name</td>
+              <td class="other-items td-name">Retail Price Value</td>
+              <td class="other-items td-cgst">CGST</td>
+              <td class="other-items td-cgst">SGST</td>
+              <td class="other-items td-cgst">IGST</td>
+              <td class="other-items"></td>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td id="item-name"><span><</span>Item Name<span>></span></td>
+              <td><span><</span>Item Name<span>></span></td>
               <td class="other-items"></td>
               <td class="other-items">9%</td>
               <td class="other-items">9%</td>
               <td class="other-items">18%</td>
+              <td class="other-items"></td>
             </tr>
             <tr>
               <td class="other-items"></td>
@@ -306,20 +320,24 @@
               <td class="other-items"><span><</span>Amount<span>></span></td>
               <td class="other-items"><span><</span>Amount<span>></span></td>
               <td class="other-items"><span><</span>Amount<span>></span></td>
+              <td class="other-items"></td>
             </tr>
             <tr class="blank"></tr>
           </tbody>         
         </table>
       </div>
-    </div> 
-    <footer>
-      <p class="footer-t"">This is a computer-generated invoice and does not require signature.
-        <br>For details about Terms & Conditions, Refund and Cancellation policy please visit www.bragbox.io.
-      </p>
+    </div>
+  </div>
+  <footer>
+    <div class="footer-content">
+      <div class="footer-t"">
+        <div>This is a computer-generated invoice and does not require signature.</div>
+        <div>For details about Terms & Conditions, Refund and Cancellation policy please visit www.bragbox.io.</div>
+      </div>
       <center class="footer-b">
         <p>4C4AL Private Limited: C-804, Oceanus Monarda, Jail Road, Kasavanahalli, Bengaluru, Karnataka 560035</p>
       </center>
-    </footer>
-  </div>
+    </div>
+  </footer>
 </body>
 </html>
