@@ -1,155 +1,325 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>jquery</title>
-    <!--script
-      src="https://code.jquery.com/jquery-3.6.1.js"
-      integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
-      crossorigin="anonymous">
-    </!--script-->
-    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-    <!--script-- src="jquery-3.6.0.min.js"></!--script-->
-    <link href="style.css" rel="stylesheet">
-  </head>
-  <body>
-    <p>HEllo.</p>
-    <a class="hii">Hiii!</a><br>
-    <a id="heyyy">Heyyy!</a><br>
-    <a class="welcome">Welcome</a><br>
-    <a class="regards">Regards</a>
-    <div class="d1">apple1</div>
-    <div class="d2">apple2</div>
-    <div class="d3">apple3</div>
-    <div class="d4">how-</div>
-    <div class="d5">are-</div>
-    <div class="d6">you-</div>
-    <div class="d7">?</div>
-    <div class="d8">I</div>
-    <div class="d9">am </div>
-    <div class="d10">good</div>
-    <div class="d11">.</div>
-    <br>
-    <div class="a">I </div>
-    <div class="b">am</div>
-    <div class="c">doing</div>
-    <div class="d">well</div>
-    <br>
-    <div class="e">I</div>
-    <div class="f">can</div>
-    <div class="g">do</div>
-    <div class="h">it.</div>
-    <br>
-    <div class="i">Rough</div>
-    <div class="j" style="display:none">work.</div>
-    <br>
-    <div class="k">hello</div>
-    <div class="l">Citizens</div>
-    <br>
-    <button class="o" style="padding: 20px; background-color: blue;">STOP</button>
-    <div class="m">heyyy, </div>
-    <div class="n" style="display: none; background-color: blue; padding: 150px">Ayushi</div>
-    <!--naruto pic animation-->
-    <div style="height: 250px;">
-      <div class="naruto-jutsu-a">
-        <h1>POSITION ABSOLUTE</h1>
-        <img class="naruto-a" src="images/naruto.jpeg" width="300px" height="168px" alt="naruto-image-auto-zoom-in-animation-a">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" 
+    href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" 
+    integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" 
+    crossorigin="anonymous"
+  >
+  <style>
+    body {
+      font-family: sans-serif;
+      letter-spacing: 1px;
+      height: 988px;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    footer {
+      margin-left: 30px;
+      height: 950px;
+      width: 96%; 
+    }
+
+    #item-name{
+      align-items: left;
+    }
+
+    .r-address {
+      margin: 40px 0 10px;
+      font-size: 20px; 
+      font-weight: 500; 
+      line-height: 25px;
+    }
+
+    .ser-address {
+      display: inline-block;
+      font-style: normal;
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .blank {
+      height: 20px;
+    }
+
+    .cin {
+      display: inline-block; 
+      width: 37%; 
+      margin: 0;
+    }
+
+    .contact-info {
+      margin: 10px 0;
+    }
+
+    .country-code {
+      display: inline-block;
+      width: 45%;
+    }
+
+    .details-item {
+      width: 21.6%;
+    }
+
+    .details-blank {
+      height: 24px;
+    }
+
+    .date-block {
+      margin-right: 40px;
+      padding-right: 20px;
+    }
+
+    .gst-table  {
+      width: 80%;
+    }
+
+    .gst-content {
+      border-bottom:2px solid darkslategrey;
+      width: 100%;
+    }
+
+    .footer-b {
+      position: relative; 
+      top: 800px; 
+      border-bottom: 15px solid black; 
+      border-right: 15px solid black;
+    }
+
+    .footer-b p {
+    padding: 30px 0;
+    margin: 0;
+    }
+
+    .footer-t {
+      line-height: 35px; 
+      position: absolute;
+    }
+
+    .heading { 
+      border-top: 18px solid black;
+      border-left: 15px solid black;
+    }
+
+    .heading h2 {
+      font-size: 38px;
+      font-weight: 400;
+      letter-spacing: 2px;
+      margin-top: 30px;
+      margin-bottom: 0;
+      padding: 10px 0;
+    }
+
+    .image-logo {
+      float: right;
+    }
+
+    .main-templet {
+      margin: 40px;
+    }
+
+    .mobile-no {
+      display: inline-block;
+      width: 13%;
+    }
+
+    .name-and-address {
+      margin: 20px 0;
+    }
+
+    .no-days {
+      width: 20.5%;
+    }
+
+    .other-items {
+      text-align: center;
+    }
+
+    .recipient-info {
+      margin: 40px 0;
+      padding-bottom: 20px;
+    }
+
+    .section {
+      align-items: center;
+      border-top:2px solid darkslategrey;
+      border-bottom:2px solid darkslategrey;
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 0 20px 0;
+    }
+
+    .t-body-details {
+      border-bottom: 2px solid darkslategrey;
+      border-top: 2px solid darkslategrey;
+    }
+
+    .t-body-details tr {
+      line-height: 22px;
+    }
+
+    tr.table-border td {
+      height: 35px;
+    }
+
+    .templet {
+      margin: 0 30px;
+    }
+
+    .wallet-id {
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+  <div class="main-templet">
+    <!--heading-->
+    <div class="heading">
+      <center>
+        <h2>TAX INVOICE</h2>
+      </center>
+      <div class="image-logo">
+        <img id="logo" 
+            src="https://img1.wsimg.com/isteam/ip/93567e05-69d4-460e-bf90-d609034601db/Logo%20RGB(Black)-01.png/:/rs=w:182,h:200,cg:true,m/cr=w:182,h:200/qt=q:100/ll"
+            height="140px"
+        >
       </div>
     </div>
-    <br>
-    <div class="naruto-jutsu-b">
-      <h2>POSITION RELATIVE</h2>
-      <img class="naruto-b" src="images/naruto.jpeg" width="300px" height="168px" alt="naruto-image-zoom-animation-b">
-    </div>
-    <div class="naruto-jutsu-fight" style="height: 250px;">
-      <h2>QUEUE FUNCTIONALITY-1</h2>
-      <img class="naruto-fight" src="images/naruto-cool.jpeg" width="300px" height="168px" alt="naruto-image-zoom -in-out-animation">
-    </div>
-    <br>
-    <br>
-    <div class="n-jutsu" style="height: 250px;">
-      <h2 class="n-jutsu-heading">QUEUE FUNCTIONALITY-1</h2>
-      <img class="naruto-jutsu" src="images/naruto-jutsu.jpeg" width="300px" height="168px" alt="">
-    </div>
-    <!--JQUERY-->
-    <script>
-      $(document).ready(function(){
-        $("p").click(function(){
-          $(this).hide();
-        });
-        $(".hii").click(function() {
-          $(this).hide(2000);
-        });
-        $("#heyyy").click(function() {
-          $(this).hide();
-        });
-        //$(".welcome").click(function() {
-          //$(".regards").hide(3000);
-        //});
-        $(".welcome").click(function() {
-          $(".regards").toggle("slow");
-        });
-        $(".d1").click(function() {
-          $(".d2, .d3").toggle(3000);//toggle
-        });
-        $(".d4").click(function() {  //not working
-          $(".d5").fadeIn();
-          $(".d6").fadeIn("slow");
-          $(".d7").fadeIn(3000);
-        });
-        $(".d8").click(function() { //not working
-          $(".d9").fadeOut();
-          $(".d10").fadeOut("slow");
-          $(".d11").fadeOut(3000);
-        }); 
-        $(".a").click(function(){ //toggle
-          $(".b").fadeToggle();
-          $(".c").fadeToggle("slow");
-          $(".d").fadeToggle(3000);
-        });
-        $(".e").click(function(){
-          $(".f").fadeTo("slow", 0.15);
-          $(".g").fadeTo("slow", 0.4);
-          $(".h").fadeTo("slow", 0.7);
-        });
-        $(".i").click(function(){ //panel
-          $(".j").slideDown();
-        });
-        $(".k").click(function(){
-          $(".l").slideUp("slow");
-        });
-        $(".m").click(function(){ //top
-          $(".n").slideDown("10000");
-        });
-        $(".m").click(function(){ //not stoppig when stopped
-          $(".o").stop();
-        }, 10000);
-        $(".naruto-jutsu-a").click(function() { //animate 
-          $(".naruto-a").animate({ //manipulate multiple properties
-            left:"400px", 
-            opacity:0.8,
-            width:"150px", //with absolute vaue
-            height:"80px" //with absolute vaue
-          });
-        });
-        $(".naruto-jutsu-b").click(function() { //animate with relative value
-          $(".naruto-b").animate({ //manipulate multiple properties
-            left:"400px",
-            opacity:0.8,  //increaset the size relative to its original
-            width:"+=150px",
-            height:"+=80px"
-          });
-        });
-        $(".naruto-jutsu-fight").click(function() {
-          var anime = $ (".naruto-fight");
-          anime.animate({height: '300px', opacity: '0.4'}, "slow");
-          anime.animate({width: '600px', opacity: '0.8'}, "slow");
-          anime.animate({height: '168px', opacity: '0.4'}, "slow");
-          anime.animate({width: '300px', opacity: '0.8'}, "slow");
-        });
-      });
-    </script>
-  </body>
+      <!--service provider information-->
+    <div class="templet">  
+      <address class="ser-address">
+        4C4AL Private Limited<br>
+        Address: C-804, Oceanus Monarda, Jail Road, Kasavanahalli, Bengaluru, Karnataka 56003
+        <div class="cin">CIN: U52335KA2022PTC158803</div>
+        GST No: 29AABCZ9188Q1Z0<br>
+        E-mail - <a href="mailto: support@bragbox.io"> support@bragbox.io</a><br> 
+        Place of supply: Karnataka
+      </address>
+      <!--section-->
+      <div class="section">
+        <div>Invoice No. <span><</span>Invoice No<span>></span></div>
+        <div>Order No. <span><</span>Order No<span>></span></div>
+        <div class="date-block">Date<span><</span>DD/MM/YYYY<span>></span> </div>
+      </div>
+      <div class="recipient-info">
+        <div class="billed-to">Billed to:</div>
+        <div class="name-and-address">
+          <div>Name <span><</span>Name<span>></span><span><</span>Surname<span>></span></div>
+          <div class="re-address">Address: &nbsp;<span><</span>Address<span>></span></div>
+        </div>
+        <div class="contact-info">
+          <div class="mobile-no">Mobile No.</div>
+          <div class="country-code"> <span><</span>Country code<span>></span> <span><</span>Number<span>></span></div>
+          <div class="wallet-id">Wallet Id.<span><</span>Number<span>></span></div>
+        </div>
+      </div>
+      <!--customer-details-->
+      <table class="customer-details">
+        <thead>
+          <tr class="table-border">
+            <td class="details-item">Item Name</td>
+            <td class="details-item">From Date/Time</td>
+            <td>To Date/Time</td>
+            <td>Price/day</td>
+            <td class="no-days">No of days</td>
+            <td>Total</td>
+          </tr>
+        </thead>
+        <tbody class="t-body-details">
+          <tr>
+            <td>
+              <span><</span>Item Name<span>></span>
+            </td>
+            <td>
+              <span><</span>DD/MM/YYYY<span>></span>
+            </td>
+            <td>
+              <span><</span>DD/MM/YYYY<span>></span>
+            </td>
+            <td><span><</span>Amount<span>></span></td>
+            <td><span><</span>Days<span>></span></td>
+            <td><span><</span>Amount<span>></span></td>
+          </tr>
+          <tr>
+            <td><span><</span>Item code<span>></span></td>
+            <td><span><</span>Time<span>></span></td>
+            <td><span><</span>Time<span>></span></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><span><</span>Discount<span>></span></td>
+            <td></td>
+            <td><span><</span>Amount<span>></span></td>
+          </tr>
+          <tr class="details-blank">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Amount Paid</td>
+            <td></td>
+            <td><span><</span>Amount<span>></span></td>
+          </tr>
+        </tbody>
+      </table>
+      <!--GST table dertails-->
+      <p>GST Details</p>  
+      <div class="gst-content">
+        <table class="gst-table">
+          <thead>
+            <tr>
+              <td id="item-name">Item Name</td>
+              <td class="other-items">Retail Price Value</td>
+              <td class="other-items">CGST</td>
+              <td class="other-items">SGST</td>
+              <td class="other-items">IGST</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td id="item-name"><span><</span>Item Name<span>></span></td>
+              <td class="other-items"></td>
+              <td class="other-items">9%</td>
+              <td class="other-items">9%</td>
+              <td class="other-items">18%</td>
+            </tr>
+            <tr>
+              <td class="other-items"></td>
+              <td class="other-items"><span><</span>Amount<span>></span></td>
+              <td class="other-items"><span><</span>Amount<span>></span></td>
+              <td class="other-items"><span><</span>Amount<span>></span></td>
+              <td class="other-items"><span><</span>Amount<span>></span></td>
+            </tr>
+            <tr class="blank"></tr>
+          </tbody>         
+        </table>
+      </div>
+    </div> 
+    <footer>
+      <p class="footer-t"">This is a computer-generated invoice and does not require signature.
+        <br>For details about Terms & Conditions, Refund and Cancellation policy please visit www.bragbox.io.
+      </p>
+      <center class="footer-b">
+        <p>4C4AL Private Limited: C-804, Oceanus Monarda, Jail Road, Kasavanahalli, Bengaluru, Karnataka 560035</p>
+      </center>
+    </footer>
+  </div>
+</body>
 </html>
