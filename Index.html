@@ -13,17 +13,47 @@
   <style>
     body {
       font-family: sans-serif;
+      letter-spacing: 1px;
+      height: 988px;
     }
 
-    hr{
-      background-color: black;
-      height: 0.px;
-    }
-
-    table{
-      border-bottom: 2px solid slategrey;
+    table {
       border-collapse: collapse;
       width: 100%;
+    }
+
+    footer {
+      margin-left: 30px;
+      height: 950px;
+      width: 96%; 
+    }
+
+    #item-name{
+      align-items: left;
+    }
+
+    .r-address {
+      margin: 40px 0 10px;
+      font-size: 20px; 
+      font-weight: 500; 
+      line-height: 25px;
+    }
+
+    .ser-address {
+      display: inline-block;
+      font-style: normal;
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .blank {
+      height: 20px;
+    }
+
+    .cin {
+      display: inline-block; 
+      width: 37%; 
+      margin: 0;
     }
 
     .contact-info {
@@ -35,8 +65,43 @@
       width: 45%;
     }
 
-    .gst {
-      display: inline-block;
+    .details-item {
+      width: 21.6%;
+    }
+
+    .detail-blank {
+      height: 23px;
+    }
+
+    .date-block {
+      margin-right: 40px;
+      padding-right: 20px;
+    }
+
+    .gst-table  {
+      width: 80%;
+    }
+
+    .gst-content {
+      border-bottom:2px solid darkslategrey;
+      width: 100%;
+    }
+
+    .footer-b {
+      position: relative; 
+      top: 800px; 
+      border-bottom: 15px solid black; 
+      border-right: 15px solid black;
+    }
+
+    .footer-b p {
+    padding: 30px 0;
+    margin: 0;
+    }
+
+    .footer-t {
+      line-height: 35px; 
+      position: absolute;
     }
 
     .heading { 
@@ -45,8 +110,9 @@
     }
 
     .heading h2 {
-      font-size: 35px;
+      font-size: 38px;
       font-weight: 400;
+      letter-spacing: 2px;
       margin-top: 30px;
       margin-bottom: 0;
       padding: 10px 0;
@@ -69,34 +135,35 @@
       margin: 20px 0;
     }
 
+    .no-days {
+      width: 20.5%;
+    }
+
+    .other-items {
+      text-align: center;
+    }
+
     .recipient-info {
       margin: 40px 0;
       padding-bottom: 20px;
     }
+
     .section {
       align-items: center;
-      border-top: 2px solid slategrey;
-      border-bottom: 2px solid slategrey;;
+      border-top:2px solid darkslategrey;
+      border-bottom:2px solid darkslategrey;
       display: flex;
       justify-content: space-between;
       padding: 10px 0 20px 0;
     }
-    .service-provider-information {
-      display: inline-block;
-      margin-top: 40px;
-      padding-top: 40px;
+
+    .t-body-details {
+      border-bottom: 2px solid darkslategrey;
+      border-top: 2px solid darkslategrey;
     }
 
-    .service-address{
-      margin: 20px 0 10px;
-      font-size: 22px;
-      font-weight: 500;
-    }
-
-
-    tr.table-border {
-      border-bottom: 2px solid slategrey;; 
-      margin: 5px 0;
+    .t-body-details tr {
+      line-height: 22px;
     }
 
     tr.table-border td {
@@ -104,7 +171,6 @@
     }
 
     .templet {
-      font-size: 18px;
       margin: 0 30px;
     }
 
@@ -121,65 +187,66 @@
         <h2>TAX INVOICE</h2>
       </center>
       <div class="image-logo">
-        <img id="logo" src="https://img1.wsimg.com/isteam/ip/93567e05-69d4-460e-bf90-d609034601db/Logo%20RGB(Black)-01.png/:/rs=w:182,h:200,cg:true,m/cr=w:182,h:200/qt=q:100/ll" height="140px">
+        <img id="logo" 
+            src="https://img1.wsimg.com/isteam/ip/93567e05-69d4-460e-bf90-d609034601db/Logo%20RGB(Black)-01.png/:/rs=w:182,h:200,cg:true,m/cr=w:182,h:200/qt=q:100/ll"
+            height="140px"
+        >
       </div>
     </div>
       <!--service provider information-->
     <div class="templet">  
-      <div class="service-provider-information">
-        <div style="margin: 40px 0 10px; font-size: 20px; font-weight: 500; line-height: 25px; letter-spacing: 1px;">
-          <p style="margin-bottom: 0;">4C4AL Private Limited<br>
-            Address: C-804, Oceanus Monarda, Jail Road, Kasavanahalli, Bengaluru, Karnataka 56003
-            <div style="display: inline-block; width: 60%; margin: 0;">CIN: U52335KA2022PTC158803</div>
-            GST No: 29AABCZ9188Q1Z0<br>
-            E-mail - <a style="color: rgb(27 113 195 / 91%)" href="mailto: support@bragbox.io"> support@bragbox.io</a><br> <!--it will direct you to mail address as well-->
-            Place of supply: Karnataka
-          </p>
-        </div>
-      </div>
+      <address class="ser-address">
+        4C4AL Private Limited<br>
+        Address: C-804, Oceanus Monarda, Jail Road, Kasavanahalli, Bengaluru, Karnataka 56003
+        <div class="cin">CIN: U52335KA2022PTC158803</div>
+        GST No: 29AABCZ9188Q1Z0<br>
+        E-mail - <a href="mailto: support@bragbox.io"> support@bragbox.io</a><br> 
+        Place of supply: Karnataka
+      </address>
       <!--section-->
       <div class="section">
-        <div>Invoice No. <span><</span>Invoice No<span>></span></div> <!--<div>Invoice No. <span class='fas fa-greater-than'></span>Invoice No</div>-->
+        <div>Invoice No. <span><</span>Invoice No<span>></span></div>
         <div>Order No. <span><</span>Order No<span>></span></div>
-        <div style="margin-right: 40px; padding-right: 20px;">Date <span><</span>DD/MM/YYYY<span>></span> </div>
+        <div class="date-block">Date<span><</span>DD/MM/YYYY<span>></span> </div>
       </div>
       <div class="recipient-info">
         <div class="billed-to">Billed to:</div>
         <div class="name-and-address">
-          <div>Name <span><</span>Name<span>></span> <span><</span>Surname<span>></span></div>
-          <div class="address">Address: &nbsp;<span><</span>Address<span>></span> </Address></div>
+          <div>Name <span><</span>Name<span>></span><span><</span>Surname<span>></span></div>
+          <div class="re-address">Address: &nbsp;<span><</span>Address<span>></span></div>
         </div>
         <div class="contact-info">
           <div class="mobile-no">Mobile No.</div>
-          <div class="country-code"> <span><</span> Country code<span>></span> <span><</span>Number<span>></span></div>
-          <div class="wallet-id">Wallet Id. <span><</span>Number<span>></span></div>
+          <div class="country-code"> <span><</span>Country code<span>></span> <span><</span>Number<span>></span></div>
+          <div class="wallet-id">Wallet Id.<span><</span>Number<span>></span></div>
         </div>
       </div>
-      <table>
-        <thead style="height: 40px;">
+      <!--customer-details-->
+      <table class="customer-details">
+        <thead>
           <tr class="table-border">
-            <td style="width: 20%;">Item Name</td>
-            <td style="width: 20%;">From Date/Time</td>
-            <td style="width: 15%;">To Date/Time</td>
-            <td style="width: 13%;">Price/day</td>
-            <td style="width: 22%;">No of days</td>
+            <td class="details-item">Item Name</td>
+            <td class="details-item">From Date/Time</td>
+            <td>To Date/Time</td>
+            <td>Price/day</td>
+            <td class="no-days">No of days</td>
             <td>Total</td>
           </tr>
         </thead>
-        <tbody>
+        <tbody class="t-body-details">
           <tr>
             <td>
-              <span><</span> Item Name<span>></span>
+              <span><</span>Item Name<span>></span>
             </td>
             <td>
-              <span><</span> DD/MM/YYYY<span>></span>
+              <span><</span>DD/MM/YYYY<span>></span>
             </td>
             <td>
-              <span><</span> DD/MM/YYYY<span>></span>
+              <span><</span>DD/MM/YYYY<span>></span>
             </td>
-            <td><span><</span> Amount<span>></span></td>
-            <td><span><</span> Days<span>></span></td>
-            <td><span><</span> Amount<span>></span></td>
+            <td><span><</span>Amount<span>></span></td>
+            <td><span><</span>Days<span>></span></td>
+            <td><span><</span>Amount<span>></span></td>
           </tr>
           <tr>
             <td><span><</span>Item code<span>></span></td>
@@ -192,9 +259,9 @@
             <td></td>
             <td><span><</span>Discount<span>></span></td>
             <td></td>
-            <td><span><</span> Amount<span>></span></td>
+            <td><span><</span>Amount<span>></span></td>
           </tr>
-          <tr style="height: 23px;">
+          <tr class="details-blank">
             <td></td>
             <td></td>
             <td></td>
@@ -212,45 +279,48 @@
           </tr>
         </tbody>
       </table>
-      <p>GST Details</p>
-      <div style="height: 65px; border-bottom: 2px solid dimgrey">
-        <ol style="list-style: none; padding: 0; margin: 0; display: inline-block; width: 18%; position: relative; top: -22px;">
-          <li>Item Name</li>
-          <li><span><</span>Item Name<span>></span></li>
-          <li style="height: 21px;"></li>                                     <!--not working-->
-        </ol>
-        <ol style="list-style: none; margin: 0; padding: 0; display: inline-block; width: 12%;">
-          <li style="display: flex; justify-content: center;">Retail Price Value</li>
-          <li style="display: flex; justify-content: center; height: 21px;"></li>
-          <li style="display: flex; justify-content: center;"><span><</span>Amount<span>></span></li>
-        </ol>
-        <ol style="list-style: none; margin: 0; display: inline-block; width: 15%;">
-          <li style="display: flex; justify-content: center;">CGST</li>
-          <li style="display: flex; justify-content: center;">9%</li>
-          <li style="display: flex; justify-content: center;"><span><</span>Amount<span>></span></li>
-        </ol>
-        <ol style="list-style: none; margin: 0; display: inline-block; width: 13%; padding: 0;">
-          <li style="display: flex; justify-content: center;">SGST</li>
-          <li style="display: flex; justify-content: center;">9%</li>
-          <li style="display: flex; justify-content: center;"><span><</span>Amount<span>></span></li>
-        </ol>
-        <ol style="list-style: none; margin: 0; display: inline-block;">
-          <li style="display: flex; justify-content: center;">IGST</li>
-          <li style="display: flex; justify-content: center;">9%</li>
-          <li style="display: flex; justify-content: center;"><span><</span>Amount<span>></span></li>
-        </ol>
+      <!--GST table dertails-->
+      <p>GST Details</p>  
+      <div class="gst-content">
+        <table class="gst-table">
+          <thead>
+            <tr>
+              <td id="item-name">Item Name</td>
+              <td class="other-items">Retail Price Value</td>
+              <td class="other-items">CGST</td>
+              <td class="other-items">SGST</td>
+              <td class="other-items">IGST</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td id="item-name"><span><</span>Item Name<span>></span></td>
+              <td class="other-items"></td>
+              <td class="other-items">9%</td>
+              <td class="other-items">9%</td>
+              <td class="other-items">18%</td>
+            </tr>
+            <tr>
+              <td class="other-items"></td>
+              <td class="other-items"><span><</span>Amount<span>></span></td>
+              <td class="other-items"><span><</span>Amount<span>></span></td>
+              <td class="other-items"><span><</span>Amount<span>></span></td>
+              <td class="other-items"><span><</span>Amount<span>></span></td>
+            </tr>
+            <tr class="blank"></tr>
+          </tbody>         
+        </table>
       </div>
-      <p style="line-height: 35px;">This is a computer-generated invoice and does not require signature.
-        <br>For details about Terms & Conditions, Refund and Cancellation policy please visit www.bragbox.io.
-      </p>
-      <footer style="position: absolute; width: 88%;">
-        <center style="position: relative; top: 700px; border-bottom: 15px solid black; border-right: 15px solid black;">
-          <p style="padding: 25px 0; margin: 0;">4C4AL Private Limited: C-804, Oceanus Monarda, Jail Road, Kasavanahalli, Bengaluru, Karnataka 560035</p>
-        </center>
-      </footer>
     </div>
     
-    
+    <footer>
+      <p class="footer-t"">This is a computer-generated invoice and does not require signature.
+        <br>For details about Terms & Conditions, Refund and Cancellation policy please visit www.bragbox.io.
+      </p>
+      <center class="footer-b">
+        <p>4C4AL Private Limited: C-804, Oceanus Monarda, Jail Road, Kasavanahalli, Bengaluru, Karnataka 560035</p>
+      </center>
+    </footer>
   </div>
 </body>
 </html>
