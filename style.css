@@ -1,0 +1,140 @@
+form {
+  border: 1px solid lightgrey;
+  border-radius: 50px;
+}
+
+ul li {
+  list-style: none;
+  display: inline-block;
+}
+
+#online-dot {
+  font-size: 12px;
+}
+
+#space1, #space2 {
+  display: flex;
+  flex: 1;
+}
+
+.camera {
+  font-size: 20px;
+  background-color: rgb(225, 230, 245);
+  position: relative;
+  right: 45px;
+  top: 50px;
+}
+
+.dp-parent {
+  position: relative;
+}
+
+.extra-option, .post-1 {
+  padding: 0 12px;
+}
+
+.fa-circle {
+  position: relative;
+  color: greenyellow;
+  top: 12px;
+  right: 14px;
+}
+
+.fb-dp {
+  width: 178px;
+  border: 4px solid white;
+}
+
+.friend-list button{
+  font-size: 20px;
+  background-color: rgb(225, 230, 245);
+}
+
+.friend-dp {
+  position: absolute;
+  right: 72.5%;
+}
+
+.input-search {
+  font-size: 14px;
+}
+
+.introduction {
+  background: white;
+  padding: 20px;
+  width: 100%;
+}
+
+.left-inner {
+  float: right;
+  width: 78%;
+}
+
+.main-templet, .nav-content, .flags, .view-opt {
+  border-top: 1px solid lightgray;
+}
+
+.main-templet i {
+  font-size: 18px;
+}
+
+.mynav-right {
+  margin: 5px 0;
+}
+
+.mynav-right li {
+  background-color: rgb(225, 230, 245);
+  font-size: 20px;
+  margin: 0 5px;
+}
+
+.mynav-right a {
+  padding: 0 5px;
+}
+
+.name-info {
+  margin-bottom: 8px;
+}
+
+.onmind {
+  width: 91%;
+}
+
+.post1-dp {
+  border: 2px solid blue;
+}
+
+.profile {
+  margin: 0 auto;
+  width: 87%;
+}
+
+.profle-block {
+  position: relative;
+  bottom: 40px;
+}
+
+.right-inner {
+  padding: 20%;
+  width: 100%;
+}
+
+.templet-left {
+  width: 39%;
+}
+
+.templet-right {
+  width: 49%;
+}
+
+.topnav-center {
+  justify-content: space-between;
+  font-size: 24px;
+  width: 100%;
+}
+
+.story-edit {
+  float: right;
+  position: relative;
+  top: 135px;
+}
