@@ -1,140 +1,211 @@
-form {
-  border: 1px solid lightgrey;
-  border-radius: 50px;
-}
-
-ul li {
-  list-style: none;
-  display: inline-block;
-}
-
-#online-dot {
-  font-size: 12px;
-}
-
-#space1, #space2 {
-  display: flex;
-  flex: 1;
-}
-
-.camera {
-  font-size: 20px;
-  background-color: rgb(225, 230, 245);
-  position: relative;
-  right: 45px;
-  top: 50px;
-}
-
-.dp-parent {
-  position: relative;
-}
-
-.extra-option, .post-1 {
-  padding: 0 12px;
-}
-
-.fa-circle {
-  position: relative;
-  color: greenyellow;
-  top: 12px;
-  right: 14px;
-}
-
-.fb-dp {
-  width: 178px;
-  border: 4px solid white;
-}
-
-.friend-list button{
-  font-size: 20px;
-  background-color: rgb(225, 230, 245);
-}
-
-.friend-dp {
-  position: absolute;
-  right: 72.5%;
-}
-
-.input-search {
-  font-size: 14px;
-}
-
-.introduction {
-  background: white;
-  padding: 20px;
+.main-nav-bar {
+  position: fixed;
   width: 100%;
 }
-
-.left-inner {
-  float: right;
-  width: 78%;
+.main-nav-bar .page-head-nav {
+  position: static;
+  box-shadow: 0 0px 6px 0 lightgrey;
+}
+.main-nav-bar .page-head-nav form {
+  border-radius: 50px;
+  width: 20%;
+}
+.main-nav-bar .page-head-nav #mynavbar {
+  font-size: 25px;
+}
+.main-nav-bar .page-head-nav .header-nav-account {
+  font-size: 20px;
+  width: 14%;
+}
+.main-nav-bar .page-head-nav .input-search {
+  font-size: 15px;
+}
+.main-nav-bar .page-head-nav .space {
+  flex: 1;
+}
+.main-nav-bar .page-head-nav .top-nav-setting {
+  width: 20%;
 }
 
-.main-templet, .nav-content, .flags, .view-opt {
+.fb-full-body {
   border-top: 1px solid lightgray;
-}
-
-.main-templet i {
   font-size: 18px;
 }
-
-.mynav-right {
-  margin: 5px 0;
+.fb-full-body .main-body {
+  margin: 0 auto;
+  width: 83.5%;
 }
-
-.mynav-right li {
-  background-color: rgb(225, 230, 245);
-  font-size: 20px;
-  margin: 0 5px;
+.fb-full-body .main-body .introduction {
+  padding: 15px;
+  box-shadow: 0px 2px 3px 0px lightgrey;
 }
-
-.mynav-right a {
-  padding: 0 5px;
+.fb-full-body .main-body .introduction button {
+  font-weight: 600;
+  font-size: 15px;
 }
-
-.name-info {
-  margin-bottom: 8px;
+.fb-full-body .main-body .introduction span {
+  font-size: 15px;
 }
-
-.onmind {
-  width: 91%;
+.fb-full-body .main-body .introduction span a {
+  font-weight: 600;
 }
-
-.post1-dp {
-  border: 2px solid blue;
+.fb-full-body .main-body .introduction #home-icon {
+  font-size: 27px;
+}
+.fb-full-body .main-body .introduction #map-icon {
+  font-size: 27px;
+}
+.fb-full-body .main-body .introduction .graduation-icon {
+  font-size: 22px;
+}
+.fb-full-body .main-body .friends-list {
+  box-shadow: 0px 2px 3px 0px lightgrey;
+}
+.fb-full-body .main-body .see-all-photo {
+  font-weight: 400;
+  font-size: 16px;
+  box-shadow: 0px 2px 3px 0px lightgrey;
+}
+.fb-full-body .main-body .templet-about {
+  width: 40.8%;
+}
+.fb-full-body .main-body .templet-about a {
+  font-weight: 400;
+  font-size: 16px;
+}
+.fb-full-body .main-body .templet-about .grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  row-gap: 10px;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+}
+.fb-full-body .main-body .templet-about .grid-container .grid-item {
+  margin-bottom: 15px;
+}
+.fb-full-body .main-body .templet-about .grid-container .grid-item a {
+  font-size: 13px;
+  font-weight: 600;
+}
+.fb-full-body .main-body .templet-about .grid-container .grid-item img {
+  border-radius: 10px;
+}
+.fb-full-body .main-body .templet-posts {
+  float: right;
+  width: 57.8%;
+}
+.fb-full-body .main-body .templet-posts .extra-option, .fb-full-body .main-body .templet-posts .posts-setting, .fb-full-body .main-body .templet-posts .post-block {
+  box-shadow: 0px 2px 3px 0px lightgrey;
 }
 
 .profile {
   margin: 0 auto;
   width: 87%;
 }
-
-.profle-block {
+.profile .camera {
   position: relative;
-  bottom: 40px;
+  right: 58px;
+  top: 38px;
 }
-
-.right-inner {
-  padding: 20%;
-  width: 100%;
+.profile .dp-parent {
+  padding: 8px 11px;
+  border-radius: 50%;
+  margin: 0;
 }
-
-.templet-left {
-  width: 39%;
+.profile .extra {
+  height: 58px;
 }
-
-.templet-right {
-  width: 49%;
-}
-
-.topnav-center {
-  justify-content: space-between;
-  font-size: 24px;
-  width: 100%;
-}
-
-.story-edit {
-  float: right;
+.profile .name-info {
+  right: 30px;
   position: relative;
-  top: 135px;
+  top: -40px;
 }
+.profile .name-info .img-stack {
+  position: relative;
+  right: 12%;
+}
+.profile .profile-intro {
+  border-bottom: 1px solid lightgray;
+  height: 160px;
+}
+.profile .profile-intro .fb-dp {
+  position: relative;
+  bottom: 30px;
+}
+.profile .profile-intro .story-edit {
+  position: relative;
+  left: 441px;
+  top: 15px;
+  display: inline-block;
+}
+
+.templet-posts .flags {
+  border-top: 1px solid lightgray;
+}
+.templet-posts .flags i {
+  font-size: 22px;
+}
+.templet-posts .extra-option .onmind {
+  font-size: 16px;
+  width: 92.9%;
+}
+.templet-posts .posts-setting button, .templet-posts .posts-setting .view-opt {
+  font-size: 15px;
+  font-weight: 600;
+}
+.templet-posts .posts-setting button i, .templet-posts .posts-setting .view-opt i {
+  font-size: 18px;
+}
+.templet-posts .posts-setting .opt-button {
+  margin-top: 2px;
+}
+.templet-posts .posts-setting .view-opt {
+  border-top: 1px solid lightgray;
+}
+.templet-posts .post-block .post-head {
+  border-bottom: 1px solid lightgray;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 10px 15px;
+}
+.templet-posts .post-block .post-head #post-dp {
+  bottom: 14px;
+  position: relative;
+}
+.templet-posts .post-block .post-head p {
+  font-weight: 400;
+  line-height: 13px;
+}
+.templet-posts .post-block .post-head .post-date {
+  font-size: 13px;
+  font-weight: 300;
+}
+.templet-posts .post-block .post-head .post-dp-block {
+  margin-right: 5px;
+}
+.templet-posts .post-block .post-image-block {
+  height: 560px;
+  border-bottom: 1px solid lightgray;
+}
+.templet-posts .post-block .post-image-block .post-img {
+  margin: auto;
+}
+.templet-posts .post-block .like-content {
+  font-size: 15px;
+  font-weight: 400;
+}
+.templet-posts .post-block .like-content .like-icon {
+  padding: 3px;
+  font-size: 13px;
+}
+
+table {
+  border-top: 1px solid lightgray;
+  height: 45px;
+  width: 95.5%;
+}
+table .share-icon {
+  font-size: 15px;
+  font-weight: 500;
+  text-align: center;
+}/*# sourceMappingURL=style.css.map */
