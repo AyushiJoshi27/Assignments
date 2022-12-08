@@ -4,13 +4,13 @@
 }
 .main-nav-bar .page-head-nav {
   position: static;
-  box-shadow: 0 0px 6px 0 lightgrey;
+  box-shadow: 0px 2px 3px 0px lightgrey;
 }
 .main-nav-bar .page-head-nav form {
   border-radius: 50px;
   width: 20%;
 }
-.main-nav-bar .page-head-nav #mynavbar {
+.main-nav-bar .page-head-nav #my-nav-bar {
   font-size: 25px;
 }
 .main-nav-bar .page-head-nav .header-nav-account {

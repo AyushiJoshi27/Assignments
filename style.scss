@@ -3,19 +3,19 @@ $head-nav-width: 20%;
 $intro-font-weight: 600;
 $date-posting: 13px;
 
-@mixin borderbottom {
+@mixin b-bottom {
   border-bottom: 1px solid lightgray;
 }
 
-@mixin bordertop {
+@mixin b-top {
   border-top: 1px solid lightgray;
 }
 
-@mixin box-shadow {
+@mixin b-shadow {
   box-shadow: 0 0px 6px 0 lightgrey;
 }
 
-@mixin forphotos {
+@mixin for-photos {
   font-weight: 400;
   font-size: 16px;
 }
@@ -32,14 +32,14 @@ $date-posting: 13px;
   .page-head-nav {
     
     position: static;
-    @include box-shadow;
+    @include box-shade;
 
     form {
       border-radius: 50px;
       width: $head-nav-width;
     }
 
-    #mynavbar {
+    #my-nav-bar {
       font-size: 25px;
     }
 
@@ -64,7 +64,7 @@ $date-posting: 13px;
 
 .fb-full-body {
 
-  @include bordertop;
+  @include b-top;
   font-size: 18px;
   
   .main-body {
@@ -106,7 +106,7 @@ $date-posting: 13px;
     }
 
     .see-all-photo {
-      @include forphotos;
+      @include for-photos;
       @include box-shade;
     }
 
@@ -114,7 +114,7 @@ $date-posting: 13px;
       width: 40.8%; 
 
       a {
-        @include forphotos;
+        @include for-photos;
       }
 
       .grid-container {
@@ -182,7 +182,7 @@ $date-posting: 13px;
   }
 
   .profile-intro {
-    @include borderbottom;
+    @include b-bottom;
     height: 160px;
 
     .fb-dp {
@@ -203,7 +203,7 @@ $date-posting: 13px;
 .templet-posts {
 
   .flags {
-    @include bordertop;
+    @include b-top;
 
     i {
       font-size: 22px;
@@ -241,7 +241,7 @@ $date-posting: 13px;
   .post-block {
 
     .post-head {
-      @include borderbottom;
+      @include b-bottom;
       font-size: $myfont;
       font-weight: 500;
       padding: 10px 15px;
@@ -268,7 +268,7 @@ $date-posting: 13px;
     
     .post-image-block {
       height: 560px;
-      @include borderbottom;
+      @include b-bottom;
   
       .post-img {
         margin: auto;
@@ -289,7 +289,7 @@ $date-posting: 13px;
 }
 
 table {
-  @include bordertop;
+  @include b-top;
   height: 45px;
   width: 95.5%;
 
