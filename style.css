@@ -1,53 +1,119 @@
 body {
-  background-color: grey;
-}
-
-button, #month {
-  border: none;
-  background-color: black;
-}
-
-td:hover,
-th:hover,
-#next:hover, 
-#prev:hover, 
-#today:hover, 
-#monthAndYear:hover {
-  color: white;
-}
-
-#next, #prev, #today {
-  color: darkgrey;
-  font-size: 25px;
-  font-weight: 600;
-}
-
-#calendar td {
-  border: none;
-}
-
-#calendar th {
-  border: none;
-}
-
-#month {
-  background-color: blue;
-  color: white;
-  font-size: 20px;
-}
-
-.header {
-  padding: 20px 0 40px;
-}
-
-.main-templet {
-  background-color: black;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  justify-content: center;
+  min-height: 100vh;
+  background: grey;
   color: grey;
-  cursor: pointer;
-  width: 40%;
 }
 
+.calendar {
+  padding: 20px;
+}
 
+.calendar ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 10px;
+  text-align: center;
+}
 
+.calendar .days {
+  margin-bottom: 20px;
+}
 
+.calendar li {
+  color:grey;
+  width: calc(100% / 7);
+  font-size: 1.07rem;
+}
 
+.calendar .weeks li {
+  font-weight: 500;
+  cursor: default;
+}
+
+.calendar .days li {
+  cursor: pointer;
+  position: relative;
+  margin-top: 30px;
+}
+
+.days li.inactive {
+  color: black;
+}
+
+.days li.active {
+  color:gainsboro ;
+}
+.days li::before {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 40px;
+  width: 40px;
+  z-index: -1;
+  border-radius: 50%;
+}
+
+.days li.active {
+  border-radius: 40%;
+}
+
+header .icons {
+  display: flex;
+}
+
+header .icons span {
+  height: 38px;
+  width: 38px;
+  margin: 0 1px;
+  cursor: pointer;
+  text-align: center;
+  line-height: 38px;
+  font-size: 30px;
+  user-select: none;
+  border-radius: 50%;
+}
+ 
+.current-date {
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.icons span:hover{
+  color: white;
+  background-color: brown;
+}
+
+li:hover {
+  color: whitesmoke;
+}
+
+#today {
+  border: none;
+  background-color: grey;
+  color: aliceblue;
+  font-size: 12px;
+  padding: 10px 15px;
+}
+
+#today:hover {
+  background-color: brown;
+}
+
+.templet-main {
+  background: black;
+  border-radius: 10px;
+  height: 600px;
+  width: 600px;
+}
+
+.templet-main header {
+  display: flex;
+  align-items: center;
+  padding: 25px 30px 10px;
+  justify-content: space-around;
+}
