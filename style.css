@@ -1,53 +1,68 @@
-body {
-  background-color: grey;
+* {
+  font-family: serif;
 }
 
-button, #month {
-  border: none;
-  background-color: black;
+label {
+  margin: 0;
 }
 
-td:hover,
-th:hover,
-#next:hover, 
-#prev:hover, 
-#today:hover, 
-#monthAndYear:hover {
-  color: white;
+#user-icon {
+  font-size: 40px;
+  border-radius: 50%;
 }
 
-#next, #prev, #today {
-  color: darkgrey;
-  font-size: 25px;
-  font-weight: 600;
+.choose-state {
+  float: right;
 }
 
-#calendar td {
-  border: none;
+.detail, .indicator, .way-contact, .submit-botton {
+  margin-top: 20px;
 }
 
-#calendar th {
-  border: none;
-}
-
-#month {
-  background-color: blue;
-  color: white;
-  font-size: 20px;
-}
-
-.header {
-  padding: 20px 0 40px;
-}
-
-.main-templet {
-  background-color: black;
-  color: grey;
+.choose-point, .decrese, .increse, .slider {
   cursor: pointer;
-  width: 40%;
 }
 
+.detail, .photo, .indicator, .way-to-contact {
+  background-color: rgb(255 255 202);
+}
 
+.error {
+  color: red;
+}
 
+.form-content-block {
+  padding: 15px;
+}
 
+.gen-details, .field-block, .way-to-contact {
+  border: 15px solid yellow;
+}
+
+.heading {
+  width: 20%;
+}
+
+.heading label {
+  float: right;
+}
+
+.legend {
+  margin-left: 40px;
+}
+
+.legend-head {
+  font-size: 16px;
+  line-height: 15px;
+  background-color: yellow;
+}
+
+.slider {
+  height: 30px;
+  width: 350px;
+}
+
+.text-muted {
+  font-size: 13px;
+}
 
