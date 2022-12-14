@@ -1,68 +1,79 @@
-* {
-  font-family: serif;
+h3#monthandyear, #leftbtn, #rightbtn {
+    margin: 0;
+    padding: 30px;
 }
 
-label {
-  margin: 0;
+#calendar {
+  border: 1px solid black;
+  border-top: 0;
+  display: grid;
+  height: 444px;
+  grid-template-columns: repeat(7, 14.3%);
+  background-color: lightgrey;
 }
 
-#user-icon {
-  font-size: 40px;
-  border-radius: 50%;
-}
-
-.choose-state {
-  float: right;
-}
-
-.detail, .indicator, .way-contact, .submit-botton {
-  margin-top: 20px;
-}
-
-.choose-point, .decrese, .increse, .slider {
+#leftbtn p, #rightbtn p {
   cursor: pointer;
+  font-size: 30px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+/*
+#todaybtn {
+  padding: 5px 15px;
+  background-color: silver;
+  border: none
+}
+*/
+
+#monthandyear {
+  text-align: center;
+  font-size: large;
 }
 
-.detail, .photo, .indicator, .way-to-contact {
-  background-color: rgb(255 255 202);
+#navbar {
+  background-color: dimgrey;
+  border: 1px solid black;
+  display: flex;
+  justify-content: space-between;
 }
 
-.error {
-  color: red;
+
+/*
+.today-content {
+  text-align: center;
+  border: 1px solid black;
+  border-top: 0;
+  background: dimgray;
+}
+*/
+
+.calendar-main {
+  margin: 0 auto;
+  width: 40%;
 }
 
-.form-content-block {
+.day, .todate, .weekend {
+  border-radius: 50%;
+  box-sizing: content-box;
+  text-align: center;
+  cursor: pointer;
   padding: 15px;
 }
 
-.gen-details, .field-block, .way-to-contact {
-  border: 15px solid yellow;
-}
-
-.heading {
-  width: 20%;
-}
-
-.heading label {
-  float: right;
-}
-
-.legend {
-  margin-left: 40px;
-}
-
-.legend-head {
+.dayname {
+  border-bottom: 1px solid dimgrey;
+  height: 20px;
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
   font-size: 16px;
-  line-height: 15px;
-  background-color: yellow;
 }
 
-.slider {
-  height: 30px;
-  width: 350px;
+.todate {
+  color: red;
 }
 
-.text-muted {
-  font-size: 13px;
+.weekend {
+  color: #1a53ff;
 }
-
