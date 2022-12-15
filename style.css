@@ -1,79 +1,66 @@
-h3#monthandyear, #leftbtn, #rightbtn {
-    margin: 0;
-    padding: 30px;
+#result {
+  width: 40px;
+  height: 40px;
+  font-size: 18px;
+  border-radius: 5px;
+  border: 0;
 }
 
-#calendar {
-  border: 1px solid black;
-  border-top: 0;
-  display: grid;
-  height: 444px;
-  grid-template-columns: repeat(7, 14.3%);
-  background-color: lightgrey;
+#clear, #result {
+  background-color: yellow;
 }
 
-#leftbtn p, #rightbtn p {
-  cursor: pointer;
-  font-size: 30px;
-  margin-top: 15px;
-  margin-bottom: 15px;
-}
-/*
-#todaybtn {
-  padding: 5px 15px;
-  background-color: silver;
-  border: none
-}
-*/
-
-#monthandyear {
-  text-align: center;
-  font-size: large;
+.calculator {
+  height: 100%;
 }
 
-#navbar {
-  background-color: dimgrey;
-  border: 1px solid black;
+.calculator #display {
+  background-color: azure;
+  border: none;
+  font-size: 25px;
+  height: 50px;
+  width: 80%;
+  margin: 20px 48px;
+  text-align: right;
+}
+
+.cal-row {
+  margin: 20px 44px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
+}
+
+.cal-row input {
+  width: 40px;
+  height: 40px;
+  font-size: 18px;
+  border-radius: 5px;
+  border: 0;
+}
+
+.calculator input:hover {
+  font-size: 22px;
+  box-shadow: inset 0px 0px 15px 2px gainsboro;
+  border: none;
+}
+
+.cal-row input:hover {
+  box-shadow: inset 0px 0px 14px 2px palevioletred;
+  font-size: 22px;
+}
+
+.container {
+  border-radius: 20px;
+  background-color: darkcyan;
+  height: 410px;
+  margin: 40px auto;
+  padding: 20px 0;
+  width: 500px;
 }
 
 
-/*
-.today-content {
-  text-align: center;
-  border: 1px solid black;
-  border-top: 0;
-  background: dimgray;
-}
-*/
-
-.calendar-main {
-  margin: 0 auto;
-  width: 40%;
-}
-
-.day, .todate, .weekend {
-  border-radius: 50%;
-  box-sizing: content-box;
-  text-align: center;
-  cursor: pointer;
-  padding: 15px;
-}
-
-.dayname {
-  border-bottom: 1px solid dimgrey;
-  height: 20px;
-  text-align: center;
-  padding-top: 30px;
-  padding-bottom: 30px;
-  font-size: 16px;
-}
-
-.todate {
+.error {
   color: red;
-}
-
-.weekend {
-  color: #1a53ff;
+  font: 14px;
+  text-align: center;
 }

@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html>
-<head lang="en">
+<html lang="en">
+
+<head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JQUERY</title>
+  <title>Document</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
     integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
@@ -12,21 +13,42 @@
 </head>
 
 <body>
-  <div class="calendar-main">
-    <div id="navbar">
-      <div id='leftbtn'><i class="fa fa-arrow-left" aria-hidden="true"></i></div>
-      <h3 id="monthandyear"></h3>
-      <div id='rightbtn'><i class="fa fa-arrow-right" aria-hidden="true"></i></div>
-    </div>
-    <div id='calendar'></div>
-    <!--div class="today-content">
-      <button id="todaybtn">Today</button>
-    </!--div-->
+  <div class="container">
+    <form name="forms" class="calculator">
+      <input type="text" name="display" id="display" value="" disabled>
+      <div class="cal-row">
+        <input type="button" id="seven" value="7">
+        <input type="button" id="eight" value="8">
+        <input type="button" id="nine" value="9">
+        <input type="button" id="div" value="/">
+      </div>
+      <div class="cal-row">
+        <input type="button" id="four" value="4">
+        <input type="button" id="five" value="5">
+        <input type="button" id="six" value="6">
+        <input type="button" id="multiply" value="*">
+      </div>
+      <div class="cal-row">
+        <input type="button" id="one" value="1">
+        <input type="button" id="two" value="2">
+        <input type="button" id="three" value="3">
+        <input type="button" id="subs" value="-">
+      </div>
+      <div class="cal-row">
+        <input type="button" id="decimal" value=".">
+        <input type="button" id="zero" value="0">
+        <input type="button" id="add" value="+">
+        <input type="button" id="clearAll" value="CE">
+      </div>
+      <div class="cal-row">
+        <input type="button" id="result" value="=">
+        <input type="button" id="clear" value="C">
+      </div>
+      <div class="error"></div>
+    </form>
   </div>
-
-  <!--script-->
   <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-  <script type="text/javascript" src="script.js"></script>
-  </script>
+  <script src="script.js"></script>
 </body>
+
 </html>

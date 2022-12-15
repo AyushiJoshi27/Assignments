@@ -1,87 +1,84 @@
-const calendar = document.querySelector("#calendar")
+$(document).ready(function(){
 
-var days = ['Mon', 'Tues', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
-var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
-var now = new Date()
-var month = now.getMonth()
-var year = now.getFullYear()
-daysinmonth = new Date(year, month + 1, 0).getDate()
-firstdayofmonth = new Date(year, month, 1).getDay()
-
-  $('#rightbtn').click(function (event) {
-    const myNode = document.querySelector("#calendar");
-    while (myNode.firstChild) {
-      myNode.removeChild(myNode.lastChild);
-    }
-    month++
-    if (month == 12) {
-      month = 0
-      year++
-    }
-    daysinmonth = new Date(year, month + 1, 0).getDate()
-    firstdayofmonth = new Date(year, month, 1).getDay()
-    createCalendar()
+  $("#seven").click(function(){
+    document.forms.display.value += 7;
   })
 
-  $('#leftbtn').click(function (event) {
-    const myNode = document.querySelector("#calendar");
-    while (myNode.firstChild) {
-      myNode.removeChild(myNode.lastChild);
-    }
-    month--
-    if (month == -1) {
-      month = 11
-      year--
-    }
-    daysinmonth = new Date(year, month + 1, 0).getDate()
-    firstdayofmonth = new Date(year, month, 1).getDay()
-    createCalendar()
-  })
-  /*
-  $("#todaybtn").click(function(event) { 
-    
-    let date = new Date()
-    let month = months[date.getMonth()];
-    let currentYear = date.getFullYear();
-    $("#monthandyear").text(month + ' ' +currentYear);
+  $("#eight").click(function(){
+    document.forms.display.value += 8;
+  }); 
+
+  $("#nine").click(function() { 
+    document.forms.display.value += 9;
   });
-  */
-createCalendar = () => {
-  //("#todate") = now.getDate();
-  document.querySelector('#monthandyear').innerHTML =
-    months[month] + ' ' + year
-  days.forEach(day =>
-    calendar.insertAdjacentHTML("beforeend",
-      `<div class="dayname">${day}</div>`)
-  )
-  if (firstdayofmonth == 1) {
-    //pass
-  } else if (firstdayofmonth == 0) {
-    for (i = 0; i < 6; i++) {
-      calendar.insertAdjacentHTML("beforeend",
-        `<div class="emptyday"></div>`)
-      }
-  } else {
-    for (i = 0; i < firstdayofmonth - 1; i++)
-      calendar.insertAdjacentHTML("beforeend",
-        `<div class="emptyday"></div>`)
-  }
-  for (let day = 1; day <= daysinmonth; day++) {
-    if (new Date(year, month, day).getDay() == 0 || new Date(year, month, day).getDay() == 6) 
-    {
-        calendar.insertAdjacentHTML("beforeend",
-          `<div class="weekend">${day}<p></p></div>`)
-    } 
-    else if (day==now.getDate() && month == now.getMonth() && year == now.getFullYear()) {
-      calendar.insertAdjacentHTML("beforeend", `<div class = "todate">${day}<p></p></div>`)
-    }
-    else
-    {
-      calendar.insertAdjacentHTML("beforeend",
-        `<div class="day">${day} <p></p></div>`) 
-        
-    }
-  }
-}
 
-createCalendar()
+  $("#six").click(function() { 
+    document.forms.display.value += 6;
+  });
+
+  $("#five").click(function() { 
+    document.forms.display.value += 5;
+  });
+
+  $("#four").click(function() { 
+    document.forms.display.value += 4;
+  });
+
+  $("#three").click(function() { 
+    document.forms.display.value += 3;
+  });
+
+  $("#two").click(function() { 
+    document.forms.display.value += 2;
+  });
+  
+  $("#one").click(function() { 
+    document.forms.display.value +=1;
+  });
+  
+  $("#zero").click(function() { 
+    document.forms.display.value += 0;
+  });
+
+  $("#div").click(function(){
+    document.forms.display.value += "/";
+  });
+
+  $("#multiply").click(function() {
+    document.forms.display.value += "*";
+  });
+  
+  $("#add").click(function() { 
+    document.forms.display.value += "+";
+  });
+
+  $("#subs").click(function() { 
+    document.forms.display.value += "-";
+  });
+
+  $("#clearAll").click(function() { 
+    $(".calculator")[0].reset();
+  });
+
+  $("#decimal").click(function(){
+    document.forms.display.value += ".";
+  });
+
+  $("#clear").click(function() {
+    clearButton = $("#display").val();
+    if (clearButton.length > 0) {
+      clearButton = clearButton.substring(0, clearButton.length - 1);
+    };
+    $("#display").val(clearButton);
+  });
+
+  $("#result").click(function(){
+    if (display.value == "") {
+      $(".").text("Please write some values to calculate");
+    }
+    else {
+      document.forms.display.value = eval(document.forms.display.value);
+    }
+  });
+
+});
