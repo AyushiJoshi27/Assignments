@@ -1,84 +1,40 @@
-$(document).ready(function(){
+console.log("Task");
 
-  $("#seven").click(function(){
-    document.forms.display.value += 7;
-  })
+$.ajax({
 
-  $("#eight").click(function(){
-    document.forms.display.value += 8;
-  }); 
-
-  $("#nine").click(function() { 
-    document.forms.display.value += 9;
-  });
-
-  $("#six").click(function() { 
-    document.forms.display.value += 6;
-  });
-
-  $("#five").click(function() { 
-    document.forms.display.value += 5;
-  });
-
-  $("#four").click(function() { 
-    document.forms.display.value += 4;
-  });
-
-  $("#three").click(function() { 
-    document.forms.display.value += 3;
-  });
-
-  $("#two").click(function() { 
-    document.forms.display.value += 2;
-  });
-  
-  $("#one").click(function() { 
-    document.forms.display.value +=1;
-  });
-  
-  $("#zero").click(function() { 
-    document.forms.display.value += 0;
-  });
-
-  $("#div").click(function(){
-    document.forms.display.value += "/";
-  });
-
-  $("#multiply").click(function() {
-    document.forms.display.value += "*";
-  });
-  
-  $("#add").click(function() { 
-    document.forms.display.value += "+";
-  });
-
-  $("#subs").click(function() { 
-    document.forms.display.value += "-";
-  });
-
-  $("#clearAll").click(function() { 
-    $(".calculator")[0].reset();
-  });
-
-  $("#decimal").click(function(){
-    document.forms.display.value += ".";
-  });
-
-  $("#clear").click(function() {
-    clearButton = $("#display").val();
-    if (clearButton.length > 0) {
-      clearButton = clearButton.substring(0, clearButton.length - 1);
-    };
-    $("#display").val(clearButton);
-  });
-
-  $("#result").click(function(){
-    if (display.value == "") {
-      $(".").text("Please write some values to calculate");
+  type: "GET",
+  url : "https://dummyjson.com/products?limit=10&select=title,description,price,rating,images",
+  dataType : 'JSON',
+  products: {},
+    
+  /*
+    fetch('https://dummyjson.com/products?limit=10', {
+        method :"GET",
+      })
+      .then(res => res.json())
+      .then(console.log)
     }
-    else {
-      document.forms.display.value = eval(document.forms.display.value);
-    }
-  });
+  */
 
+  success: function(products) { 
+    
+    console.log("sucess data")
+    
+    var table = $("#table-content");
+    for (var i = 0; i < 10 ; i++) {
+      var tr = $('<tr/>');
+      tr.append("<td>" + products.products[i].title + "</td>");
+      tr.append("<td>" + products.products[i].description + "</td>");
+      tr.append("<td>" + products.products[i].price + "</td>");
+      tr.append("<td>" + products.products[i].rating + "</td>");
+      
+      for (j=0; j<1; j++) {
+        //    how it happened????
+        tr.append("<td>" + "<img src='" + products.products[i].images[j] + "' alt='product-img' id='target'>" + "</td>");
+      }
+      table.append(tr);
+    }
+  }
+  
 });
+    
