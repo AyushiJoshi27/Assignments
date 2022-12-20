@@ -29,7 +29,6 @@ $.ajax({
       tr.append("<td>" + products.products[i].rating + "</td>");
       
       for (j=0; j<1; j++) {
-        //    how it happened????
         tr.append("<td>" + "<img src='" + products.products[i].images[j] + "' alt='product-img' id='target'>" + "</td>");
       }
       table.append(tr);
