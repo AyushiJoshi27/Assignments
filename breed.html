@@ -21,13 +21,15 @@
   <div class="main-content">
     <div class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a href="index.html" id="dog-img"><img src="images/dog_image.jpeg" class="rounded-circle main-img" height="140px" width="140px" alt="dog-image"></a>
+              <a href="index.html" id="dog-img"><img src="images/dog_image.jpeg" class="rounded-circle main-img"
+                  height="140px" width="140px" alt="dog-image"></a>
             </li>
             <li class="nav-item">
               <h2 class="nav-heading">Dog API</h2>
@@ -42,10 +44,12 @@
               <a class="nav-link px-0" id="about-list" href="about.html">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link px-0" id="submit-list" href="https://github.com/jigsawpieces/dog-api-images#dog-api-images">Submit your dog</a>
+              <a class="nav-link px-0" id="submit-list"
+                href="https://github.com/jigsawpieces/dog-api-images#dog-api-images">Submit your dog</a>
             </li>
             <ul class="social-sites">
-              <a class="social-link px-0 py-1" href="https://sideorders.co.uk/collections/frontpage/products/dog-ceo-issue-1" target="_blank">
+              <a class="social-link px-0 py-1"
+                href="https://sideorders.co.uk/collections/frontpage/products/dog-ceo-issue-1" target="_blank">
                 <i class="fa fa-paw" aria-hidden="true"></i> Dog CEO Zine</a>
               <a class="social-link px-0 py-1" href="https://www.paypal.com/paypalme/dogapi">
                 <i class="fa fa-usd" aria-hidden="true"></i> Buy me a dog treat</a>
@@ -60,31 +64,57 @@
     </div>
     <!--page-->
     <div class="main-section">
-      <p class="main-heading">
-        The internet's biggest collection of <b>open source dog pictures.</b>
-      </p>
-      <div class="main-content">
-        Puppy kitty ipsum dolor sit good dog foot stick canary. <p> Teeth Mittens grooming vaccine walk swimming nest
-        good boy furry tongue heel furry treats fish. </p> Yawn litter fish yawn toy pet gate throw Buddy kitty wag tail ball groom crate
-        ferret heel wet nose Rover toys pet supplies. Bird Food treats tongue lick teeth ferret litter box slobbery
-        litter box crate bird small animals yawn small animals shake slobber gimme five toys polydactyl meow.
-        </p>
-      </div>
+      <form class="d-inline-block">
+        <h4>BREEDS LIST</h4>
+        <select class="dog-selector">
+        </select>
+      </form>
+      <button type="button" class="button border-0 bg-info" id="btn-breed">FETCH!!!</button>
       <div class="img-show">
-        <button type="button" class="button border-0 bg-info" id="btn-fetch">FETCH!!!</button>
         <div id="img-block">
           <h6><b>IMAGE</b></h6>
-          <img src="images/main_page.jpeg" height='250px' class="main-img" width='400px' alt="main-page">
+          <img src="images/dog_image.jpeg" height='250px' class="main-img" width='400px' alt="main-page">
           <div class="imgpage"></div>
         </div>
       </div>
     </div>
-    <!--btn Fetch-->
   </div>
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.2.min.js"
     integrity="sha256-2krYZKh//PcchRtd+H+VyyQoZ/e3EcrkxhM8ycwASPA=" crossorigin="anonymous"></script>
-  <script src="script.js"></script>
-</body>
+  <script>
+    $.ajax({
+      type : "GET",
+      url : "https://dog.ceo/api/breeds/list/all",
+      dataType : "JSON",
+      lists : {},
 
+      success: function(lists) {
+        var sel = $(".dog-selector");
+
+        $.each(lists.message, function (key, value) {
+          sel.append('<option value="' + key + '">' + key + '</option>');
+        });
+      }
+    });
+
+    $("select.dog-selector").change(function(){
+      var selectedDog = $(this).children("option:selected").val();
+    
+    $("#btn-breed").click(function(){
+      $.ajax({
+        type: "GET",
+        url : "https://dog.ceo/api/breed/" + selectedDog + "/images/random",
+        dataType : "JSON",
+        dogImage : {},
+
+        success : function(dogImage) {
+          $(".main-img").hide();
+          $(".imgpage").html("<img src='" + dogImage.message + "' alt='product-img' height='250px' width='400px'>");
+        }
+        });
+      });
+    });
+  </script>
+</body>
 </html>
