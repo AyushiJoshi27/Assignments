@@ -1,21 +1,31 @@
-* {
-  font-family: serif;
-  letter-spacing: 1px;
-}
-
 button {
   font-size: 16px;
   padding: 0 5px;
   border-radius: 10px;
 }
 
-select {
-  height: 50px;
-  padding: 10px;
+h4 {
+  margin-top: 40px;
+  padding-top: 20px;
 }
 
-#img-block {
-  float: right;
+img {
+  width: 300px;
+  height:300px;
+  object-fit: scale-down;
+}
+
+nav {
+  background-color: #eee;
+}
+
+select, option {
+  height: 30px;
+  text-transform: capitalize;
+}
+
+@media all and (max-width:998px) {
+  
 }
 
 #list {
@@ -26,61 +36,64 @@ select {
   margin: 10px;
 }
 
-.breed-ref a {
-  border-bottom: 2px solid #337ab7;
-  color: black;
+#social-sites {
+  margin-top: 40px;
 }
 
-.breed-ref a:hover {
+.breed-ref a {
+  border-bottom: 2px solid rgb(26 145 219);
+  color: black;
   text-decoration: none;
 }
 
+.breed-ref a:hover {
+  color: rgb(26 145 219);
+  text-decoration: none;
+  border: none;
+}
+
 .doc-block {
-  height: 365px;
   margin: 40px 0;
 }
 
 .endpoint {
-  list-style: none;
   display: flex;
-  width: 73%;
+  width: 100%;
   justify-content: space-between;
   padding: 0;
   margin: 40px 0;
   font-size: 20px;
 }
 
-.endpoint-list a {
-  border-bottom: 2px solid #337ab7;
+.endpoint li {
+  list-style: none;
+}
+
+.endpoint li a {
+  border-bottom: 2px solid rgb(26 145 219);
   color: black;
   text-decoration: none;
 }
 
-.endpoint-list a:hover {
-  color: #337ab7;
+.endpoint li a:hover {
+  color: rgb(26 145 219);
   border: none;
   text-decoration: none;
 }
 
-.main-section{
-  line-height: 40px;
-  font-size: 22px;
-  margin: 20px;
+.fa {
+  margin-right: 8px;
 }
 
+.hollow-list {
+  width: 124.11;
+}
 .main-section p {
   margin: 20px 0;
 }
 
 .main-heading {
   font-size: 38px;
-}
-
-.main-section {
-  float: right;
-  margin: 40px;
-  width: 69%;
-  padding: 40px 20px;
 }
 
 .nav-heading {
@@ -91,7 +104,7 @@ select {
   width: 25%;
   display: inline-block;
   height: 1000px;
-  padding: 40px 10px;
+  padding: 40px 0;
   font-size: 18px;
   position: fixed;
   top: 0;
@@ -117,14 +130,13 @@ select {
 }
 
 .nav-link:hover {
-  color: rgb(13 110 253);
+  color: rgb(26 145 219);
   text-decoration: none;
-  border-bottom: 1px solid rgb(13 110 253);
 }
 
-
-.navbar.collapsed {
-  background-color: green;
+#dog-img img {
+  width: 40%;
+  height: auto;
 }
 
 .row {
@@ -140,28 +152,37 @@ select {
   font-size: 20px;
   color: black;
   text-decoration: none;
-  border-bottom: 2px solid rgb(13 110 253);;
+  border-bottom: 2px solid rgb(26 145 219);
+}
+
+.side:hover{
+  color : rgb(26 145 219);
+  border-bottom: 1px solid rgb(26 145 219);;
+}
+
+.side  {
+  color: black;
+  padding: 12px 0;
+  border-bottom: 1px solid lightgrey;
 }
 
 .social-link {
+  font-size: 14px;
   color: black;
-  display: block;
-  padding: 10px;
-  text-decoration: none;
 }
 
 .social-link .fa {
   font-size: 18px;;
 }
 
-.social-sites {
-  margin: 40px 0;
-  padding: 0;
+a.social-link:hover {
+  color : rgb(26 145 219);
+  border-bottom: none;
 }
 
-.support-block {
-  margin: 40px 0;
-  padding: 40px 0;
+#social {
+  margin: 40px 0 0 20px;
+  padding: 0;
 }
 
 .three-breeds {
@@ -171,4 +192,63 @@ select {
 
 .with-breed-one {
   margin: 30px 0;
+}
+
+.sidebar {
+  height: 100%;
+  width: 25%;
+  background-color: #eee;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidebar a {
+  margin: 0px 8px 0px 20px;;
+  text-decoration: none;
+  font-size: 18px;
+  color: black;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #111;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+}
+
+.openbtn:hover {
+  background-color: #444;
+}
+
+#main {
+  margin-left: 25%;
+  transition: margin-left .5s;
+  padding: 16px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidebar {
+    padding-top: 15px;
+  }
+
+  .sidebar a {
+    font-size: 18px;
+  }
 }
