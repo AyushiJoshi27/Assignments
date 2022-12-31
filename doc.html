@@ -44,18 +44,18 @@
       <div class="section-list">
         <h3>ENDPOINTS</h3>
         <ul class="endpoint">
-          <li><a data-type="breed-block" href="#all_breeds" class="all-breed">List all breeds</a></li>
+          <li><a data-type="all" href="#all_breeds" class="all-breed">List all breeds</a></li>
           <li><a data-type="random" href="#random" class="random">Random image</a></li>
-          <li><a data-type="with-breed" href="#by-breed" class="by-breed">By breed</a></li>
-          <li><a data-type="sub-breed" href="#By-sub-breed" class="sub-breed">By sub-breed</a></li>
+          <li><a data-type="by" href="#by-breed" class="by-breed">By breed</a></li>
+          <li><a data-type="sub" href="#By-sub-breed" class="sub-breed">By sub-breed</a></li>
           <li><a href="breed.html" class="browse-breed">Browse breed list</a></li>
           <li class="hollow-list"></li>
         </ul>
       </div>
       <!--LIST ALL BREEDS-->
 
-      <div class="doc-block content-breed-block" id="breed-list-block">
-        <h4>List all breeds</h4>
+      <div class="doc-block content-all" >
+        <h3>List all breeds</h3>
         <div class="breed-list">
           <div class="json-content"></div>
         </div>
@@ -65,62 +65,70 @@
       </div>
 
       <!--Random Image DOC-->
-      <div class="doc-block content-random" id="random-breed">
-        <h4>Display single random image from all dogs collection</h4>
+      <div class="doc-block content-random">
+        <h3>Display single random image from all dogs collection</h3>
         <div class="img-show">
-          <button type="button" class="btn-sm border-0 bg-info btn-fetch">FETCH!!!</button>
+          <div class="btn-block"  data="main">
+            <button type="button" class="btn-sm border-0 bg-info btn-main">FETCH!!!</button>
+          </div>
           <div id="img-block">
             <h5><b>IMAGE</b></h5>
-            <img src="images/main_page.jpeg" class="main-img" alt="main-page">
-            <table class="table border-0 w-100 table-content"></table>
+            <img src="images/main_page.jpeg" class="img-main" alt="main-page">
+            <table class="table border-0 w-100 table-main"></table>
           </div>
         </div>
         <div class="random-three">
-          <h4>Multiple images from a breed collection</h4>
-          <button type="button" class="btn-sm border-0 bg-info" id="random-trio">FETCH!!!</button>
+          <h3>Multiple images from a breed collection</h3>
+          <div class="btn-block" data="trio">
+            <button type="button" class="btn-sm border-0 bg-info btn-trio">FETCH!!!</button>
+          </div>
           <div id="triple-img-block">
-            <h5><b>IMAGE</b></h5>
+            <h4><b>IMAGE</b></h4>
             <div class="row show-img">
-              <div><img src="images/trio-1.jpeg" class="random-tri" alt="triple-img"></div>
-              <div><img src="images/trio-2.jpeg" class="random-tri" alt="triple-img"></div>
-              <div><img src="images/trio-3.jpeg" class="random-tri" alt="triple-img"></div>
+              <div><img src="images/trio-1.jpeg" class="img-trio" alt="triple-img"></div>
+              <div><img src="images/trio-2.jpeg" class="img-trio" alt="triple-img"></div>
+              <div><img src="images/trio-3.jpeg" class="img-trio" alt="triple-img"></div>
             </div>
-            <table class="table border-0 w-100 trio-table"></table>
+            <table class="table border-0 w-100 table-block-trio"></table>
           </div>
         </div>
       </div>
 
       <!--by breed-->
 
-      <div class="doc-block content-with-breed" id="content-with-breed">
+      <div class="doc-block content-by">
         <div class="with-breed-one">
           <h4 class="my-4">Random image from a breed collection</h4>
-          <button type="button" class="btn-sm border-0 bg-info btn-fetch" id="btn-with">FETCH!!!</button>
+          <div class="btn-block" data="by">
+            <button type="button" class="btn-sm border-0 bg-info btn-by">FETCH!!!</button>
+          </div>
           <div id="img-block">
             <h5><b>IMAGE</b></h5>
-            <img src="images/main_page.jpeg" class="main-img" alt="main-page">
-            <table class="table border-0 w-100 table-content"></table>
+            <img src="images/main_page.jpeg" class="img-by" alt="main-page">
+            <table class="table border-0 w-100 table-by"></table>
           </div>
         </div>
         <!--3 imgs-->
         <div class="random-three">
           <h4>Multiple images from a breed collection</h4>
-          <button type="button" class="btn-sm border-0 bg-info" id="trio-fetch">FETCH!!!</button>
+          <div class="btn-block" data="tri">
+            <button type="button" class="btn-sm border-0 bg-info btn-tri">FETCH!!!</button>
+          </div>
           <div id="trio-img-block">
             <h5><b>IMAGE</b></h5>
             <div class="row show-img">
-              <div class="col-4"><img src="images/trio-1.jpeg" class="trio-img" alt="triple-img"></div>
-              <div class="col-4"><img src="images/trio-2.jpeg" class="trio-img" alt="triple-img"></div>
-              <div class="col-4"><img src="images/trio-3.jpeg" class="trio-img" alt="triple-img"></div>
+              <div><img src="images/trio-1.jpeg" class="img-tri" alt="triple-img"></div>
+              <div><img src="images/trio-2.jpeg" class="img-tri" alt="triple-img"></div>
+              <div><img src="images/trio-3.jpeg" class="img-tri" alt="triple-img"></div>
             </div>
-            <table class="w-100 table border-0 trio-table"></table>
+            <table class="w-100 table border-0 table-block-tri"></table>
           </div>
         </div>
       </div>
 
 
       <!--by sub breed-->
-      <div class="doc-block content-sub-breed" id="by-sub-breed">
+      <div class="doc-block content-sub">
         <div class="list-block">
           <h4 class="my-4">List all sub-breeds</h4>
           <div id="list"></div>
@@ -129,26 +137,30 @@
         <div id="one-img">
           <h4 class="my-4">Single random image from a sub breed collection</h4>
           <div class="img-show">
-            <button type="button" class="btn-sm border-0 bg-info btn-fetch" id="by-fetch">FETCH!!!</button>
+            <div class="btn-block" data="sub">
+              <button type="button" class="btn-sm border-0 bg-info bth-sub">FETCH!!!</button>
+            </div>
             <div id="img-block">
               <h5><b>IMAGE</b></h5>
-              <img src="images/main_page.jpeg" class="main-img" alt="main-page">
-              <table class="table border-0 w-100 table-content"></table>
+              <img src="images/main_page.jpeg" class="img-sub" alt="main-page">
+              <table class="table border-0 w-100 table-sub"></table>
             </div>
           </div>
         </div>
         <!--three images-->
         <div class="three-breeds">
           <h4>Multiple images from a sub-breed collection</h4>
-          <button type="button" class="btn-sm border-0 bg-info" id="tri-fetch">FETCH!!!</button>
+          <div class="btn-block" data="thri">
+            <button type="button" class="btn-sm border-0 bg-info btn-thri">FETCH!!!</button>
+          </div>
           <div id="triple-img-block">
             <h5><b>IMAGE</b></h5>
             <div class="row show-img">
-              <div class="col-4"><img src="images/trio-1.jpeg" class="tri-img" alt="tri-img"></div>
-              <div class="col-4"><img src="images/trio-2.jpeg" class="tri-img" alt="tri-img"></div>
-              <div class="col-4"><img src="images/trio-3.jpeg" class="tri-img" alt="tri-img"></div>
+              <div class="col-4"><img src="images/trio-1.jpeg" class="img-thri" alt="tri-img"></div>
+              <div class="col-4"><img src="images/trio-2.jpeg" class="img-thri" alt="tri-img"></div>
+              <div class="col-4"><img src="images/trio-3.jpeg" class="img-thri" alt="tri-img"></div>
             </div>
-            <table class="w-100 table border-0 trio-table"></table>
+            <table class="w-100 table border-0 table-block-thri"></table>
           </div>
         </div>
       </div>
