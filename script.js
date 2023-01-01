@@ -1,3 +1,7 @@
+
+$('.doc-block').hide();
+$('.content-all').show();
+$(document).ready( function() {
 $('.openbtn').click(function(){
   document.getElementById("mySidebar").style.width = "300px";
   document.getElementById("main").style.marginLeft = "300px";
@@ -10,15 +14,11 @@ var path = {
   'main' : 'https://dog.ceo/api/breeds/image/random', 'trio' : 'https://dog.ceo/api/breeds/image/random/3', 'by' : 'https://dog.ceo/api/breed/hound/images/random',
   'tri' : 'https://dog.ceo/api/breed/hound/images/random/3', 'sub' : 'https://dog.ceo/api/breed/hound/afghan/images/random', 'thri' : 'https://dog.ceo/api/breed/hound/afghan/images/random/3'
 };
-
-$('.doc-block').hide();
-$('.content-all').show();
 $('.endpoint li a').click(function(){
   var type = $(this).attr('data-type');
   $('.doc-block').hide();
   $('.content-' + type).show(); 
 });
-
 $('.btn-block').click(function() {
   var handle = $(this).attr('data');
   $.ajax({
@@ -27,8 +27,6 @@ $('.btn-block').click(function() {
     product : {},
     success : function(product) {
       $('.img-' + handle).hide();
-      //let len = product.message;
-      //console.log(len);
       if (product.message.length <= 3) {
         $('.table-block-' + handle).empty();
         for (i = 0; i < product.message.length; i++) {
@@ -49,4 +47,5 @@ $.ajax({
       $('#list').append(`<p style="text-transform:capitalize;">${list.message[i]}</p><br>`);
     };
   }
+});
 });
