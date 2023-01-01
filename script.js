@@ -1,4 +1,3 @@
-
 $('.doc-block').hide();
 $('.content-all').show();
 $(document).ready( function() {
