@@ -1,250 +1,256 @@
-button {
-  font-size: 16px;
-  padding: 0 5px;
-  border-radius: 10px;
+img {
+  height: 200px;
+  width: 200px;
 }
 
-h4 {
-  margin-top: 40px;
-  padding-top: 20px;
+.cart-content {
+  margin-top: 100px;
 }
-
-img, .img-api {
-  width: 300px;
-  height: 300px;
-  object-fit: scale-down;
-}
-
-nav {
-  background-color: #eee;
-}
-
-select, option {
-  height: 30px;
-  text-transform: capitalize;
-}
-
-#list {
-  background-color: azure;
-}
-
-#list p {
-  margin: 10px;
-}
-
-#social-sites {
-  margin-top: 40px;
-}
-
-.breed-ref a {
-  border-bottom: 2px solid rgb(26 145 219);
-  color: black;
-  text-decoration: none;
-}
-
-.breed-ref a:hover {
-  color: rgb(26 145 219);
-  text-decoration: none;
-  border: none;
-}
-
-.doc-block {
-  margin: 40px 0;
-}
-
-.endpoint {
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-  padding: 0;
-  margin: 40px 0;
-  font-size: 20px;
-}
-
-.endpoint li {
-  list-style: none;
-}
-
-.endpoint li a {
-  border-bottom: 2px solid rgb(26 145 219);
-  color: black;
-  text-decoration: none;
-}
-
-.endpoint li a:hover {
-  color: rgb(26 145 219);
-  border: none;
-  text-decoration: none;
-}
-
-.fa {
-  margin-right: 8px;
-}
-
-.hollow-list {
-  width: 124.11;
-}
-.main-section p {
-  margin: 20px 0;
-}
-
-.main-heading {
-  font-size: 38px;
-}
-
-.nav-heading {
-  margin: 30px 0;
-}
-
-.navbar {
-  width: 350px;
-  display: inline-block;
-  height: 1000px;
-  padding: 40px 0;
-  font-size: 18px;
-  position: fixed;
-  top: 0;
-  left: 0
-  ;
-}
-
-.navbar-nav {
-  width: 100%;
-  display: block;
-}
-
-.nav-item {
-  display: block;
-  width: 100%;
-}
-
-
-.nav-link {
-  color: black;
-  padding: 12px 0;
-  border-bottom: 1px solid lightgrey;
-}
-
-.nav-link:hover {
-  color: rgb(26 145 219);
-  text-decoration: none;
-}
-
-#dog-img img {
+.cart-content table {
   width: 40%;
-  height: auto;
+  margin: 0 auto;
+}
+.cart-content tr {
+  border: 1px solid lightgrey;
+}
+.cart-content th, .cart-content td {
+  border: 1px solid lightgray;
+  width: 50%;
+  padding: 5px 10px;
+  text-align: center;
 }
 
-.show-img {
-  margin-left: -7px;
+.content-block,
+.content-electronics,
+.content-jewelery,
+.content-men,
+.content-women {
+  margin-top: 100px;
 }
-
-.project-list {
-  font-size: 20px;
-  margin: 20px 0;
-}
-
-.project-list li a{
-  font-size: 20px;
-  color: black;
-  text-decoration: none;
-  border-bottom: 2px solid rgb(26 145 219);
-}
-
-.side:hover{
-  color : rgb(26 145 219);
-  border-bottom: 1px solid rgb(26 145 219);;
-}
-
-.side  {
-  color: black;
-  padding: 12px 0;
-  border-bottom: 1px solid lightgrey;
-}
-
-.social-link {
-  font-size: 18px;
-  color: black;
-}
-
-.social-link .fa {
-  font-size: 18px;;
-}
-
-a.social-link:hover {
-  color : rgb(26 145 219);
-  border-bottom: none;
-}
-
-#social {
-  margin: 40px 0 0 20px;
-  padding: 0;
-}
-
-.three-breeds {
-  margin: 40px 0;
-  padding: 20px 0;
-}
-
-.with-breed-one {
-  margin: 30px 0;
-}
-
-.sidebar {
-  height: 100%;
-  width: 350px;
-  background-color: #eee;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  overflow-x: hidden;
-  transition: 0.5s;
-  padding-top: 60px;
-}
-
-.sidebar a {
-  margin: 0px 8px 0px 20px;;
-  text-decoration: none;
-  font-size: 18px;
-  color: black;
-  display: block;
-  transition: 0.3s;
-}
-
-.sidebar .closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
-}
-
-.openbtn {
-  font-size: 20px;
-  cursor: pointer;
-  background-color: #111;
-  color: white;
-  padding: 10px 15px;
+.content-block button,
+.content-electronics button,
+.content-jewelery button,
+.content-men button,
+.content-women button {
+  background-color: rgb(142, 142, 158);
   border: none;
+  border-radius: 5px;
+  padding: 2px 5px;
+}
+.content-block button:hover,
+.content-electronics button:hover,
+.content-jewelery button:hover,
+.content-men button:hover,
+.content-women button:hover {
+  background-color: rgb(98, 98, 246);
+  border: 2px solid rgb(98, 98, 246);
+  border-radius: 5px;
+}
+.content-block center h3,
+.content-electronics center h3,
+.content-jewelery center h3,
+.content-men center h3,
+.content-women center h3 {
+  text-transform: uppercase;
+}
+.content-block .outer-wrapper, .content-block .content-wrapper,
+.content-electronics .outer-wrapper,
+.content-electronics .content-wrapper,
+.content-jewelery .outer-wrapper,
+.content-jewelery .content-wrapper,
+.content-men .outer-wrapper,
+.content-men .content-wrapper,
+.content-women .outer-wrapper,
+.content-women .content-wrapper {
+  display: grid;
+  font-size: 14px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-gap: 20px;
+  margin: 0 30px;
+}
+.content-block .outer-wrapper .main-content, .content-block .content-wrapper .main-content,
+.content-electronics .outer-wrapper .main-content,
+.content-electronics .content-wrapper .main-content,
+.content-jewelery .outer-wrapper .main-content,
+.content-jewelery .content-wrapper .main-content,
+.content-men .outer-wrapper .main-content,
+.content-men .content-wrapper .main-content,
+.content-women .outer-wrapper .main-content,
+.content-women .content-wrapper .main-content {
+  margin-top: 20px;
+}
+.content-block .outer-wrapper .main-content .details, .content-block .content-wrapper .main-content .details,
+.content-electronics .outer-wrapper .main-content .details,
+.content-electronics .content-wrapper .main-content .details,
+.content-jewelery .outer-wrapper .main-content .details,
+.content-jewelery .content-wrapper .main-content .details,
+.content-men .outer-wrapper .main-content .details,
+.content-men .content-wrapper .main-content .details,
+.content-women .outer-wrapper .main-content .details,
+.content-women .content-wrapper .main-content .details {
+  margin-top: 15px;
+}
+.content-block .outer-wrapper .main-content .details p, .content-block .content-wrapper .main-content .details p,
+.content-electronics .outer-wrapper .main-content .details p,
+.content-electronics .content-wrapper .main-content .details p,
+.content-jewelery .outer-wrapper .main-content .details p,
+.content-jewelery .content-wrapper .main-content .details p,
+.content-men .outer-wrapper .main-content .details p,
+.content-men .content-wrapper .main-content .details p,
+.content-women .outer-wrapper .main-content .details p,
+.content-women .content-wrapper .main-content .details p {
+  margin: 0;
+}
+.content-block .outer-wrapper .main-content .details p span, .content-block .content-wrapper .main-content .details p span,
+.content-electronics .outer-wrapper .main-content .details p span,
+.content-electronics .content-wrapper .main-content .details p span,
+.content-jewelery .outer-wrapper .main-content .details p span,
+.content-jewelery .content-wrapper .main-content .details p span,
+.content-men .outer-wrapper .main-content .details p span,
+.content-men .content-wrapper .main-content .details p span,
+.content-women .outer-wrapper .main-content .details p span,
+.content-women .content-wrapper .main-content .details p span {
+  margin-left: 10px;
+}
+.content-block .modal,
+.content-electronics .modal,
+.content-jewelery .modal,
+.content-men .modal,
+.content-women .modal {
+  display: none;
+}
+.content-block .modal .modal-content,
+.content-electronics .modal .modal-content,
+.content-jewelery .modal .modal-content,
+.content-men .modal .modal-content,
+.content-women .modal .modal-content {
+  width: 600px;
+  right: 150px;
+}
+.content-block .modal .modal-content .modal-header,
+.content-electronics .modal .modal-content .modal-header,
+.content-jewelery .modal .modal-content .modal-header,
+.content-men .modal .modal-content .modal-header,
+.content-women .modal .modal-content .modal-header {
+  height: 60px;
 }
 
-.openbtn:hover {
-  background-color: #444;
+.content-wishlist {
+  margin-top: 100px;
+}
+.content-wishlist .login-content {
+  display: none;
+  width: 150px;
+  margin: 0 auto;
+}
+.content-wishlist .login-content button {
+  margin-left: 40px;
+}
+.content-wishlist .wrapper {
+  background-color: yellow;
+  border-top: 5px dotted orange;
+  border-left: 5px dotted orange;
+  border-right: 5px dotted rgb(255, 0, 0);
+  border-bottom: 5px dotted rgb(255, 0, 0);
+  border-radius: 50px;
+  padding: 40px;
+  height: 200px;
+  margin: 0 auto;
+  width: 400px;
+}
+.content-wishlist .wrapper h3 {
+  font-size: 25px;
+  text-align: center;
+  margin-top: 30px;
 }
 
-#main {
-  margin-left: 350px;
-  transition: margin-left .5s;
-  padding: 16px;
+.nav-wrapper {
+  background-color: white;
+  position: fixed;
+  top: 0;
+  box-shadow: 0px 0px 15px 2px lightgrey;
+}
+.nav-wrapper #user-info .dropdown .dropdown-menu {
+  width: 225px;
+}
+.nav-wrapper #user-info .dropdown .dropdown-menu header {
+  margin: 8px 5px;
+}
+.nav-wrapper #user-info .dropdown .dropdown-menu .dropdown-item {
+  border: 2px solid rgb(234, 229, 229);
+  border-radius: 5px;
+  color: red;
+  margin: 0 auto;
+  padding: 2px 16px;
+  text-align: center;
+  width: 150px;
+}
+.nav-wrapper #user-info .dropdown .dropdown-menu .dropdown-item:hover {
+  border: 2px solid red;
+  background-color: white;
+}
+.nav-wrapper .navbar #nav-content {
+  text-transform: capitalize;
+  width: 40%;
+}
+.nav-wrapper .navbar .fa {
+  margin-right: 5px;
+}
+.nav-wrapper .navbar .form-inline {
+  display: inherit;
+  flex: 1;
+}
+.nav-wrapper .navbar .navbar-brand img {
+  height: 40px;
+  width: 40px;
+}
+.nav-wrapper .navbar .dropdown-toggle::after {
+  display: none;
 }
 
-@media screen and (max-height: 450px) {
-  .sidebar {
-    padding-top: 15px;
-  }
-
-  .sidebar a {
-    font-size: 18px;
-  }
+.content-login {
+  margin-top: 100px;
+  display: grid;
 }
+.content-login form {
+  border-radius: 30px;
+  width: 345px;
+  background-image: linear-gradient(to bottom right, red, orange, yellow);
+  place-self: center;
+  padding: 20px;
+  height: 390px;
+}
+.content-login form center {
+  margin-top: 30px;
+}
+.content-login form center .submit-btn {
+  border: none;
+  color: white;
+  padding: 5px 15px;
+  background-color: red;
+  border-radius: 10px;
+  font-size: 20px;
+}
+.content-login form center p {
+  color: red;
+}
+.content-login form .dp {
+  font-size: 60px;
+  border-radius: 50%;
+  height: 90px;
+  width: 90px;
+  margin: 30px auto;
+  background-color: crimson;
+  border: none;
+  color: white;
+  text-align: center;
+}
+.content-login form .error-message {
+  color: red;
+  font-size: 14px;
+  text-align: center;
+}
+.content-login form .username, .content-login form .password {
+  height: 30px;
+  margin: 20px 0;
+}/*# sourceMappingURL=style.css.map */
