@@ -41,7 +41,7 @@
             </a>
             <ul class="dropdown-menu">
               <header>Welcome<br>Accounts and manage orders</header>
-              <li><a class="dropdown-item"></a></li>
+              <li><a class="dropdown-item exit"></a></li>
             </ul>
           </li>
           <li class="nav-item wishlist">
@@ -49,7 +49,7 @@
               <i class="fa fa-heart" aria-hidden="true"></i>Wishlist
             </a>
           </li>
-          <li class="nav-item cart">
+          <li class="nav-item" id="cart">
             <a class="nav-link">
               <i class="fa fa-shopping-bag" aria-hidden="true"></i>Bag
             </a>
@@ -58,7 +58,13 @@
       </div>
     </nav>
   </div>
-  <div class="cart-content"></div>  
+  <div class="cart-content">
+    <table>
+      <thead></thead>
+      <tbody></tbody>
+    </table>
+  </div>
+  <tr class="products"></tr>  
   <script src="https://code.jquery.com/jquery-3.6.2.min.js"
     integrity="sha256-2krYZKh//PcchRtd+H+VyyQoZ/e3EcrkxhM8ycwASPA=" crossorigin="anonymous"></script>
   <script src="script.js"></script>

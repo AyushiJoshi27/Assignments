@@ -7,17 +7,17 @@ img {
   margin-top: 100px;
 }
 .cart-content table {
-  width: 40%;
   margin: 0 auto;
+  width: 40%;
 }
 .cart-content tr {
   border: 1px solid lightgrey;
 }
 .cart-content th, .cart-content td {
   border: 1px solid lightgray;
-  width: 50%;
   padding: 5px 10px;
   text-align: center;
+  width: 50%;
 }
 
 .content-block,
@@ -124,8 +124,8 @@ img {
 .content-jewelery .modal .modal-content,
 .content-men .modal .modal-content,
 .content-women .modal .modal-content {
-  width: 600px;
   right: 150px;
+  width: 600px;
 }
 .content-block .modal .modal-content .modal-header,
 .content-electronics .modal .modal-content .modal-header,
@@ -140,8 +140,8 @@ img {
 }
 .content-wishlist .login-content {
   display: none;
-  width: 150px;
   margin: 0 auto;
+  width: 150px;
 }
 .content-wishlist .login-content button {
   margin-left: 40px;
@@ -153,22 +153,25 @@ img {
   border-right: 5px dotted rgb(255, 0, 0);
   border-bottom: 5px dotted rgb(255, 0, 0);
   border-radius: 50px;
-  padding: 40px;
   height: 200px;
   margin: 0 auto;
+  padding: 40px;
   width: 400px;
+}
+.content-wishlist .wrapper .welcome #name {
+  text-transform: capitalize;
 }
 .content-wishlist .wrapper h3 {
   font-size: 25px;
-  text-align: center;
   margin-top: 30px;
+  text-align: center;
 }
 
 .nav-wrapper {
   background-color: white;
+  box-shadow: 0px 0px 15px 2px lightgrey;
   position: fixed;
   top: 0;
-  box-shadow: 0px 0px 15px 2px lightgrey;
 }
 .nav-wrapper #user-info .dropdown .dropdown-menu {
   width: 225px;
@@ -209,41 +212,41 @@ img {
 }
 
 .content-login {
-  margin-top: 100px;
   display: grid;
+  margin-top: 100px;
 }
 .content-login form {
-  border-radius: 30px;
-  width: 345px;
   background-image: linear-gradient(to bottom right, red, orange, yellow);
-  place-self: center;
-  padding: 20px;
+  border-radius: 30px;
   height: 390px;
+  padding: 20px;
+  place-self: center;
+  width: 345px;
 }
 .content-login form center {
   margin-top: 30px;
 }
 .content-login form center .submit-btn {
-  border: none;
-  color: white;
-  padding: 5px 15px;
   background-color: red;
+  border: none;
   border-radius: 10px;
+  color: white;
   font-size: 20px;
+  padding: 5px 15px;
 }
 .content-login form center p {
   color: red;
 }
 .content-login form .dp {
-  font-size: 60px;
-  border-radius: 50%;
-  height: 90px;
-  width: 90px;
-  margin: 30px auto;
   background-color: crimson;
   border: none;
+  border-radius: 50%;
   color: white;
+  font-size: 60px;
+  height: 90px;
+  margin: 30px auto;
   text-align: center;
+  width: 90px;
 }
 .content-login form .error-message {
   color: red;
