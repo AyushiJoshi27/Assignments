@@ -44,8 +44,7 @@ $(document).ready(function () {
       prephtml += `</div>`;
       $("#selected-product").append(prephtml);
     });
-
-  }
+  };
 
   //PRODUCTS UNDER NAV-CATEGORIES
   function navProducts() {
@@ -110,14 +109,14 @@ $(document).ready(function () {
           else if (inputusername == username && userpassword != password) {
             $(".error-message").html("Please enter correct password");
           }
-        }
+        };
       }
     });
   });
 
   $(".dropdown-item").click(function () {
     window.location.href = "login.html";
-  })
+  });
 
   $(".wishlist").click(function () {
     if (!user) {
@@ -126,28 +125,28 @@ $(document).ready(function () {
     else {
       window.open("wishlist.html", "_self");
     }
-  })
+  });
 
   if (!user) {
     $(".dropdown-item").html("LOGIN");
   }
   else {
     $(".dropdown-item").html("LOGOUT");
-  }
+  };
 
   if (user) {
     $(".exit").click(function () {
       localStorage.removeItem('username');
       $(".dropdown-item").html("LOGIN");
     });
-  }
+  };
 
   //cart
   if (user) {
     $("#cart").click(function () {
       window.location.href = "cart.html";
     });
-  }
+  };
 
   $.ajax({
     type: "Get",
@@ -170,4 +169,4 @@ $(document).ready(function () {
       };
     }
   });
-})
+});
