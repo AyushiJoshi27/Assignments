@@ -41,7 +41,8 @@
             </a>
             <ul class="dropdown-menu">
               <header>Welcome<br>Accounts and manage orders</header>
-              <li><a class="dropdown-item exit"></a></li>
+              <li><a href="#admin-page" class="dropdown-item admin-page">Go to Admin Page</a></li>
+              <li><a class="dropdown-item getin exit"></a></li>
             </ul>
           </li>
           <li class="nav-item wishlist">
@@ -72,12 +73,16 @@
         <input type="password" id="password" name="password" placeholder="password"><br />
       </div>
       <div class="content-info"></div>
-      <center><button type="submit" class="login-btn submit-btn" form="login-form" value="Submit">Submit</button></center>
+      <center><button type="submit" class="login-btn submit-btn" form="login-form" value="Submit">Submit</button>
+      </center>
       <div class="error-message hidden"></div>
     </form>
   </div>
   <script src="https://code.jquery.com/jquery-3.6.2.min.js"
     integrity="sha256-2krYZKh//PcchRtd+H+VyyQoZ/e3EcrkxhM8ycwASPA=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"
+    integrity="sha512-rstIgDs0xPgmG6RX1Aba4KV5cWJbAMcvRCVmglpam9SoHZiUCyQVDdH2LPlxoHtrv17XWblE/V/PP+Tr04hbtA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="script.js"></script>
 </body>
 
