@@ -20,7 +20,7 @@
 <body>
   <div class="container-fluid nav-wrapper">
     <nav class="navbar navbar-expand-lg navbar-light">
-      <a class="navbar-brand" href="index.html">
+      <a class="navbar-brand">
         <img src="images/brand-logo.png" alt="navbar-brand">
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-content"
@@ -30,8 +30,8 @@
       <div class="collapse navbar-collapse" id="navbar-content">
         <ul class="navbar-nav" id="nav-content"></ul>
         <form class="form-inline">
-          <input class="form-control " type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success submit-button mx-2" type="submit">Search</button>
+          <input type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success submit-button" type="submit">Search</button>
         </form>
         <ul class="navbar-nav" id="user-info">
           <li class="nav-item dropdown">
@@ -41,8 +41,8 @@
             </a>
             <ul class="dropdown-menu">
               <header>Welcome<br>Accounts and manage orders</header>
-              <li><a href="#admin-page" class="dropdown-item admin-page">Go to Admin Page</a></li>
-              <li><a class="dropdown-item getin exit"></a></li>
+              <li class="to-admin"><a href="#admin-page" class="dropdown-item admin-page">Go to Admin Page</a></li>
+              <li><a class="dropdown-item get-in exit"></a></li>
             </ul>
           </li>
           <li class="nav-item wishlist">
@@ -68,7 +68,7 @@
       <div class="modal-dialog modal-md">
         <div class="modal-content">
           <div class="modal-header">
-            <button type="button" id="close"><i class="fa fa-times" aria-hidden="true"></i></button>
+            <button type="button" class="btn btn-danger close"><i class="fa fa-times" aria-hidden="true"></i></button>
           </div>
           <div class="modal-body" id="selected-id">
             <form id="add-product-form">
@@ -81,7 +81,7 @@
                 <input type="number" id="price" name="price" placeholder="price"><br />
               </div>
               <div class="description">
-                <label for="description"><b>TITLE: </b></label>
+                <label for="description"><b>DESCRIPTION: </b></label>
                 <input type="text" id="description" name="description" placeholder="description"><br>
               </div>
               <div class="image">
@@ -91,10 +91,10 @@
               <div class="category">
                 <label for="category"><b>CATEGORY: </b></label>
                 <select id="category" name="category">
-                  <option value="Categories">Categories</option>
+                  <option value="">Choose a category</option>
                 </select>
               </div>
-              <center><button type="submit" class="submit-form">Submit</button></center>
+              <center><button type="submit" class="btn btn-primary submit-form">Submit</button></center>
             </form>
           </div>
         </div>
@@ -104,19 +104,19 @@
       <div class="modal-dialog modal-md">
         <div class="modal-content">
           <div class="modal-header">
-            <button type="button" class="close"><i class="fa fa-times" aria-hidden="true"></i></button>
+            <button type="button" class="btn btn-danger close"><i class="fa fa-times" aria-hidden="true"></i></button>
           </div>
           <div class="modal-body">
             <form id="update-product-form">
               <label><b>Title: </b></label>
-              <input type="text" id="m-title"><br>
+              <input type="text" name="m-title" id="m-title"><br>
               <label><b>PRICE: </b></label>
-              <input type="number" id="m-price"><br />
+              <input type="text" name="m-price" id="m-price"><br />
               <label><b>IMAGE: </b></label>
-              <input type="url" id="m-image"><br />
+              <input type="url" name="m-image" id="m-image"><br />
               <label><b>DESCRIPTION: </b></label>
-              <textarea id="m-description"></textarea><br>
-              <center><button type="submit" id="update-submit-btn">Submit</button></center>
+              <textarea name="m-description" id="m-description"></textarea><br>
+              <center><button type="submit" class="btn btn-primary" id="update-submit-btn">Submit</button></center>
             </form>
           </div>
         </div>
@@ -126,9 +126,11 @@
       <div class="modal-dialog modal-sm">
         <div class="modal-content">
           <div class="modal-header">
-            <button type="button" id="msg-close"><i class="fa fa-times" aria-hidden="true"></i></button>
+            <button type="button" close="btn btn-danger close">
+              <i class="fa fa-times" aria-hidden="true"></i>
+            </button>
           </div>
-          <div class="modal-body">Success</div>
+          <div class="modal-body"></div>
         </div>
       </div>
     </div>
