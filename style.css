@@ -6,18 +6,20 @@
     width: 200px;
   }
   .admin-block {
-    position: absolute;
-    top: 80px;
+    background-color: #fdf5e6;
+    position: relative;
+    top: 67px;
     width: 100%;
+    padding: 40px 0;
   }
   .admin-block table {
-    border: 2px solid black;
+    border: 2px solid #000000;
     margin: 0 auto;
     width: 50%;
   }
   .admin-block table th,
 .admin-block table td {
-    border: 1px solid black;
+    border: 1px solid #000000;
     text-align: center;
   }
   .admin-block table .delete-block {
@@ -31,7 +33,7 @@
     padding: 4px 10px;
   }
   .admin-block table .delete-block .product-delete-btn:hover {
-    border: 1px solid red;
+    border: 1px solid #ff0000;
   }
   .admin-block table .modify-block {
     height: 40px;
@@ -47,9 +49,14 @@
   .admin-block table .modify-block .product-update-btn:hover {
     border: 1px solid #5a8181;
   }
+  .admin-block #update-modal label {
+    margin: 10px 5px 10px;
+    text-align: end;
+    width: 32%;
+  }
   .admin-block .modal .modal-content {
     border: none;
-    box-shadow: 4px 5px 22px 20px lightgrey;
+    box-shadow: 4px 5px 22px 20px #d3d3d3;
     top: 100px;
   }
   .admin-block .modal .modal-content .modal-header {
@@ -73,14 +80,14 @@
     width: 100%;
     text-align: center;
     font-size: 13px;
-    color: red;
+    color: #ff0000;
   }
   .admin-block .modal .modal-content .question-block .accept {
     border: none;
     margin: 0 35px;
   }
   .admin-block .modal .modal-content .question-block .accept:hover {
-    border: 1px solid red;
+    border: 1px solid #ff0000;
     margin: 0 35px;
   }
   .admin-block .modal .modal-content .question-block .decline {
@@ -88,7 +95,7 @@
     margin: 0 35px;
   }
   .admin-block .modal .modal-content .question-block .decline:hover {
-    border: 1px solid red;
+    border: 1px solid #ff0000;
     margin: 0 35px;
   }
   .admin-block .product-add {
@@ -106,72 +113,83 @@
     font-size: 14px;
   }
   .cart-content {
-    margin-top: 100px;
+    background-color: #fdf5e6;
+    position: relative;
+    top: 67px;
+    width: 100%;
+    padding: 40px 0;
+    height: 800px;
   }
   .cart-content table {
-    border: 2px solid black;
+    border: 2px solid #000000;
     margin: 0 auto;
-    width: 40%;
+    width: 50%;
   }
-  .cart-content table thead th,
-.cart-content table thead tr {
-    border: 2px solid black;
+  .cart-content table thead th {
+    background-color: #fdecec;
+    border: 2px solid #000000;
   }
-  .cart-content table tbody tr {
-    border: 1px solid lightgrey;
-  }
-  .cart-content table tbody th,
-.cart-content table tbody td {
-    border: 1px solid lightgray;
+  .cart-content table tbody td {
+    background-color: #f0f8ff;
+    border: 1px solid #d3d3d3;
     padding: 5px 10px;
     text-align: center;
     width: 50%;
   }
-  .cart-content table tbody th:hover, .cart-content table tbody th:hover,
-.cart-content table tbody td:hover,
-.cart-content table tbody td:hover {
-    background-color: aliceblue;
+  .cart-content table tbody tr {
+    border: 1px solid #d3d3d3;
+  }
+  .cart-content table tbody:hover {
+    background-color: #f0f8ff;
   }
   .content-block {
-    margin-top: 100px;
+    background-color: #fdf5e6;
+    position: relative;
+    top: 67px;
+    width: 100%;
+    padding: 40px 0;
+    /*,
+    .content-wrapper */
   }
   .content-block button {
-    background-color: rgb(142, 142, 158);
+    background-color: #8e8e9e;
     border: none;
     border-radius: 5px;
     padding: 2px 5px;
   }
   .content-block button:hover {
-    background-color: rgb(98, 98, 246);
-    border: 2px solid rgb(98, 98, 246);
+    background-color: #6262f6;
+    border: 2px solid #6262f6;
     border-radius: 5px;
   }
   .content-block center h3 {
     text-transform: uppercase;
   }
-  .content-block .outer-wrapper,
-.content-block .content-wrapper {
+  .content-block .outer-wrapper {
     display: grid;
     font-size: 14px;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     grid-gap: 20px;
     margin: 0 30px;
   }
-  .content-block .outer-wrapper .main-content,
-.content-block .content-wrapper .main-content {
-    margin-top: 20px;
+  .content-block .outer-wrapper .main-content {
+    background-color: antiquewhite;
+    border-radius: 20px;
+    padding: 20px;
   }
-  .content-block .outer-wrapper .main-content .details,
-.content-block .content-wrapper .main-content .details {
-    margin-top: 15px;
+  .content-block .outer-wrapper .main-content .details {
+    margin: 10px;
   }
-  .content-block .outer-wrapper .main-content .details p,
-.content-block .content-wrapper .main-content .details p {
+  .content-block .outer-wrapper .main-content .details p {
     margin: 0;
   }
-  .content-block .outer-wrapper .main-content .details p span,
-.content-block .content-wrapper .main-content .details p span {
+  .content-block .outer-wrapper .main-content .details p span {
     margin-left: 10px;
+  }
+  .content-block .outer-wrapper .main-content .img-wrap {
+    background: #ffffff;
+    height: 200px;
+    width: 200px;
   }
   .content-block .modal {
     display: none;
@@ -184,26 +202,24 @@
     height: 60px;
   }
   .content-wishlist {
-    margin-top: 100px;
-  }
-  .content-wishlist .login-content {
-    display: none;
-    margin: 0 auto;
-    width: 150px;
-  }
-  .content-wishlist .login-content button {
-    margin-left: 40px;
+    background-color: #fdf5e6;
+    position: relative;
+    top: 67px;
+    width: 100%;
+    padding: 40px 0;
+    height: 800px;
   }
   .content-wishlist .wrapper {
-    background-color: yellow;
-    border-top: 5px dotted orange;
-    border-left: 5px dotted orange;
-    border-right: 5px dotted rgb(255, 0, 0);
-    border-bottom: 5px dotted rgb(255, 0, 0);
+    background-color: #ffff00;
+    border-top: 5px dotted #ffa500;
+    border-left: 5px dotted #ffa500;
+    border-right: 5px dotted #ff0000;
+    border-bottom: 5px dotted #ff0000;
     border-radius: 50px;
     height: 200px;
     margin: 0 auto;
     padding: 40px;
+    transition: width 4s, height 4s, transform 4s;
     width: 400px;
   }
   .content-wishlist .wrapper .welcome #name {
@@ -219,21 +235,21 @@
   @-webkit-keyframes fadeInAnimation {
     0% {
       opacity: 0;
-      color: orange;
+      color: #ffa500;
     }
     100% {
       opacity: 1;
-      color: red;
+      color: #ff0000;
     }
   }
   @keyframes fadeInAnimation {
     0% {
       opacity: 0;
-      color: orange;
+      color: #ffa500;
     }
     100% {
       opacity: 1;
-      color: red;
+      color: #ff0000;
     }
   }
   .content-wishlist .wrapper h3 {
@@ -241,39 +257,61 @@
     margin-top: 30px;
     text-align: center;
   }
+  .content-wishlist .wrapper:hover {
+    transform: rotate(360deg);
+  }
   .nav-wrapper {
-    background-color: white;
-    box-shadow: 0px 0px 15px 2px lightgrey;
+    background-color: #faebd7;
+    box-shadow: 0px 0px 15px 2px #d3d3d3;
     position: fixed;
-    top: 0;
     z-index: 1;
   }
   .nav-wrapper #user-info .dropdown .dropdown-menu {
+    background-color: #faebd7;
     margin-top: 12px;
     width: 225px;
   }
   .nav-wrapper #user-info .dropdown .dropdown-menu header {
-    font-size: 12px;
+    font-size: 14px;
     margin: 8px 5px;
   }
   .nav-wrapper #user-info .dropdown .dropdown-menu li {
     margin: 5px 0;
   }
-  .nav-wrapper #user-info .dropdown .dropdown-menu .get-in {
-    border: 2px solid rgb(234, 229, 229);
+  .nav-wrapper #user-info .dropdown .dropdown-menu .to-admin {
+    border: 2px solid #eae5e5;
     border-radius: 5px;
+    margin: 0 auto;
+    text-align: center;
+    text-transform: uppercase;
+    width: 185px;
+  }
+  .nav-wrapper #user-info .dropdown .dropdown-menu .to-admin .admin-page {
     color: red;
+    font-size: 15px;
+  }
+  .nav-wrapper #user-info .dropdown .dropdown-menu .to-admin:hover {
+    background-color: #ffffff;
+    border: 2px solid #ff0000;
+  }
+  .nav-wrapper #user-info .dropdown .dropdown-menu .get-in {
+    border: 2px solid #eae5e5;
+    border-radius: 5px;
+    color: #ff0000;
     margin: 0 auto;
     padding: 2px 16px;
     text-align: center;
     width: 150px;
   }
   .nav-wrapper #user-info .dropdown .dropdown-menu .get-in:hover {
-    background-color: white;
-    border: 2px solid red;
+    background-color: #ffffff;
+    border: 2px solid #ff0000;
+    color: #ff0000;
   }
-  .nav-wrapper #user-info:hover .dropdown-menu {
+  .nav-wrapper #user-info .dropdown:hover .dropdown-menu {
+    background-color: #faebd7;
     display: block;
+    height: 155px;
   }
   .nav-wrapper .navbar #nav-content {
     text-transform: capitalize;
@@ -286,19 +324,27 @@
     display: inherit;
     flex: 1;
   }
+  .nav-wrapper .navbar .form-inline input {
+    margin-right: 14px;
+    width: 80%;
+  }
   .nav-wrapper .navbar .navbar-brand img {
     height: 40px;
+    -o-object-fit: cover;
+       object-fit: cover;
     width: 40px;
   }
-  .nav-wrapper .navbar .dropdown-toggle:hover {
-    display: block;
-  }
   .content-login {
+    background-color: #fdf5e6;
+    position: relative;
+    top: 67px;
+    width: 100%;
+    padding: 40px 0;
     display: grid;
-    margin-top: 100px;
+    height: 750px;
   }
   .content-login form {
-    background-image: linear-gradient(to bottom right, red, orange, yellow);
+    background-image: linear-gradient(to bottom right, #ff0000, #ffa500, #ffff00);
     border-radius: 30px;
     height: 390px;
     padding: 20px;
@@ -309,7 +355,7 @@
     margin-top: 30px;
   }
   .content-login form center .submit-btn {
-    background-color: red;
+    background-color: #ff0000;
     border: none;
     border-radius: 10px;
     color: white;
@@ -317,10 +363,10 @@
     padding: 5px 15px;
   }
   .content-login form center p {
-    color: red;
+    color: #ff0000;
   }
   .content-login form .dp {
-    background-color: crimson;
+    background-color: #ff0000;
     border: none;
     border-radius: 50%;
     color: white;
@@ -331,7 +377,7 @@
     width: 90px;
   }
   .content-login form .error-message {
-    color: red;
+    color: #ff0000;
     font-size: 14px;
     text-align: center;
   }
@@ -352,46 +398,63 @@
     width: 100px;
   }
   .cart-content {
-    margin-top: 100px;
+    background-color: #fdf5e6;
+    position: relative;
+    top: 67px;
+    width: 100%;
+    padding: 40px 0;
+    height: 600px;
   }
   .cart-content table {
-    border: 2px solid black;
+    border: 2px solid #000000;
     margin: 0 auto;
     width: 90%;
   }
   .cart-content table thead th,
 .cart-content table thead tr {
     background-color: #fdecec;
-    border: 2px solid black;
+    border: 2px solid #000000;
   }
   .cart-content table tr {
-    border: 1px solid lightgrey;
+    border: 1px solid #d3d3d3;
   }
   .cart-content table th,
 .cart-content table td {
-    background-color: beige;
-    border: 1px solid lightgray;
-    border-right: 2px solid black;
+    background-color: #f0f8ff;
+    border: 1px solid #d3d3d3;
+    border: 2px solid #000000;
     padding: 5px 10px;
     text-align: center;
     width: 50%;
   }
   .content-block {
-    margin-top: 100px;
+    background-color: #fdf5e6;
+    position: relative;
+    top: 67px;
+    width: 100%;
+    padding: 40px 0;
     text-transform: capitalize;
   }
   .content-block .main-content {
+    background-color: antiquewhite;
+    border-radius: 20px;
     padding: 20px;
   }
   .content-block .main-content .details p {
     margin-bottom: 5px;
   }
   .content-block .main-content .img-wrap {
+    background: #ffffff;
+    height: 200px;
     padding: 10px;
+    width: 200px;
   }
   .content-block .modal {
     display: none;
-    margin-top: 100px;
+    position: relative;
+    top: 67px;
+    width: 100%;
+    padding: 40px 0;
   }
   .content-block .modal .modal-content {
     width: 370px;
@@ -400,18 +463,23 @@
     height: 60px;
   }
   .content-block .modal .modal-content .modal-header button {
-    background-color: rgb(142, 142, 158);
+    background-color: #8e8e9e;
     border: none;
     border-radius: 5px;
     padding: 2px 5px;
   }
   .content-block .modal .modal-content .modal-header button:hover {
-    background-color: rgb(98, 98, 246);
-    border: 2px solid rgb(98, 98, 246);
+    background-color: #6262f6;
+    border: 2px solid #6262f6;
     border-radius: 5px;
   }
   .content-wishlist {
-    margin-top: 100px;
+    background-color: #fdf5e6;
+    position: relative;
+    top: 67px;
+    width: 100%;
+    padding: 40px 0;
+    height: 600px;
   }
   .content-wishlist .login-content {
     display: none;
@@ -422,15 +490,16 @@
     margin-left: 40px;
   }
   .content-wishlist .wrapper {
-    background-color: yellow;
-    border-top: 5px dotted orange;
-    border-left: 5px dotted orange;
-    border-right: 5px dotted rgb(255, 0, 0);
-    border-bottom: 5px dotted rgb(255, 0, 0);
+    background-color: #ffff00;
+    border-top: 5px dotted #ffa500;
+    border-left: 5px dotted #ffa500;
+    border-right: 5px dotted #ff0000;
+    border-bottom: 5px dotted #ff0000;
     border-radius: 50px;
     height: 200px;
     margin: 0 auto;
     padding: 40px;
+    transition: width 4s, height 4s, transform 4s;
     width: 300px;
   }
   .content-wishlist .wrapper .welcome #name {
@@ -446,21 +515,21 @@
   @-webkit-keyframes fadeInAnimation {
     0% {
       opacity: 0;
-      color: orange;
+      color: #ffa500;
     }
     100% {
       opacity: 1;
-      color: red;
+      color: #ff0000;
     }
   }
   @keyframes fadeInAnimation {
     0% {
       opacity: 0;
-      color: orange;
+      color: #ffa500;
     }
     100% {
       opacity: 1;
-      color: red;
+      color: #ff0000;
     }
   }
   .content-wishlist .wrapper h3 {
@@ -468,17 +537,20 @@
     margin-top: 30px;
     text-align: center;
   }
+  .content-wishlist .wrapper:hover {
+    transform: rotate(360deg);
+  }
   .nav-wrapper {
-    background-color: white;
-    box-shadow: 0px 0px 15px 2px lightgrey;
+    background-color: #faebd7;
+    box-shadow: 0px 0px 15px 2px #d3d3d3;
     position: fixed;
-    top: 0;
+    z-index: 1;
   }
   .nav-wrapper nav {
     height: 68px;
   }
   .nav-wrapper #navbar-content {
-    background-color: white;
+    background-color: #ffffff;
   }
   .nav-wrapper #navbar-content .navbar-nav li {
     padding-left: 8px;
@@ -498,27 +570,31 @@
     margin: 5px 0;
   }
   .nav-wrapper #navbar-content .navbar-nav li .show .to-admin .admin-page {
-    border: 2px solid rgb(234, 229, 229);
+    border: 2px solid #eae5e5;
     border-radius: 5px;
-    color: red;
+    color: #ff0000;
     margin: 0 auto;
     padding: 2px 16px;
-    width: 166px;
+    text-align: center;
+    text-transform: uppercase;
+    width: 175px;
   }
   .nav-wrapper #navbar-content .navbar-nav li .exit {
-    border: 2px solid rgb(234, 229, 229);
+    border: 2px solid #eae5e5;
     border-radius: 5px;
-    color: red;
+    color: #ff0000;
     margin: 0 auto;
     padding: 2px 16px;
     text-align: center;
     width: 120px;
   }
   .nav-wrapper #navbar-content .form-inline {
-    display: inline-block;
-    height: 45px;
-    margin: 0 8px 8px 8px;
-    width: 80%;
+    height: 73px;
+  }
+  .nav-wrapper #navbar-content .form-inline input {
+    height: 30px;
+    padding: 0 10px;
+    margin: 5px 0;
   }
   .nav-wrapper #navbar-content .form-inline .submit-button {
     margin-bottom: 8px;
@@ -531,11 +607,15 @@
     width: auto;
   }
   .content-login {
+    background-color: #fdf5e6;
+    position: relative;
+    top: 67px;
+    width: 100%;
+    padding: 40px 0;
     display: grid;
-    margin-top: 100px;
   }
   .content-login form {
-    background-image: linear-gradient(to bottom right, red, orange, yellow);
+    background-image: linear-gradient(to bottom right, #ff0000, #ffa500, #ffff00);
     border-radius: 30px;
     height: 390px;
     padding: 20px;
@@ -543,24 +623,27 @@
     width: 345px;
   }
   .content-login form center {
-    margin-top: 30px;
+    position: relative;
+    top: 67px;
+    width: 100%;
+    padding: 40px 0;
   }
   .content-login form center .submit-btn {
-    background-color: red;
+    background-color: #ff0000;
     border: none;
     border-radius: 10px;
-    color: white;
+    color: #ffffff;
     font-size: 20px;
     padding: 5px 15px;
   }
   .content-login form center p {
-    color: red;
+    color: #ff0000;
   }
   .content-login form .dp {
-    background-color: crimson;
+    background-color: #dc143c;
     border: none;
     border-radius: 50%;
-    color: white;
+    color: #ffffff;
     font-size: 60px;
     height: 90px;
     margin: 30px auto;
@@ -568,7 +651,7 @@
     width: 90px;
   }
   .content-login form .error-message {
-    color: red;
+    color: #ff0000;
     font-size: 14px;
     text-align: center;
   }
@@ -578,17 +661,21 @@
     margin: 20px 0;
   }
   .admin-block {
-    margin-top: 100px;
+    background-color: #fdf5e6;
+    position: relative;
+    top: 67px;
+    width: 100%;
+    padding: 40px 0;
   }
   .admin-block .data-table {
-    border: 2px solid black;
+    border: 2px solid #000000;
     margin: 10px 20px auto;
     width: 350px;
   }
   .admin-block .data-table th,
 .admin-block .data-table tr,
 .admin-block .data-table td {
-    border: 1px solid black;
+    border: 1px solid #000000;
   }
   .admin-block .data-table .delete-block {
     height: 40px;
@@ -602,7 +689,7 @@
     padding: 4px 10px;
   }
   .admin-block .data-table .delete-block .product-delete-btn:hover {
-    border: 1px solid red;
+    border: 1px solid #ff0000;
     margin: 0 6px;
   }
   .admin-block .data-table .modify-block {

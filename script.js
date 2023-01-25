@@ -6,13 +6,12 @@ $( document ).ready(function() {
   categoriesUrl = link + "products/categories";
   var user = localStorage.getItem('username');
 
-  $('.navbar-brand').click(function() {
+  $('#nav-content').click(function() {
     window.location.href = 'index.html';
   });
 
-  $('#update-submit-btn').click(function() {
-    $('#success-msg').show();
-    $('#update-modal').hide();
+  $('.navbar-brand').click(function() {
+    window.location.href = 'index.html';
   });
 
   $('.outer-wrapper').click(function () {
@@ -20,10 +19,7 @@ $( document ).ready(function() {
   });
 
   $('.close').click(function() {
-    $('#update-modal').hide();
-    $('#success-msg').hide();
-    $('#small-modal').hide();
-    $('#add-modal').hide();
+    $('.modal').hide();
   });
 
   $('.navbar-toggler').click(function() {
@@ -52,7 +48,6 @@ $( document ).ready(function() {
     prepHtml += `<p><b>Available: </b>Only ${pack.rating.count} items are left</p>`;
     prepHtml += `<details><summary><b>Description: </b></summary>${pack.description}</details>`;
     prepHtml += `</div>`;
-    prepHtml += `</div>`;
     return prepHtml;
   };
 
@@ -62,6 +57,7 @@ $( document ).ready(function() {
       let pack = products[index];
       var prepHtml = `<div class="main-content" data-id="${index}">`;
       prepHtml += htmlContent(pack, prepHtml);
+      prepHtml += `</div>`;
       $('.outer-wrapper').append(prepHtml);
     };
 
@@ -70,6 +66,7 @@ $( document ).ready(function() {
       let pack = products[type];
       var prepHtml = `<div class="main-content">`;
       prepHtml += htmlContent(pack, prepHtml);
+      prepHtml += `</div>`;
       $('.modal-body').html(prepHtml);
     });
   };
@@ -96,6 +93,7 @@ $( document ).ready(function() {
       }
       getData('GET' ,categoriesPath, categoryFn);
     });
+
   };
 
   const userFn = function(products) {
@@ -103,18 +101,19 @@ $( document ).ready(function() {
     pwrd = $('#password').val();
     var len = products.length;
     for (let i = 0; i < len; i++) {
-      var username = products[i].username;
-      var password = products[i].password;
+      var objArr = {username : products[i].username, password : products[i].password};
       var usersId = products[i].id;
-      if (name == username && pwrd == password) {
-        localStorage.setItem('username', username);
+      if (name == objArr.username && pwrd == objArr.password) {
+        var arr = [];
+        arr.push(objArr.username);
+        localStorage.setItem('username', arr);
         localStorage.setItem('itemId', usersId);
         window.location.href = 'wishlist.html';
       }
-      else if (name != username && pwrd == password) {
+      else if (name != objArr.username && pwrd == objArr.password) {
         $('.error-message').html("Please enter correct username");
       }
-      else if (name == username && pwrd != password) {
+      else if (name == objArr.username && pwrd != objArr.password) {
         $('.error-message').html("Please enter correct password");
       }
     };
@@ -138,7 +137,7 @@ $( document ).ready(function() {
         producthtml += `<td>${cart[j].quantity}</td><tr>`;
         $('.cart-body').append(producthtml);
       };
-    };         
+    };
   };
 
   $('.get-in').click(function () {
@@ -223,14 +222,14 @@ $( document ).ready(function() {
         innerHtml += `<tr><td>${productId}.</td>`;
         innerHtml += `<td>${productTitle}</td>`;
         innerHtml += `<td class="modify-block"><button type="button" class="product-update-btn" data-id="${productId}">UPDATE</button></td>`;
-        innerHtml += `<td class="delete-block"><button type="button" class="bg-danger product-delete-btn" data-id="${productId}">DELETE</button><td>`;
+        innerHtml += `<td class="delete-block"><button type="button" class="bg-danger product-delete-btn" data-id="${productId}">DELETE</button></td>`;
         innerHtml += `</tr></tbody>`;
       $('.data-table').append(innerHtml);
     }
 
     $('.product-update-btn').click(function(event) {
       $('#update-product-form input').val('');
-      //$('#update-product-form input').prop("readonly", true);
+      $('#update-product-form input').prop("readonly", true);
       var updateId = $(this).attr('data-id');
       $('#update-modal').show();
       event.preventDefault();
@@ -244,6 +243,11 @@ $( document ).ready(function() {
       };
 
       getData('GET', updateUrl, updateFn);
+
+      $('#update-submit-btn').click(function() {
+        $('#update-modal').hide();
+      });
+
     });
 
     $('.product-delete-btn').click(function() {
@@ -265,7 +269,6 @@ $( document ).ready(function() {
       $('.decline').click(function() {
         $('#success-msg').hide();
       });
-
     });
   };
 

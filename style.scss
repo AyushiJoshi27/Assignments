@@ -1,31 +1,62 @@
+@mixin top-gap {
+  position: relative;
+  top: 67px;
+  width: 100%;
+  padding: 40px 0;
+}
+
+@mixin bg-content{
+  background-color: #fdf5e6;
+}
+
+@mixin bold-outline {
+  border: 2px solid #000000;
+}
+
+@mixin dark-outine {
+  border: 1px solid #000000;
+}
+
+@mixin each-product {
+  background-color: antiquewhite;
+  border-radius: 20px;
+}
+
+@mixin login-input {
+  height: 30px;
+  margin: 20px 0;
+}
+
+@mixin form-btns {
+  background-color: #ff4500;
+  border: none;
+  border-radius: 5px;
+  color: #ffffff;
+}
+
+@mixin welcome-block {
+  background-image: linear-gradient(to bottom right, #ff0000, #ffa500, #ffff00);
+  border-radius: 30px;
+  height: 390px;
+  padding: 20px;
+  place-self: center;
+  width: 345px;
+}
+
+@mixin wrapper-transition {
+  background-color: #ffff00;
+  border-top: 5px dotted #ffa500;
+  border-left: 5px dotted #ffa500;
+  border-right: 5px dotted #ff0000;
+  border-bottom: 5px dotted #ff0000;
+  border-radius: 50px;
+  height: 200px;
+  margin: 0 auto;
+  padding: 40px;
+  transition: width 4s, height 4s, transform 4s;
+}
+
 @media only screen and (min-width: 768px) {
-  @mixin login-input {
-    height: 30px;
-    margin: 20px 0;
-  }
-
-  @mixin form-btns {
-    background-color: #ff4500;
-    border: none;
-    border-radius: 5px;
-    color: #ffffff;
-  }
-
-  @mixin top-gap {
-    position: absolute;
-    top: 120px;
-    width: 100%;
-  }
-
-  @mixin welcome-block {
-    background-image: linear-gradient(to bottom right, #ff0000, #ffa500, #ffff00);
-    border-radius: 30px;
-    height: 390px;
-    padding: 20px;
-    place-self: center;
-    width: 345px;
-  }
-
   img {
     object-fit: contain;
     height: 200px;
@@ -33,16 +64,17 @@
   }
 
   .admin-block {
+    @include bg-content;
     @include top-gap;
 
     table {
-      border: 2px solid #000000;
+      @include bold-outline;
       margin: 0 auto;
       width: 50%;
 
       th,
       td {
-        border: 1px solid #000000;
+        @include dark-outine;
         text-align: center;
       }
 
@@ -72,7 +104,7 @@
           border-radius: 10px;
           font-size: 14px;
           padding: 4px 10px;
-        
+
           &:hover {
             border: 1px solid #5a8181;
           }
@@ -171,32 +203,36 @@
   }
 
   .cart-content {
+    @include bg-content;
     @include top-gap;
+    height: 800px;
 
     table {
-      border: 2px solid #000000;
+      @include bold-outline;
       margin: 0 auto;
-      width: 90%;
+      width: 50%;
 
       thead {
-        th,
-        tr {
+
+        th {
           background-color: #fdecec;
-          border: 2px solid #000000;
+          @include bold-outline;
         }
       }
+
       tbody {
-        th,
         td {
+          background-color: #f0f8ff;
           border: 1px solid #d3d3d3;
           padding: 5px 10px;
           text-align: center;
           width: 50%;
         }
+
         tr {
           border: 1px solid #d3d3d3;
         }
-        &:hover,
+
         &:hover {
           background-color: #f0f8ff;
         }
@@ -205,6 +241,7 @@
   }
 
   .content-block {
+    @include bg-content;
     @include top-gap;
 
     button {
@@ -212,20 +249,20 @@
       border: none;
       border-radius: 5px;
       padding: 2px 5px;
-    }
 
-    button:hover {
-      background-color: #6262f6;
-      border: 2px solid #6262f6;
-      border-radius: 5px;
+      &:hover {
+        background-color: #6262f6;
+        border: 2px solid #6262f6;
+        border-radius: 5px;
+      }
     }
 
     center h3 {
       text-transform: uppercase;
     }
-
-    .outer-wrapper,
-    .content-wrapper {
+    /*,
+    .content-wrapper */ 
+    .outer-wrapper {
       display: grid;
       font-size: 14px;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -233,11 +270,11 @@
       margin: 0 30px;
 
       .main-content {
-        @include top-gap;
+        @include each-product;
+        padding: 20px;
 
         .details {
-          @include top-gap;
-
+          margin: 10px;
           p {
             margin: 0;
 
@@ -245,6 +282,12 @@
               margin-left: 10px
             }
           }
+        }
+
+        .img-wrap {
+          background: #ffffff;
+          height: 200px;
+          width: 200px;
         }
       }
     }
@@ -264,28 +307,12 @@
   }
 
   .content-wishlist {
+    @include bg-content;
     @include top-gap;
-
-    .login-content {
-      display: none;
-      margin: 0 auto;
-      width: 150px;
-
-      button {
-        margin-left: 40px;
-      }
-    }
+    height: 800px;
 
     .wrapper {
-      background-color: #ffff00;
-      border-top: 5px dotted #ffa500;
-      border-left: 5px dotted #ffa500;
-      border-right: 5px dotted #ff0000;
-      border-bottom: 5px dotted #ff0000;
-      border-radius: 50px;
-      height: 200px;
-      margin: 0 auto;
-      padding: 40px;
+      @include wrapper-transition();
       width: 400px;
 
       .welcome {
@@ -300,7 +327,8 @@
             0% {
               opacity: 0;
               color: #ffa500;
-            } 
+            }
+
             100% {
               opacity: 1;
               color: #ff0000;
@@ -314,44 +342,54 @@
         margin-top: 30px;
         text-align: center;
       }
+
+      &:hover {
+        transform: rotate(360deg);
+      }
     }
   }
 
   .nav-wrapper {
-    background-color: #ffffff;
+    background-color: #faebd7;
     box-shadow: 0px 0px 15px 2px #d3d3d3;
     position: fixed;
-    top: 0;
     z-index: 1;
 
     #user-info {
       .dropdown {
         .dropdown-menu {
+          background-color: #faebd7;
           margin-top: 12px;
           width: 225px;
 
           header {
-            font-size: 12px;
+            font-size: 14px;
             margin: 8px 5px;
           }
+
           li {
             margin: 5px 0;
           }
+
           .to-admin {
-            width: 175px;
+            border: 2px solid #eae5e5;
             border-radius: 5px;
-            color: red;
             margin: 0 auto;
-            padding: 2px 16px;
             text-align: center;
-            border: 2px solid rgb(234, 229, 229);
             text-transform: uppercase;
+            width: 185px;
+
+            .admin-page {
+              color: red;
+              font-size: 15px;
+            }
 
             &:hover {
               background-color: #ffffff;
               border: 2px solid #ff0000;
             }
           }
+
           .get-in {
             border: 2px solid #eae5e5;
             border-radius: 5px;
@@ -360,16 +398,19 @@
             padding: 2px 16px;
             text-align: center;
             width: 150px;
-            
+
             &:hover {
               background-color: #ffffff;
               border: 2px solid #ff0000;
+              color: #ff0000;
             }
           }
-          &:hover {
-            .dropdown-menu {
-              display: block;
-            }
+        }
+        &:hover {
+          .dropdown-menu {
+            background-color: #faebd7;
+            display: block;
+            height: 155px;
           }
         }
       }
@@ -380,30 +421,34 @@
         text-transform: capitalize;
         width: 40%;
       }
+
       .fa {
         margin-right: 5px;
       }
+
       .form-inline {
         display: inherit;
         flex: 1;
 
         input {
+          margin-right: 14px;
           width: 80%;
         }
       }
+
       .navbar-brand img {
         height: 40px;
+        object-fit: cover;
         width: 40px;
-      }
-      .dropdown-toggle:hover {
-        display: block;
       }
     }
   }
 
   .content-login {
-    display: grid;
+    @include bg-content;
     @include top-gap;
+    display: grid;
+    height: 750px;
 
     form {
       @include welcome-block;
@@ -419,10 +464,12 @@
           font-size: 20px;
           padding: 5px 15px;
         }
+
         p {
           color: #ff0000;
         }
       }
+
       .dp {
         background-color: #ff0000;
         border: none;
@@ -434,11 +481,13 @@
         text-align: center;
         width: 90px;
       }
+
       .error-message {
         color: #ff0000;
         font-size: 14px;
         text-align: center;
       }
+
       .username,
       .password {
         @include login-input;
@@ -464,28 +513,33 @@
   }
 
   .cart-content {
+    @include bg-content;
     @include top-gap;
+    height: 600px;
 
     table {
-      border: 2px solid #000000;
+      @include bold-outline;
       margin: 0 auto;
       width: 90%;
 
       thead {
+
         th,
         tr {
           background-color: #fdecec;
-          border: 2px solid #000000;
+          @include bold-outline;
         }
       }
+
       tr {
         border: 1px solid #d3d3d3;
       }
+
       th,
       td {
-        background-color: #f5f5dc;
+        background-color: #f0f8ff;
         border: 1px solid #d3d3d3;
-        border-right: 2px solid #000000;
+        @include bold-outline;
         padding: 5px 10px;
         text-align: center;
         width: 50%;
@@ -494,10 +548,12 @@
   }
 
   .content-block {
+    @include bg-content;
     @include top-gap;
     text-transform: capitalize;
 
     .main-content {
+      @include each-product;
       padding: 20px;
 
       .details {
@@ -505,8 +561,12 @@
           margin-bottom: 5px;
         }
       }
+
       .img-wrap {
+        background: #ffffff;
+        height: 200px;
         padding: 10px;
+        width: 200px;
       }
     }
 
@@ -526,6 +586,7 @@
             border-radius: 5px;
             padding: 2px 5px;
           }
+
           button:hover {
             background-color: #6262f6;
             border: 2px solid #6262f6;
@@ -537,7 +598,9 @@
   }
 
   .content-wishlist {
+    @include bg-content;
     @include top-gap;
+    height: 600px;
 
     .login-content {
       display: none;
@@ -550,15 +613,7 @@
     }
 
     .wrapper {
-      background-color: #ffff00;
-      border-top: 5px dotted #ffa500;
-      border-left: 5px dotted #ffa500;
-      border-right: 5px dotted #ff0000;
-      border-bottom: 5px dotted #ff0000;
-      border-radius: 50px;
-      height: 200px;
-      margin: 0 auto;
-      padding: 40px;
+      @include wrapper-transition();
       width: 300px;
 
       .welcome {
@@ -573,7 +628,8 @@
             0% {
               opacity: 0;
               color: #ffa500;
-            } 
+            }
+
             100% {
               opacity: 1;
               color: #ff0000;
@@ -581,23 +637,28 @@
           }
         }
       }
+
       h3 {
         font-size: 25px;
         margin-top: 30px;
         text-align: center;
       }
+      &:hover {
+        transform: rotate(360deg);
+      }
     }
   }
 
   .nav-wrapper {
-    background-color: #ffffff;
+    background-color: #faebd7;
     box-shadow: 0px 0px 15px 2px #d3d3d3;
     position: fixed;
-    top: 0;
+    z-index: 1;
 
     nav {
       height: 68px;
     }
+
     #navbar-content {
       background-color: #ffffff;
 
@@ -616,13 +677,14 @@
           header {
             font-size: 12px;
           }
+
           .to-admin {
             margin: 5px 0;
 
             .admin-page {
-              border: 2px solid rgb(234, 229, 229);
+              border: 2px solid #eae5e5;
               border-radius: 5px;
-              color: red;
+              color: #ff0000;
               margin: 0 auto;
               padding: 2px 16px;
               text-align: center;
@@ -631,6 +693,7 @@
             }
           }
         }
+
         .exit {
           border: 2px solid #eae5e5;
           border-radius: 5px;
@@ -641,6 +704,7 @@
           width: 120px;
         }
       }
+
       .form-inline {
         height: 73px;
 
@@ -659,14 +723,17 @@
         }
       }
     }
+
     .navbar-brand img {
       height: 50px;
       width: auto;
     }
   }
+
   .content-login {
-    display: grid;
+    @include bg-content;
     @include top-gap;
+    display: grid;
 
     form {
       @include welcome-block;
@@ -682,10 +749,12 @@
           font-size: 20px;
           padding: 5px 15px;
         }
+
         p {
           color: #ff0000;
         }
       }
+
       .dp {
         background-color: #dc143c;
         border: none;
@@ -697,11 +766,13 @@
         text-align: center;
         width: 90px;
       }
+
       .error-message {
         color: #ff0000;
         font-size: 14px;
         text-align: center;
       }
+
       .username,
       .password {
         @include login-input;
@@ -710,18 +781,20 @@
   }
 
   .admin-block {
+    @include bg-content;
     @include top-gap;
 
     .data-table {
-      border: 2px solid #000000;
+      @include bold-outline;
       margin: 10px 20px auto;
       width: 350px;
 
       th,
       tr,
       td {
-        border: 1px solid #000000;
+        @include dark-outine;
       }
+
       .delete-block {
         height: 40px;
         width: 90px;
@@ -733,11 +806,13 @@
           margin: 0 6px;
           padding: 4px 10px;
         }
+
         .product-delete-btn:hover {
           border: 1px solid #ff0000;
           margin: 0 6px;
         }
       }
+
       .modify-block {
         height: 40px;
         width: 90px;
@@ -752,6 +827,7 @@
         }
       }
     }
+
     .product-add {
       height: 40px;
 
@@ -765,4 +841,3 @@
     }
   }
 }
-
