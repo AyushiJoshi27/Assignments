@@ -295,3 +295,4 @@ $( document ).ready(function() {
   getData('GET', cartUrl, cartFn);
   getData('GET', getUrl, dataTable);
 });
+
