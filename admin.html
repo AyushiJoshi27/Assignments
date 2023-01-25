@@ -60,7 +60,7 @@
     </nav>
   </div>
   <!--main content-->
-  <div class="admin-block">
+  <div class="admin-block main-block">
     <div class="product-add">
       <button class="add-product-btn bg-info">Add a new product</button>
     </div>
@@ -116,6 +116,8 @@
               <input type="url" name="m-image" id="m-image"><br />
               <label><b>DESCRIPTION: </b></label>
               <textarea name="m-description" id="m-description"></textarea><br>
+              <label><b>CATEGORY: </b></label>
+              <select id="m-category" name="m-category"></select>
               <center><button type="submit" class="btn btn-primary" id="update-submit-btn">Submit</button></center>
             </form>
           </div>
@@ -126,11 +128,27 @@
       <div class="modal-dialog modal-sm">
         <div class="modal-content">
           <div class="modal-header">
-            <button type="button" close="btn btn-danger close">
+            <button type="button" class="btn bg-danger close">
               <i class="fa fa-times" aria-hidden="true"></i>
             </button>
           </div>
           <div class="modal-body"></div>
+        </div>
+      </div>
+    </div>
+    <div id="delete-product" class="modal">
+      <div class="modal-dialog modal-md modal-confirm">
+        <div class="modal-content">
+          <div class="modal-header flex-column">
+            <h4 class="modal-title w-100">Are you sure?</h4>
+          </div>
+          <div class="modal-body">
+            <p>Do you really want to delete these records? This process cannot be undone.</p>
+          </div>
+          <div class="modal-footer justify-content-center">
+            <button type="button" class="btn btn-secondary accept" data-dismiss="modal">Delete</button>
+            <button type="button" class="btn btn-danger decline">Cancel</button>
+          </div>
         </div>
       </div>
     </div>

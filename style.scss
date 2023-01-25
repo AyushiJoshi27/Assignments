@@ -5,7 +5,15 @@
   padding: 40px 0;
 }
 
-@mixin bg-content{
+@mixin error-msg {
+  color: red;
+  font-size: 13px;
+  font-weight: 600;
+  text-align: center;
+  width: 100%;
+}
+
+@mixin bg-content {
   background-color: #fdf5e6;
 }
 
@@ -18,7 +26,7 @@
 }
 
 @mixin each-product {
-  background-color: antiquewhite;
+  background-color: #faebd7;
   border-radius: 20px;
 }
 
@@ -32,6 +40,12 @@
   border: none;
   border-radius: 5px;
   color: #ffffff;
+}
+
+@mixin close-btn {
+  color: #fff;
+  background-color: #dc3545;
+  border-color: #dc3545;
 }
 
 @mixin welcome-block {
@@ -98,7 +112,7 @@
         height: 40px;
         width: 90px;
 
-        .product-update-btn {
+        .product-upgrade-btn {
           background-color: #8dc9c9;
           border: none;
           border-radius: 10px;
@@ -111,7 +125,7 @@
         }
       }
     }
-
+    
     #update-modal {
       label {
         margin: 10px 5px 10px;
@@ -121,16 +135,23 @@
     }
 
     .modal {
+      display: none;
+
       .modal-content {
         border: none;
         box-shadow: 4px 5px 22px 20px #d3d3d3;
+        right: 150px;
         top: 100px;
+        width: 600px;
 
         .modal-header {
+          background-color: #faebd7;
+          height: 60px;
           justify-content: end;
         }
 
         .modal-body {
+          @include bg-content;
           padding: 20px;
 
           form {
@@ -149,30 +170,21 @@
               }
 
               label.error {
-                width: 100%;
-                text-align: center;
-                font-size: 13px;
                 color: #ff0000;
+                font-size: 13px;
+                text-align: center;
+                width: 100%;
               }
             }
           }
         }
 
         .question-block {
-          .accept {
-            border: none;
-            margin: 0 35px;
 
-            &:hover {
-              border: 1px solid #ff0000;
-              margin: 0 35px;
-            }
-          }
-
+          .accept,
           .decline {
             border: none;
             margin: 0 35px;
-
 
             &:hover {
               border: 1px solid #ff0000;
@@ -213,10 +225,10 @@
       width: 50%;
 
       thead {
-
         th {
-          background-color: #fdecec;
           @include bold-outline;
+          background-color: #fdecec;
+          text-align: center;
         }
       }
 
@@ -245,7 +257,6 @@
     @include top-gap;
 
     button {
-      background-color: #8e8e9e;
       border: none;
       border-radius: 5px;
       padding: 2px 5px;
@@ -260,8 +271,33 @@
     center h3 {
       text-transform: uppercase;
     }
-    /*,
-    .content-wrapper */ 
+    .modal {
+      .modal-content {
+        top: 70px;
+        
+        .modal-body {
+          @include bg-content;
+
+          .details {
+            margin: 10px;
+
+            p{
+              margin-bottom: 5px;
+            }
+          }
+          .img-wrap {
+            background-color: #ffffff;
+            height: 200px;
+            width: 200px;
+          }
+        }
+        .modal-header {
+          @include each-product;
+          border-radius: 0;
+          height: 60px;
+        }
+      }
+    }
     .outer-wrapper {
       display: grid;
       font-size: 14px;
@@ -275,6 +311,7 @@
 
         .details {
           margin: 10px;
+
           p {
             margin: 0;
 
@@ -285,22 +322,9 @@
         }
 
         .img-wrap {
-          background: #ffffff;
+          background-color: #ffffff;
           height: 200px;
           width: 200px;
-        }
-      }
-    }
-
-    .modal {
-      display: none;
-
-      .modal-content {
-        right: 150px;
-        width: 600px;
-
-        .modal-header {
-          height: 60px;
         }
       }
     }
@@ -356,10 +380,13 @@
     z-index: 1;
 
     #user-info {
+      #cart {
+        cursor: pointer;
+      }
+
       .dropdown {
         .dropdown-menu {
           background-color: #faebd7;
-          margin-top: 12px;
           width: 225px;
 
           header {
@@ -406,6 +433,7 @@
             }
           }
         }
+
         &:hover {
           .dropdown-menu {
             background-color: #faebd7;
@@ -413,6 +441,10 @@
             height: 155px;
           }
         }
+      }
+
+      .wishlist {
+        cursor: pointer;
       }
     }
 
@@ -491,6 +523,11 @@
       .username,
       .password {
         @include login-input;
+
+        #username-error, 
+        #password-error {
+          @include error-msg;
+        }
       }
     }
   }
@@ -554,49 +591,45 @@
 
     .main-content {
       @include each-product;
+      margin: 20px 10px;
       padding: 20px;
 
       .details {
+        margin: 10px 0;
+
         p {
-          margin-bottom: 5px;
+          margin-bottom: 0px;
         }
       }
 
       .img-wrap {
         background: #ffffff;
-        height: 200px;
+        height: 120px;
         padding: 10px;
-        width: 200px;
+        width: 120px;
       }
     }
 
     .modal {
-      display: none;
-      @include top-gap;
+      margin: 20px 10px;
+      top: 68px;
+      width: 370px;
 
-      .modal-content {
-        width: 370px;
-
-        .modal-header {
-          height: 60px;
-
-          button {
-            background-color: #8e8e9e;
-            border: none;
-            border-radius: 5px;
-            padding: 2px 5px;
-          }
-
-          button:hover {
-            background-color: #6262f6;
-            border: 2px solid #6262f6;
-            border-radius: 5px;
-          }
+      .modal-header {
+        background-color: #faebd7;
+        height: 60px;
+        justify-content: space-between;
+      }
+      .modal-body {
+        @include bg-content;
+        
+        .main-content {
+          background-color: #fdf5e6;
+          margin: 0;
         }
       }
     }
   }
-
   .content-wishlist {
     @include bg-content;
     @include top-gap;
@@ -643,6 +676,7 @@
         margin-top: 30px;
         text-align: center;
       }
+
       &:hover {
         transform: rotate(360deg);
       }
@@ -660,7 +694,7 @@
     }
 
     #navbar-content {
-      background-color: #ffffff;
+      background-color: #faebd7;
 
       .navbar-nav li {
         padding-left: 8px;
@@ -671,7 +705,7 @@
         }
 
         .show {
-          margin-top: 12px;
+          background-color: #faebd7;
           padding: 8px;
 
           header {
@@ -682,7 +716,7 @@
             margin: 5px 0;
 
             .admin-page {
-              border: 2px solid #eae5e5;
+              border: 2px solid #ff0000;
               border-radius: 5px;
               color: #ff0000;
               margin: 0 auto;
@@ -695,7 +729,7 @@
         }
 
         .exit {
-          border: 2px solid #eae5e5;
+          border: 2px solid #ff0000;
           border-radius: 5px;
           color: #ff0000;
           margin: 0 auto;
@@ -706,16 +740,17 @@
       }
 
       .form-inline {
-        height: 73px;
-
+        padding: 0 10px;
         input {
           height: 30px;
-          padding: 0 10px;
           margin: 5px 0;
+          padding: 0 10px;
+          width: 75%;
         }
 
         .submit-button {
-          margin-bottom: 8px;
+          margin-bottom: 4px;
+          padding: 2px 8px;
         }
 
         #name {
@@ -739,7 +774,8 @@
       @include welcome-block;
 
       center {
-        @include top-gap;
+        padding: 10px 0;
+        width: 100%;
 
         .submit-btn {
           background-color: #ff0000;
@@ -776,6 +812,11 @@
       .username,
       .password {
         @include login-input;
+
+        #password-error,
+        #username-error {
+          @include error-msg;
+        }
       }
     }
   }
@@ -786,7 +827,8 @@
 
     .data-table {
       @include bold-outline;
-      margin: 10px 20px auto;
+      margin: 10px auto;
+      text-align: center;
       width: 350px;
 
       th,
@@ -802,7 +844,7 @@
         .product-delete-btn {
           border: none;
           border-radius: 10px;
-          font-size: 14px;
+          font-size: 12px;
           margin: 0 6px;
           padding: 4px 10px;
         }
@@ -817,17 +859,91 @@
         height: 40px;
         width: 90px;
 
-        .product-update-btn {
+        .product-upgrade-btn {
           background-color: #8dc9c9;
           border: none;
           border-radius: 10px;
-          font-size: 14px;
+          font-size: 12px;
           margin: 0 6px;
           padding: 4px 10px;
         }
       }
     }
+    #update-modal {
+      label {
+        margin: 10px 5px 10px;
+        text-align: end;
+        width: 32%;
+      }
+    }
+    .modal {
+      display: none;
+      position: relative;
+      z-index: 0;
+  
+      .modal-content {
+        border: none;
+        box-shadow: 0px 0px 7px 3px #d3d3d2;
+        width: 370px;
 
+        .modal-header {
+          background-color: #faebd7;
+          height: 60px;
+          justify-content: end;
+        }
+        .modal-body {
+          @include bg-content;
+          padding: 20px;
+
+          form {
+
+            div {
+              margin: 10px 0;
+
+              label {
+                width: 35%;
+                text-align: end;
+                margin-right: 5px;
+              }
+
+              #category {
+                height: 30px;
+              }
+
+              label.error {
+                color: #ff0000;
+                font-size: 13px;
+                text-align: center;
+                width: 100%;
+              }
+            }
+            .category {
+              /*
+              option {
+
+              }
+              */
+              select {
+                width: 162px;
+              }
+            }
+          }
+        }
+        .question-block {
+
+          .accept,
+          .decline {
+            border: none;
+            margin: 0 35px;
+
+            &:hover {
+              border: 1px solid #ff0000;
+              margin: 0 35px;
+            }
+          }
+        }
+      }
+    }
     .product-add {
       height: 40px;
 
