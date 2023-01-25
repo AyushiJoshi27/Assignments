@@ -294,5 +294,6 @@ $( document ).ready(function() {
   getData('GET', categoriesUrl, navFn);
   getData('GET', cartUrl, cartFn);
   getData('GET', getUrl, dataTable);
+  
 });
 
