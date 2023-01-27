@@ -7,6 +7,7 @@ $( document ).ready(function() {
   var user = localStorage.getItem('username');
   var userIdNum = localStorage.getItem('itemId');
   var cartUrl = link + "carts/user/" + userIdNum;
+  modalToggle($('.content-wrap'), false);
 
   $('.navbar-brand').click(function() {
     window.location.href = 'index.html';
@@ -87,6 +88,8 @@ $( document ).ready(function() {
     
     $('#nav-content li a').click(function() {
       var navObj = $(this).attr('data-id');
+      modalToggle($('.main-block'), false);
+      modalToggle($('.content-wrap'), true);
       $('.outer-wrapper, center h3').empty();
       var categoriesPath = link + 'products/category/' + navObj;
       const categoryFn = function(products) {
