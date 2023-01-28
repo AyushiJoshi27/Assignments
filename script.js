@@ -1,33 +1,25 @@
 $( document ).ready(function() {
   const link = "https://fakestoreapi.com/";
-  var getUrl, categoriesUrl;
-  getUrl = link + 'products';
+  var getUrl = link + 'products';
   const usersUrl = link + 'users';
-  categoriesUrl = link + "products/categories";
+  const categoriesUrl = link + "products/categories";
   var user = localStorage.getItem('username');
   var userIdNum = localStorage.getItem('itemId');
   var cartUrl = link + "carts/user/" + userIdNum;
   modalToggle($('.content-wrap'), false);
-
-  $('.navbar-brand').click(function() {
-    window.location.href = 'index.html';
-  });
+  $('.get-in').html(user ? 'LOGOUT' : 'LOGIN');
 
   function modalToggle(modalId, show) {
     show == true ? modalId.show() : modalId.hide();
   }
 
-  $('.add-product-btn').click(function() {
-    modalToggle($('#add-modal'), true);
-  });
-  
-  $('.outer-wrapper').click(function() {
-    modalToggle($('#small-modal'), true);
+  $('.navbar-brand, .add-product-btn').click(function() {
+    'navbar-brand' == $(this).attr('class') ? window.open('index.html', '_self') : modalToggle($('#add-modal'), true);
   });
 
-  $('.close').click(function() {
+  $('.close').click(function(e) {
     modalToggle($('.modal'), false);
-    modalToggle($('#sucess-msg'), true);
+    e.preventDefault();
   });
 
   $('.navbar-toggler').click(function() {
@@ -35,9 +27,9 @@ $( document ).ready(function() {
     modalToggle($('#name'), true);
   });
 
-  function getData(method, getUrl, mainFn) {
+  function getData(getType, getUrl, mainFn) {
     $.ajax({
-      type: method,
+      type: getType,
       url: getUrl,
       success: mainFn,
     });
@@ -46,19 +38,16 @@ $( document ).ready(function() {
   function htmlContent(pack, prepHtml) {
     prepHtml += `<div class="img-wrap"><img src="${pack.image}" class="item-img"></div>`;
     prepHtml += `<div class="details">`;
-    prepHtml += `<p><b>Title: </b>${pack.title}</p>`;
-    prepHtml += `<p><b>Price: </b>$${pack.price}`;
+    prepHtml += `<p><b>Title: </b>${pack.title}</p><p><b>Price: </b>$${pack.price}`;
     prepHtml += `<span class="rating"><b> Rating: </b>${pack.rating.rate}</span></p>`;
     prepHtml += `<p><b>Available: </b>Only ${pack.rating.count} items are left</p>`;
     prepHtml += `<details><summary><b>Description: </b></summary>${pack.description}</details>`;
-    prepHtml += `</div>`;
-    prepHtml += `</div>`;
+    prepHtml += `</div></div>`;
     return prepHtml;
   };
 
   function wrapperCall(products) {
-    var max = products.length;
-    for (let index = 0; index < max; index++) {
+    for (let index = 0; index < products.length; index++) {
       let pack = products[index];
       var prepHtml = `<div class="main-content" data-id="${index}">`;
       prepHtml = htmlContent(pack, prepHtml);
@@ -66,6 +55,7 @@ $( document ).ready(function() {
     };
 
     $('.main-content').click(function() {
+      modalToggle($('#small-modal'), true);
       var type = $(this).attr("data-id");
       let pack = products[type];
       var prepHtml = `<div class="main-content">`;
@@ -79,8 +69,7 @@ $( document ).ready(function() {
   };
 
   const navFn = function(products) {
-    var len = products.length;
-    for (let i = 0; i < len; i++) {
+    for (let i = 0; i < products.length; i++) {
       var categories = products[i];
       $('#nav-content').append(`<li class='nav-item'><a class='nav-link' href="#${categories}" data-id="${categories}">${categories}</a></li>`);
       $('#category').append(`<option class='category-opt'>${categories}</option>`);
@@ -88,14 +77,15 @@ $( document ).ready(function() {
     
     $('#nav-content li a').click(function() {
       var navObj = $(this).attr('data-id');
-      modalToggle($('.main-block'), false);
-      modalToggle($('.content-wrap'), true);
+      modalToggle($('.main-block'), false) ? modalToggle($('.main-block'), false) : modalToggle($('.content-wrap'), true);
       $('.outer-wrapper, center h3').empty();
       var categoriesPath = link + 'products/category/' + navObj;
+
       const categoryFn = function(products) {
         $('center h3').html(products[0].category);
         wrapperCall(products);
-      }
+      };
+
       getData('GET' ,categoriesPath, categoryFn);
     });
   };
@@ -103,53 +93,34 @@ $( document ).ready(function() {
   const userFn = function(products) {
     var name = $('#username').val(),
     pwrd = $('#password').val();
-    $('.login-form').valid(); 
-    var len = products.length;
-    for (let i = 0; i < len; i++) {
-      var objArr = {username : products[i].username, password : products[i].password};
-      var usersId = products[i].id;
-      var onjUsername = objArr.username, objPassword = objArr.password;
-      if (name == onjUsername && pwrd == objPassword) {
-        var arr = [];
-        arr.push(objArr.username);
-        localStorage.setItem('username', arr);
-        localStorage.setItem('itemId', usersId);
-        window.location.href = 'wishlist.html';
-      }
-      else if (name != onjUsername && pwrd != objPassword) {
-        $('.error-message').html("Your username and password does not match correctly");
-      }
+    var valid = $('.login-form').valid(); 
+    if (valid) {
+      for (let i = 0; i < products.length; i++) {
+        var objArr = {username : products[i].username, password : products[i].password};
+        var usersId = products[i].id;
+        var onjUsername = objArr.username, objPassword = objArr.password;
+        if (name == onjUsername && pwrd == objPassword) {
+          var arr = [];
+          arr.push(objArr.username);
+          localStorage.setItem('username', arr);
+          localStorage.setItem('itemId', usersId);
+          window.open('wishlist.html', '_self');
+        }
+        else if (name != objUsername && pwrd != objPassword) {
+          $('.error-message').html("Your username and password does not match correctly");
+        }
+      };
     };
   };
 
-  $('.login-form').validate ({
-    rules: {
-      username: 'required',
-      password: {
-        required: true,
-        minlength: 5
-      }
-    },
-    messages: {
-      username: "Title is mandatory",
-      password: {
-        required: "Password is mandatory.",
-        minlength: "Please enter a password containing more than 5 characters."
-      }
-    }
-  });
-
   const cartFn = function(products) {
-    let len = products.length;
     html = `<tr><th>UserID: ${products[0].userId}</th>`;
     html += `<th>Date: ${products[0].date}</th></tr>`;
-    html += `<tr><th>ProductId</th>`;
-    html += `<th>Quantity</th></tr>`;
+    html += `<tr><th>ProductId</th><th>Quantity</th></tr>`;
     $('.cart-head').append(html);
-    for (let i = 0; i < len; i++) {
+    for (let i = 0; i < products.length; i++) {
       var cart = products[i].products;
-      var max = cart.length;
-      for (let j = 0; j < max; j++) {
+      for (let j = 0; j < cart.length; j++) {
         var producthtml = `<tr><td>${cart[j].productId}</td>`;
         producthtml += `<td>${cart[j].quantity}</td><tr>`;
         $('.cart-body').append(producthtml);
@@ -157,22 +128,11 @@ $( document ).ready(function() {
     };
   };
 
-  $('.get-in').click(function() {
-    window.location.href = 'login.html';
+  $('.get-in, .admin-page').click(function() {
+    window.open(('dropdown-item admin-page' == $(this).attr('class')) ? 'admin.html' : 'login.html', '_self');
   });
-
-  $('.wishlist').click(function() {
-    window.open(!user ? 'login.html' : 'wishlist.html', '_self');
-  });
-
-  $('.admin-page').click(function() {
-    window.location.href = 'admin.html';
-  });
-
-  $('.get-in').html(user ? 'LOGOUT' : 'LOGIN');
 
   $('.submit-btn').click(function() {
-    $('.error-message').empty();
     getData('GET', usersUrl, userFn);
   });
   
@@ -182,34 +142,28 @@ $( document ).ready(function() {
     $('.exit').click(function() {
       localStorage.removeItem('username');
     });
-
-    $('#cart').click(function() {
-      window.location.href = 'cart.html';
-    });
   };
+
+  $('#cart, #wishlist').click(function() {
+    window.open(!user ? 'login.html' : ($(this).attr('id') + '.html'), '_self');
+  });
 
   $('.submit-form').click(function(event) {
     event.preventDefault();
-    $('#add-product-form').valid();
-    var newObj = {
-      title: $('#title').val(),
-      price: $('#price').val(),
-      description: $('#description').val(),
-      image: $('#image').val(),
-      category: $('#category').val()
-    };
-    const postUrl = function(products) {
-      if (newObj.title != '' && newObj.price != '' && newObj.description != '' && newObj.image != '' && newObj.category != '') {
-        console.log("success");
+    var valid = $('#add-product-form').valid();
+
+    const postUrl = function() {
+      if (valid) {
         modalToggle($('#add-modal'), false);
-        modalToggle($('#success-msg'), true);
         $('#success-msg .modal-body').html(`<p class="text-success">Product added successfully.</p>`);
+        valid ? modalToggle($('#success-msg'), true) : modalToggle($('#add-modal'), false);
       };
     };
+
     getData('POST', getUrl, postUrl);
   });
 
-  $('#add-product-form').validate({
+  $('.form-content').validate({
     rules: {
       title: 'required',
       description: 'required',
@@ -219,6 +173,11 @@ $( document ).ready(function() {
       },
       image: 'required',
       category: 'required',
+      username: 'required',
+      password: {
+        required: true,
+        minlength: 5
+      }
     },
     messages: {
       title: 'Title must be required',
@@ -226,30 +185,29 @@ $( document ).ready(function() {
       price: 'Price must be required',
       image: 'Image must be required',
       category: 'Category must be required',
+      username: "Title is required",
+      password: "Please enter a password containing more than 5 characters."
     }
   });
 
   const dataTable = function(products) {
-    var len = products.length;
-    for (let i = 0; i < len; i++) {
+    for (let i = 0; i < products.length; i++) {
       var productTitle = products[i].title,
-      productId = products[i].id;
+        productId = products[i].id;
       var innerHtml = `<tbody>`;
-        innerHtml += `<tr><td>${productId}.</td>`;
-        innerHtml += `<td>${productTitle}</td>`;
+        innerHtml += `<tr><td>${productId}.</td><td>${productTitle}</td>`;
         innerHtml += `<td class="modify-block"><button type="button" class="product-upgrade-btn" data-id="${productId}">UPDATE</button></td>`;
         innerHtml += `<td class="delete-block"><button type="button" class="bg-danger product-delete-btn" data-id="${productId}">DELETE</button></td>`;
         innerHtml += `</tr></tbody>`;
       $('.data-table').append(innerHtml);
     };
 
-    $('.product-upgrade-btn').click(function(e) {
+    $('.product-upgrade-btn').click(function() {
       $('#update-product-form input').val('');
-      //$('#update-product-form input').prop("readonly", true);
+      $('#update-product-form input').prop("readonly", true);
       var updateId = $(this).attr('data-id');
       modalToggle($('#update-modal'), true);
-      e.preventDefault();
-      var updateUrl = getUrl + '/' + updateId; 
+      var updateUrl = getUrl + '/' + updateId;
 
       const updateFn = function(data) {
         $('#m-title').val(data.title);
@@ -263,12 +221,11 @@ $( document ).ready(function() {
 
       $('#update-submit-btn').click(function(e) {
         e.preventDefault();
-        modalToggle($('#update-modal'), false);
+        modalToggle($('#update-modal'), false) ? modalToggle(($('#update-modal'), false)) : (modalToggle($('#success-msg'), true));
+        
         getData('PUT', updateUrl, function putProductFn() {
           $('#success-msg .modal-body').html(`<p class="text-success">Product has been successfully updated</p>`)
-          }
-        );
-        modalToggle($('#success-msg'), true);
+        });
       });
     });
 
@@ -282,14 +239,8 @@ $( document ).ready(function() {
         getData('DELETE', deleteUrl, function deleteFn() {
           $('#success-msg .modal-body').html(`<p class="text-success">Product has been deleted successfully.</p>`);
         });
-        modalToggle($('#success-msg'), true);
-        console.log("toggle");
-        modalToggle($('#delete-product'), false);
+        modalToggle($('#delete-product'), false) ? modalToggle($('#delete-product'), false) : modalToggle($('#success-msg'), true);;
       });
-    });
-
-    $('.decline').click(function() {
-      modalToggle($('#delete-product'), false);
     });
   };
 
@@ -297,6 +248,5 @@ $( document ).ready(function() {
   getData('GET', categoriesUrl, navFn);
   getData('GET', cartUrl, cartFn);
   getData('GET', getUrl, dataTable);
-  
-});
 
+});

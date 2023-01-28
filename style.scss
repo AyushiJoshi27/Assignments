@@ -1,3 +1,49 @@
+$m-outer-gap: 20px 10px;
+$nav-drop-shadow: 0px 0px 15px 2px #d3d3d3;
+$text-formate: capitalize;
+$txt-uppercase: uppercase;
+$txt-center: center;
+$red-color: #ff0000;
+$input-length: 30px;
+$grey-border: 1px solid #d3d3d3;
+@mixin t-block {
+  height: 40px;
+  width: 90px;
+}
+
+@mixin product-btns {
+  border: none;
+  border-radius: 10px;
+  font-size: 14px;
+  padding: 4px 10px;
+}
+
+@mixin max-height {
+  height: 40px;
+}
+
+@mixin modal-head {
+  height: 60px;
+  justify-content: end;
+}
+
+@mixin exit-btn {
+  border: 2px solid #ff0000;
+  border-radius: 5px;
+  color: $red-color;
+  margin: 0 auto;
+  padding: 2px 16px;
+  text-align: center;
+}
+
+@mixin product-add-btn { 
+  border: none;
+  border-radius: 20px;
+  float: right;
+  margin-right: 40px;
+  padding: 8px 10px;
+}
+
 @mixin top-gap {
   position: relative;
   top: 67px;
@@ -6,7 +52,6 @@
 }
 
 @mixin error-msg {
-  color: red;
   font-size: 13px;
   font-weight: 600;
   text-align: center;
@@ -27,8 +72,8 @@
 
 @mixin each-product {
   background-color: #faebd7;
-  border-radius: 20px;
 }
+
 
 @mixin login-input {
   height: 30px;
@@ -48,6 +93,10 @@
   border-color: #dc3545;
 }
 
+@mixin question-outer-brim {
+  margin: 0 35px;
+}
+
 @mixin welcome-block {
   background-image: linear-gradient(to bottom right, #ff0000, #ffa500, #ffff00);
   border-radius: 30px;
@@ -55,6 +104,16 @@
   padding: 20px;
   place-self: center;
   width: 345px;
+}
+
+@mixin form-heading {
+  margin-right: 10px 5px;
+  text-align: end;
+  width: 35%;
+}
+
+@mixin red-border {
+  border: 1px solid #ff0000; 
 }
 
 @mixin wrapper-transition {
@@ -67,7 +126,7 @@
   height: 200px;
   margin: 0 auto;
   padding: 40px;
-  transition: width 4s, height 4s, transform 4s;
+  transition: width 1s, height 1s, transform 1s;
 }
 
 @media only screen and (min-width: 768px) {
@@ -89,35 +148,27 @@
       th,
       td {
         @include dark-outine;
-        text-align: center;
+        text-align: $txt-center;
       }
 
       .delete-block {
-        height: 40px;
-        width: 90px;
+        @include t-block;
 
         .product-delete-btn {
-          border: none;
-          border-radius: 10px;
-          font-size: 14px;
-          padding: 4px 10px;
+          @include product-btns;
 
           &:hover {
-            border: 1px solid #ff0000;
+            @include red-border;
           }
         }
       }
 
       .modify-block {
-        height: 40px;
-        width: 90px;
+        @include t-block;
 
         .product-upgrade-btn {
+          @include product-btns;
           background-color: #8dc9c9;
-          border: none;
-          border-radius: 10px;
-          font-size: 14px;
-          padding: 4px 10px;
 
           &:hover {
             border: 1px solid #5a8181;
@@ -127,9 +178,9 @@
     }
     
     #update-modal {
+
       label {
-        margin: 10px 5px 10px;
-        text-align: end;
+        @include form-heading();
         width: 32%;
       }
     }
@@ -140,14 +191,12 @@
       .modal-content {
         border: none;
         box-shadow: 4px 5px 22px 20px #d3d3d3;
-        right: 150px;
         top: 100px;
         width: 600px;
 
         .modal-header {
-          background-color: #faebd7;
-          height: 60px;
-          justify-content: end;
+          @include each-product;
+          @include modal-head;
         }
 
         .modal-body {
@@ -160,19 +209,17 @@
               margin: 10px 0;
 
               label {
-                width: 35%;
-                text-align: end;
-                margin-right: 5px;
+                @include form-heading;
               }
 
               #category {
-                height: 30px;
+                height: $input-length;
               }
 
               label.error {
-                color: #ff0000;
+                color: $red-color;
                 font-size: 13px;
-                text-align: center;
+                text-align: $txt-center;
                 width: 100%;
               }
             }
@@ -181,14 +228,13 @@
 
         .question-block {
 
-          .accept,
-          .decline {
+          .accept {
             border: none;
-            margin: 0 35px;
+            @include question-outer-brim;
 
             &:hover {
-              border: 1px solid #ff0000;
-              margin: 0 35px;
+              @include question-outer-brim;
+              @include red-border;
             }
           }
         }
@@ -196,14 +242,10 @@
     }
 
     .product-add {
-      height: 40px;
+      @include max-height;
 
       .add-product-btn {
-        border: none;
-        border-radius: 20px;
-        float: right;
-        margin-right: 40px;
-        padding: 8px 10px;
+        @include product-add-btn;
 
         &:hover {
           border: 1px solid #80a4d2;
@@ -228,21 +270,21 @@
         th {
           @include bold-outline;
           background-color: #fdecec;
-          text-align: center;
+          text-align: $txt-center;
         }
       }
 
       tbody {
         td {
           background-color: #f0f8ff;
-          border: 1px solid #d3d3d3;
+          border: $grey-border;
           padding: 5px 10px;
-          text-align: center;
+          text-align: $txt-center;
           width: 50%;
         }
 
         tr {
-          border: 1px solid #d3d3d3;
+          border: $grey-border;
         }
 
         &:hover {
@@ -269,7 +311,7 @@
     }
 
     center h3 {
-      text-transform: uppercase;
+      text-transform: $txt-uppercase;
     }
     .modal {
       .modal-content {
@@ -345,7 +387,7 @@
           animation-iteration-count: 1;
           animation-fill-mode: forwards;
           display: block;
-          text-transform: capitalize;
+          text-transform: $text-formate;
 
           @keyframes fadeInAnimation {
             0% {
@@ -355,7 +397,7 @@
 
             100% {
               opacity: 1;
-              color: #ff0000;
+              color: $red-color;
             }
           }
         }
@@ -364,18 +406,20 @@
       h3 {
         font-size: 25px;
         margin-top: 30px;
-        text-align: center;
+        text-align: $txt-center;
       }
 
       &:hover {
         transform: rotate(360deg);
+        height: 250px;
+        width: 440px;
       }
     }
   }
 
   .nav-wrapper {
-    background-color: #faebd7;
-    box-shadow: 0px 0px 15px 2px #d3d3d3;
+    @include each-product;
+    box-shadow: $nav-drop-shadow;
     position: fixed;
     z-index: 1;
 
@@ -386,7 +430,7 @@
 
       .dropdown {
         .dropdown-menu {
-          background-color: #faebd7;
+          @include each-product;
           width: 225px;
 
           header {
@@ -402,41 +446,41 @@
             border: 2px solid #eae5e5;
             border-radius: 5px;
             margin: 0 auto;
-            text-align: center;
-            text-transform: uppercase;
+            text-align: $txt-center;
+            text-transform: $txt-uppercase;
             width: 185px;
 
             .admin-page {
-              color: red;
+              color: $red-color;
               font-size: 15px;
             }
 
             &:hover {
               background-color: #ffffff;
-              border: 2px solid #ff0000;
+              border: 2px solid $red-color;
             }
           }
 
           .get-in {
             border: 2px solid #eae5e5;
             border-radius: 5px;
-            color: #ff0000;
+            color: $red-color;
             margin: 0 auto;
             padding: 2px 16px;
-            text-align: center;
+            text-align: $txt-center;
             width: 150px;
 
             &:hover {
               background-color: #ffffff;
-              border: 2px solid #ff0000;
-              color: #ff0000;
+              border: 2px solid $red-color;
+              color: $red-color;
             }
           }
         }
 
         &:hover {
           .dropdown-menu {
-            background-color: #faebd7;
+            @include each-product;
             display: block;
             height: 155px;
           }
@@ -450,7 +494,7 @@
 
     .navbar {
       #nav-content {
-        text-transform: capitalize;
+        text-transform: $text-formate;
         width: 40%;
       }
 
@@ -469,7 +513,7 @@
       }
 
       .navbar-brand img {
-        height: 40px;
+        @include max-height;
         object-fit: cover;
         width: 40px;
       }
@@ -489,37 +533,36 @@
         margin-top: 30px;
 
         .submit-btn {
-          background-color: #ff0000;
+          background-color: $red-color;
           border: none;
           border-radius: 10px;
-          color: white;
+          color: #ffffff;
           font-size: 20px;
           padding: 5px 15px;
         }
 
         p {
-          color: #ff0000;
+          color: $red-color;
         }
       }
 
       .dp {
-        background-color: #ff0000;
+        background-color: $red-color;
         border: none;
         border-radius: 50%;
-        color: white;
+        color: #ffffff;
         font-size: 60px;
         height: 90px;
         margin: 30px auto;
-        text-align: center;
+        text-align: $txt-center;
         width: 90px;
       }
 
       .error-message {
-        color: #ff0000;
-        font-size: 14px;
-        text-align: center;
+        @include error-msg;
+        color: $red-color;
       }
-
+      
       .username,
       .password {
         @include login-input;
@@ -527,6 +570,7 @@
         #username-error, 
         #password-error {
           @include error-msg;
+          color: $red-color;
         }
       }
     }
@@ -535,18 +579,12 @@
 
 @media only screen and (max-width: 768px) {
   @mixin login-input {
-    height: 30px;
+    height: $input-length;
     margin: 20px 0;
   }
 
   body {
     font-size: 14px;
-  }
-
-  img {
-    object-fit: contain;
-    height: 100px;
-    width: 100px;
   }
 
   .cart-content {
@@ -563,22 +601,22 @@
 
         th,
         tr {
-          background-color: #fdecec;
           @include bold-outline;
+          background-color: #fdecec;
         }
       }
 
       tr {
-        border: 1px solid #d3d3d3;
+        border: $grey-border;
       }
 
       th,
       td {
-        background-color: #f0f8ff;
-        border: 1px solid #d3d3d3;
         @include bold-outline;
+        background-color: #f0f8ff;
+        border: $grey-border;
         padding: 5px 10px;
-        text-align: center;
+        text-align: $txt-center;
         width: 50%;
       }
     }
@@ -587,11 +625,11 @@
   .content-block {
     @include bg-content;
     @include top-gap;
-    text-transform: capitalize;
+    text-transform: $text-formate;
 
     .main-content {
       @include each-product;
-      margin: 20px 10px;
+      margin: $m-outer-gap;
       padding: 20px;
 
       .details {
@@ -611,25 +649,27 @@
     }
 
     .modal {
-      margin: 20px 10px;
+      margin: $m-outer-gap;
       top: 68px;
       width: 370px;
 
       .modal-header {
-        background-color: #faebd7;
+        @include each-product;
         height: 60px;
         justify-content: space-between;
       }
+
       .modal-body {
         @include bg-content;
         
         .main-content {
-          background-color: #fdf5e6;
+          @include bg-content;
           margin: 0;
         }
       }
     }
   }
+
   .content-wishlist {
     @include bg-content;
     @include top-gap;
@@ -655,7 +695,7 @@
           animation-iteration-count: 1;
           animation-fill-mode: forwards;
           display: block;
-          text-transform: capitalize;
+          text-transform: $text-formate;
 
           @keyframes fadeInAnimation {
             0% {
@@ -665,7 +705,7 @@
 
             100% {
               opacity: 1;
-              color: #ff0000;
+              color: $red-color;
             }
           }
         }
@@ -674,7 +714,7 @@
       h3 {
         font-size: 25px;
         margin-top: 30px;
-        text-align: center;
+        text-align: $txt-center;
       }
 
       &:hover {
@@ -684,8 +724,8 @@
   }
 
   .nav-wrapper {
-    background-color: #faebd7;
-    box-shadow: 0px 0px 15px 2px #d3d3d3;
+    @include each-product;
+    box-shadow: $nav-drop-shadow;
     position: fixed;
     z-index: 1;
 
@@ -694,18 +734,18 @@
     }
 
     #navbar-content {
-      background-color: #faebd7;
+      @include each-product;
 
       .navbar-nav li {
         padding-left: 8px;
-        text-transform: capitalize;
+        text-transform: $text-formate;
 
         .fa {
           margin-right: 5px;
         }
 
         .show {
-          background-color: #faebd7;
+          @include each-product;
           padding: 8px;
 
           header {
@@ -716,33 +756,24 @@
             margin: 5px 0;
 
             .admin-page {
-              border: 2px solid #ff0000;
-              border-radius: 5px;
-              color: #ff0000;
-              margin: 0 auto;
-              padding: 2px 16px;
-              text-align: center;
-              text-transform: uppercase;
+              @include exit-btn;
+              text-transform: $txt-uppercase;
               width: 175px;
             }
           }
         }
 
         .exit {
-          border: 2px solid #ff0000;
-          border-radius: 5px;
-          color: #ff0000;
-          margin: 0 auto;
-          padding: 2px 16px;
-          text-align: center;
+          @include exit-btn;
           width: 120px;
         }
       }
 
       .form-inline {
         padding: 0 10px;
+
         input {
-          height: 30px;
+          height: $input-length;
           margin: 5px 0;
           padding: 0 10px;
           width: 75%;
@@ -778,7 +809,7 @@
         width: 100%;
 
         .submit-btn {
-          background-color: #ff0000;
+          background-color: $red-color;
           border: none;
           border-radius: 10px;
           color: #ffffff;
@@ -787,26 +818,25 @@
         }
 
         p {
-          color: #ff0000;
+          color: $red-color;
         }
       }
 
       .dp {
-        background-color: #dc143c;
+        background-color: $red-color;
         border: none;
         border-radius: 50%;
         color: #ffffff;
         font-size: 60px;
         height: 90px;
         margin: 30px auto;
-        text-align: center;
+        text-align: $txt-center;
         width: 90px;
       }
 
       .error-message {
-        color: #ff0000;
-        font-size: 14px;
-        text-align: center;
+        @include error-msg;
+        color: $red-color;
       }
 
       .username,
@@ -816,6 +846,7 @@
         #password-error,
         #username-error {
           @include error-msg;
+          color: $red-color;
         }
       }
     }
@@ -828,7 +859,7 @@
     .data-table {
       @include bold-outline;
       margin: 10px auto;
-      text-align: center;
+      text-align: $txt-center;
       width: 350px;
 
       th,
@@ -838,8 +869,7 @@
       }
 
       .delete-block {
-        height: 40px;
-        width: 90px;
+        @include t-block;
 
         .product-delete-btn {
           border: none;
@@ -847,17 +877,16 @@
           font-size: 12px;
           margin: 0 6px;
           padding: 4px 10px;
-        }
 
-        .product-delete-btn:hover {
-          border: 1px solid #ff0000;
-          margin: 0 6px;
+          &:hover {
+            @include red-border;
+            margin: 0 6px;
+          }
         }
       }
 
       .modify-block {
-        height: 40px;
-        width: 90px;
+        @include t-block;
 
         .product-upgrade-btn {
           background-color: #8dc9c9;
@@ -869,15 +898,16 @@
         }
       }
     }
+
     #update-modal {
+
       label {
-        margin: 10px 5px 10px;
-        text-align: end;
+        @include form-heading;
         width: 32%;
       }
     }
+
     .modal {
-      display: none;
       position: relative;
       z-index: 0;
   
@@ -887,10 +917,10 @@
         width: 370px;
 
         .modal-header {
-          background-color: #faebd7;
-          height: 60px;
-          justify-content: end;
+          @include each-product;
+          @include modal-head;
         }
+
         .modal-body {
           @include bg-content;
           padding: 20px;
@@ -901,58 +931,47 @@
               margin: 10px 0;
 
               label {
-                width: 35%;
-                text-align: end;
-                margin-right: 5px;
+                @include form-heading;
               }
 
               #category {
-                height: 30px;
+                height: $input-length;
               }
 
               label.error {
-                color: #ff0000;
+                color: $red-color;
                 font-size: 13px;
-                text-align: center;
+                text-align: $txt-center;
                 width: 100%;
               }
             }
-            .category {
-              /*
-              option {
 
-              }
-              */
+            .category {
+
               select {
                 width: 162px;
               }
             }
           }
         }
-        .question-block {
 
-          .accept,
-          .decline {
+        .question-block {
+          .accept {
             border: none;
-            margin: 0 35px;
 
             &:hover {
-              border: 1px solid #ff0000;
-              margin: 0 35px;
+              @include red-border;
             }
           }
         }
       }
     }
+
     .product-add {
-      height: 40px;
+      @include max-height;
 
       .add-product-btn {
-        border: none;
-        border-radius: 20px;
-        float: right;
-        margin-right: 40px;
-        padding: 8px 10px;
+        @include product-add-btn;
       }
     }
   }
