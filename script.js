@@ -1,13 +1,12 @@
-$( document ).ready(function() {
+$(document).ready(function() {
   const link = "https://fakestoreapi.com/";
   var getUrl = link + 'products';
   const usersUrl = link + 'users';
   const categoriesUrl = link + "products/categories";
-  var user = localStorage.getItem('username');
-  var userIdNum = localStorage.getItem('itemId');
-  var cartUrl = link + "carts/user/" + userIdNum;
+  var storedInfo = {user : localStorage.getItem('username'), userId : localStorage.getItem('itemId')}  
+  var cartUrl = link + "carts/user/" + storedInfo.userId;
   modalToggle($('.content-wrap'), false);
-  $('.get-in').html(user ? 'LOGOUT' : 'LOGIN');
+  $('.get-in').html(storedInfo.user ? 'LOGOUT' : 'LOGIN');
 
   function modalToggle(modalId, show) {
     show == true ? modalId.show() : modalId.hide();
@@ -17,9 +16,8 @@ $( document ).ready(function() {
     'navbar-brand' == $(this).attr('class') ? window.open('index.html', '_self') : modalToggle($('#add-modal'), true);
   });
 
-  $('.close').click(function(e) {
+  $('.close').click(function() {
     modalToggle($('.modal'), false);
-    e.preventDefault();
   });
 
   $('.navbar-toggler').click(function() {
@@ -27,10 +25,11 @@ $( document ).ready(function() {
     modalToggle($('#name'), true);
   });
 
-  function getData(getType, getUrl, mainFn) {
+  function ajaxCall(getType, getUrl, mainFn, data) {
     $.ajax({
       type: getType,
       url: getUrl,
+      data: data,
       success: mainFn,
     });
   };
@@ -38,34 +37,28 @@ $( document ).ready(function() {
   function htmlContent(pack, prepHtml) {
     prepHtml += `<div class="img-wrap"><img src="${pack.image}" class="item-img"></div>`;
     prepHtml += `<div class="details">`;
-    prepHtml += `<p><b>Title: </b>${pack.title}</p><p><b>Price: </b>$${pack.price}`;
-    prepHtml += `<span class="rating"><b> Rating: </b>${pack.rating.rate}</span></p>`;
-    prepHtml += `<p><b>Available: </b>Only ${pack.rating.count} items are left</p>`;
-    prepHtml += `<details><summary><b>Description: </b></summary>${pack.description}</details>`;
-    prepHtml += `</div></div>`;
+    prepHtml += `<p><b>Title: </b>${pack.title}</p><p><b>Price: </b>$${pack.price}</p>`;
     return prepHtml;
   };
 
   function wrapperCall(products) {
     for (let index = 0; index < products.length; index++) {
-      let pack = products[index];
       var prepHtml = `<div class="main-content" data-id="${index}">`;
-      prepHtml = htmlContent(pack, prepHtml);
+      prepHtml = htmlContent(products[index], prepHtml);
+      prepHtml += `</div>`;
       $('.outer-wrapper').append(prepHtml);
     };
 
     $('.main-content').click(function() {
       modalToggle($('#small-modal'), true);
-      var type = $(this).attr("data-id");
-      let pack = products[type];
+      var type = products[$(this).attr('data-id')];
       var prepHtml = `<div class="main-content">`;
-      prepHtml += htmlContent(pack, prepHtml);
+        prepHtml += htmlContent(type, prepHtml);
+        prepHtml += `<p class="rating"><b> Rating: </b>${type.rating.rate} <b>Available: </b>Only ${type.rating.count} items are left</p>`;
+        prepHtml += `<details><summary><b>Description: </b></summary>${type.description}</details>`;
+        prepHtml += `</div>`;
       $('.modal-body').html(prepHtml);
     });
-  };
-
-  const mainFn = function(products) {
-    wrapperCall(products);
   };
 
   const navFn = function(products) {
@@ -86,7 +79,7 @@ $( document ).ready(function() {
         wrapperCall(products);
       };
 
-      getData('GET' ,categoriesPath, categoryFn);
+      ajaxCall('GET', categoriesPath, categoryFn, null);
     });
   };
 
@@ -96,17 +89,14 @@ $( document ).ready(function() {
     var valid = $('.login-form').valid(); 
     if (valid) {
       for (let i = 0; i < products.length; i++) {
-        var objArr = {username : products[i].username, password : products[i].password};
-        var usersId = products[i].id;
-        var onjUsername = objArr.username, objPassword = objArr.password;
-        if (name == onjUsername && pwrd == objPassword) {
-          var arr = [];
-          arr.push(objArr.username);
-          localStorage.setItem('username', arr);
-          localStorage.setItem('itemId', usersId);
+        var objArr = {username : products[i].username, password : products[i].password, usersId : products[i].id};
+        if (name == objArr.username && pwrd == objArr.password) {
+          localStorage.setItem('username', objArr.username);
+          localStorage.setItem('itemId', objArr.usersId);
           window.open('wishlist.html', '_self');
         }
-        else if (name != objUsername && pwrd != objPassword) {
+        else if (i==products.length-1) {
+          console.log('!user');
           $('.error-message').html("Your username and password does not match correctly");
         }
       };
@@ -128,16 +118,16 @@ $( document ).ready(function() {
     };
   };
 
-  $('.get-in, .admin-page').click(function() {
-    window.open(('dropdown-item admin-page' == $(this).attr('class')) ? 'admin.html' : 'login.html', '_self');
+  $('.admin-page, .get-in').click(function() {
+    window.open(storedInfo.user ? 'admin.html' : 'login.html', '_self');
   });
 
   $('.submit-btn').click(function() {
-    getData('GET', usersUrl, userFn);
+    ajaxCall('GET', usersUrl, userFn, null);
   });
   
-  if (user) {
-    $('#name').html(user)
+  if (storedInfo.user) {
+    $('#name').html(storedInfo.user)
     
     $('.exit').click(function() {
       localStorage.removeItem('username');
@@ -145,22 +135,24 @@ $( document ).ready(function() {
   };
 
   $('#cart, #wishlist').click(function() {
-    window.open(!user ? 'login.html' : ($(this).attr('id') + '.html'), '_self');
+    window.open(!storedInfo.user ? 'login.html' : ($(this).attr('id') + '.html'), '_self');
   });
 
   $('.submit-form').click(function(event) {
     event.preventDefault();
-    var valid = $('#add-product-form').valid();
+    var data = $('#add-product-form').serialize();
+    var valid = $('#add-product-form').valid()
 
-    const postUrl = function() {
-      if (valid) {
-        modalToggle($('#add-modal'), false);
-        $('#success-msg .modal-body').html(`<p class="text-success">Product added successfully.</p>`);
-        valid ? modalToggle($('#success-msg'), true) : modalToggle($('#add-modal'), false);
-      };
+    const postFn = function() {
+      modalToggle($('#add-modal'), false);
+      $('#success-msg .modal-body').html(`<p class="text-success">Product added successfully.</p>`);
+      valid ? modalToggle($('#success-msg'), true) : modalToggle($('#add-modal'), false);
     };
 
-    getData('POST', getUrl, postUrl);
+    if (!valid) {
+      return;
+    }
+    ajaxCall('POST', getUrl, postFn, data);
   });
 
   $('.form-content').validate({
@@ -182,7 +174,7 @@ $( document ).ready(function() {
     messages: {
       title: 'Title must be required',
       description: 'Description must be required',
-      price: 'Price must be required',
+      price: 'Price must be required with minimum value 0',
       image: 'Image must be required',
       category: 'Category must be required',
       username: "Title is required",
@@ -191,20 +183,18 @@ $( document ).ready(function() {
   });
 
   const dataTable = function(products) {
-    for (let i = 0; i < products.length; i++) {
-      var productTitle = products[i].title,
-        productId = products[i].id;
-      var innerHtml = `<tbody>`;
-        innerHtml += `<tr><td>${productId}.</td><td>${productTitle}</td>`;
-        innerHtml += `<td class="modify-block"><button type="button" class="product-upgrade-btn" data-id="${productId}">UPDATE</button></td>`;
-        innerHtml += `<td class="delete-block"><button type="button" class="bg-danger product-delete-btn" data-id="${productId}">DELETE</button></td>`;
-        innerHtml += `</tr></tbody>`;
-      $('.data-table').append(innerHtml);
+      for (let i = 0; i < products.length; i++) {
+        var productId = products[i].id;
+        var innerHtml = `<tr>`;
+          innerHtml += `<td>${productId}.</td><td>${products[i].title}</td>`;
+          innerHtml += `<td class="modify-block"><button class="btn product-upgrade-btn" data-id="${productId}">UPDATE</button></td>`;
+          innerHtml += `<td class="delete-block"><button class="btn bg-danger product-delete-btn" data-id="${productId}">DELETE</button></td>`;
+          innerHtml += `</tr>`;
+        $('.data-table tbody').append(innerHtml);
     };
 
     $('.product-upgrade-btn').click(function() {
-      $('#update-product-form input').val('');
-      $('#update-product-form input').prop("readonly", true);
+      $('#update-product-form input, textarea').prop("readonly", true);
       var updateId = $(this).attr('data-id');
       modalToggle($('#update-modal'), true);
       var updateUrl = getUrl + '/' + updateId;
@@ -217,15 +207,15 @@ $( document ).ready(function() {
         $('#m-category').html(`<option value="${data.category}">${data.category}</option>`);
       };
 
-      getData('GET', updateUrl, updateFn);
+      ajaxCall('GET', updateUrl, updateFn, null);
 
       $('#update-submit-btn').click(function(e) {
         e.preventDefault();
         modalToggle($('#update-modal'), false) ? modalToggle(($('#update-modal'), false)) : (modalToggle($('#success-msg'), true));
         
-        getData('PUT', updateUrl, function putProductFn() {
+        ajaxCall('PUT', updateUrl, function putProductFn() {
           $('#success-msg .modal-body').html(`<p class="text-success">Product has been successfully updated</p>`)
-        });
+        }, null);
       });
     });
 
@@ -236,17 +226,17 @@ $( document ).ready(function() {
       $('.accept').click(function(e) {
         e.preventDefault();
         var deleteUrl = getUrl + '/' + deleteId;
-        getData('DELETE', deleteUrl, function deleteFn() {
+        ajaxCall('DELETE', deleteUrl, function deleteFn() {
           $('#success-msg .modal-body').html(`<p class="text-success">Product has been deleted successfully.</p>`);
-        });
-        modalToggle($('#delete-product'), false) ? modalToggle($('#delete-product'), false) : modalToggle($('#success-msg'), true);;
+        }, null);
+        modalToggle($('#delete-product'), false) ? modalToggle($('#delete-product'), false) : modalToggle($('#success-msg'), true);
       });
     });
   };
 
-  getData('GET', getUrl, mainFn);
-  getData('GET', categoriesUrl, navFn);
-  getData('GET', cartUrl, cartFn);
-  getData('GET', getUrl, dataTable);
+  ajaxCall('GET', getUrl, wrapperCall, null);
+  ajaxCall('GET', categoriesUrl, navFn, null);
+  ajaxCall('GET', cartUrl, cartFn, null);
+  ajaxCall('GET', getUrl, dataTable, null);
 
 });

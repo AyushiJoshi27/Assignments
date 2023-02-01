@@ -1,17 +1,39 @@
-$half-breadth: 50%;
+$half-wrapper: 50%;
 $m-outer-gap: 20px 10px;
 $nav-drop-shadow: 0px 0px 15px 2px #d3d3d3;
-$text-formate: capitalize;
+$txt-formate: capitalize;
 $txt-uppercase: uppercase;
 $txt-center: center;
 $red-color: #ff0000;
 $input-length: 30px;
-$grey-border: 1px solid #d3d3d3;
+$grey-border: 1px solid #000000;
+$sign-in-cover: 150px;
+$bold-outline: 2px solid #000000;
+$modal-head-bg:#866943;
+$modal-body-bg: #fff5ce;
+$bg-content: #fcf4f4;
+$each-product: #ffffff;
+
+@mixin dropdown-btn {
+  color: #ff0000;
+  display: inline;
+  font-size: 14px;
+  margin: 5px 10px;
+  padding: 4px 10px;
+}
+
+@mixin hover-effect {
+  background-color: $red-color;
+  border-radius: 8px;
+  color: #ffffff;
+  display: inline;
+  padding: 5px 10px;
+}
 
 @mixin dp-block {
   background-color: $red-color;
   border: none;
-  width: $half-breadth;
+  border-radius: $half-wrapper;
   color: #ffffff;
   font-size: 60px;
   height: 90px;
@@ -26,6 +48,7 @@ $grey-border: 1px solid #d3d3d3;
   border-radius: 10px;
   color: #ffffff;
   font-size: 20px;
+  margin-top: 10px;
   padding: 5px 15px;
 }
 
@@ -59,11 +82,12 @@ $grey-border: 1px solid #d3d3d3;
 }
 
 @mixin exit-btn {
-  border: 2px solid #ff0000;
   border-radius: 5px;
-  color: $red-color;
-  margin: 0 auto;
-  padding: 2px 16px;
+  background-color: $red-color;
+  color: #ffffff;
+  display: inline;
+  font-size: 14px;
+  padding: 5px 10px;
   text-align: center;
 }
 
@@ -76,52 +100,21 @@ $grey-border: 1px solid #d3d3d3;
 }
 
 @mixin top-gap {
-  position: relative;
-  top: 67px;
-  width: 100%;
   padding: 40px 0;
+  width: 100%;
 }
 
 @mixin error-msg {
   font-size: 13px;
   font-weight: 600;
+  line-height: 14px;
   text-align: center;
   width: 100%;
 }
 
-@mixin bg-content {
-  background-color: #fdf5e6;
-}
-
-@mixin bold-outline {
-  border: 2px solid #000000;
-}
-
-@mixin dark-outine {
-  border: 1px solid #000000;
-}
-
-@mixin each-product {
-  background-color: #faebd7;
-}
-
-
 @mixin login-input {
   height: 30px;
   margin: 20px 0;
-}
-
-@mixin form-btns {
-  background-color: #ff4500;
-  border: none;
-  border-radius: 5px;
-  color: #ffffff;
-}
-
-@mixin close-btn {
-  color: #fff;
-  background-color: #dc3545;
-  border-color: #dc3545;
 }
 
 @mixin question-outer-brim {
@@ -148,12 +141,12 @@ $grey-border: 1px solid #d3d3d3;
 }
 
 @mixin wrapper-transition {
-  background-color: #ffff00;
-  border-top: 5px dotted #ffa500;
-  border-left: 5px dotted #ffa500;
-  border-right: 5px dotted #ff0000;
+  background-image: repeating-conic-gradient(#eed6eb 10%, #ffeded 20%);
   border-bottom: 5px dotted #ff0000;
+  border-left: 5px dotted #ffa500;
   border-radius: 50px;
+  border-right: 5px dotted #ff0000;
+  border-top: 5px dotted #ffa500;
   height: 200px;
   margin: 0 auto;
   padding: 40px;
@@ -163,24 +156,39 @@ $grey-border: 1px solid #d3d3d3;
 @media only screen and (min-width: 768px) {
 
   img {
-    object-fit: contain;
     height: 200px;
+    object-fit: contain;
     width: 200px;
   }
 
   .admin-block {
-    @include bg-content;
     @include top-gap;
+    background-color: $bg-content;
 
     table {
-      @include bold-outline;
+      border: $bold-outline;
       margin: 0 auto;
-      width: $half-breadth;
+      width: $half-wrapper;
 
-      th,
-      td {
-        @include dark-outine;
+      th {
+        background-color: #fffaf0;
+        border: $bold-outline;
+        padding: 15px;
         text-align: $txt-center;
+
+        &:hover {
+          box-shadow: inset 0px 0px 12px 2px #ffefcf;
+        }
+      }
+
+      td {
+        background-color: #f0f8ff;
+        border-right: $bold-outline;
+        text-align: $txt-center;
+
+        &:hover {
+          box-shadow: inset 0px 0px 12px 2px #b3dcff;
+        }
       }
 
       .delete-block {
@@ -213,17 +221,25 @@ $grey-border: 1px solid #d3d3d3;
 
       .modal-content {
         border: none;
-        box-shadow: 4px 5px 22px 20px #d3d3d3;
         top: 100px;
         width: 600px;
 
         .modal-header {
-          @include each-product;
           @include modal-head;
+          background-color: $modal-head-bg;
+
+          button {
+            padding: 5px 10px;
+
+            &:hover {
+              box-shadow: inset 0px 0px 5px 1px #c9c9f6;
+              color: #fefefe;
+            }
+          }
         }
 
         .modal-body {
-          @include bg-content;
+          background-color: $modal-body-bg;
           padding: 20px;
 
           form {
@@ -258,19 +274,6 @@ $grey-border: 1px solid #d3d3d3;
             }
           }
         }
-
-        .question-block {
-
-          .accept {
-            border: none;
-            @include question-outer-brim;
-
-            &:hover {
-              @include question-outer-brim;
-              @include red-border;
-            }
-          }
-        }
       }
     }
 
@@ -290,21 +293,26 @@ $grey-border: 1px solid #d3d3d3;
   }
 
   .cart-content {
-    @include bg-content;
     @include top-gap;
+    background-color: $bg-content;
     height: 800px;
 
     table {
-      @include bold-outline;
+      border: $bold-outline;
       margin: 0 auto;
-      width: $half-breadth;
+      width: $half-wrapper;
 
       thead {
+        background-color: #fffaf0;
 
         th {
-          @include bold-outline;
-          background-color: #fdecec;
+          border: $bold-outline;
+          padding: 15px;
           text-align: $txt-center;
+
+          &:hover {
+            box-shadow: inset 0px 0px 12px 2px #ffefcf;
+          }
         }
       }
 
@@ -313,39 +321,41 @@ $grey-border: 1px solid #d3d3d3;
         td {
           background-color: #f0f8ff;
           border: $grey-border;
-          padding: 5px 10px;
+          border-right: $bold-outline;
+          padding: 10px;
           text-align: $txt-center;
-          width: $half-breadth;
+          width: $half-wrapper;
+
+          &:hover {
+            box-shadow: inset 0px 0px 12px 2px #b3dcff;
+          }
         }
 
         tr {
           border: $grey-border;
-        }
-
-        &:hover {
-          background-color: #f0f8ff;
         }
       }
     }
   }
 
   .content-block {
-    @include bg-content;
     @include top-gap;
+    background-color: $bg-content;
 
     button {
       border: none;
       border-radius: 5px;
-      padding: 2px 5px;
+      padding: 5px 8px;
 
       &:hover {
-        background-color: #6262f6;
-        border: 2px solid #6262f6;
         border-radius: 5px;
+        box-shadow: inset 0px 0px 5px 1px #0d0dda;
+        color: #000000;
       }
     }
 
     center h3 {
+      margin-bottom: 20px;
       text-transform: $txt-uppercase;
     }
 
@@ -355,7 +365,7 @@ $grey-border: 1px solid #d3d3d3;
         top: 70px;
 
         .modal-body {
-          @include bg-content;
+          background-color: $modal-body-bg;
 
           .details {
             margin: 10px;
@@ -366,16 +376,25 @@ $grey-border: 1px solid #d3d3d3;
           }
 
           .img-wrap {
-            background-color: #ffffff;
+            background-color: $each-product;
             height: 200px;
             width: 200px;
           }
         }
 
         .modal-header {
-          @include each-product;
+          background-color: $modal-head-bg;
           border-radius: 0;
           height: 60px;
+          
+          button {
+            padding: 5px 10px;
+
+            &:hover {
+              box-shadow: inset 0px 0px 5px 1px #c9c9f6;
+              color: #fefefe;
+            }
+          }
         }
       }
     }
@@ -383,16 +402,20 @@ $grey-border: 1px solid #d3d3d3;
     .outer-wrapper {
       display: grid;
       font-size: 14px;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       grid-gap: 20px;
       margin: 0 30px;
 
       .main-content {
-        @include each-product;
-        padding: 20px;
+        background-color: $each-product;
+        border-radius: 20px;
+        padding: 40px 20px;
 
         .details {
-          margin: 10px;
+          float: right;
+          line-height: 30px;
+          margin: 40px 0;
+          width: 61%;
 
           p {
             margin: 0;
@@ -404,7 +427,8 @@ $grey-border: 1px solid #d3d3d3;
         }
 
         .img-wrap {
-          background-color: #ffffff;
+          background-color: $each-product;
+          display: inline-block;
           height: 200px;
           width: 200px;
         }
@@ -413,8 +437,8 @@ $grey-border: 1px solid #d3d3d3;
   }
 
   .content-wishlist {
-    @include bg-content;
     @include top-gap;
+    background-color: $bg-content;
     height: 800px;
 
     .wrapper {
@@ -428,17 +452,17 @@ $grey-border: 1px solid #d3d3d3;
           animation-iteration-count: 1;
           animation-fill-mode: forwards;
           display: block;
-          text-transform: $text-formate;
+          text-transform: $txt-formate;
 
           @keyframes fadeInAnimation {
             0% {
-              opacity: 0;
               color: #ffa500;
+              opacity: 0;
             }
 
             100% {
-              opacity: 1;
               color: $red-color;
+              opacity: 1;
             }
           }
         }
@@ -451,17 +475,18 @@ $grey-border: 1px solid #d3d3d3;
       }
 
       &:hover {
-        transform: rotate(360deg);
         height: 250px;
+        transform: rotate(360deg);
         width: 440px;
       }
     }
   }
 
   .nav-wrapper {
-    @include each-product;
+    background-color: $each-product;
     box-shadow: $nav-drop-shadow;
-    position: fixed;
+    position: sticky;
+    top: 0;
     z-index: 1;
 
     #user-info {
@@ -473,50 +498,34 @@ $grey-border: 1px solid #d3d3d3;
       .dropdown {
 
         .dropdown-menu {
-          @include each-product;
+          border: none;
+          height: 135px;
           width: 225px;
 
           header {
             font-size: 14px;
-            margin: 8px 5px;
+            margin: 8px 10px;
           }
-
-          li {
-            margin: 5px 0;
-          }
+          
 
           .to-admin {
-            border: 2px solid #eae5e5;
-            border-radius: 5px;
-            margin: 0 auto;
-            text-align: $txt-center;
+            margin: 5px 0 10px 0;
             text-transform: $txt-uppercase;
-            width: 185px;
 
             .admin-page {
-              color: $red-color;
-              font-size: 15px;
-            }
+              @include dropdown-btn;
 
-            &:hover {
-              background-color: #ffffff;
-              border: 2px solid $red-color;
+              &:hover {
+                @include hover-effect;
+              }
             }
           }
 
-          .get-in {
-            border: 2px solid #eae5e5;
-            border-radius: 5px;
-            color: $red-color;
-            margin: 0 auto;
-            padding: 2px 16px;
-            text-align: $txt-center;
-            width: 150px;
+          .get-in, .exit {
+            @include dropdown-btn;
 
             &:hover {
-              background-color: #ffffff;
-              border: 2px solid $red-color;
-              color: $red-color;
+              @include hover-effect;
             }
           }
         }
@@ -524,7 +533,7 @@ $grey-border: 1px solid #d3d3d3;
         &:hover {
 
           .dropdown-menu {
-            @include each-product;
+            background-color: $each-product;
             display: block;
             height: 155px;
           }
@@ -539,11 +548,11 @@ $grey-border: 1px solid #d3d3d3;
     .navbar {
 
       #nav-content {
-        text-transform: $text-formate;
+        text-transform: $txt-formate;
         width: 40%;
       }
 
-      .fa {
+      .fa, .fa-solid {
         margin-right: 5px;
       }
 
@@ -566,8 +575,8 @@ $grey-border: 1px solid #d3d3d3;
   }
 
   .content-login {
-    @include bg-content;
     @include top-gap;
+    background-color: $bg-content;
     display: grid;
     height: 750px;
 
@@ -575,7 +584,6 @@ $grey-border: 1px solid #d3d3d3;
       @include welcome-block;
 
       center {
-        margin-top: 30px;
 
         .submit-btn {
           @include submit-btn;
@@ -620,47 +628,67 @@ $grey-border: 1px solid #d3d3d3;
   }
 
   .cart-content {
-    @include bg-content;
     @include top-gap;
+    background-color: $bg-content;
     height: 600px;
 
     table {
-      @include bold-outline;
+      border: $bold-outline;
       margin: 0 auto;
       width: 90%;
 
       thead {
 
-        th,
-        tr {
-          @include bold-outline;
-          background-color: #fdecec;
+        th {
+          background-color: #fffaf0;
+          border: $bold-outline;
+          box-shadow: inset 0px 0px 10px 1px #ffefcf;
+          text-align: $txt-center;
         }
       }
 
-      tr {
-        border: $grey-border;
-      }
-
-      th,
       td {
-        @include bold-outline;
         background-color: #f0f8ff;
         border: $grey-border;
+        border-right: 2px solid #000000;
+        box-shadow: inset 0px 0px 10px 1px #b3dcff;
         padding: 5px 10px;
         text-align: $txt-center;
-        width: $half-breadth;
+        width: $half-wrapper;
       }
     }
   }
 
   .content-block {
-    @include bg-content;
     @include top-gap;
-    text-transform: $text-formate;
+    background-color: $bg-content;
+    text-transform: $txt-formate;
+
+    .modal {
+      margin: $m-outer-gap;
+      top: 68px;
+      width: 370px;
+
+      .modal-content {
+
+        .modal-header {
+          background-color: $modal-head-bg;
+          height: 60px;
+        }
+
+        .modal-body {
+          background-color: $modal-body-bg;
+          
+          .main-content {
+            background-color: $modal-body-bg;
+            margin: 0;
+          }
+        }
+      }
+    }
 
     .main-content {
-      @include each-product;
+      background-color: $each-product;
       margin: $m-outer-gap;
       padding: 20px;
 
@@ -673,7 +701,7 @@ $grey-border: 1px solid #d3d3d3;
       }
 
       .img-wrap {
-        background: #ffffff;
+        background-color: $each-product;
         height: 120px;
         padding: 10px;
         width: 120px;
@@ -685,38 +713,17 @@ $grey-border: 1px solid #d3d3d3;
         }
       }
     }
-
-    .modal {
-      margin: $m-outer-gap;
-      top: 68px;
-      width: 370px;
-
-      .modal-header {
-        @include each-product;
-        height: 60px;
-        justify-content: space-between;
-      }
-
-      .modal-body {
-        @include bg-content;
-        
-        .main-content {
-          @include bg-content;
-          margin: 0;
-        }
-      }
-    }
   }
 
   .content-wishlist {
-    @include bg-content;
     @include top-gap;
+    background-color: $bg-content;
     height: 600px;
 
     .login-content {
       display: none;
       margin: 0 auto;
-      width: 150px;
+      width: $sign-in-cover;
 
       button {
         margin-left: 40px;
@@ -724,16 +731,16 @@ $grey-border: 1px solid #d3d3d3;
     }
 
     .wrapper {
-      @include wrapper-transition();
+      @include wrapper-transition;
       width: 300px;
 
       .welcome {
         #name {
           animation: fadeInAnimation ease 3s;
-          animation-iteration-count: 1;
           animation-fill-mode: forwards;
+          animation-iteration-count: 1;
           display: block;
-          text-transform: $text-formate;
+          text-transform: $txt-formate;
 
           @keyframes fadeInAnimation {
             0% {
@@ -762,81 +769,79 @@ $grey-border: 1px solid #d3d3d3;
   }
 
   .nav-wrapper {
-    @include each-product;
     box-shadow: $nav-drop-shadow;
-    position: fixed;
+    position: sticky;
     z-index: 1;
 
     nav {
       height: 68px;
-    }
 
-    #navbar-content {
-      @include each-product;
+      #navbar-content {
+        background-color: $each-product;
 
-      .navbar-nav li {
-        padding-left: 8px;
-        text-transform: $text-formate;
+        .navbar-nav li {
+          padding: 0 8px;
+          text-transform: $txt-formate;
 
-        .fa {
-          margin-right: 5px;
-        }
-
-        .show {
-          @include each-product;
-          padding: 8px;
-
-          header {
-            font-size: 12px;
+          .fa, .fa-solid {
+            margin-right: 5px;
           }
 
-          .to-admin {
-            margin: 5px 0;
+          .show {
+            background-color: $each-product;
+            padding: 8px;
 
-            .admin-page {
-              @include exit-btn;
-              text-transform: $txt-uppercase;
-              width: 175px;
+            header {
+              font-size: 14px;
+            }
+
+            li {
+              margin: 10px 0;
+              padding: 0;
+
+              .admin-page {
+                @include exit-btn;
+                text-transform: $txt-uppercase;
+              }
+
+              .exit {
+                @include exit-btn;
+              }
             }
           }
         }
 
-        .exit {
-          @include exit-btn;
-          width: 120px;
-        }
-      }
-
-      .form-inline {
-        padding: 0 10px;
-
-        input {
-          height: $input-length;
-          margin: 5px 0;
+        .form-inline {
           padding: 0 10px;
-          width: 75%;
-        }
 
-        .submit-button {
-          margin-bottom: 4px;
-          padding: 2px 8px;
-        }
+          input {
+            height: $input-length;
+            margin: 5px 0;
+            padding: 0 10px;
+            width: 75%;
+          }
 
-        #name {
-          display: none;
+          .submit-button {
+            margin-bottom: 4px;
+            padding: 2px 8px;
+          }
+
+          #name {
+            display: none;
+          }
         }
       }
-    }
 
-    .navbar-brand img {
-      height: 50px;
-      width: auto;
+      .navbar-brand img {
+        height: 50px;
+        width: auto;
+      }
     }
   }
 
   .content-login {
-    @include bg-content;
     @include top-gap;
+    background-color: $bg-content;
     display: grid;
 
     form {
@@ -878,19 +883,27 @@ $grey-border: 1px solid #d3d3d3;
   }
 
   .admin-block {
-    @include bg-content;
     @include top-gap;
+    background-color: $bg-content;
 
     .data-table {
-      @include bold-outline;
+      border: $bold-outline;
       margin: 10px auto;
       text-align: $txt-center;
       width: 350px;
 
-      th,
-      tr,
+      th {
+        background-color: $bg-content;
+        border: $bold-outline;
+        box-shadow: inset 0px 0px 10px 1px #ffefcf;
+        padding: 5px
+      }
+
       td {
-        @include dark-outine;
+        background-color: #f0f8ff;
+        border: $grey-border;
+        border-right: $bold-outline;
+        box-shadow: inset 0px 0px 10px 1px #b3dcff;
       }
 
       .delete-block {
@@ -910,8 +923,8 @@ $grey-border: 1px solid #d3d3d3;
         @include t-block;
 
         .product-upgrade-btn {
-          background-color: #8dc9c9;
           @include phone-modal-btn;
+          background-color: #8dc9c9;
         }
       }
     }
@@ -923,16 +936,15 @@ $grey-border: 1px solid #d3d3d3;
   
       .modal-content {
         border: none;
-        box-shadow: 0px 0px 7px 3px #d3d3d2;
         width: 370px;
 
         .modal-header {
-          @include each-product;
           @include modal-head;
+          background-color: $modal-head-bg;
         }
 
         .modal-body {
-          @include bg-content;
+          background-color: $modal-body-bg;
           padding: 20px;
 
           form {
