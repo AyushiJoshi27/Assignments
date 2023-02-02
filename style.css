@@ -11,26 +11,20 @@
     background-color: #fcf4f4;
   }
   .admin-block table {
+    background-color: #ffffff;
     border: 2px solid #000000;
     margin: 0 auto;
     width: 50%;
   }
   .admin-block table th {
-    background-color: #fffaf0;
     border: 2px solid #000000;
     padding: 15px;
     text-align: center;
   }
-  .admin-block table th:hover {
-    box-shadow: inset 0px 0px 12px 2px #ffefcf;
-  }
   .admin-block table td {
-    background-color: #f0f8ff;
     border-right: 2px solid #000000;
+    border-bottom: 1px solid #000000;
     text-align: center;
-  }
-  .admin-block table td:hover {
-    box-shadow: inset 0px 0px 12px 2px #b3dcff;
   }
   .admin-block table .delete-block {
     height: 40px;
@@ -43,7 +37,7 @@
     padding: 4px 10px;
   }
   .admin-block table .delete-block .product-delete-btn:hover {
-    border: 1px solid #ff0000;
+    border: 2px solid #ff0000;
   }
   .admin-block table .modify-block {
     height: 40px;
@@ -54,30 +48,28 @@
     border-radius: 10px;
     font-size: 14px;
     padding: 4px 10px;
-    background-color: #8dc9c9;
   }
   .admin-block table .modify-block .product-upgrade-btn:hover {
-    border: 1px solid #5a8181;
+    border: 2px solid #0d6efd;
   }
   .admin-block .modal .modal-content {
     border: none;
+    box-shadow: 0px 10px 14px 3px #dad6d6;
     top: 100px;
     width: 600px;
   }
   .admin-block .modal .modal-content .modal-header {
     height: 60px;
     justify-content: end;
-    background-color: #866943;
   }
   .admin-block .modal .modal-content .modal-header button {
     padding: 5px 10px;
   }
   .admin-block .modal .modal-content .modal-header button:hover {
     box-shadow: inset 0px 0px 5px 1px #c9c9f6;
-    color: #fefefe;
+    color: #000000;
   }
   .admin-block .modal .modal-content .modal-body {
-    background-color: #fff5ce;
     padding: 20px;
   }
   .admin-block .modal .modal-content .modal-body form div {
@@ -107,17 +99,21 @@
   }
   .admin-block .product-add {
     height: 40px;
+    margin: 5px 0;
   }
   .admin-block .product-add .add-product-btn {
     border: none;
     border-radius: 20px;
+    color: #ffffff;
     float: right;
     margin-right: 40px;
     padding: 8px 10px;
   }
   .admin-block .product-add .add-product-btn:hover {
-    border: 1px solid #80a4d2;
-    font-size: 14px;
+    border: 2px solid #0d6efd !important;
+    background-color: #ffffff !important;
+    color: #0d6efd !important;
+    padding: 6px 8px;
   }
   .cart-content {
     padding: 40px 0;
@@ -126,12 +122,10 @@
     height: 800px;
   }
   .cart-content table {
+    background-color: #ffffff;
     border: 2px solid #000000;
     margin: 0 auto;
     width: 50%;
-  }
-  .cart-content table thead {
-    background-color: #fffaf0;
   }
   .cart-content table thead th {
     border: 2px solid #000000;
@@ -139,18 +133,17 @@
     text-align: center;
   }
   .cart-content table thead th:hover {
-    box-shadow: inset 0px 0px 12px 2px #ffefcf;
+    box-shadow: inset 0px 0px 8px 2px #e2e1e1;
   }
   .cart-content table tbody td {
-    background-color: #f0f8ff;
-    border: 1px solid #000000;
+    border-bottom: 1px solid #000000;
     border-right: 2px solid #000000;
     padding: 10px;
     text-align: center;
     width: 50%;
   }
   .cart-content table tbody td:hover {
-    box-shadow: inset 0px 0px 12px 2px #b3dcff;
+    box-shadow: inset 0px 0px 8px 2px #e2e1e1;
   }
   .cart-content table tbody tr {
     border: 1px solid #000000;
@@ -175,10 +168,12 @@
     text-transform: uppercase;
   }
   .content-block .modal .modal-content {
+    border: none;
+    box-shadow: 0px 10px 14px 3px #dad6d6;
     top: 70px;
   }
   .content-block .modal .modal-content .modal-body {
-    background-color: #fff5ce;
+    padding: 20px;
   }
   .content-block .modal .modal-content .modal-body .details {
     margin: 10px;
@@ -188,11 +183,11 @@
   }
   .content-block .modal .modal-content .modal-body .img-wrap {
     background-color: #ffffff;
+    float: left;
     height: 200px;
     width: 200px;
   }
   .content-block .modal .modal-content .modal-header {
-    background-color: #866943;
     border-radius: 0;
     height: 60px;
   }
@@ -201,7 +196,7 @@
   }
   .content-block .modal .modal-content .modal-header button:hover {
     box-shadow: inset 0px 0px 5px 1px #c9c9f6;
-    color: #fefefe;
+    color: #000000;
   }
   .content-block .outer-wrapper {
     display: grid;
@@ -289,83 +284,54 @@
   }
   .content-wishlist .wrapper:hover {
     height: 250px;
-    transform: rotate(360deg);
     width: 440px;
   }
   .nav-wrapper {
     background-color: #ffffff;
-    box-shadow: 0px 0px 15px 2px #d3d3d3;
+    box-shadow: 0px 0px 15px 7px #f4f4f4;
     position: -webkit-sticky;
     position: sticky;
     top: 0;
     z-index: 1;
+  }
+  .nav-wrapper #user-info {
+    justify-content: end;
+    width: 35%;
   }
   .nav-wrapper #user-info #cart {
     cursor: pointer;
   }
   .nav-wrapper #user-info .dropdown .dropdown-menu {
     border: none;
-    height: 135px;
     width: 225px;
   }
-  .nav-wrapper #user-info .dropdown .dropdown-menu header {
-    font-size: 14px;
-    margin: 8px 10px;
-  }
   .nav-wrapper #user-info .dropdown .dropdown-menu .to-admin {
-    margin: 5px 0 10px 0;
+    font-size: 14px;
+    margin: 5px 0;
     text-transform: uppercase;
   }
-  .nav-wrapper #user-info .dropdown .dropdown-menu .to-admin .admin-page {
-    color: #ff0000;
-    display: inline;
-    font-size: 14px;
-    margin: 5px 10px;
-    padding: 4px 10px;
-  }
-  .nav-wrapper #user-info .dropdown .dropdown-menu .to-admin .admin-page:hover {
-    background-color: #ff0000;
-    border-radius: 8px;
-    color: #ffffff;
-    display: inline;
-    padding: 5px 10px;
-  }
   .nav-wrapper #user-info .dropdown .dropdown-menu .get-in, .nav-wrapper #user-info .dropdown .dropdown-menu .exit {
-    color: #ff0000;
+    background-color: #fcf4f4;
+    border: 2px solid #ffe5e5;
     display: inline;
     font-size: 14px;
     margin: 5px 10px;
     padding: 4px 10px;
-  }
-  .nav-wrapper #user-info .dropdown .dropdown-menu .get-in:hover, .nav-wrapper #user-info .dropdown .dropdown-menu .exit:hover {
-    background-color: #ff0000;
-    border-radius: 8px;
-    color: #ffffff;
-    display: inline;
-    padding: 5px 10px;
   }
   .nav-wrapper #user-info .dropdown:hover .dropdown-menu {
     background-color: #ffffff;
     display: block;
-    height: 155px;
   }
   .nav-wrapper #user-info .wishlist {
     cursor: pointer;
   }
   .nav-wrapper .navbar #nav-content {
+    flex: 1;
+    justify-content: end;
     text-transform: capitalize;
-    width: 40%;
   }
   .nav-wrapper .navbar .fa, .nav-wrapper .navbar .fa-solid {
     margin-right: 5px;
-  }
-  .nav-wrapper .navbar .form-inline {
-    display: inherit;
-    flex: 1;
-  }
-  .nav-wrapper .navbar .form-inline input {
-    margin-right: 14px;
-    width: 80%;
   }
   .nav-wrapper .navbar .navbar-brand img {
     height: 40px;
@@ -447,21 +413,18 @@
     height: 600px;
   }
   .cart-content table {
+    background-color: #ffffff;
     border: 2px solid #000000;
     margin: 0 auto;
     width: 90%;
   }
   .cart-content table thead th {
-    background-color: #fffaf0;
     border: 2px solid #000000;
-    box-shadow: inset 0px 0px 10px 1px #ffefcf;
     text-align: center;
   }
   .cart-content table td {
-    background-color: #f0f8ff;
-    border: 1px solid #000000;
+    border-bottom: 1px solid #000000;
     border-right: 2px solid #000000;
-    box-shadow: inset 0px 0px 10px 1px #b3dcff;
     padding: 5px 10px;
     text-align: center;
     width: 50%;
@@ -477,16 +440,16 @@
     top: 68px;
     width: 370px;
   }
+  .content-block .modal .modal-content {
+    box-shadow: 0px 8px 17px -3px #dad6d6;
+    border: none;
+  }
   .content-block .modal .modal-content .modal-header {
-    background-color: #866943;
     height: 60px;
   }
-  .content-block .modal .modal-content .modal-body {
-    background-color: #fff5ce;
-  }
   .content-block .modal .modal-content .modal-body .main-content {
-    background-color: #fff5ce;
     margin: 0;
+    padding: 0;
   }
   .content-block .main-content {
     background-color: #ffffff;
@@ -551,7 +514,7 @@
   @-webkit-keyframes fadeInAnimation {
     0% {
       opacity: 0;
-      color: #ffa500;
+      color: #ffecc8;
     }
     100% {
       opacity: 1;
@@ -561,7 +524,7 @@
   @keyframes fadeInAnimation {
     0% {
       opacity: 0;
-      color: #ffa500;
+      color: #ffecc8;
     }
     100% {
       opacity: 1;
@@ -573,11 +536,8 @@
     margin-top: 30px;
     text-align: center;
   }
-  .content-wishlist .wrapper:hover {
-    transform: rotate(360deg);
-  }
   .nav-wrapper {
-    box-shadow: 0px 0px 15px 2px #d3d3d3;
+    box-shadow: 0px 0px 15px 7px #f4f4f4;
     position: -webkit-sticky;
     position: sticky;
     z-index: 1;
@@ -587,6 +547,8 @@
   }
   .nav-wrapper nav #navbar-content {
     background-color: #ffffff;
+    border: none;
+    box-shadow: 0px 12px 12px 2px #eeeeee;
   }
   .nav-wrapper nav #navbar-content .navbar-nav li {
     padding: 0 8px;
@@ -599,47 +561,26 @@
     background-color: #ffffff;
     padding: 8px;
   }
-  .nav-wrapper nav #navbar-content .navbar-nav li .show header {
-    font-size: 14px;
-  }
   .nav-wrapper nav #navbar-content .navbar-nav li .show li {
     margin: 10px 0;
     padding: 0;
   }
   .nav-wrapper nav #navbar-content .navbar-nav li .show li .admin-page {
-    border-radius: 5px;
-    background-color: #ff0000;
-    color: #ffffff;
-    display: inline;
-    font-size: 14px;
-    padding: 5px 10px;
-    text-align: center;
+    font-size: 12px;
+    padding: 0;
     text-transform: uppercase;
   }
   .nav-wrapper nav #navbar-content .navbar-nav li .show li .exit {
     border-radius: 5px;
-    background-color: #ff0000;
     color: #ffffff;
     display: inline;
     font-size: 14px;
     padding: 5px 10px;
     text-align: center;
-  }
-  .nav-wrapper nav #navbar-content .form-inline {
-    padding: 0 10px;
-  }
-  .nav-wrapper nav #navbar-content .form-inline input {
-    height: 30px;
-    margin: 5px 0;
-    padding: 0 10px;
-    width: 75%;
-  }
-  .nav-wrapper nav #navbar-content .form-inline .submit-button {
-    margin-bottom: 4px;
-    padding: 2px 8px;
-  }
-  .nav-wrapper nav #navbar-content .form-inline #name {
-    display: none;
+    background-color: #fcf4f4;
+    border: 2px solid #ffe5e5;
+    color: #000000;
+    font-size: 12px;
   }
   .nav-wrapper nav .navbar-brand img {
     height: 50px;
@@ -716,22 +657,19 @@
     background-color: #fcf4f4;
   }
   .admin-block .data-table {
+    background-color: #ffffff;
     border: 2px solid #000000;
     margin: 10px auto;
     text-align: center;
     width: 350px;
   }
   .admin-block .data-table th {
-    background-color: #fcf4f4;
     border: 2px solid #000000;
-    box-shadow: inset 0px 0px 10px 1px #ffefcf;
     padding: 5px;
   }
   .admin-block .data-table td {
-    background-color: #f0f8ff;
     border: 1px solid #000000;
     border-right: 2px solid #000000;
-    box-shadow: inset 0px 0px 10px 1px #b3dcff;
   }
   .admin-block .data-table .delete-block {
     height: 40px;
@@ -744,10 +682,6 @@
     margin: 0 6px;
     padding: 4px 10px;
   }
-  .admin-block .data-table .delete-block .product-delete-btn:hover {
-    border: 1px solid #ff0000;
-    margin: 0 6px;
-  }
   .admin-block .data-table .modify-block {
     height: 40px;
     width: 90px;
@@ -758,7 +692,6 @@
     font-size: 12px;
     margin: 0 6px;
     padding: 4px 10px;
-    background-color: #8dc9c9;
   }
   .admin-block .modal {
     position: relative;
@@ -766,15 +699,14 @@
   }
   .admin-block .modal .modal-content {
     border: none;
+    box-shadow: 0px 4px 6px 2px #eeeeee;
     width: 370px;
   }
   .admin-block .modal .modal-content .modal-header {
     height: 60px;
     justify-content: end;
-    background-color: #866943;
   }
   .admin-block .modal .modal-content .modal-body {
-    background-color: #fff5ce;
     padding: 20px;
   }
   .admin-block .modal .modal-content .modal-body form div {
@@ -811,7 +743,7 @@
     border: none;
   }
   .admin-block .modal .modal-content .question-block .accept:hover {
-    border: 1px solid #ff0000;
+    border: 2px solid #ff0000;
   }
   .admin-block .product-add {
     height: 40px;
@@ -819,6 +751,7 @@
   .admin-block .product-add .add-product-btn {
     border: none;
     border-radius: 20px;
+    color: #ffffff;
     float: right;
     margin-right: 40px;
     padding: 8px 10px;

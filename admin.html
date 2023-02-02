@@ -29,10 +29,6 @@
       </button>
       <div class="collapse navbar-collapse" id="navbar-content">
         <ul class="navbar-nav" id="nav-content"></ul>
-        <form class="form-inline">
-          <input type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success submit-button" type="submit">Search</button>
-        </form>
         <ul class="navbar-nav" id="user-info">
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#profile" role="button"
@@ -40,7 +36,6 @@
               <i class="fa fa-user" aria-hidden="true"></i>Profile
             </a>
             <ul class="dropdown-menu">
-              <header>Welcome<br>Accounts and manage orders</header>
               <li class="to-admin"><a href="#admin-page" class="dropdown-item admin-page">Go to Admin Page</a></li>
               <li><a class="dropdown-item get-in exit"></a></li>
             </ul>
@@ -50,7 +45,7 @@
               <i class="fa fa-heart" aria-hidden="true"></i>Wishlist
             </a>
           </li>
-          <li class="nav-item" id="cart">
+          <li class="nav-item cart" id="cart">
             <a class="nav-link">
               <i class="fa-solid fa-cart-shopping"></i>Bag
             </a>
@@ -62,7 +57,7 @@
   <!--main content-->
   <div class="admin-block main-block">
     <div class="product-add">
-      <button class="add-product-btn bg-info">Add a new product</button>
+      <button class="add-product-btn bg-primary">Add a new product</button>
     </div>
     <div class="modal" id="add-modal">
       <div class="modal-dialog modal-md">
@@ -139,14 +134,11 @@
     <div id="delete-product" class="modal">
       <div class="modal-dialog modal-md modal-confirm">
         <div class="modal-content">
-          <div class="modal-header flex-column">
-            <h4 class="modal-title w-100">Are you sure?</h4>
-          </div>
           <div class="modal-body">
             <p>Do you really want to delete these records? This process cannot be undone.</p>
           </div>
           <div class="modal-footer justify-content-center">
-            <button type="button" class="btn btn-primary accept" data-dismiss="modal">Delete</button>
+            <button type="button" class="btn btn-danger accept" data-dismiss="modal">Delete</button>
             <button type="button" class="btn btn-secondary decline close">Cancel</button>
           </div>
         </div>
@@ -173,9 +165,9 @@
       <div class="modal-dialog modal-md">
         <div class="modal-content">
           <div class="modal-header">
-            <button type="button" class="btn close"><i class="fa fa-times" aria-hidden="true"></i></button>
             <button type="button" class="btn btn-primary" id="wishlist"><i class="fa-solid fa-heart"></i>
               Wishlist</button>
+            <button type="button" class="btn close"><i class="fa fa-times" aria-hidden="true"></i></button>
           </div>
           <div class="modal-body" id="selected-product"></div>
         </div>

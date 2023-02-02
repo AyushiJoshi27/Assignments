@@ -17,7 +17,7 @@ $(document).ready(function() {
   });
 
   $('.close').click(function() {
-    modalToggle($('.modal'), false);
+    window.location.reload();
   });
 
   $('.navbar-toggler').click(function() {
@@ -53,7 +53,7 @@ $(document).ready(function() {
       modalToggle($('#small-modal'), true);
       var type = products[$(this).attr('data-id')];
       var prepHtml = `<div class="main-content">`;
-        prepHtml += htmlContent(type, prepHtml);
+        prepHtml = htmlContent(type, prepHtml);
         prepHtml += `<p class="rating"><b> Rating: </b>${type.rating.rate} <b>Available: </b>Only ${type.rating.count} items are left</p>`;
         prepHtml += `<details><summary><b>Description: </b></summary>${type.description}</details>`;
         prepHtml += `</div>`;
@@ -84,13 +84,12 @@ $(document).ready(function() {
   };
 
   const userFn = function(products) {
-    var name = $('#username').val(),
-    pwrd = $('#password').val();
+    var dataArr = { 'name' : $('#username').val(), 'pwrd' : $('#password').val()}
     var valid = $('.login-form').valid(); 
     if (valid) {
       for (let i = 0; i < products.length; i++) {
         var objArr = {username : products[i].username, password : products[i].password, usersId : products[i].id};
-        if (name == objArr.username && pwrd == objArr.password) {
+        if (dataArr.name == objArr.username && dataArr.pwrd == objArr.password) {
           localStorage.setItem('username', objArr.username);
           localStorage.setItem('itemId', objArr.usersId);
           window.open('wishlist.html', '_self');
@@ -188,13 +187,12 @@ $(document).ready(function() {
         var innerHtml = `<tr>`;
           innerHtml += `<td>${productId}.</td><td>${products[i].title}</td>`;
           innerHtml += `<td class="modify-block"><button class="btn product-upgrade-btn" data-id="${productId}">UPDATE</button></td>`;
-          innerHtml += `<td class="delete-block"><button class="btn bg-danger product-delete-btn" data-id="${productId}">DELETE</button></td>`;
+          innerHtml += `<td class="delete-block"><button class="btn product-delete-btn" data-id="${productId}">DELETE</button></td>`;
           innerHtml += `</tr>`;
         $('.data-table tbody').append(innerHtml);
     };
 
     $('.product-upgrade-btn').click(function() {
-      $('#update-product-form input, textarea').prop("readonly", true);
       var updateId = $(this).attr('data-id');
       modalToggle($('#update-modal'), true);
       var updateUrl = getUrl + '/' + updateId;
@@ -219,17 +217,17 @@ $(document).ready(function() {
       });
     });
 
-    $('.product-delete-btn').click(function() {
+    $('.product-delete-btn').click(function(e) {
+      e.preventDefault();
       modalToggle($('#delete-product'), true);
-      var deleteId = $(this).attr('data-id');
+      let deleteId = $(this).attr('data-id');
 
-      $('.accept').click(function(e) {
-        e.preventDefault();
+      $('.accept').click(function() {
         var deleteUrl = getUrl + '/' + deleteId;
         ajaxCall('DELETE', deleteUrl, function deleteFn() {
+          modalToggle($('#delete-product'), false) ? modalToggle($('#delete-product'), false) : modalToggle($('#success-msg'), true);
           $('#success-msg .modal-body').html(`<p class="text-success">Product has been deleted successfully.</p>`);
         }, null);
-        modalToggle($('#delete-product'), false) ? modalToggle($('#delete-product'), false) : modalToggle($('#success-msg'), true);
       });
     });
   };

@@ -1,6 +1,7 @@
 $half-wrapper: 50%;
 $m-outer-gap: 20px 10px;
-$nav-drop-shadow: 0px 0px 15px 2px #d3d3d3;
+$nav-drop-shadow: 0px 0px 15px 7px #f4f4f4;
+$nav-shadow: inset 0px 0px 8px 2px #e2e1e1;
 $txt-formate: capitalize;
 $txt-uppercase: uppercase;
 $txt-center: center;
@@ -10,24 +11,15 @@ $grey-border: 1px solid #000000;
 $sign-in-cover: 150px;
 $bold-outline: 2px solid #000000;
 $modal-head-bg:#866943;
-$modal-body-bg: #fff5ce;
 $bg-content: #fcf4f4;
 $each-product: #ffffff;
+$modal-shadow: 0px 10px 14px 3px #dad6d6;
 
 @mixin dropdown-btn {
-  color: #ff0000;
   display: inline;
   font-size: 14px;
   margin: 5px 10px;
   padding: 4px 10px;
-}
-
-@mixin hover-effect {
-  background-color: $red-color;
-  border-radius: 8px;
-  color: #ffffff;
-  display: inline;
-  padding: 5px 10px;
 }
 
 @mixin dp-block {
@@ -83,7 +75,6 @@ $each-product: #ffffff;
 
 @mixin exit-btn {
   border-radius: 5px;
-  background-color: $red-color;
   color: #ffffff;
   display: inline;
   font-size: 14px;
@@ -94,6 +85,7 @@ $each-product: #ffffff;
 @mixin product-add-btn { 
   border: none;
   border-radius: 20px;
+  color: $each-product;
   float: right;
   margin-right: 40px;
   padding: 8px 10px;
@@ -137,7 +129,7 @@ $each-product: #ffffff;
 }
 
 @mixin red-border {
-  border: 1px solid #ff0000; 
+  border: 2px solid #ff0000; 
 }
 
 @mixin wrapper-transition {
@@ -166,29 +158,21 @@ $each-product: #ffffff;
     background-color: $bg-content;
 
     table {
+      background-color: $each-product;
       border: $bold-outline;
       margin: 0 auto;
       width: $half-wrapper;
 
       th {
-        background-color: #fffaf0;
         border: $bold-outline;
         padding: 15px;
         text-align: $txt-center;
-
-        &:hover {
-          box-shadow: inset 0px 0px 12px 2px #ffefcf;
-        }
       }
 
       td {
-        background-color: #f0f8ff;
         border-right: $bold-outline;
+        border-bottom: $grey-border;
         text-align: $txt-center;
-
-        &:hover {
-          box-shadow: inset 0px 0px 12px 2px #b3dcff;
-        }
       }
 
       .delete-block {
@@ -208,10 +192,9 @@ $each-product: #ffffff;
 
         .product-upgrade-btn {
           @include product-btns;
-          background-color: #8dc9c9;
 
           &:hover {
-            border: 1px solid #5a8181;
+            border: 2px solid #0d6efd;
           }
         }
       }
@@ -221,25 +204,24 @@ $each-product: #ffffff;
 
       .modal-content {
         border: none;
+        box-shadow: 0px 10px 14px 3px #dad6d6;
         top: 100px;
         width: 600px;
 
         .modal-header {
           @include modal-head;
-          background-color: $modal-head-bg;
 
           button {
             padding: 5px 10px;
 
             &:hover {
               box-shadow: inset 0px 0px 5px 1px #c9c9f6;
-              color: #fefefe;
+              color: #000000;
             }
           }
         }
 
         .modal-body {
-          background-color: $modal-body-bg;
           padding: 20px;
 
           form {
@@ -279,13 +261,16 @@ $each-product: #ffffff;
 
     .product-add {
       @include max-height;
+      margin: 5px 0;
 
       .add-product-btn {
         @include product-add-btn;
 
         &:hover {
-          border: 1px solid #80a4d2;
-          font-size: 14px;
+          border: 2px solid #0d6efd!important;
+          background-color: #ffffff!important;
+          color: #0d6efd!important;
+          padding: 6px 8px;
         }
       }
     }
@@ -298,12 +283,12 @@ $each-product: #ffffff;
     height: 800px;
 
     table {
+      background-color: $each-product;
       border: $bold-outline;
       margin: 0 auto;
       width: $half-wrapper;
 
       thead {
-        background-color: #fffaf0;
 
         th {
           border: $bold-outline;
@@ -311,7 +296,7 @@ $each-product: #ffffff;
           text-align: $txt-center;
 
           &:hover {
-            box-shadow: inset 0px 0px 12px 2px #ffefcf;
+            box-shadow: $nav-shadow;
           }
         }
       }
@@ -319,15 +304,14 @@ $each-product: #ffffff;
       tbody {
 
         td {
-          background-color: #f0f8ff;
-          border: $grey-border;
+          border-bottom: $grey-border;
           border-right: $bold-outline;
           padding: 10px;
           text-align: $txt-center;
           width: $half-wrapper;
 
           &:hover {
-            box-shadow: inset 0px 0px 12px 2px #b3dcff;
+            box-shadow: $nav-shadow;
           }
         }
 
@@ -362,10 +346,12 @@ $each-product: #ffffff;
     .modal {
 
       .modal-content {
+        border: none;
+        box-shadow: $modal-shadow;
         top: 70px;
 
         .modal-body {
-          background-color: $modal-body-bg;
+          padding: 20px;
 
           .details {
             margin: 10px;
@@ -377,13 +363,13 @@ $each-product: #ffffff;
 
           .img-wrap {
             background-color: $each-product;
+            float: left;
             height: 200px;
             width: 200px;
           }
         }
 
         .modal-header {
-          background-color: $modal-head-bg;
           border-radius: 0;
           height: 60px;
           
@@ -392,7 +378,7 @@ $each-product: #ffffff;
 
             &:hover {
               box-shadow: inset 0px 0px 5px 1px #c9c9f6;
-              color: #fefefe;
+              color: #000000;
             }
           }
         }
@@ -442,7 +428,7 @@ $each-product: #ffffff;
     height: 800px;
 
     .wrapper {
-      @include wrapper-transition();
+      @include wrapper-transition;
       width: 400px;
 
       .welcome {
@@ -476,7 +462,6 @@ $each-product: #ffffff;
 
       &:hover {
         height: 250px;
-        transform: rotate(360deg);
         width: 440px;
       }
     }
@@ -490,6 +475,8 @@ $each-product: #ffffff;
     z-index: 1;
 
     #user-info {
+      justify-content: end;
+      width: 35%;
 
       #cart {
         cursor: pointer;
@@ -499,43 +486,26 @@ $each-product: #ffffff;
 
         .dropdown-menu {
           border: none;
-          height: 135px;
           width: 225px;
 
-          header {
-            font-size: 14px;
-            margin: 8px 10px;
-          }
-          
-
           .to-admin {
-            margin: 5px 0 10px 0;
+            font-size: 14px;
+            margin: 5px 0;
             text-transform: $txt-uppercase;
-
-            .admin-page {
-              @include dropdown-btn;
-
-              &:hover {
-                @include hover-effect;
-              }
-            }
           }
 
           .get-in, .exit {
+            background-color: #fcf4f4;
+            border: 2px solid #ffe5e5;
             @include dropdown-btn;
-
-            &:hover {
-              @include hover-effect;
-            }
           }
         }
 
         &:hover {
-
+          
           .dropdown-menu {
             background-color: $each-product;
             display: block;
-            height: 155px;
           }
         }
       }
@@ -548,28 +518,22 @@ $each-product: #ffffff;
     .navbar {
 
       #nav-content {
+        flex: 1;
+        justify-content: end;
         text-transform: $txt-formate;
-        width: 40%;
       }
 
       .fa, .fa-solid {
         margin-right: 5px;
       }
 
-      .form-inline {
-        display: inherit;
-        flex: 1;
+      .navbar-brand {
 
-        input {
-          margin-right: 14px;
-          width: 80%;
+        img {
+          @include max-height;
+          object-fit: cover;
+          width: 40px;
         }
-      }
-
-      .navbar-brand img {
-        @include max-height;
-        object-fit: cover;
-        width: 40px;
       }
     }
   }
@@ -617,6 +581,7 @@ $each-product: #ffffff;
   }
 }
 
+
 @media only screen and (max-width: 768px) {
   @mixin login-input {
     height: $input-length;
@@ -633,6 +598,7 @@ $each-product: #ffffff;
     height: 600px;
 
     table {
+      background-color: $each-product;
       border: $bold-outline;
       margin: 0 auto;
       width: 90%;
@@ -640,18 +606,14 @@ $each-product: #ffffff;
       thead {
 
         th {
-          background-color: #fffaf0;
           border: $bold-outline;
-          box-shadow: inset 0px 0px 10px 1px #ffefcf;
           text-align: $txt-center;
         }
       }
 
       td {
-        background-color: #f0f8ff;
-        border: $grey-border;
+        border-bottom: $grey-border;
         border-right: 2px solid #000000;
-        box-shadow: inset 0px 0px 10px 1px #b3dcff;
         padding: 5px 10px;
         text-align: $txt-center;
         width: $half-wrapper;
@@ -670,18 +632,18 @@ $each-product: #ffffff;
       width: 370px;
 
       .modal-content {
+        box-shadow: 0px 8px 17px -3px #dad6d6;
+        border: none;
 
         .modal-header {
-          background-color: $modal-head-bg;
           height: 60px;
         }
 
         .modal-body {
-          background-color: $modal-body-bg;
           
           .main-content {
-            background-color: $modal-body-bg;
             margin: 0;
+            padding: 0;
           }
         }
       }
@@ -745,7 +707,7 @@ $each-product: #ffffff;
           @keyframes fadeInAnimation {
             0% {
               opacity: 0;
-              color: #ffa500;
+              color: #ffecc8;
             }
 
             100% {
@@ -761,10 +723,6 @@ $each-product: #ffffff;
         margin-top: 30px;
         text-align: $txt-center;
       }
-
-      &:hover {
-        transform: rotate(360deg);
-      }
     }
   }
 
@@ -778,6 +736,8 @@ $each-product: #ffffff;
 
       #navbar-content {
         background-color: $each-product;
+        border: none;
+        box-shadow: 0px 12px 12px 2px #eeeeee;
 
         .navbar-nav li {
           padding: 0 8px;
@@ -791,43 +751,24 @@ $each-product: #ffffff;
             background-color: $each-product;
             padding: 8px;
 
-            header {
-              font-size: 14px;
-            }
-
             li {
               margin: 10px 0;
               padding: 0;
 
               .admin-page {
-                @include exit-btn;
+                font-size: 12px;
+                padding: 0;
                 text-transform: $txt-uppercase;
               }
 
               .exit {
                 @include exit-btn;
+                background-color: #fcf4f4;
+                border: 2px solid #ffe5e5;
+                color: #000000;
+                font-size: 12px;
               }
             }
-          }
-        }
-
-        .form-inline {
-          padding: 0 10px;
-
-          input {
-            height: $input-length;
-            margin: 5px 0;
-            padding: 0 10px;
-            width: 75%;
-          }
-
-          .submit-button {
-            margin-bottom: 4px;
-            padding: 2px 8px;
-          }
-
-          #name {
-            display: none;
           }
         }
       }
@@ -887,23 +828,20 @@ $each-product: #ffffff;
     background-color: $bg-content;
 
     .data-table {
+      background-color: $each-product;
       border: $bold-outline;
       margin: 10px auto;
       text-align: $txt-center;
       width: 350px;
 
       th {
-        background-color: $bg-content;
         border: $bold-outline;
-        box-shadow: inset 0px 0px 10px 1px #ffefcf;
         padding: 5px
       }
 
       td {
-        background-color: #f0f8ff;
         border: $grey-border;
         border-right: $bold-outline;
-        box-shadow: inset 0px 0px 10px 1px #b3dcff;
       }
 
       .delete-block {
@@ -911,11 +849,6 @@ $each-product: #ffffff;
 
         .product-delete-btn {
           @include phone-modal-btn;
-
-          &:hover {
-            @include red-border;
-            margin: 0 6px;
-          }
         }
       }
 
@@ -924,7 +857,6 @@ $each-product: #ffffff;
 
         .product-upgrade-btn {
           @include phone-modal-btn;
-          background-color: #8dc9c9;
         }
       }
     }
@@ -936,15 +868,14 @@ $each-product: #ffffff;
   
       .modal-content {
         border: none;
+        box-shadow: 0px 4px 6px 2px #eeeeee;
         width: 370px;
 
         .modal-header {
           @include modal-head;
-          background-color: $modal-head-bg;
         }
 
         .modal-body {
-          background-color: $modal-body-bg;
           padding: 20px;
 
           form {
