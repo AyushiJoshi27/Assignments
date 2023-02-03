@@ -18,6 +18,10 @@ $(document).ready(function() {
     'navbar-brand' == $(this).attr('class') ? window.open('index.html', '_self') : modalToggle($('#add-modal'), true);
   });
 
+  $('#close').click(function() {
+    modalToggle($('.modal'), false);
+  });
+
   $('.close').click(function() {
     window.location.reload();
   });
@@ -66,8 +70,8 @@ $(document).ready(function() {
   const navFn = function(products) {
     for (let i = 0; i < products.length; i++) {
       var categories = products[i];
-      $('#nav-content').append(`<li class='nav-item'><a class='nav-link' href="#${categories}" data-id="${categories}">${categories}</a></li>`);
-      $('#category').append(`<option class='category-opt'>${categories}</option>`);
+      $('#nav-content').append(`<li class="nav-item"><a class="nav-link" href="#${categories}" data-id="${categories}">${categories}</a></li>`);
+      $('#category').append(`<option class="category-opt">${categories}</option>`);
     };
     
     $('#nav-content li a').click(function() {
@@ -95,7 +99,7 @@ $(document).ready(function() {
           localStorage.setItem('userId', dataArr.usersId);
           window.open('wishlist.html', '_self');
         }
-        else if (i == products.length-1) {
+        else if (i == products.length) {
           $('.error-message').html("Your username and password does not match correctly");
         }
       };
