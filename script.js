@@ -1,12 +1,14 @@
 $(document).ready(function() {
   const link = "https://fakestoreapi.com/";
-  var getUrl = link + 'products';
+  const getUrl = link + 'products';
   const usersUrl = link + 'users';
   const categoriesUrl = link + "products/categories";
-  var storedInfo = {user : localStorage.getItem('username'), userId : localStorage.getItem('itemId')}  
-  var cartUrl = link + "carts/user/" + storedInfo.userId;
+  function storageCall(data) {
+    return localStorage.getItem(data);
+  };
+  var cartUrl = link + "carts/user/" + storageCall('userId');
   modalToggle($('.content-wrap'), false);
-  $('.get-in').html(storedInfo.user ? 'LOGOUT' : 'LOGIN');
+  $('.get-in').html(storageCall('userName') ? 'LOGOUT' : 'LOGIN');
 
   function modalToggle(modalId, show) {
     show == true ? modalId.show() : modalId.hide();
@@ -84,18 +86,16 @@ $(document).ready(function() {
   };
 
   const userFn = function(products) {
-    var dataArr = { 'name' : $('#username').val(), 'pwrd' : $('#password').val()}
-    var valid = $('.login-form').valid(); 
+    let valid = $('.login-form').valid(); 
     if (valid) {
       for (let i = 0; i < products.length; i++) {
-        var objArr = {username : products[i].username, password : products[i].password, usersId : products[i].id};
-        if (dataArr.name == objArr.username && dataArr.pwrd == objArr.password) {
-          localStorage.setItem('username', objArr.username);
-          localStorage.setItem('itemId', objArr.usersId);
+        var dataArr = { name : $('#username').val(), pwrd : $('#password').val(), usersId : products[i].id}
+        if (dataArr.name == products[i].username && dataArr.pwrd == products[i].password) {
+          localStorage.setItem('userName', dataArr.name);
+          localStorage.setItem('userId', dataArr.usersId);
           window.open('wishlist.html', '_self');
         }
-        else if (i==products.length-1) {
-          console.log('!user');
+        else if (i == products.length-1) {
           $('.error-message').html("Your username and password does not match correctly");
         }
       };
@@ -117,24 +117,21 @@ $(document).ready(function() {
     };
   };
 
-  $('.admin-page, .get-in').click(function() {
-    window.open(storedInfo.user ? 'admin.html' : 'login.html', '_self');
-  });
-
   $('.submit-btn').click(function() {
     ajaxCall('GET', usersUrl, userFn, null);
   });
   
-  if (storedInfo.user) {
-    $('#name').html(storedInfo.user)
+  if (storageCall('userName')) {
+    $('#name').html(storageCall('userName'))
     
     $('.exit').click(function() {
-      localStorage.removeItem('username');
+      localStorage.removeItem('userName');
+      window.open('login.html', '_self');
     });
   };
 
-  $('#cart, #wishlist').click(function() {
-    window.open(!storedInfo.user ? 'login.html' : ($(this).attr('id') + '.html'), '_self');
+  $('#cart, #wishlist, #admin, .get-in').click(function() {
+    window.open(!storageCall('userName') ? 'login.html' : ($(this).attr('id') + '.html'), '_self');
   });
 
   $('.submit-form').click(function(event) {

@@ -36,7 +36,7 @@
               <i class="fa fa-user" aria-hidden="true"></i>Profile
             </a>
             <ul class="dropdown-menu">
-              <li class="to-admin"><a href="#admin-page" class="dropdown-item admin-page">Go to Admin Page</a></li>
+              <li class="to-admin"><a href="#admin-page" class="dropdown-item admin-page" id="admin">Go to Admin Page</a></li>
               <li><a class="dropdown-item get-in exit"></a></li>
             </ul>
           </li>
@@ -63,6 +63,7 @@
       <div class="modal-dialog modal-md">
         <div class="modal-content">
           <div class="modal-header">
+            <h4>DELETE A PRODUCT</h4>
             <button type="button" class="btn close"><i class="fa fa-times" aria-hidden="true"></i></button>
           </div>
           <div class="modal-body" id="selected-id">
@@ -99,6 +100,7 @@
       <div class="modal-dialog modal-md">
         <div class="modal-content">
           <div class="modal-header">
+            <h4>UPDATE A PRODUCT</h4>
             <button type="button" class="btn close"><i class="fa fa-times" aria-hidden="true"></i></button>
           </div>
           <div class="modal-body">
@@ -123,9 +125,8 @@
       <div class="modal-dialog modal-md">
         <div class="modal-content">
           <div class="modal-header">
-            <button type="button" class="btn close">
-              <i class="fa fa-times" aria-hidden="true"></i>
-            </button>
+            <h4>SUCCESS MESSAGE</h4>
+            <button type="button" class="btn close"><i class="fa fa-times" aria-hidden="true"></i></button>
           </div>
           <div class="modal-body"></div>
         </div>
@@ -134,6 +135,10 @@
     <div id="delete-product" class="modal">
       <div class="modal-dialog modal-md modal-confirm">
         <div class="modal-content">
+          <div class="modal-header">
+            <h4>DELETE A PRODUCT</h4>
+            <button type="button" class="btn close"><i class="fa fa-times" aria-hidden="true"></i></button>
+          </div>
           <div class="modal-body">
             <p>Do you really want to delete these records? This process cannot be undone.</p>
           </div>
