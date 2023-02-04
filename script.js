@@ -43,7 +43,7 @@ $(document).ready(function() {
   function htmlContent(pack, prepHtml) {
     prepHtml += `<div class="img-wrap"><img src="${pack.image}" class="item-img"></div>`;
     prepHtml += `<div class="details">`;
-    prepHtml += `<p><b>Title: </b>${pack.title}</p><p><b>Price: </b>$${pack.price}</p>`;
+    prepHtml += `<p><b>Title: </b>${pack.title}</p><p><b>Price: </b>${pack.price}</p>`;
     return prepHtml;
   };
 
