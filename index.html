@@ -1,374 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" 
-    href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" 
-    integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" 
-    crossorigin="anonymous"
-  >
-  <style>
-    body {
-      font-family: sans-serif;
-      letter-spacing: 1px;
-    }
-
-    table {
-      border-collapse: collapse;
-      width: 100%;
-    }
-
-    footer {
-      margin: 0 40px;
-      height: 950px; 
-    }
-
-    .r-address {
-      margin: 40px 0 10px;
-      font-size: 20px; 
-      font-weight: 500; 
-      line-height: 25px;
-    }
-
-    .ser-address {
-      display: inline-block;
-      font-style: normal;
-      font-size: 20px;
-      margin-bottom: 10px;
-    }
-
-    .blank {
-      height: 20px;
-    }
-
-    .cin {
-      display: inline-block; 
-      width: 37%; 
-      margin: 0;
-    }
-
-    .contact-info {
-      margin: 10px 0;
-    }
-
-    .country-code {
-      display: inline-block;
-      width: 48%;
-    }
-
-    .customer-time {
-      width: 14%;
-    }
-
-    .details-item {
-      width: 20.5%;
-    }
-
-    .details-blank {
-      height: 24px;
-    }
-
-    .date-block {
-      margin-right: 40px;
-      padding-right: 20px;
-    }
-
-    .gst-content {
-      border-bottom:2px solid darkslategrey;
-      width: 100%;
-    }
-
-    .footer-content {
-      margin: 0 30px;
-    }
-
-    .footer-b {
-      border-bottom: 15px solid black; 
-      border-right: 15px solid black;
-      margin-right: 20px;
-      position: relative; 
-      top: 800px; 
-    }
-
-    .footer-b p {
-    padding: 30px 0;
-    margin: 0;
-    }
-
-    .footer-t {
-      line-height: 35px; 
-      margin: 20px 0;
-      position: absolute;
-      width: 80%;
-    }
-
-    .heading { 
-      border-top: 18px solid black;
-      border-left: 15px solid black;
-      margin-top: 40px;
-    }
-
-    .heading h2 {
-      font-size: 38px;
-      font-weight: 400;
-      letter-spacing: 2px;
-      margin-top: 30px;
-      margin-bottom: 0;
-      padding: 10px 0;
-    }
-
-    .image-logo {
-      float: right;
-    }
-
-    .main-templet {
-      font-size: 17px;
-      margin: 0 40px;
-      padding-right: 20px;
-    }
-
-    .mobile-no {
-      display: inline-block;
-      width: 13%;
-    }
-
-    .name-and-address {
-      margin: 20px 0;
-    }
-
-    .no-days {
-      width: 21%;
-    }
-
-    .other-items {
-      text-align: center;
-    }
-
-    .recipient-info {
-      margin: 40px 0;
-      padding-bottom: 20px;
-    }
-
-    .section {
-      align-items: center;
-      border-top:2px solid darkslategrey;
-      border-bottom:2px solid darkslategrey;
-      display: flex;
-      justify-content: space-between;
-      padding: 10px 0 20px 0;
-    }
-
-    .t-body-details {
-      border-bottom: 2px solid darkslategrey;
-      border-top: 2px solid darkslategrey;
-    }
-
-    .t-body-details tr {
-      line-height: 22px;
-    }
-
-    .td-cgst {
-      width: 14%;
-    }
-
-    .td-name {
-      width: 18%;
-    }
-
-    tr.table-border td {
-      height: 35px;
-    }
-
-    .templet {
-      margin: 40px 30px 0;
-    }
-
-    .wallet-id {
-      display: inline-block;
-    }
-  </style>
+  <title>Dog APi</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <!--font Awesom-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <div class="main-templet">
-    <!--heading-->
-    <div class="heading">
-      <center>
-        <h2>TAX INVOICE</h2>
-      </center>
-      <div class="image-logo">
-        <img id="logo" 
-          src="https://img1.wsimg.com/isteam/ip/93567e05-69d4-460e-bf90-d609034601db/Logo%20RGB(Black)-01.png/:/rs=w:182,h:200,cg:true,m/cr=w:182,h:200/qt=q:100/ll"
-          height="140px"
-        >
+  <div class="main-content">
+    <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid p-0">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-nav-dropdown" aria-controls="navbar-nav-dropdown" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbar-nav-dropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a href="index.html" id="dog-img">
+                <img src="images/dog_image.jpeg" class="rounded-circle" alt="nav-image">
+              </a>
+            </li>
+            <li class="nav-item">
+              <h2 class="nav-heading">Dog API</h2>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link px-0" href="doc.html">Documentation</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link px-0" href="breed.html">Breeds list</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link px-0" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link px-0" href="https://github.com/jigsawpieces/dog-api-images#dog-api-images">Submit your dog</a>
+            </li>
+            <li class="nav-item" id="social-sites" >
+              <a class="social-link px-0 py-1"
+                href="https://sideorders.co.uk/collections/frontpage/products/dog-ceo-issue-1" target="_blank">
+                <i class="fa fa-paw" aria-hidden="true"></i> Dog CEO Zine</a>
+            </li>
+            <li class="nav-item">
+              <a class="social-link px-0 py-1" href="https://www.paypal.com/paypalme/dogapi">
+                <i class="fa fa-usd" aria-hidden="true"></i> Buy me a dog treat</a>
+            </li>
+            <li class="nav-item">
+              <a class="social-link px-0 py-1" href="https://github.com/ElliottLandsborough/dog-ceo-api">
+                <i class="fa fa-github"></i> Veiw on Github</a>
+            </li>
+            <li class="nav-item">
+              <a class="social-link px-0 py-1" href="https://twitter.com/dog__CEO">
+                <i class="fa fa-twitter" aria-hidden="true"></i> Follow on Twitter</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!--page-->
+    <div class="main-section" id="main">
+      <p class="main-heading">
+        The internet's biggest collection of <b>open source dog pictures.</b>
+      </p>
+      <div class="main-content">
+        Puppy kitty ipsum dolor sit good dog foot stick canary. <p> Teeth Mittens grooming vaccine walk swimming nest
+        good boy furry tongue heel furry treats fish. </p> Yawn litter fish yawn toy pet gate throw Buddy kitty wag tail ball groom crate
+        ferret heel wet nose Rover toys pet supplies. Bird Food treats tongue lick teeth ferret litter box slobbery
+        litter box crate bird small animals yawn small animals shake slobber gimme five toys polydactyl meow.
+        </p>
+      </div>
+      <div class="img-show">
+        <div class="d-inline-block btn-block"  data="main">
+          <button type="button" class="btn-sm border-0 bg-info btn-main">FETCH!!!</button>
+        </div>
+        <div id="img-block">
+          <h4><b>IMAGE</b></h4>
+          <img src="images/about/about-3.jpeg" class="img-main" alt="">
+          <table class="table border-0 w-100 table-main"></table>
+        </div>
       </div>
     </div>
-      <!--service provider information-->
-    <div class="templet">  
-      <address class="ser-address">
-        4C4AL Private Limited<br>
-        Address: C-804, Oceanus Monarda, Jail Road, Kasavanahalli, Bengaluru, Karnataka 56003
-        <div class="cin">CIN: U52335KA2022PTC158803</div>
-        GST No: 29AABCZ9188Q1Z0<br>
-        E-mail - <a href="mailto: support@bragbox.io"> support@bragbox.io</a><br> 
-        Place of supply: Karnataka
-      </address>
-      <!--section-->
-      <div class="section">
-        <div>Invoice No. <span><</span>Invoice No<span>></span></div>
-        <div>Order No. <span><</span>Order No<span>></span></div>
-        <div class="date-block">Date<span><</span>DD/MM/YYYY<span>></span> </div>
-      </div>
-      <div class="recipient-info">
-        <div class="billed-to">Billed to:</div>
-        <div class="name-and-address">
-          <div>Name <span><</span>Name<span>></span><span><</span>Surname<span>></span></div>
-          <div class="re-address">Address:<span> <</span>Address<span>></span></div>
-        </div>
-        <div class="contact-info">
-          <div class="mobile-no">Mobile No.</div>
-          <div class="country-code"> <span><</span>Country code<span>></span> <span><</span>Number<span>></span></div>
-          <div class="wallet-id">Wallet Id.<span><</span>Number<span>></span></div>
-        </div>
-      </div>
-      <!--customer-details-->
-      <table class="customer-details">
-        <thead>
-          <tr class="table-border">
-            <td class="details-item">Item Name</td>
-            <td class="details-item">From Date/Time</td>
-            <td class="customer-time">To Date/Time</td>
-            <td class="customer-day">Price/day</td>
-            <td class="no-days">No of days</td>
-            <td>Total</td>
-          </tr>
-        </thead>
-        <tbody class="t-body-details">
-          <tr>
-            <td>
-              <span><</span>Item Name<span>></span>
-            </td>
-            <td>
-              <span><</span>DD/MM/YYYY<span>></span>
-            </td>
-            <td>
-              <span><</span>DD/MM/YYYY<span>></span>
-            </td>
-            <td><span><</span>Amount<span>></span></td>
-            <td><span><</span>Days<span>></span></td>
-            <td><span><</span>Amount<span>></span></td>
-          </tr>
-          <tr>
-            <td><span><</span>Item code<span>></span></td>
-            <td><span><</span>Time<span>></span></td>
-            <td><span><</span>Time<span>></span></td> 
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td><span><</span>Discount<span>></span></td>
-            <td></td>
-            <td><span><</span>Amount<span>></span></td>
-          </tr>
-          <tr class="details-blank">
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>Amount Paid</td>
-            <td></td>
-            <td><span><</span>Amount<span>></span></td>
-          </tr>
-        </tbody>
-      </table>
-      <!--GST table dertails-->
-      <p>GST Details</p>  
-      <div class="gst-content">
-        <table>
-          <thead>
-            <tr>
-              <td class="td-name">Item Name</td>
-              <td class="other-items td-name">Retail Price Value</td>
-              <td class="other-items td-cgst">CGST</td>
-              <td class="other-items td-cgst">SGST</td>
-              <td class="other-items td-cgst">IGST</td>
-              <td class="other-items"></td>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><span><</span>Item Name<span>></span></td>
-              <td class="other-items"></td>
-              <td class="other-items">9%</td>
-              <td class="other-items">9%</td>
-              <td class="other-items">18%</td>
-              <td class="other-items"></td>
-            </tr>
-            <tr>
-              <td class="other-items"></td>
-              <td class="other-items"><span><</span>Amount<span>></span></td>
-              <td class="other-items"><span><</span>Amount<span>></span></td>
-              <td class="other-items"><span><</span>Amount<span>></span></td>
-              <td class="other-items"><span><</span>Amount<span>></span></td>
-              <td class="other-items"></td>
-            </tr>
-            <tr class="blank"></tr>
-          </tbody>         
-        </table>
-      </div>
-    </div>
+    <!--btn Fetch-->
   </div>
-  <footer>
-    <div class="footer-content">
-      <div class="footer-t"">
-        <div>This is a computer-generated invoice and does not require signature.</div>
-        <div>For details about Terms & Conditions, Refund and Cancellation policy please visit www.bragbox.io.</div>
-      </div>
-      <center class="footer-b">
-        <p>4C4AL Private Limited: C-804, Oceanus Monarda, Jail Road, Kasavanahalli, Bengaluru, Karnataka 560035</p>
-      </center>
-    </div>
-  </footer>
+  <script src="https://code.jquery.com/jquery-3.6.2.min.js"
+    integrity="sha256-2krYZKh//PcchRtd+H+VyyQoZ/e3EcrkxhM8ycwASPA=" crossorigin="anonymous"></script>
+  <script src="script.js"></script>
 </body>
+
 </html>
-
-
-
-ajaxURL = path[type]
-  console.log(ajaxURL)
-
-
-  $('button').click(function() {
-    var handle = $(this).attr('type');
-    
-  });
-
-  const ajaxCall = function(ajaxURL, successfn){
-    $.ajax ({
-      type : 'GET',
-      url : ajaxURL,
-      dataType : 'JSON',
-      products : {},
-
-      successfn : function(products) {
-        console.log("HELLO");
-        successfn();
-      }
-    });
-  }; 
-
-
-  const successfn = function() {
-    $('.main-img').hide();
-    $('.table-content').html(`<img src='${products.message}' alt='product-img'>`);
-  }
