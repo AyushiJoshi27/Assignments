@@ -1,145 +1,181 @@
 body {
   margin: 0;
-  background-color: #fcfcfc;
+  background-color: rgb(252, 252, 252);
+}
 
+h3.follow-us {
+  padding: 20px 0px;
+  font-size: 25px;
+}
+
+#new1 {
+  position: relative;
+}
+
+#nav-content-hvr {
+  color: rgb(255, 0, 0);
+  margin: 0px 20px;
+}
+
+#weekly-head-icons-circle {
+  color: rgb(215, 215, 215);
+  font-size: 10px;
+  margin: 0px 5px;
+}
+
+#weekly-head-icons-minus {
+  color: rgb(238, 69, 49);
+  font-size: 40px;
+  position: relative;
+  top: 12px;
+}
+
+#weeklynews3-special {
+  margin-right: 0px;
+}
+
+#middle-a {
+  background-color: rgb(251, 232, 231);
+  padding: 10px 15px;
+}
+
+#middle-b {
+  background-color: rgb(244, 252, 214);
+}
+
+#middle-c {
+  background-color: rgb(226, 252, 254);
+}
+
+#middle-g {
+  background-color: rgb(255, 249, 199);
+}
+
+#shadow-remove {
+  box-shadow: 0px 0px rgb(255 255 255);
+  margin-bottom: 20px;
+}
+
+#search-icon {
+  left: 88%;
+  position: relative;
+  top: 44%;
+}
+
+#trending-bottom-img {
+  margin-bottom: 20px;
 }
 
 .templet-main {
-  margin: 0;
   font-family: Arial, Helvetica, sans-serif;
-
+  margin: 0;
 }
 
 .head {
-  width: 100%;
+  box-shadow: 1px 1px 1px rgb(232, 232, 232);
   height: 115px;
-  box-shadow: 1px 1px 1px #e8e8e8;
-
+  width: 100%;
 }
 
 .logo {
   display: inline-block;
   height: 115px;
   width: 22%;
-
 }
 
 
 .logo img {
   float: right;
   padding: 27px 0px;
-
 }
 
 .header-card {
   float: right;
-  width: 62%;
   height: 115px;
-
+  width: 62%;
 }
 
 
 .header-card img {
-  padding: 8px 8px;
   float: left;
-
+  padding: 8px 8px;
 }
 
 .navbar {
-  height: 115px;
   box-shadow: 0px 19px 19px rgb(239 236 236);
+  height: 115px;
   width: 100%;
-
 }
 
 .bar {
-  position: absolute;
+  display: inline-block;
   height: 35px;
   padding: 40px 0px;
+  position: absolute;
   width: 54%;
-  display: inline-block;
 }
 
 .abc-l {
-  height: 20px; 
-  width: 82%;
   float: right;
+  height: 20px; 
   padding: 10px 0;
-
+  width: 82%;
 }
-
 
 .imp {
-  color: black;
+  color: rgb(0, 0, 0);
+  font-size: 14px;
+  font-weight: bold;
   margin: 0px 20px 0px 20px ;
   text-decoration: none;
-  font-weight: bold;
-  font-size: 14px;
-}
-
-
-#search-icon {
-  position: relative;
-  top: 44%;
-  left: 88%;
-
 }
 
 .middle {
   margin: 10px;
   width: 100%;
-
 }
 
 .trending-middle {
   height: 815px;
   width: 100%;
-
 }
 
 .mid-i {
   display: inline-block;
   height: 815px;
   width: 66%;
-
 }
 
 .mid-i-a{
   margin: 0;
   padding: 20px 0px;
   width: 100%;
-
 }
 
 .mid-i-a-trend {
   display: inline-block;
   width: 18.8%;
-
 }
 
 .mid-i-a-bangladesh {
   float: right;
   width: 80%;
-
 }
 
 .trending-top {
   height: 455px;
   margin: 15px 0px;
   width: 100%;
-
 }
 
 .trend-image {
   float: right;
   height: 455px;
   width: 88%;
-
 }
 
 .trend-image img {
   position: absolute;
-
 }
 
 div.trend-text {
@@ -149,46 +185,40 @@ div.trend-text {
   left: 14.5%;
   position: relative;
   width: 65%;
-
 }
 
 .trend-button {
   background-color: rgb(255 249 199);
   border-color: rgb(255 249 199);
   border-radius: 5px;
-  color: black;
+  color: rgb(0, 0, 0);
   display: inline-block;
   font-size: 11px;
   margin-left: 20px;
-  padding: 10px 15px;
-    
+  padding: 10px 15px; 
 }
 
 .trend-txt {
-  color: white;
+  color: rgb(255, 255, 255);
   display: inline-block;
   font-size: 28px;
   margin: 15px 20px 15px 20px
-
 }
-
 
 .trending-now {
   background-color: rgb(238, 53, 48);
   border-radius: 4px;
-  color: white;
+  color: rgb(255, 255, 255);
   float: right;
   font-size: 13px;
   font-weight: 100;
   height: 13px;
   padding: 12px 23px;
-  
 }
 
 .bangladesh {
   height: 16px;
   padding: 8px 0px;
-
 }
 
 .trending-bottom {
@@ -204,19 +234,12 @@ div.trend-text {
   float: right;
   justify-content: space-between;
   width: 88%;
-  
 }
 
 .trending-bottom-a {
   height: 280px;
   display: inline-block;
   width: 240px;
-
-}
-
-#trending-bottom-img {
-  margin-bottom: 20px;
-
 }
 
 .trend-tag-a {
@@ -226,13 +249,11 @@ div.trend-text {
   margin-bottom: 10px;
   margin-top: 0px;
   padding: 10px 15px;
-
 }
 
 .mascng {
   font-size: 14px;
   margin-top: 10px;
-
 }
 
 .mid-right {
@@ -241,15 +262,13 @@ div.trend-text {
   height: 800px;
   margin: 15px 0px 0px 0px;
   width: 34%;
-
 }
 
 .mid-right-block {
   box-shadow: 0px 1px rgb(232 232 232);
   height: 800px;
   padding-left: 30px;
-  width: 77%;
-
+  width: 69%;
 }
 
 .right1 {
@@ -258,73 +277,38 @@ div.trend-text {
   height: 125px;
   margin-bottom: 25px;
   width: 92%;
-
-}
-
-#shadow-remove {
-  margin-bottom: 20px;
-  box-shadow: 0px 0px rgb(255 255 255);
-  
 }
 
 .right1-img {
   display: inline-block;
-
 }
 
 .x-y {
   float: right;
   padding: 0px 0px 20px 10px;
   width: 53%;
-
-}
-
-#middle-a {
-  background-color: #FBE8E7;
-  padding: 10px 15px;
-  
-}
-
-#middle-b {
-  background-color: rgb(244, 252, 214);
-  
-}
-
-#middle-c {
-  background-color: rgb(226, 252, 254);
-  
-}
-
-#middle-g {
-  background-color: rgb(255, 249, 199);
-  
 }
 
 .weekly {
   height: 605px;
   width: 100%;
-
 }
 
 .weekly-head {
   height: 100px;
   width: 100%;
-
 }
 
 .weekly-head-heading {
   display: inline-block;
   height: 100px;
   width: 19%;
-
 }
-
 
 .weekly-head-heading h3{
   float: right;
   margin: 23px 0px;
   padding: 20px 0px 0px;
-
 }
 
 .weekly-head-icons {
@@ -332,36 +316,17 @@ div.trend-text {
   margin: 23px 10px 23px 0px;
   position: absolute;
   right: 138px;
-
 }
-
-#weekly-head-icons-circle {
-  color: #D7D7D7;
-  font-size: 10px;
-  margin: 0px 5px;
-
-}
-
-#weekly-head-icons-minus {
-  color: #EE4531;
-  font-size: 40px;
-  position: relative;
-  top: 12px;
-
-}
-
 
 .weekly-img-block {
   width: 100%;
   height: 505px;
-
 }
 
 .weekly-img-block-space {
   height: 505px;
   display: inline-block;
   width: 88.7%;
-
 }
 
 .weekly-img-h {
@@ -371,23 +336,16 @@ div.trend-text {
   display: flex;
   justify-content: space-between;
   width: 92%;
-
 }
 
 .weekly-img {
   border-radius: 5px;
   display: inline-block;
-
 } 
-
-#weeklynews3-special {
-  margin-right: 0px;
-
-}
 
 .new1-box {
   border-radius: 15px;
-  background: white;
+  background: rgb(255, 255, 255);
   bottom: 43%;
   display: inline-block;
   height: 110px;
@@ -395,45 +353,34 @@ div.trend-text {
   padding: 20px;
   position: relative;
   width: 250px;
-
-}
-
-#new1 {
-  position: relative;
-
 }
 
 .weekly-button {
   font-size: 12px;
   padding: 10px;
   position: absolute;
-
 }
 
 .weekly-txt {
   font-size: 20px;
   position: relative;
   top: 60px;
-
 }
 
 .footer {
   width: 100%;
   height: 800px;
-
 }
 
 .footer-left {
   float: left;
   width: 63%;
   height: 950px;
-
 }
 
 .footer-nav {
   height: 100px;
   margin: 10px 0px;
-
 }
 
 .nav-left {
@@ -441,21 +388,18 @@ div.trend-text {
   height: 20px;
   padding: 40px 0px;
   width: 30%;
-
 }
 
 .nav-head {
   float: right;
   font-size: 25px;
   margin: 0;
-
 }
 
 .nav-right {
   float: right;
   height: 100px;
   width: 70%;
-
 }
 
 .nav-bar {
@@ -465,44 +409,32 @@ div.trend-text {
   height: 20px;
   padding: 10px 0px 10px 0px;
   width: 94%;
-
 }
 
 .nav-content {
   text-decoration: none;
   color: rgb(200 200 203);
   padding: 10px 15px;
-
-}
-
-#nav-content-hvr {
-  color: red;
-  margin: 0px 20px;
-
 }
 
 .footer-news {
   height: 850px;
   width: 100%;
-
 }
 
 .super-news {
   height: 335px;
   position: absolute;
   width: 25%;
-
 }
 
 .whatnews {
   position: absolute;
-  
 }
 
 .news-left {
   display: inline-block;
   width: 55%;
-  
 }
 
 .news-content {
@@ -510,29 +442,26 @@ div.trend-text {
   margin-bottom: 15px;
   width: 74%;
   height: 420px;
-
 }
 
 .news-box {
   border-top-right-radius: 5px;
   width: 300px;
   height: 100px;
-  background: #fcfcfc;
+  background: rgb(252, 252, 252);
   left: 0px;
   top: 60%;
   padding: 25px 0px 0px 0px ;
   position: relative;
-
 }
 
 .news-button {
-  background: #f9dada;
-  border: #f9dada;
+  background: rgb(249, 218, 218);
+  border: rgb(249, 218, 218);
   font-size: 11px;
   padding: 10px;
   text-decoration: none;
   text-transform: uppercase;
-
 }
 
 .news-txt {
@@ -540,15 +469,11 @@ div.trend-text {
   font-size: 18px;
   position: relative;
   top: 11px;
-
 }
-
 
 .news-right {
   width: 40%;
   float: right;
-
-
 }
 
 .news-content-r {
@@ -556,37 +481,26 @@ div.trend-text {
   margin-bottom: 15px;
   width: 100%;
   height: 420px;
-
 }
 
 .footer-right {
   float: right;
   width: 34%;
-
 }
 
 .follow-us {
   margin: 0px;
   padding: 30px 0px;
-
-}
-
-h3.follow-us {
-  padding: 20px 0px;
-  font-size: 25px;
-
 }
 
 .application {
   height: 130px;
   width: 78%;
-
 }
 
 .app-l {
   display: inline-block;
-  width: 48%; /* width:180px */
-
+  width: 48%; 
 }
 
 .app-content {
@@ -596,29 +510,24 @@ h3.follow-us {
   margin-bottom: 10px;
   padding: 10px 15px;
   width: 135px; 
-
 }
 
 .super-app {
   display: inline-block;
-
 }
 
 .app-box {
   display: inline-block;
   margin: 0px 10px;
-
 }
 
 .fans {
   font-size: 14px;
   color: rgb(129 124 139);
-
 }
 
 .app-r {
   display: inline-block;
-
 }
 
 .news-card {
@@ -633,3 +542,5 @@ h3.follow-us {
   margin: 30px 40px 0px 40px;
   width: 75%;
 }
+
+
