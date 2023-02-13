@@ -1,84 +1,374 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ester</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-    crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
-    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="style.css">
-</head>
+  <title>Document</title>
+  <link rel="stylesheet" 
+    href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" 
+    integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" 
+    crossorigin="anonymous"
+  >
+  <style>
+    body {
+      font-family: sans-serif;
+      letter-spacing: 1px;
+    }
 
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    footer {
+      margin: 0 40px;
+      height: 950px; 
+    }
+
+    .r-address {
+      margin: 40px 0 10px;
+      font-size: 20px; 
+      font-weight: 500; 
+      line-height: 25px;
+    }
+
+    .ser-address {
+      display: inline-block;
+      font-style: normal;
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .blank {
+      height: 20px;
+    }
+
+    .cin {
+      display: inline-block; 
+      width: 37%; 
+      margin: 0;
+    }
+
+    .contact-info {
+      margin: 10px 0;
+    }
+
+    .country-code {
+      display: inline-block;
+      width: 48%;
+    }
+
+    .customer-time {
+      width: 14%;
+    }
+
+    .details-item {
+      width: 20.5%;
+    }
+
+    .details-blank {
+      height: 24px;
+    }
+
+    .date-block {
+      margin-right: 40px;
+      padding-right: 20px;
+    }
+
+    .gst-content {
+      border-bottom:2px solid darkslategrey;
+      width: 100%;
+    }
+
+    .footer-content {
+      margin: 0 30px;
+    }
+
+    .footer-b {
+      border-bottom: 15px solid black; 
+      border-right: 15px solid black;
+      margin-right: 20px;
+      position: relative; 
+      top: 800px; 
+    }
+
+    .footer-b p {
+    padding: 30px 0;
+    margin: 0;
+    }
+
+    .footer-t {
+      line-height: 35px; 
+      margin: 20px 0;
+      position: absolute;
+      width: 80%;
+    }
+
+    .heading { 
+      border-top: 18px solid black;
+      border-left: 15px solid black;
+      margin-top: 40px;
+    }
+
+    .heading h2 {
+      font-size: 38px;
+      font-weight: 400;
+      letter-spacing: 2px;
+      margin-top: 30px;
+      margin-bottom: 0;
+      padding: 10px 0;
+    }
+
+    .image-logo {
+      float: right;
+    }
+
+    .main-templet {
+      font-size: 17px;
+      margin: 0 40px;
+      padding-right: 20px;
+    }
+
+    .mobile-no {
+      display: inline-block;
+      width: 13%;
+    }
+
+    .name-and-address {
+      margin: 20px 0;
+    }
+
+    .no-days {
+      width: 21%;
+    }
+
+    .other-items {
+      text-align: center;
+    }
+
+    .recipient-info {
+      margin: 40px 0;
+      padding-bottom: 20px;
+    }
+
+    .section {
+      align-items: center;
+      border-top:2px solid darkslategrey;
+      border-bottom:2px solid darkslategrey;
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 0 20px 0;
+    }
+
+    .t-body-details {
+      border-bottom: 2px solid darkslategrey;
+      border-top: 2px solid darkslategrey;
+    }
+
+    .t-body-details tr {
+      line-height: 22px;
+    }
+
+    .td-cgst {
+      width: 14%;
+    }
+
+    .td-name {
+      width: 18%;
+    }
+
+    tr.table-border td {
+      height: 35px;
+    }
+
+    .templet {
+      margin: 40px 30px 0;
+    }
+
+    .wallet-id {
+      display: inline-block;
+    }
+  </style>
+</head>
 <body>
-  <div class="container-fluid nav-wrapper">
-    <nav class="navbar navbar-expand-lg navbar-light">
-      <a class="navbar-brand">
-        <img src="images/brand-logo.png" alt="navbar-brand">
-      </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-content"
-        aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbar-content">
-        <ul class="navbar-nav" id="nav-content"></ul>
-        <ul class="navbar-nav" id="user-info">
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#profile" role="button"
-              aria-expanded="false">
-              <i class="fa fa-user" aria-hidden="true"></i>Profile
-            </a>
-            <ul class="dropdown-menu">
-              <li class="to-admin"><a href="#admin-page" class="dropdown-item admin-page" id="admin">Go to Admin Page</a></li>
-              <li><a class="dropdown-item get-in exit"></a></li>
-            </ul>
-          </li>
-          <li class="nav-item wishlist" id="wishlist">
-            <a class="nav-link">
-              <i class="fa-solid fa-heart"></i> Wishlist
-            </a>
-          </li>
-          <li class="nav-item cart" id="cart">
-            <a class="nav-link">
-              <i class="fa-solid fa-cart-shopping"></i>Bag
-            </a>
-          </li>
-        </ul>
+  <div class="main-templet">
+    <!--heading-->
+    <div class="heading">
+      <center>
+        <h2>TAX INVOICE</h2>
+      </center>
+      <div class="image-logo">
+        <img id="logo" 
+          src="https://img1.wsimg.com/isteam/ip/93567e05-69d4-460e-bf90-d609034601db/Logo%20RGB(Black)-01.png/:/rs=w:182,h:200,cg:true,m/cr=w:182,h:200/qt=q:100/ll"
+          height="140px"
+        >
       </div>
-    </nav>
-  </div>
-  <!--main content-->
-  <div class="content-block">
-    <center>
-      <h3>All products</h3>
-    </center>
-    <div class="outer-wrapper"></div>
-    <div class="modal" id="small-modal">
-      <div class="modal-dialog modal-md">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="btn btn-primary" id="wishlist"><i class="fa-solid fa-heart"></i>
-              Wishlist</button>
-            <button type="button" class="bt bg-white" id="close"><i class="fa fa-times" aria-hidden="true"></i></button>
-          </div>
-          <div class="modal-body" id="selected-product"></div>
+    </div>
+      <!--service provider information-->
+    <div class="templet">  
+      <address class="ser-address">
+        4C4AL Private Limited<br>
+        Address: C-804, Oceanus Monarda, Jail Road, Kasavanahalli, Bengaluru, Karnataka 56003
+        <div class="cin">CIN: U52335KA2022PTC158803</div>
+        GST No: 29AABCZ9188Q1Z0<br>
+        E-mail - <a href="mailto: support@bragbox.io"> support@bragbox.io</a><br> 
+        Place of supply: Karnataka
+      </address>
+      <!--section-->
+      <div class="section">
+        <div>Invoice No. <span><</span>Invoice No<span>></span></div>
+        <div>Order No. <span><</span>Order No<span>></span></div>
+        <div class="date-block">Date<span><</span>DD/MM/YYYY<span>></span> </div>
+      </div>
+      <div class="recipient-info">
+        <div class="billed-to">Billed to:</div>
+        <div class="name-and-address">
+          <div>Name <span><</span>Name<span>></span><span><</span>Surname<span>></span></div>
+          <div class="re-address">Address:<span> <</span>Address<span>></span></div>
         </div>
+        <div class="contact-info">
+          <div class="mobile-no">Mobile No.</div>
+          <div class="country-code"> <span><</span>Country code<span>></span> <span><</span>Number<span>></span></div>
+          <div class="wallet-id">Wallet Id.<span><</span>Number<span>></span></div>
+        </div>
+      </div>
+      <!--customer-details-->
+      <table class="customer-details">
+        <thead>
+          <tr class="table-border">
+            <td class="details-item">Item Name</td>
+            <td class="details-item">From Date/Time</td>
+            <td class="customer-time">To Date/Time</td>
+            <td class="customer-day">Price/day</td>
+            <td class="no-days">No of days</td>
+            <td>Total</td>
+          </tr>
+        </thead>
+        <tbody class="t-body-details">
+          <tr>
+            <td>
+              <span><</span>Item Name<span>></span>
+            </td>
+            <td>
+              <span><</span>DD/MM/YYYY<span>></span>
+            </td>
+            <td>
+              <span><</span>DD/MM/YYYY<span>></span>
+            </td>
+            <td><span><</span>Amount<span>></span></td>
+            <td><span><</span>Days<span>></span></td>
+            <td><span><</span>Amount<span>></span></td>
+          </tr>
+          <tr>
+            <td><span><</span>Item code<span>></span></td>
+            <td><span><</span>Time<span>></span></td>
+            <td><span><</span>Time<span>></span></td> 
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><span><</span>Discount<span>></span></td>
+            <td></td>
+            <td><span><</span>Amount<span>></span></td>
+          </tr>
+          <tr class="details-blank">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Amount Paid</td>
+            <td></td>
+            <td><span><</span>Amount<span>></span></td>
+          </tr>
+        </tbody>
+      </table>
+      <!--GST table dertails-->
+      <p>GST Details</p>  
+      <div class="gst-content">
+        <table>
+          <thead>
+            <tr>
+              <td class="td-name">Item Name</td>
+              <td class="other-items td-name">Retail Price Value</td>
+              <td class="other-items td-cgst">CGST</td>
+              <td class="other-items td-cgst">SGST</td>
+              <td class="other-items td-cgst">IGST</td>
+              <td class="other-items"></td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span><</span>Item Name<span>></span></td>
+              <td class="other-items"></td>
+              <td class="other-items">9%</td>
+              <td class="other-items">9%</td>
+              <td class="other-items">18%</td>
+              <td class="other-items"></td>
+            </tr>
+            <tr>
+              <td class="other-items"></td>
+              <td class="other-items"><span><</span>Amount<span>></span></td>
+              <td class="other-items"><span><</span>Amount<span>></span></td>
+              <td class="other-items"><span><</span>Amount<span>></span></td>
+              <td class="other-items"><span><</span>Amount<span>></span></td>
+              <td class="other-items"></td>
+            </tr>
+            <tr class="blank"></tr>
+          </tbody>         
+        </table>
       </div>
     </div>
   </div>
-  <script src="https://code.jquery.com/jquery-3.6.1.min.js"
-    integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"
-    integrity="sha512-rstIgDs0xPgmG6RX1Aba4KV5cWJbAMcvRCVmglpam9SoHZiUCyQVDdH2LPlxoHtrv17XWblE/V/PP+Tr04hbtA=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="script.js"></script>
+  <footer>
+    <div class="footer-content">
+      <div class="footer-t"">
+        <div>This is a computer-generated invoice and does not require signature.</div>
+        <div>For details about Terms & Conditions, Refund and Cancellation policy please visit www.bragbox.io.</div>
+      </div>
+      <center class="footer-b">
+        <p>4C4AL Private Limited: C-804, Oceanus Monarda, Jail Road, Kasavanahalli, Bengaluru, Karnataka 560035</p>
+      </center>
+    </div>
+  </footer>
 </body>
-
 </html>
+
+
+
+ajaxURL = path[type]
+  console.log(ajaxURL)
+
+
+  $('button').click(function() {
+    var handle = $(this).attr('type');
+    
+  });
+
+  const ajaxCall = function(ajaxURL, successfn){
+    $.ajax ({
+      type : 'GET',
+      url : ajaxURL,
+      dataType : 'JSON',
+      products : {},
+
+      successfn : function(products) {
+        console.log("HELLO");
+        successfn();
+      }
+    });
+  }; 
+
+
+  const successfn = function() {
+    $('.main-img').hide();
+    $('.table-content').html(`<img src='${products.message}' alt='product-img'>`);
+  }
