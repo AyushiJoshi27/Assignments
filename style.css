@@ -1,64 +1,211 @@
-body {
-  background-color: black;
+.main-nav-bar {
+  position: fixed;
+  width: 100%;
 }
-
-button {
-  background-color: lightgray;
-  border: 1px solid black;
-  border-radius: 30%;
-  border: none;
-  font-size: 18px;
-  font-weight: bold;
-  height: 60px;
-  margin: 2px;
-  width: 70px;   
+.main-nav-bar .page-head-nav {
+  position: static;
+  box-shadow: 0px 2px 3px 0px lightgrey;
 }
-
-#calculator {
-  background-color: grey;
-  border: 5px solid lightgrey;
-  color: black;
-  margin: 20px auto;
-  width: 29%;
-  font-family: sans-serif;
+.main-nav-bar .page-head-nav form {
+  border-radius: 50px;
+  width: 20%;
 }
-
-#result-and-display {
-  background-color: whitesmoke;
-}
-
-#result-screen {
-  font-size: 16px;
-  text-align: right;
-  padding: 10px 15px;
-}
-
-#display-screen {
+.main-nav-bar .page-head-nav #my-nav-bar {
   font-size: 25px;
-  text-align: right;
+}
+.main-nav-bar .page-head-nav .header-nav-account {
+  font-size: 20px;
+  width: 14%;
+}
+.main-nav-bar .page-head-nav .input-search {
+  font-size: 15px;
+}
+.main-nav-bar .page-head-nav .space {
+  flex: 1;
+}
+.main-nav-bar .page-head-nav .top-nav-setting {
+  width: 20%;
+}
+
+.fb-full-body {
+  border-top: 1px solid lightgray;
+  font-size: 18px;
+}
+.fb-full-body .main-body {
+  margin: 0 auto;
+  width: 83.5%;
+}
+.fb-full-body .main-body .introduction {
+  padding: 15px;
+  box-shadow: 0px 2px 3px 0px lightgrey;
+}
+.fb-full-body .main-body .introduction button {
+  font-weight: 600;
+  font-size: 15px;
+}
+.fb-full-body .main-body .introduction span {
+  font-size: 15px;
+}
+.fb-full-body .main-body .introduction span a {
+  font-weight: 600;
+}
+.fb-full-body .main-body .introduction #home-icon {
+  font-size: 27px;
+}
+.fb-full-body .main-body .introduction #map-icon {
+  font-size: 27px;
+}
+.fb-full-body .main-body .introduction .graduation-icon {
+  font-size: 22px;
+}
+.fb-full-body .main-body .friends-list {
+  box-shadow: 0px 2px 3px 0px lightgrey;
+}
+.fb-full-body .main-body .see-all-photo {
+  font-weight: 400;
+  font-size: 16px;
+  box-shadow: 0px 2px 3px 0px lightgrey;
+}
+.fb-full-body .main-body .templet-about {
+  width: 40.8%;
+}
+.fb-full-body .main-body .templet-about a {
+  font-weight: 400;
+  font-size: 16px;
+}
+.fb-full-body .main-body .templet-about .grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  row-gap: 10px;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+}
+.fb-full-body .main-body .templet-about .grid-container .grid-item {
+  margin-bottom: 15px;
+}
+.fb-full-body .main-body .templet-about .grid-container .grid-item a {
+  font-size: 13px;
+  font-weight: 600;
+}
+.fb-full-body .main-body .templet-about .grid-container .grid-item img {
+  border-radius: 10px;
+}
+.fb-full-body .main-body .templet-posts {
+  float: right;
+  width: 57.8%;
+}
+.fb-full-body .main-body .templet-posts .extra-option, .fb-full-body .main-body .templet-posts .posts-setting, .fb-full-body .main-body .templet-posts .post-block {
+  box-shadow: 0px 2px 3px 0px lightgrey;
+}
+
+.profile {
+  margin: 0 auto;
+  width: 87%;
+}
+.profile .camera {
+  position: relative;
+  right: 58px;
+  top: 38px;
+}
+.profile .dp-parent {
+  padding: 8px 11px;
+  border-radius: 50%;
+  margin: 0;
+}
+.profile .extra {
+  height: 58px;
+}
+.profile .name-info {
+  right: 30px;
+  position: relative;
+  top: -40px;
+}
+.profile .name-info .img-stack {
+  position: relative;
+  right: 12%;
+}
+.profile .profile-intro {
+  border-bottom: 1px solid lightgray;
+  height: 160px;
+}
+.profile .profile-intro .fb-dp {
+  position: relative;
+  bottom: 30px;
+}
+.profile .profile-intro .story-edit {
+  position: relative;
+  left: 441px;
+  top: 15px;
+  display: inline-block;
+}
+
+.templet-posts .flags {
+  border-top: 1px solid lightgray;
+}
+.templet-posts .flags i {
+  font-size: 22px;
+}
+.templet-posts .extra-option .onmind {
+  font-size: 16px;
+  width: 92.9%;
+}
+.templet-posts .posts-setting button, .templet-posts .posts-setting .view-opt {
+  font-size: 15px;
+  font-weight: 600;
+}
+.templet-posts .posts-setting button i, .templet-posts .posts-setting .view-opt i {
+  font-size: 18px;
+}
+.templet-posts .posts-setting .opt-button {
+  margin-top: 2px;
+}
+.templet-posts .posts-setting .view-opt {
+  border-top: 1px solid lightgray;
+}
+.templet-posts .post-block .post-head {
+  border-bottom: 1px solid lightgray;
+  font-size: 15px;
+  font-weight: 500;
   padding: 10px 15px;
 }
-
-#welcome {
-  text-align: center;
-  padding: 5px;
+.templet-posts .post-block .post-head #post-dp {
+  bottom: 14px;
+  position: relative;
 }
-
-.digit, .oparator {
-  cursor: pointer;
+.templet-posts .post-block .post-head p {
+  font-weight: 400;
+  line-height: 13px;
 }
-
-.operator:active, .digit:active {
+.templet-posts .post-block .post-head .post-date {
   font-size: 13px;
-  background-color: red;
+  font-weight: 300;
+}
+.templet-posts .post-block .post-head .post-dp-block {
+  margin-right: 5px;
+}
+.templet-posts .post-block .post-image-block {
+  height: 560px;
+  border-bottom: 1px solid lightgray;
+}
+.templet-posts .post-block .post-image-block .post-img {
+  margin: auto;
+}
+.templet-posts .post-block .like-content {
+  font-size: 15px;
+  font-weight: 400;
+}
+.templet-posts .post-block .like-content .like-icon {
+  padding: 3px;
+  font-size: 13px;
 }
 
-.keys-row {
-  display: flex;
-  justify-content: space-between;
+table {
+  border-top: 1px solid lightgray;
+  height: 45px;
+  width: 95.5%;
 }
-
-.operator {
-  background-color: beige;
-}
-
+table .share-icon {
+  font-size: 15px;
+  font-weight: 500;
+  text-align: center;
+}/*# sourceMappingURL=style.css.map */
