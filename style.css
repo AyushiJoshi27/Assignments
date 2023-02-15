@@ -1,0 +1,81 @@
+body {
+  background-color: #afafaf;
+}
+
+button {
+  border: none;
+  background-color: #000000;
+}
+
+td:hover {
+  color: #ffffff;
+}
+
+th:hover,
+#next:hover, 
+#previous:hover, 
+#today:hover, 
+#monthAndYear:hover,
+.today:hover {
+  background-color: #007bff;
+  border: none;
+  box-shadow: inset 0px 0px 10px 0px #000000;
+  color: #ffffff;
+}
+
+#previous, #next {
+  background-color: #007bff;
+  color: #ffffff;
+  height: 30px;
+  margin-top: 10px;
+  padding: 0px 10px;
+}
+
+#today {
+  background-color: #007bff;
+  border-radius: 5px;
+  color: #ffffff;
+  height: 45px;
+  font-size: 20px;
+  padding: 0 20px;
+}
+
+#calendar td {
+  border: none;
+  border-radius: 10px;
+  text-align: center;
+}
+
+#calendar th {
+  border: none;
+  text-align: center;
+}
+
+#month {
+  background-color: #007bff;
+  color: #ffffff;
+  font-size: 20px;
+  height: 28px;
+  padding: 0px 15px;
+}
+
+.card-header {
+  background-color: #007bff;
+  border-radius: 5px;
+  color: #ffffff;
+  font-size: 20px;
+  height: 45px;
+  padding: 9px 20px;
+}
+
+.header {
+  padding: 20px 0 40px;
+}
+
+.main-templet {
+  background-color: #000000;
+  color: #808080;
+  cursor: pointer;
+  min-width: 440px;
+  width: 40%;
+}
