@@ -1,12 +1,15 @@
 var today = new Date();
 let currentMonth = today.getMonth();
 let currentYear = today.getFullYear();
+let weekDays = document.getElementsByTagName('thead tr');
 let selectYear = document.getElementById('year');
 let selectMonth = document.getElementById('month');
 let months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 let monthAndYear = document.getElementById('monthAndYear');
 let buttons = document.getElementsByTagName("button");
 showCalendar(currentMonth, currentYear);
+
+document.getElementById("weekDays").innerHTML += ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].map(element => "<th>" + element + " </th>").join("");
 
 const buttonsPressed = e => {
   let thisId = e.target.id;
