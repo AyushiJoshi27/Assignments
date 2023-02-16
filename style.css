@@ -1,250 +1,68 @@
-button {
-  border-radius: 10px;
-  font-size: 16px;
-  padding: 0 5px;
+div center b {
+  font-size: 30px;
 }
 
-h4 {
-  margin-top: 40px;
-  padding-top: 20px;
+h3#monthandyear, #leftbtn, #rightbtn {
+  float: left;
+  margin: 0;
+  padding: 10px;
 }
 
-img, .img-api {
-  height: 300px;
-  object-fit: scale-down;
-  width: 300px;
+#calendar {
+  background-color: #d3d3d3;
+  border: 1px solid #000000;
+  border-top: 0;
+  display: grid;
+  grid-template-columns: repeat(7, 14.3%);
+  height: 444px;
 }
 
-nav {
-  background-color: rgb(238, 238, 238);
+#leftbtn p, #rightbtn p {
+  cursor: pointer;
+  font-size: 30px;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
-select, option {
-  height: 30px;
-  text-transform: capitalize;
+#monthandyear {
+  font-size: large;
+  text-align: center;
 }
 
-#list {
-  background-color: rgb(240, 255, 255);
-}
-
-#list p {
-  margin: 10px;
-  text-transform: capitalize;
-}
-
-#social-sites {
-  margin-top: 40px;
-}
-
-.breed-ref a {
-  border-bottom: 2px solid rgb(26 145 219);
-  color: rgb(0, 0, 0);
-  text-decoration: none;
-}
-
-.breed-ref a:hover {
-  border: none;
-  color: rgb(26 145 219);
-  text-decoration: none;
-}
-
-.doc-block {
-  margin: 40px 0;
-}
-
-.endpoint {
+#navbar {
+  background-color: #696969;
+  border: 1px solid #000000;
+  color: #ffffff;
   display: flex;
-  font-size: 20px;
   justify-content: space-between;
-  margin: 40px 0;
-  padding: 0;
-  width: 100%;
 }
 
-.endpoint li {
-  list-style: none;
-}
-
-.endpoint li a {
-  border-bottom: 2px solid rgb(26 145 219);
-  color: rgb(0, 0, 0);
-  text-decoration: none;
-}
-
-.endpoint li a:hover {
-  border: none;
-  color: rgb(26 145 219);
-  text-decoration: none;
-}
-
-.fa {
-  margin-right: 8px;
-}
-
-.hollow-list {
-  width: 124.11;
-}
-.main-section p {
-  margin: 20px 0;
-}
-
-.main-heading {
-  font-size: 38px;
-}
-
-.nav-heading {
-  margin: 30px 0;
-}
-
-.navbar {
-  display: inline-block;
-  font-size: 18px;
-  height: 1000px;
-  left: 0;
-  padding: 40px 0;
-  position: fixed;
-  top: 0;
-  width: 350px;
-}
-
-.navbar-nav {
-  display: block;
-  width: 100%;
-}
-
-.nav-item {
-  display: block;
-  width: 100%;
-}
-
-
-.nav-link {
-  border-bottom: 1px solid lightgrey;
-  color: rgb(0, 0, 0);
-  padding: 12px 0;
-}
-
-.nav-link:hover {
-  color: rgb(26 145 219);
-  text-decoration: none;
-}
-
-#dog-img img {
-  height: auto;
+.calendar-main {
+  margin: 0 auto;
+  min-width: 350px;
   width: 40%;
 }
 
-.show-img {
-  margin-left: -7px;
-}
-
-.project-list {
-  font-size: 20px;
-  margin: 20px 0;
-}
-
-.project-list li a{
-  border-bottom: 2px solid rgb(26 145 219);
-  color: rgb(0, 0, 0);
-  font-size: 20px;
-  text-decoration: none;
-}
-
-.side:hover{
-  border-bottom: 1px solid rgb(26 145 219);;
-  color : rgb(26 145 219);
-}
-
-.side  {
-  border-bottom: 1px solid lightgrey;
-  color: rgb(0, 0, 0);
-  padding: 12px 0;
-}
-
-.social-link {
-  color: rgb(0, 0, 0);
-  font-size: 18px;
-}
-
-.social-link .fa {
-  font-size: 18px;;
-}
-
-a.social-link:hover {
-  color : rgb(26 145 219);
-  border-bottom: none;
-}
-
-#social {
-  margin: 40px 0 0 20px;
-  padding: 0;
-}
-
-.three-breeds {
-  margin: 40px 0;
-  padding: 20px 0;
-}
-
-.with-breed-one {
-  margin: 30px 0;
-}
-
-.sidebar {
-  background-color: rgb(238, 238, 238);
-  height: 100%;
-  left: 0;
-  overflow-x: hidden;
-  padding-top: 60px;
-  position: fixed;
-  top: 0;
-  transition: 0.5s;
-  width: 350px;
-  z-index: 1;
-}
-
-.sidebar a {
-  color: rgb(0, 0, 0);
-  display: block;
-  font-size: 18px;
-  margin: 0px 8px 0px 20px;;
-  text-decoration: none;
-  transition: 0.3s;
-}
-
-.sidebar .closebtn {
-  font-size: 36px;
-  margin-left: 50px;
-  position: absolute;
-  right: 25px;
-  top: 0;
-}
-
-.openbtn {
-  background-color: rgb(17, 17, 17);
-  border: none;
-  color: rgb(255, 255, 255);
+.day, .todate, .weekend, .emptyday {
+  box-sizing: content-box;
   cursor: pointer;
-  font-size: 20px;
-  padding: 10px 15px;
+  height: 20px;
+  text-align: center;
 }
 
-.openbtn:hover {
-  background-color: rgb(68, 68, 68);
+.dayname {
+  border-bottom: 1px solid #696969;
+  font-size: 16px;
+  height: 20px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  text-align: center;
 }
 
-#main {
-  margin-left: 350px;
-  padding: 16px;
-  transition: margin-left .5s;
+.todate {
+  color: #ff0000;
 }
 
-@media screen and (max-height: 450px) {
-  .sidebar {
-    padding-top: 15px;
-  }
-
-  .sidebar a {
-    font-size: 18px;
-  }
+.weekend {
+  color: #1a53ff;
 }

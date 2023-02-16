@@ -1,89 +1,69 @@
 $(document).ready(function() {
-  $('.doc-block').hide();
-  $('.content-all').show();
+  var days = ['Mon', 'Tues', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+  var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+  var now = new Date();
+  var month = now.getMonth();
+  var year = now.getFullYear();
+  daysinmonth = new Date(year, month + 1, 0).getDate();
+  firstdayofmonth = new Date(year, month, 1).getDay();
 
-  const ajaxCall = function(callurl, sFn) {
-    $.ajax({
-      type: 'GET',
-      url: callurl,
-      success: sFn
-    });
-  };
-
-  $('.openbtn').click(function() {
-    $('#mySidebar').css('width', '300px');
-    $('#main').css('marginLeft', '300px');
+  $('#rightbtn').click(function () {
+    const myNode = document.querySelector("#calendar");
+    while (myNode.firstChild) {
+      myNode.removeChild(myNode.lastChild);
+    }
+    month++
+    if (month == 12) {
+      month = 0;
+      year++;
+    }
+    daysinmonth = new Date(year, month + 1, 0).getDate();
+    firstdayofmonth = new Date(year, month, 1).getDay();
+    createCalendar()
   });
 
-  $('.closebtn').click(function() {
-    $("#mySidebar").css('width', '0');
-    $('#main').css('marginLeft', '0');
+  $('#leftbtn').click(function () {
+    const myNode = document.querySelector("#calendar");
+    while (myNode.firstChild) {
+      myNode.removeChild(myNode.lastChild);
+    }
+    month--
+    if (month == -1) {
+      month = 11;
+      year--;
+    }
+    daysinmonth = new Date(year, month + 1, 0).getDate();
+    firstdayofmonth = new Date(year, month, 1).getDay();
+    createCalendar()
   });
-
-  var path = {
-    'main' : 'https://dog.ceo/api/breeds/image/random', 
-    'trio' : 'https://dog.ceo/api/breeds/image/random/3', 
-    'by' : 'https://dog.ceo/api/breed/hound/images/random',
-    'tri' : 'https://dog.ceo/api/breed/hound/images/random/3', 
-    'sub' : 'https://dog.ceo/api/breed/hound/afghan/images/random', 
-    'thri' : 'https://dog.ceo/api/breed/hound/afghan/images/random/3',
-    'list' : 'https://dog.ceo/api/breed/hound/list'
-  };
-
-  $('.endpoint li a').click(function() {
-    var type = $(this).attr('data-type');
-    $('.doc-block').hide();
-    $('.content-' + type).show(); 
-
-  });
-
-  $('.btn-block').click(function() {
-    var handle = $(this).attr('data');  
     
-    const getData = function(product) {
-      $('.img-' + handle).hide();
-      if (product.message.length <= 3) {
-        $('.table-block-' + handle).empty();
-        for (i = 0; i < product.message.length; i++) {
-          $('.table-block-' + handle).append(`<tr><td><img src='${product.message[i]}' class='img-api'></td></tr>`);
-        };
+  createCalendar = () => {
+    document.querySelector('#monthandyear').innerHTML = months[month] + ' ' + year;
+    days.forEach(day => $('#calendar').append(`<div class="dayname">${day}</div>`));
+    if (firstdayofmonth == 1) {
+      null;
+    } 
+    else if (firstdayofmonth == 0) {
+      for (i = 0; i < 6; i++) {
+        $('#calendar').append(`<div class="emptyday"></div>`);
+        }
+    } 
+    else {
+      for (i = 0; i < firstdayofmonth - 1; i++)
+        $('#calendar').append(`<div class="emptyday"></div>`);
+    }
+    for (let day = 1; day <= daysinmonth; day++) {
+      if (new Date(year, month, day).getDay() == 0 || new Date(year, month, day).getDay() == 6) {
+        $('#calendar').append(`<div class="weekend">${day}</div>`);
       } 
-      else {
-        $('.table-' + handle).html(`<tr><td><img src='${product.message}' class='img-api'></td></tr>`);
+      else if (day==now.getDate() && month == now.getMonth() && year == now.getFullYear()) {
+        $('#calendar').append(`<div class = "todate">${day}</div>`);
       }
-    };
-
-    ajaxCall(path[handle], getData)
-  });
-
-  const listFn = function (list) {
-    for (var i = 0; i < 7; i++) {
-      $('#list').append(`<p>${list.message[i]}</p>`);
-    };
+      else {    
+        $("#calendar").append(`<div class="day">${day}</div>`);
+      }
+    }
   };
-
-  ajaxCall(path['list'], listFn);
-  const breedListUrl =  'https://dog.ceo/api/breeds/list/all';
-
-  const breedListFn = function(lists) {
-    $.each(lists.message, function (key, value) {
-      $('.dog-selector').append(`<option value='${key}'>${key}</option>`);
-    });
-  }
-
-  ajaxCall(breedListUrl, breedListFn);
-
-  $("select.dog-selector").change(function() {
-    var selectedDog = $(this).val();
-    const selectedBreedUrl = 'https://dog.ceo/api/breed/' + selectedDog + '/images/random';
-    
-    $('#btn-breed').click(function() {
-      ajaxCall(selectedBreedUrl, function selectedDogFn(dogImage) {
-        $('.main-img').hide();
-        $('.img-page').html(`<img src='${dogImage.message}' alt='product-img'>`);
-      });
-    });
-
-  });
+  createCalendar()
 
 });
