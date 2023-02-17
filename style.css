@@ -1,73 +1,78 @@
-div center b {
-  font-size: 30px;
+* {
+  font-family: serif;
 }
 
-h3#month-and-year, #left-btn, #right-btn {
-  float: left;
+label {
   margin: 0;
-  padding: 10px;
 }
 
-#calendar {
-  background-color: #d3d3d3;
-  border: 1px solid #000000;
-  border-top: 0;
-  display: grid;
-  grid-template-columns: repeat(7, 14.3%);
-  height: 444px;
+#submit {
+  font-size: 18px;
+  margin: 20px 0;
+  padding: 2px 18px;
 }
 
-#left-btn p, #right-btn p {
+#user-icon {
+  font-size: 40px;
+  border-radius: 50%;
+}
+
+#short, #tall, #high-sal, #low-sal, #color {
   cursor: pointer;
-  font-size: 30px;
-  margin-top: 15px;
-  margin-bottom: 15px;
 }
 
-#month-and-year {
-  font-size: large;
-  margin: 8px 0;
-  padding: 0 10px;
-  text-align: center;
+.choose-state {
+  float: right;
 }
 
-#navbar {
-  background-color: #696969;
-  border: 1px solid #000000;
-  color: #ffffff;
-  display: flex;
-  justify-content: space-between;
+.detail, .indicator, .way-contact, .submit-botton {
+  margin-top: 20px;
 }
 
-.calendar-main {
-  margin: 0 auto;
-  min-width: 350px;
-  width: 40%;
-}
-
-.day, .todate, .weekend, .empty-day {
-  box-sizing: content-box;
+.choose-point, .decrese, .increse, .slider {
   cursor: pointer;
-  height: 20px;
-  text-align: center;
 }
 
-.day-name {
-  border-bottom: 1px solid #696969;
+.detail, .photo, .indicator, .way-to-contact {
+  background-color: rgb(255 255 202);
+}
+
+.error {
+  color: rgb(255, 0, 0);
+}
+
+.form-content-block {
+  padding: 15px;
+}
+
+.gen-details, .field-block, .way-to-contact {
+  border: 15px solid rgb(255, 255, 0);
+}
+
+.heading {
+  width: 20%;
+}
+
+.heading label {
+  float: right;
+}
+
+.legend {
+  margin-left: 40px;
+}
+
+.legend-head {
+  background-color: rgb(255, 255, 0);
   font-size: 16px;
-  height: 20px;
-  padding-top: 15px;
-  padding-bottom: 15px;
-  text-align: center;
+  line-height: 15px;
 }
 
-.todate {
-  color: #ff0000;
+.slider {
+  height: 30px;
+  width: 350px;
 }
 
-.weekend {
-  color: #1a53ff;
+.text-muted {
+  font-size: 13px;
 }
-
-
 
