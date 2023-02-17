@@ -1,139 +1,124 @@
 $(document).ready(function() {
+  let salaryValue = 0, heightValue = 0;
+  var mailReg = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
-  $("#valid-form").validate({
+  $('#valid-form').validate({
     rules: {
-      "user-icon": "required",
-      image : "required",
+      'prev-image': 'required',
       age: {
         required: true,
         range : [0, 100]
       },
-      gender : "required",
-      email : {
-        required :true
+      image : 'required',
+      gender : 'required',
+      email : 'required',
+      name: 'required',
+      'choose-country' : 'required',
+      phone : {
+        required: true,
+        digits: true,
+        minlength: 12,
+        maxlength: 12
       },
-      "choose-country" : "required",
-      name: {
-        required: true
-      },
-      phone : "required",
-      "ways-to-contact" : "required",
-      check: "required"
+      'ways-to-contact' : 'required',
+      check: 'required'
     }, 
     messages: {
-      image : "choose a file",
-      "user-icon": "choose a file",
-      name: {
-        pattern: "Enter your full name here!"
+      'prev-image': "Choose a file",
+      name: 'Enter your full name here!',
+      age : 'Please enter your age between 0 to 100',
+      gender : 'Please select your gender!',
+      email : 'Please enter your email address',
+      'choose-country' : 'Please choose the country you belong to!',
+      phone : {
+        required: 'Please enter your number',
+        maxlength: 'Write your phone number containing 10 numbers without country code'
       },
-      age : "Please enter your age between 0 to 100",
-      gender : "Please select your gender!",
-      "choose-country" : "Please choose the country you belong to!",
-      phone : "Please enter your number without country code",
-      "ways-to-contact" : "Please choose any one!",
-      check: "Enter your date of birth"
-    },
-    submitHandler: function(form) {
-      form.submit();
+      'ways-to-contact' : 'Please choose any one!',
+      check: 'Enter your date of birth'
     }
   });
-
-
-
 
   let countryState = {
-    "india": {
-      "state": ["Punjab", "Rajsthan", "Manipur", "Himachal Pradesh", "Sikkim"],
-      "countryCode": "91"
+    'india': {
+      'state': ['Punjab', 'Rajsthan', 'Manipur', 'Himachal Pradesh', 'Sikkim'],
+      'countryCode': '91'
     },
-    "australia": {
-      "state": ["Victoria", "Queensland", "Tasmania", "South Australia", "Western Australia"],
-      "countryCode": "61"
+    'australia': {
+      'state': ['Victoria', 'Queensland', 'Tasmania', 'South Australia', 'Western Australia'],
+      'countryCode': '61'
     },
-    "canada" : {
-      "state": ["Alberta","Manitoba", "Ontario", "Nova Scotia", "Yukon"],
-      "countryCode" : "1"
+    'canada' : {
+      'state': ['Alberta','Manitoba', 'Ontario', 'Nova Scotia', 'Yukon'],
+      'countryCode' : '1'
     },
-    "italy" : {
-      "state": ["Vento", "Marche", "Lazio", "Molise", "Liguria"],
-      "countryCode": "39"
+    'italy' : {
+      'state': ['Vento', 'Marche', 'Lazio', 'Molise', 'Liguria'],
+      'countryCode': '39'
     },
-    "switzerland": {
-      "state": ["Zuc", "Uri", "Luzern", "Bern", "Glarus"],
-      "countryCode": "41"
+    'switzerland': {
+      'state': ['Zuc', 'Uri', 'Luzern', 'Bern', 'Glarus'],
+      'countryCode': '41'
     }
-  }
+  };
 
-  $(".state").hide();
-  $("#state").hide();
-
-  $("#choose-country").change(function(){ 
-    $('#state')
-    .find('option')
-    .remove()
-    .end()
-    .append('<option value="choose">select state</option>')
-    .val('select state');
-    for (var index = 0; index <= countryState[$('#choose-country').find(":selected").val()].state.length -1; index++) {
-      $('#state').append('<option value="' + countryState[$('#choose-country').find(":selected").val()].state[index] + '">' + countryState[$('#choose-country').find(":selected").val()].state[index] + '</option>');
-    }
-    $("#state").show();
-    $(".state").show();
-    $("#phone").val(countryState[$('#choose-country').find(":selected").val()].countryCode);
-
-    $( "#phone" )
-    .focusout(function() {
-      if (!/^d{12}$g/.test($("#phone").val())) {
-        document.querySelector(".error").text("Please enter your ten digits phone number without country code");
-        $("#phone").val('');
-      }
-    });
+  $('#email').on('blur', function() {
+    var mail = $(this).val(); 
+    (mail && mailReg.test(mail)) ? console.log('True') : $('#email-error').html('Please enter a valid email address');
   });
 
-});
+  $('.state, #state').hide();
 
-let salaryValue = 0;
+  $('#choose-country').change(function(){ 
+    $('#state').find('option').remove().end().append(`<option value="choose">select state</option>`).val('select state');
+    for (var index = 0; index <= countryState[$('#choose-country').find(':selected').val()].state.length -1; index++) {
+      $('#state').append(`<option value="${countryState[$('#choose-country').find(':selected').val()].state[index]}">${countryState[$('#choose-country').find(':selected').val()].state[index]}</option>`);
+    }
+    $('#state, .state').show();
+    $('#phone').val(countryState[$('#choose-country').find(":selected").val()].countryCode);
+  });
 
-function decrease() {
-  if (salaryValue>1) {
-    salaryValue -=5;
-  }
-  $("#selectedSalary").text(salaryValue);
-  document.querySelector("#myRange").stepDown(5);
-}
+  $('#low-sal, #high-sal').click(function() {
+    if ($(this).attr('id') == 'low-sal') {
+      if (salaryValue>5) {
+        salaryValue -=5;
+      }
+      document.querySelector("#myRange").stepDown(5);
+    }
+    else {
+      salaryValue +=5;
+      document.querySelector("#myRange").stepUp(5);  
+    }
+    $("#selectedSalary").text(salaryValue);
+  });
 
-function increase() {
-  salaryValue +=5;
-  $("#selectedSalary").text(salaryValue);
-  document.querySelector("#myRange").stepUp(5);
-}
+  $('#short, #tall').click(function() {
+    if ($(this).attr('id') == 'short') {
+      if(heightValue > 1) {
+        heightValue -= 2;
+      }
+      document.querySelector("#my-height").stepDown(2);
+    }
+    else {
+      heightValue += 2;
+      document.querySelector("#my-height").stepUp(2);
+    }
+      $("#selectedHeight").text(heightValue);
+  });
 
-let heightValue = 0;
+  $("#image").hide();
+  $("#user-icon").show();
 
-function decrement() {
-  if(heightValue > 1) {
-    heightValue -= 2;
-  }
-  $("#selectedHeight").text(heightValue);
-  document.querySelector("#my-height").stepDown(2);
-}
-function increment() {
-  heightValue += 2;
-  $("#selectedHeight").text(heightValue);
-  document.querySelector("#my-height").stepUp(2);
-}
+  $('#preview').change(function(e) {
+    image.src=URL.createObjectURL(e.target.files[0]);
+    $("#image").toggle();
+    $("#user-icon").toggle();
+  });
 
+  $( 'form' ).bind( 'keypress keydown keyup', function(e) {
+    if (e.keyCode == 13) {
+        e.preventDefault();
+    }
+  });
 
-$("#image").hide();
-$("#user-icon").show();
-function preview(e) {
-  image.src=URL.createObjectURL(event.target.files[0]);
-  $("#image").toggle();
-  $("#user-icon").toggle();
-};
-
-jQuery( 'form' ).bind( 'keypress keydown keyup', function(e) {
-  if (e.keyCode == 13) {
-      e.preventDefault();
-  }
 });

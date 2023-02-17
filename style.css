@@ -6,9 +6,19 @@ label {
   margin: 0;
 }
 
+#submit {
+  font-size: 18px;
+  margin: 20px 0;
+  padding: 2px 18px;
+}
+
 #user-icon {
   font-size: 40px;
   border-radius: 50%;
+}
+
+#short, #tall, #high-sal, #low-sal, #color {
+  cursor: pointer;
 }
 
 .choose-state {
@@ -28,7 +38,7 @@ label {
 }
 
 .error {
-  color: red;
+  color: rgb(255, 0, 0);
 }
 
 .form-content-block {
@@ -36,7 +46,7 @@ label {
 }
 
 .gen-details, .field-block, .way-to-contact {
-  border: 15px solid yellow;
+  border: 15px solid rgb(255, 255, 0);
 }
 
 .heading {
@@ -52,9 +62,9 @@ label {
 }
 
 .legend-head {
+  background-color: rgb(255, 255, 0);
   font-size: 16px;
   line-height: 15px;
-  background-color: yellow;
 }
 
 .slider {

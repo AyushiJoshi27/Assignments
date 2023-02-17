@@ -32,8 +32,9 @@
               </label>
             </div>
             <div class="d-inline-block user-input">
-              <input type="file" name="prev-image" onchange="preview()">
+              <input type="file" name="prev-image" id="preview">
             </div>
+            <!--img-->
             <div class="my-2 prev-img">
               <div class="d-inline-block heading">
                 <label for="prev-image">Image preview : </label>
@@ -149,9 +150,9 @@
             </div>
 
             <div class="d-inline-block range-h-slide slide-block">
-              <span class="bg-danger p-1 " onclick="decrement()">Short</span>
+              <span class="bg-danger p-1 " id="short">Short</span>
               <input type="range" name="height" id="my-height" value="0" class="slider">
-              <span class="bg-danger p-1" onclick="increment()">Tall</span>
+              <span class="bg-danger p-1" id="tall">Tall</span>
               <label id="selectedHeight" class="px-2 bg-info text-black">0</label>
             </div>
           </div>
@@ -161,23 +162,19 @@
               <label for="salary">Salary : </label>
             </div>
             <div class="d-inline-block user-input slide-block">
-              <span class="bg-danger p-1 " onclick="decrease()">Poor</span>
+              <span class="bg-danger p-1 " id="low-sal">Poor</span>
               <input type="range" id="myRange" class="slider" value="0">
-              <span class="bg-danger p-1" onclick="increase()">Rich</span>
+              <span class="bg-danger p-1" id="high-sal">Rich</span>
               <label id="selectedSalary" class="px-2 bg-info text-black">0</label>
             </div>
           </div>
-
         </fieldset>
       </div>
-
       <div class="way-contact">
         <fieldset class="way-to-contact">
-
           <legend class="legend-head">
             <div class="legend">Your Contact Information</div>
           </legend>
-
           <div class="heading d-inline-block">
             <label for="email">Email :
               <a href="#" class="text-danger">*</a> :
@@ -215,12 +212,9 @@
                 <label for="in-chat">In-chat app</label>
             </div>
           </div>
-
         </fieldset>
       </div>
-
-      <input type="submit" id="submit" value="Submit">
-
+      <input type="submit" class="btn btn-primary submit-botton" id="submit" value="Submit">
     </form>
   </div>
   <script src="https://code.jquery.com/jquery-3.6.1.min.js"
