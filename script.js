@@ -12,7 +12,7 @@ $(document).ready(function() {
   };
 
   $('.open-btn, .close-btn').click(function() {
-    'close-btn' == $(this).attr('class') ? $("#my-sidebar").css('width', '0') && $('#main').css('marginLeft', '0') : $('#my-sidebar').css('width', '300px') && $('#main').css('marginLeft', '300px');
+    'close-btn' == $(this).attr('class') ? $("#my-sidebar").css('width', '0') && $('#main').css('margin-left', '0') : $('#my-sidebar').css('width', '300px') && $('#main').css('margin-left', '300px');
   });
 
   var path = {
