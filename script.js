@@ -12,7 +12,6 @@ $(document).ready(function() {
       image : 'required',
       gender : 'required',
       email : 'required',
-      name: 'required',
       'choose-country' : 'required',
       phone : {
         required: true,
@@ -25,7 +24,6 @@ $(document).ready(function() {
     }, 
     messages: {
       'prev-image': "Choose a file",
-      name: 'Enter your full name here!',
       age : 'Please enter your age between 0 to 100',
       gender : 'Please select your gender!',
       email : 'Please enter your email address',
@@ -62,9 +60,15 @@ $(document).ready(function() {
     }
   };
 
-  $('#email').on('blur', function() {
-    var mail = $(this).val(); 
+  $('#submit').on('click', function() {
+    $('form').valid();
+    var mail = $(email).val(); 
     (mail && mailReg.test(mail)) ? console.log('True') : $('#email-error').html('Please enter a valid email address');
+
+    var userName = /^[a-zA-Z]+ [a-zA-Z]+$/;
+    if (!userName.test($('#name').val())) {
+      $('.name-error').html("Enter your full name here!");
+    }
   });
 
   $('.state, #state').hide();

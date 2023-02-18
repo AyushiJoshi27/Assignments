@@ -37,7 +37,7 @@ label {
   background-color: rgb(255 255 202);
 }
 
-.error {
+.error, .name-error {
   color: rgb(255, 0, 0);
 }
 
