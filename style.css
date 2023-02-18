@@ -26,6 +26,7 @@ select, option {
 
 #list {
   background-color: rgb(240, 255, 255);
+  padding: 5px;
 }
 
 #list p {
@@ -79,7 +80,8 @@ select, option {
 }
 
 .fa {
-  margin-right: 8px;
+  text-align: center;
+  width: 17px;
 }
 
 .hollow-list {
@@ -212,7 +214,7 @@ a.social-link:hover {
   transition: 0.3s;
 }
 
-.sidebar .closebtn {
+.sidebar .close-btn {
   font-size: 36px;
   margin-left: 50px;
   position: absolute;
@@ -220,7 +222,7 @@ a.social-link:hover {
   top: 0;
 }
 
-.openbtn {
+.open-btn {
   background-color: rgb(17, 17, 17);
   border: none;
   color: rgb(255, 255, 255);

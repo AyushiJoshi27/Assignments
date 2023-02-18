@@ -16,9 +16,9 @@
 </head>
 
 <body>
-  <button class="openbtn">☰</button>
-  <div id="mySidebar" class="sidebar">
-    <a href="javascript:void(0)" class="closebtn"">×</a>
+  <button class="open-btn">☰</button>
+  <div id="my-sidebar" class="sidebar">
+    <a href="#" class="close-btn"">×</a>
     <a href="index.html" id="dog-img">
       <img src="images/dog_image.jpeg" class="rounded-circle" alt="nav-image">
     </a>
@@ -28,7 +28,7 @@
     <a href="about.html" class="side">About</a>
     <a href="https://github.com/jigsawpieces/dog-api-images#dog-api-images" class="side">Submit your dog</a>
     <a class="social-link" id="social"
-      href="https://sideorders.co.uk/collections/frontpage/products/dog-ceo-issue-1" target="_blank">
+      href="https://sideorders.co.uk/collections/frontpage/products/dog-ceo-issue-1">
       <i class="fa fa-paw" aria-hidden="true"></i> Dog CEO Zine</a>
     <a class="social-link" href="https://www.paypal.com/paypalme/dogapi">
       <i class="fa fa-usd" aria-hidden="true"></i> Buy me a dog treat</a>
@@ -37,23 +37,21 @@
     <a class="social-link" href="https://twitter.com/dog__CEO">
         <i class="fa fa-twitter" aria-hidden="true"></i> Follow on Twitter</a> 
   </div>
-
+  <!--main content-->
   <div class="main-content" id="main">
-    <!--main content-->
     <div class="main-section">
       <div class="section-list">
         <h3>ENDPOINTS</h3>
         <ul class="endpoint">
-          <li><a data-type="all" href="#all_breeds">List all breeds</a></li>
+          <li><a data-type="all" href="#all-breeds">List all breeds</a></li>
           <li><a data-type="random" href="#random">Random image</a></li>
           <li><a data-type="by" href="#by-breed">By breed</a></li>
-          <li><a data-type="sub" href="#By-sub-breed">By sub-breed</a></li>
+          <li><a data-type="sub" href="#by-sub-breed">By sub-breed</a></li>
           <li><a href="breed.html">Browse breed list</a></li>
           <li class="hollow-list"></li>
         </ul>
       </div>
       <!--LIST ALL BREEDS-->
-
       <div class="doc-block content-all" >
         <h3>List all breeds</h3>
         <div class="breed-list">
@@ -63,7 +61,6 @@
           <a href="breed.html">Browse breeds lists here.</a>
         </div>
       </div>
-
       <!--Random Image DOC-->
       <div class="doc-block content-random">
         <h3>Display single random image from all dogs collection</h3>
@@ -93,9 +90,7 @@
           </div>
         </div>
       </div>
-
       <!--by breed-->
-
       <div class="doc-block content-by">
         <div class="with-breed-one">
           <h4 class="my-4">Random image from a breed collection</h4>
@@ -125,8 +120,6 @@
           </div>
         </div>
       </div>
-
-
       <!--by sub breed-->
       <div class="doc-block content-sub">
         <div class="list-block">
