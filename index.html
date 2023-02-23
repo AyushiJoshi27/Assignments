@@ -1,67 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <!--link href="style.css" rel="stylesheet"-->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <header class="main-nav-bar">
-    <nav class="navbar p-2 navbar-expand-sm bg-white w-100 page-head-nav">
-      <a class="navbar-brand ps-1 pe-2 m-0 py-0" href="#"><img src="images/fb-logo.png" height="40px"></a>
-      <form action="#" class="px-3 py-2 bg-light">
-        <button type="submit" class="border-0 p-0 bg-light text-muted"> <i class="fa fa-search"></i></button>
-        <input type="search" class="border-0 bg-light search-data input-search" placeholder="Search Facebook" requiredinput>
-      </form>
-      <a href="#" class="space"></a>
-      <div class="collapse navbar-collapse" id="my-nav-bar">
-        <ul class="navbar-nav w-100 justify-content-between header-nav-extra">
-          <li class="nav-item px-3">
-            <a class="nav-link p-0" href="#"><i class="fa fa-home" aria-hidden="true"></i></a>
-          </li>
-          <li class="nav-item px-3">
-            <a class="nav-link p-0" href="#"><i class="fa fa-television" aria-hidden="true"></i></a>
-          </li>
-          <li class="nav-item px-3">
-            <a class="nav-link p-0" href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
-          </li>
-          <li class="nav-item px-3"> 
-            <a class="nav-link p-0" href="#"><i class="fa fa-users" aria-hidden="true"></i></a>
-          </li>
-        </ul>
-      </div>
-      <a href="#" class="space"></a>
-      <ul class="nav navbar-nav navbar-right mx-2 justify-content-between header-nav-account">
-        <li class="rounded-circle bg-light px-2 nav-item">
-          <a class="nav-link p-1" href="#">
-            <i class="fa fa-th" aria-hidden="true"></i>
-          </a>
+  <nav class="navbar navbar-expand-sm">
+    <a class="navbar-brand" href="#"><img src="images/fb-logo.png" height="40px"></a>
+    <form>
+      <button type="submit"> <i class="fa fa-search"></i></button>
+      <input type="search" placeholder="Search Facebook">
+    </form>
+    <div class="collapse navbar-collapse" id="my-nav-bar">
+      <ul class="navbar-nav header-nav-extra">
+        <li class="nav-item">
+          <a class="nav-link" href="#"><i class="fa fa-home" aria-hidden="true"></i></a>
         </li>
-        <li class="rounded-circle bg-light px-2 nav-item">
-          <a class="nav-link p-1" href="#">
-            <i class="fa fa-commenting-o" aria-hidden="true"></i>
-          </a>
+        <li class="nav-item">
+          <a class="nav-link" href="#"><i class="fa fa-television" aria-hidden="true"></i></a>
         </li>
-        <li class="rounded-circle bg-light px-2 nav-item">
-          <a class="nav-link p-1" href="#">
-            <i class='fa fa-bell'></i>
-          </a>
+        <li class="nav-item">
+          <a class="nav-link" href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
         </li>
-        <li class="rounded-circle bg-secondary px-2 nav-item">
-          <a class="nav-link p-1" href="#">
-            <i class="fa fa-user-o" aria-hidden="true"></i>
-          </a>
+        <li class="nav-item">
+          <a class="nav-link" href="#"><i class="fa fa-users" aria-hidden="true"></i></a>
         </li>
       </ul>
-    </nav>
-  </header>
+    </div>
+    <ul class="nav navbar-nav navbar-right header-nav-account">
+      <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-th" aria-hidden="true"></i></a></li>
+      <li class="nav-item"><a class="nav-link" href="#"><i class='fab fa-facebook-messenger'></i></a></li>
+      <li class="nav-item"><a class="nav-link" href="#"><i class='fa fa-bell'></i></a></li>
+      <li class="nav-item dropdown" id="user-account">
+        <a class="nav-link" href="#" data-toggle="dropdown"><i class="fa fa-user" aria-hidden="true"></i></a>
+        <ul class="dropdown-menu" id="log-in"><li><a class="dropdown-item in out" href="#"></a></li></ul>
+      </li>
+    </ul>
+  </nav>
   <div class="profile">
-    <div class="w-100 extra"></div>
     <div class="cover-photo">
       <img src="images/cover-photo.png" class="rounded-bottom" height="460px" width="100%">
     </div>
@@ -77,243 +67,284 @@
           <h3><strong>Marvel's Avenger</strong></h3>
           <h6 class="text-muted">50B</h6>
           <div class="w-75 friend-list">
-            <i class="fa fa-user bg-light dp-parent" aria-hidden="true"></i>
-            <i class="fa fa-user bg-light dp-parent img-stack" aria-hidden="true"></i>
+            <img src="images/capt-america.jpeg" class="bg-light dp-parent">
+            <img src="images/iron-man.jpeg" class="bg-light dp-parent img-stack">
           </div>
         </div>
         <div class="story-edit">
-          <button class="btn d-inline-block text-white bg-primary border-0">
-            <i class="fa fa-plus p-1 text-primary rounded-circle bg-white"></i>
-            Add to story
+          <button class="btn d-inline-block text-white bg-primary border-0 btn-default story-add">
+            <i class="fa fa-plus p-1 text-small text-primary rounded-circle bg-white"></i>Add to story
           </button>
           <button class="btn  d-inline-block bg-light border-0">
-            <i class="fa fa-pencil" aria-hidden="true"></i>
-            Edit profile
+            <i class="fa fa-pencil" aria-hidden="true"></i>Edit profile
           </button>
         </div>
       </div>
     </div>
-    <nav class="navbar mx-4 p-0 navbar-expand-sm nav-content">
-      <ul class="navbar-nav ms-0 mx-2 me-auto">
-        <li class="nav-item px-3 py-3 border-3 border-bottom border-primary">Page</li>
-        <li class="nav-item m-2">
-          <a class="nav-link" href="#">About</a>
-        </li>
-        <li class="nav-item m-2">
-          <a class="nav-link" href="#">Friends</a>
-        </li>
-        <li class="nav-item m-2">
-          <a class="nav-link" href="#">Photos</a>
-        </li>
-        <li class="nav-item m-2">
-          <a class="nav-link" href="#">Videos</a>
-        </li>
-        <li class="nav-item m-2">
-          <a class="nav-link" href="#">Check-ins</a>
-        </li>
-        <li class="nav-item dropdown m-2">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Dropdown</a>
-          <ul class="dropdown-menu m-2">
-            <li class="">
-              <a class="dropdown-item" href="#">Sports</a>
-            </li>
-            <li class="">
-              <a class="dropdown-item" href="#">Movies</a>
-            </li>
-            <li class="">
-              <a class="dropdown-item" href="#">Music</a>
-            </li>
-            <li class="">
-              <a class="dropdown-item" href="#">TV shows</a>
-            </li>
-            <li class="">
-              <a class="dropdown-item" href="#">Books</a>
-            </li>
-            <li class="">
-              <a class="dropdown-item" href="#">Likes</a>
-            </li>
-            <li class="">
-              <a class="dropdown-item" href="#">Events</a>
-            </li>
-            <li class="">
-              <a class="dropdown-item" href="#">Questions</a>
-            </li>
-            <li class="">
-              <a class="dropdown-item" href="#">Review given</a>
-            </li>
-            <li class="">
-              <a class="dropdown-item" href="#">Group</a>
-            </li>
-            <li class="">
-              <a class="dropdown-item" href="#">Message section</a>
-            </li>
+    <div class="navbar navbar-expand-sm nav-content">
+      <ul class="navbar-nav">
+        <li class="nav-item page">Page</li>
+        <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Friends</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Photos</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Videos</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Check-ins</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" type="button" id="dropdown-menu-button" data-bs-toggle="dropdown"
+            aria-expanded="false">Dropdown</a>
+          <ul class="dropdown-menu" aria-labelledby="dropdown-menu-button">
+            <li><a class="dropdown-item" href="#">Sports</a></li>
+            <li><a class="dropdown-item" href="#">Movies</a></li>
+            <li><a class="dropdown-item" href="#">Music</a></li>
+            <li><a class="dropdown-item" href="#">TV shows</a></li>
+            <li><a class="dropdown-item" href="#">Books</a></li>
+            <li><a class="dropdown-item" href="#">Likes</a></li>
+            <li><a class="dropdown-item" href="#">Events</a></li>
+            <li><a class="dropdown-item" href="#">Questions</a></li>
+            <li><a class="dropdown-item" href="#">Review given</a></li>
+            <li><a class="dropdown-item" href="#">Group</a></li>
+            <li><a class="dropdown-item" href="#">Message section</a></li>
           </ul>
         </li>
-      </ul> 
-      <a class="nav-item text-decoration-none text-muted py-2 px-3 my-2 bg-light rounded-2">
-        <i class="fa fa-ellipsis-h"></i>
-      </a>
-    </nav>
+      </ul>
+      <a class="nav-item text-muted bg-light"><i class="fa fa-ellipsis-h"></i></a>
+    </div>
   </div>
   <div class="p-0 bg-light fb-full-body">
     <div class="py-3 main-body">
       <!--introduction block-->
-      <section class="d-inline-block templet-about">
-        <div class="rounded-3 introduction bg-white">
+      <section class="templet-about">
+        <div class="introduction">
           <h5><b>Intro</b></h5>
-          <button type="button" class="w-100 my-2 px-0 btn border-0 align-content-center btn-light">Add bio</button>
-          <p class="my-2 py-1">
-            <i class="fa fa-graduation-cap text-muted greaduation-icon" aria-hidden="true"></i>
-            <span>  College</span>
+          <button type="button" class="btn add-bio" id="bio">Add bio</button>
+          <div class="d-none text-area">
+            <textarea rows="3" cols="46" placeholder="Describe who you are"></textarea>
+            <p class="text-muted">101 characters remaining</p>
+            <i class="fa fa-globe" aria-hidden="true"></i><span>Public</span>
+            <button type="button" class="btn bg-primary">Save</button>
+            <button type="button" class="btn bg-light">Calcel</button>
+          </div>
+          <p>
+            <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+            <span> College</span>
           </p>
-          <p class="my-2 py-1 ">
-            <i class="fa fa-graduation-cap text-muted greaduation-icon" aria-hidden="true"></i>
-            <span>  School</span>
+          <p>
+            <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+            <span> School</span>
           </p>
-          <p class="my-2 py-1">
-            <i class="fa fa-home text-muted" id="home-icon" aria-hidden="true"></i>
-            <span>Lives in <a>Current city</a></span>
+          <p>
+            <i class="fa fa-home" id="home-icon" aria-hidden="true"></i>
+            <span>Lives in <a>current city</a></span>
           </p>
-          <p class="my-2  py-1">
-            <i class="fa fa-map-marker text-muted" id="map-icon" aria-hidden="true"></i>
-            <span>From <a>Permanent city/town</a></span>
+          <p>
+            <i class="fa fa-map-marker" id="map-icon" aria-hidden="true"></i>
+            <span>From <a>permanent city/town</a></span>
           </p>
-          <button type="button" class="w-100 px-0 my-2 btn border-0 align-content-center btn-light">
-            Details
-          </button>
-          <button type="button" class="w-100 px-0 my-2 btn border-0 align-content-center btn-light">
-            Hobbies
-          </button>
-          <button type="button" class="w-100 px-0 my-2 btn border-0 align-content-center btn-light">
-            Feature
-          </button>
+          <button type="button" class="btn user-details" id="detail">Details</button>
+          <button type="button" class="btn user-hobbies" id="hobbies" href="hobbies">Hobbies</button>
+          <button type="button" class="btn features">Feature</button>
         </div>
-        <div class="p-3 my-3 bg-white rounded-3 see-all-photo">
-          <h5 class="d-inline-block m-0"><b>Photos</b></h5>
-          <a class="text-primary text-decoration-none float-end">See all photos</a>
+        <div class="see-all-photo">
+          <h5><b>Photos</b></h5>
+          <a class="text-primary">See all photos</a>
+          <div>
+            <img src="images/thor1.jpeg" alt="thor1">
+            <img src="images/thor2.jpeg" alt="thor1">
+            <img src="images/thor3.jpeg" alt="thor1">
+          </div>
         </div>
-        <div class="p-3 bg-white rounded-3 friends-list"> 
-          <h5 class="d-inline-block w-25 m-0"><b>Friends</b></h5>
-          <a class="text-primary text-decoration-none float-end">See all photos</a>
-          <a class="text-decoration-none d-block mb-3 text-muted">50M friends</a>
+        <div class="friends-list">
+          <h5><b>Friends</b></h5>
+          <a class="text-primary">See all photos</a>
+          <a class="counts">50M friends</a>
           <div class="grid-container">
             <div class="grid-item">
-              <img src="images/photo1.jpeg" height="146px" width="146px" alt="photo1">
-              <a class="text-decoration-none text-dark">Black Widow</a>
+              <img src="images/photo1.jpeg" alt="photo1" data-toggle="modal" data-target="#exampleModalCenter">
+              <a class="text-decoration-none">Black Widow</a>
             </div>
             <div class="grid-item">
-              <img src="images/photo2.jpeg" height="146px" width="146px"  alt="photo2">
-              <a class="text-decoration-none text-dark">Captain America</a>
+              <img src="images/photo2.jpeg" alt="photo2">
+              <a class="text-decoration-none">Captain America</a>
             </div>
             <div class="grid-item">
-              <img src="images/photo3.jpeg" height="146px" width="146px" alt="photo3">
-              <a class="text-decoration-none text-dark">Iron man</a>
-            </div>  
-            <div class="grid-item">
-              <img src="images/photo4.jpeg" height="146px" width="146px" alt="photo4">
-              <a class="text-decoration-none text-dark">Hulk</a>
+              <img src="images/photo3.jpeg" alt="photo3">
+              <a class="text-decoration-none">Iron man</a>
             </div>
             <div class="grid-item">
-              <img src="images/photo5.jpeg" height="146px" width="146px" alt="photo5">
-              <a class="text-decoration-none text-dark">Wonder woman</a>
+              <img src="images/photo4.jpeg" alt="photo4">
+              <a class="text-decoration-none">Hulk</a>
             </div>
             <div class="grid-item">
-              <img src="images/photo6.jpeg" height="146px" width="146px" alt="photo6">
-              <a class="text-decoration-none text-dark">Spider man</a>
-            </div>  
-            <div class="grid-item">
-              <img src="images/photo7.jpeg" height="146px" width="146px" alt="photo7">
-              <a class="text-decoration-none text-dark">Doctor strange</a>
+              <img src="images/photo5.jpeg" alt="photo5">
+              <a class="text-decoration-none">Wonder woman</a>
             </div>
             <div class="grid-item">
-              <img src="images/photo8.jpeg" height="146px" width="146px" alt="photo8">
-              <a class="text-decoration-none text-dark">Scarlet witch</a>
+              <img src="images/photo6.jpeg" alt="photo6">
+              <a class="text-decoration-none">Spider man</a>
             </div>
             <div class="grid-item">
-              <img src="images/photo9.jpeg" height="146px" width="146px" alt="photo9">
-              <a class="text-decoration-none text-dark">Loki</a>
+              <img src="images/photo7.jpeg" alt="photo7">
+              <a class="text-decoration-none">Doctor strange</a>
+            </div>
+            <div class="grid-item">
+              <img src="images/photo8.jpeg" alt="photo8">
+              <a class="text-decoration-none">Scarlet witch</a>
+            </div>
+            <div class="grid-item">
+              <img src="images/photo9.jpeg" alt="photo9">
+              <a class="text-decoration-none">Loki</a>
             </div>
           </div>
+        </div>
+        <!--edit-feature-->
+        <div class="d-none edit-feature">
+          <div class="edit-img"><img src="https://static.xx.fbcdn.net/rsrc.php/v3/yN/r/gL1slwup025.png"
+              alt="edit-feature"></div>
+          <button type="button">Add</button>
+        </div>
+        <!--hobbies-->
+        <div class="d-none hobbies" id="hobbies">
+          <div class="img-wrapper"><img src="https://static.xx.fbcdn.net/rsrc.php/v3/yU/r/0DqfQD96F8w.png"
+              alt="hobby-img"></div>
+          <div class="heading">Add hobbies<br><span>What do you love to do? Choose from the popular hobbies below or add
+              others</span></div>
+          <hr>
+          <p>RECOMMENDED HOBBIES</p>
+          <div class="hobby-varity">
+            <button type="button"><i class="fa-solid fa-music"></i>Pasodoble</button>
+            <button type="button"><i class="fa-solid fa-microphone"></i>Acapella</button>
+            <button type="button"><i class="fa fa-car"></i>Car</button>
+            <button type="button"><i class="fa fa-edit"></i>Content writing</button>
+            <button type="button"><i class="fa fa-fighter-jet"></i>Aviation</button>
+            <button type="button"><i class="fa fa-film"></i>Shooting</button>
+          </div>
+          <hr>
+          <p class="hobby-foot"><i class="fa fa-globe" aria-hidden="true"></i>Hobbies are Public</p>
         </div>
       </section>
       <!--posts block-->
-      <section class="d-inline-block templet-posts">
-        
-          <div class="bg-white px-3 rounded-3 extra-option">
-            <div class="py-2">
-              <img src="images/onmind.jpeg" class="rounded-circle" height="38px" width="38px">
-              <a href="#" class="p-2 ms-1 my-1 text-decoration-none text-muted rounded-5 d-inline-block bg-light onmind">
-                What's on your mind?
-              </a> 
-            </div>
-            <div class="d-flex justify-content-around py-3 flags">
-              <p class="m-0 text-muted"><i class="fa fa-video-camera text-danger" aria-hidden="true"></i> Live video</p>
-              <p class="m-0 text-muted"><i class="fa fa-file-image-o text-success" aria-hidden="true"></i> Photo/video</p>
-              <p class="m-0 text-muted"><i class="fa fa-flag text-primary" aria-hidden="true"></i> Live video</p>
-            </div> 
+      <section class="templet-posts">
+        <div class="add-status">
+          <div class="py-2">
+            <img src="images/onmind.jpeg" alt="dp">
+            <input placeholder="What's on your mind?">
           </div>
-          <div class="my-3 bg-white rounded-3 posts-setting">
-            <div class="py-2 my-2">
-              <h5 class="d-inline-block mx-3 pt-2 m-0"><b>Posts</b></h5>
-              <button type="button" class="btn border-none mx-2 float-end bg-light  opt-button">
-                <i class="fa fa-cog cog-icon" aria-hidden="true"></i>
-                Manage posts
-              </button>
-              <button type="button" class="btn border-none float-end bg-light opt-button">
-                <i class="fa fa-sliders" aria-hidden="true"></i>
-                Filters
-              </button>
-            </div>
-            <div class="container view-opt">
-              <div class="row m-0 w-100">
-                <div class="col text-center border-3 border-bottom border-primary mx-1 text-primary py-2">
-                  <i class="fa fa-bars" aria-hidden="true"></i>
-                  List view
-                </div>
-                <div class="col text-center text-muted mx-1 py-2">
-                  <i class="fa fa-th-large" aria-hidden="true"></i> Grid view
-                </div>
+          <div class="flags">
+            <p><i class="fa fa-video-camera text-danger" aria-hidden="true"></i> Live video</p>
+            <p><i class="fa-solid fa-image text-success"></i> Photo/video</p>
+            <p><i class="fa fa-flag text-primary" aria-hidden="true"></i> Live video</p>
+          </div>
+        </div>
+        <div class="posts-setting">
+          <div class="setting-head">
+            <h5><b>Posts</b></h5>
+            <button type="button" class="btn mx-2"><i class="fa fa-cog cog-icon" aria-hidden="true"></i>Manage posts</button>
+            <button type="button" class="btn">
+              <i class="fa fa-sliders" aria-hidden="true"></i>Filters
+            </button>
+          </div>
+          <div class="view-opt">
+            <div class="row">
+              <div class="col">
+                <i class="fa fa-bars" aria-hidden="true"></i>
+                List view
+              </div>
+              <div class="col">
+                <i class="fa fa-th-large" aria-hidden="true"></i> Grid view
               </div>
             </div>
           </div>
-          <!--post block-->
-          <div class="bg-white rounded-3 post-block">
-            <header class="post-head">
-              <div class="d-inline-block post-dp-block">
-                <img class="rounded-circle align-middle" id="post-dp" src="images/rdj.jpeg" height="40px" width="40px">
-              </div>
-              <div class="d-inline-block"> Chris hamsworth
-                <i class="fa fa-caret-right text-muted" aria-hidden="true"></i>
-                Marver's Avenger 
-                <br>
-                <span class="text-muted post-date">  
-                  Dec 05 .
-                  <i class="fa fa-user-plus" aria-hidden="true"></i>        
-                </span>
-              </div>
-              <i class="fa fa-ellipsis-h float-end mt-2"></i> 
-              <p class="m-0 post-caption">Thor : Love and Thunder</p>
-            </header>
-            <div class="d-flex post-image-block">
-              <img src="images/thor-post.jpeg" class="post-img" height="129px" width="389px" alt="thor-post">
+        </div>
+        <!--post block-->
+        <div class="post-block">
+          <header>
+            <div class="post-dp-block">
+              <img id="post-dp" src="images/rdj.jpeg" height="40px" width="40px">
             </div>
-            <div class="like-content p-3 text-muted">
-              <i class="fa fa fa-thumbs-up text-white rounded-circle bg-primary like-icon" aria-hidden="true"></i>  
-              RBJ, Chris Evans and 170M others
-              <span class="float-end">59M Comments</span>
+            <div> Chris hamsworth
+              <i class="fa fa-caret-right" aria-hidden="true"></i>
+              Marver's Avenger
+              <br>
+              <span class="post-date">
+                Dec 05 .
+                <i class="fa fa-user-plus" aria-hidden="true"></i>
+              </span>
             </div>
-            <table class="text-muted mx-3 share-block">
-              <tbody>
-                <tr>
-                  <td class="share-icon"><i class="fa fa-thumbs-o-up px-2" aria-hidden="true"></i> Likes</td>
-                  <td class="share-icon"><i class="fa fa-comment-o px-2" aria-hidden="true"></i> Comments</td>
-                  <td class="share-icon"><i class="fa fa-share-square-o px-2" aria-hidden="true"></i> Share</td>
-                </tr>
-              </tbody>
-            </table>
+            <i class="fa fa-ellipsis-h"></i>
+            <p>Thor : Love and Thunder</p>
+          </header>
+          <div class="post-image-block">
+            <img src="images/thor-love-and-thunder-poster.jpeg" alt="thor-post">
           </div>
+          <div class="like-content">
+            <i class="fa fa fa-thumbs-up" aria-hidden="true"></i>
+            RBJ, Chris Evans and 170M others
+            <span>59M Comments</span>
+          </div>
+          <table class="text-muted share-block">
+            <tbody>
+              <tr>
+                <td><i class="fa fa fa-thumbs-up" aria-hidden="true"></i> Likes</td>
+                <td><i class="fa-solid fa-comment"></i> Comments</td>
+                <td><i class="fa-solid fa-share"></i> Share</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </section>
     </div>
   </div>
+  <!-- Modal -->
+  <div class="modal" id="confirm-modal" tabindex="-1" role="dialog" aria-labelledby="confirmModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="confirmModalLabel">Add Story</h5>
+          <button type="button" class="btn close border-0" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">Are you sure you want to add a story?</div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-danger" id="confirmDelete">Yes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal" id="edit-details" tabindex="-1" role="dialog" aria-labelledby="edit-details-modal"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="edit-details-modal">Edit details</h5>
+          <button type="button" class="btn close border-0" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Customize your intro<br><span>Details you select will be public.</span></p>
+          <h5>Work</h5>
+          <i class="fa fa-plus" aria-hidden="true"></i><a href="#">Add a workplace</a>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-danger" id="confirmDelete">Yes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+    integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"
+    integrity="sha512-rstIgDs0xPgmG6RX1Aba4KV5cWJbAMcvRCVmglpam9SoHZiUCyQVDdH2LPlxoHtrv17XWblE/V/PP+Tr04hbtA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="script.js"></script>
 </body>
+
 </html>
