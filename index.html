@@ -55,27 +55,27 @@
     <div class="cover-photo">
       <img src="images/cover-photo.png" class="rounded-bottom" height="460px" width="100%">
     </div>
-    <div class="profile-intro mx-4">
-      <div class="mx-2 profle-block">
-        <div class="rounded-circle border border-4 border-white d-inline-block fb-dp">
-          <img src="images/profile-fb.jpeg" class="img-prof rounded-circle" height="170px" width="170px">
+    <div class="profile-intro">
+      <div class="profle-block">
+        <div class="fb-dp">
+          <img src="images/profile-fb.jpeg">
         </div>
-        <div class="d-inline-block bg-light rounded-circle camera">
-          <i class="fa fa-camera p-2 " aria-hidden="true"></i>
+        <div class="camera">
+          <i class="fa fa-camera " aria-hidden="true"></i>
         </div>
-        <div class="align-bottom d-inline-block name-info">
+        <div class="name-info">
           <h3><strong>Marvel's Avenger</strong></h3>
-          <h6 class="text-muted">50B</h6>
-          <div class="w-75 friend-list">
+          <h6 >50B</h6>
+          <div class="friend-list">
             <img src="images/capt-america.jpeg" class="bg-light dp-parent">
             <img src="images/iron-man.jpeg" class="bg-light dp-parent img-stack">
           </div>
         </div>
         <div class="story-edit">
-          <button class="btn d-inline-block text-white bg-primary border-0 btn-default story-add">
-            <i class="fa fa-plus p-1 text-small text-primary rounded-circle bg-white"></i>Add to story
+          <button type="button" class="btn btn-default story-add">
+            <i class="fa fa-plus"></i>Add to story
           </button>
-          <button class="btn  d-inline-block bg-light border-0">
+          <button type="button" class="btn">
             <i class="fa fa-pencil" aria-hidden="true"></i>Edit profile
           </button>
         </div>
@@ -110,8 +110,9 @@
       <a class="nav-item text-muted bg-light"><i class="fa fa-ellipsis-h"></i></a>
     </div>
   </div>
-  <div class="p-0 bg-light fb-full-body">
+  <div class="fb-full-body">
     <div class="py-3 main-body">
+      <div class="stories"></div>
       <!--introduction block-->
       <section class="templet-about">
         <div class="introduction">
@@ -119,10 +120,10 @@
           <button type="button" class="btn add-bio" id="bio">Add bio</button>
           <div class="d-none text-area">
             <textarea rows="3" cols="46" placeholder="Describe who you are"></textarea>
-            <p class="text-muted">101 characters remaining</p>
+            <p>101 characters remaining</p>
             <i class="fa fa-globe" aria-hidden="true"></i><span>Public</span>
             <button type="button" class="btn bg-primary">Save</button>
-            <button type="button" class="btn bg-light">Calcel</button>
+            <button type="button" class="btn bg-light cancel">Calcel</button>
           </div>
           <p>
             <i class="fa fa-graduation-cap" aria-hidden="true"></i>
@@ -140,17 +141,20 @@
             <i class="fa fa-map-marker" id="map-icon" aria-hidden="true"></i>
             <span>From <a>permanent city/town</a></span>
           </p>
-          <button type="button" class="btn user-details" id="detail">Details</button>
-          <button type="button" class="btn user-hobbies" id="hobbies" href="hobbies">Hobbies</button>
-          <button type="button" class="btn features">Feature</button>
+          <button type="button" class="btn user-details"><a href="#details">Details</a></button>
+          <button type="button" class="btn user-hobbies"><a href="#hobby">Hobbies</a></button>
+          <button type="button" class="btn user-features"><a href="#features">Feature</a></button>
         </div>
         <div class="see-all-photo">
           <h5><b>Photos</b></h5>
           <a class="text-primary">See all photos</a>
-          <div>
-            <img src="images/thor1.jpeg" alt="thor1">
-            <img src="images/thor2.jpeg" alt="thor1">
-            <img src="images/thor3.jpeg" alt="thor1">
+          <div class="grid-container">
+            <div class="grid-item"><img src="images/thor1.jpeg" alt="thor1"></div> 
+            <div class="grid-item"><img src="images/thor2.jpeg" alt="thor2"></div>
+            <div class="grid-item"><img src="images/thor3.jpeg" alt="thor3"></div>
+            <div class="grid-item"><img src="images/thor4.jpeg" alt="thor4"></div>
+            <div class="grid-item"><img src="images/thor5.jpeg" alt="thor5"></div>
+            <div class="grid-item"><img src="images/thor6.jpeg" alt="thor6"></div>
           </div>
         </div>
         <div class="friends-list">
@@ -197,17 +201,34 @@
           </div>
         </div>
         <!--edit-feature-->
-        <div class="d-none edit-feature">
-          <div class="edit-img"><img src="https://static.xx.fbcdn.net/rsrc.php/v3/yN/r/gL1slwup025.png"
-              alt="edit-feature"></div>
+        <div class="edit-feature" id="features">
+          <div class="feature-head">Edit featured</div>
+          <div class="edit-img"><img src="https://static.xx.fbcdn.net/rsrc.php/v3/yN/r/gL1slwup025.png"alt="edit-feature"></div>
           <button type="button">Add</button>
         </div>
+        <!--Edit details-->
+        <div id="details">
+          <div class="head">Edit details</div>
+          <div class="details-body">
+            <h5>Customize your intro</h5>
+            <p class="txt-info">Details you select will be public.</p>
+            <h5>Work</h5>
+            <p><i class="fa fa-plus" aria-hidden="true"></i><a href="#">Add a workplace</a></p>
+            <h5>Edication</h5>
+            <p><i class="fa fa-plus" aria-hidden="true"></i><a href="#">Add high school</a></p>
+            <p><i class="fa fa-plus" aria-hidden="true"></i><a href="#">Add college</a></p>
+          </div>
+          <div class="details-foot">
+            <button type="button" class="btn update-info">Update your information</button>
+            <button type="button" class="btn save">Save</button>
+          </div>
+        </div>
         <!--hobbies-->
-        <div class="d-none hobbies" id="hobbies">
+        <div class="hobbies" id="hobby">
           <div class="img-wrapper"><img src="https://static.xx.fbcdn.net/rsrc.php/v3/yU/r/0DqfQD96F8w.png"
-              alt="hobby-img"></div>
+            alt="hobby-img"></div>
           <div class="heading">Add hobbies<br><span>What do you love to do? Choose from the popular hobbies below or add
-              others</span></div>
+            others</span></div>
           <hr>
           <p>RECOMMENDED HOBBIES</p>
           <div class="hobby-varity">
@@ -261,7 +282,8 @@
             <div class="post-dp-block">
               <img id="post-dp" src="images/rdj.jpeg" height="40px" width="40px">
             </div>
-            <div> Chris hamsworth
+            <div> 
+              <span class="user">Chris hamsworth</span>
               <i class="fa fa-caret-right" aria-hidden="true"></i>
               Marver's Avenger
               <br>
@@ -284,7 +306,7 @@
           <table class="text-muted share-block">
             <tbody>
               <tr>
-                <td><i class="fa fa fa-thumbs-up" aria-hidden="true"></i> Likes</td>
+                <td class="likes"><i class="fa fa fa-thumbs-up" aria-hidden="true"></i> Likes</td>
                 <td><i class="fa-solid fa-comment"></i> Comments</td>
                 <td><i class="fa-solid fa-share"></i> Share</td>
               </tr>
@@ -301,46 +323,37 @@
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="confirmModalLabel">Add Story</h5>
-          <button type="button" class="btn close border-0" data-dismiss="modal" aria-label="Close">
+          <button type="button" class="btn close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">Are you sure you want to add a story?</div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-          <button type="button" class="btn btn-danger" id="confirmDelete">Yes</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+          <button type="button" class="btn btn-danger" id="confirm-delete">Yes</button>
         </div>
       </div>
     </div>
   </div>
-  <div class="modal" id="edit-details" tabindex="-1" role="dialog" aria-labelledby="edit-details-modal"
-    aria-hidden="true">
+  <!--img modal-->
+  <div class="modal img-modal" id="example-modal">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="edit-details-modal">Edit details</h5>
-          <button type="button" class="btn close border-0" data-dismiss="modal" aria-label="Close">
+          <h5 class="modal-title">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <div class="modal-body">
-          <p>Customize your intro<br><span>Details you select will be public.</span></p>
-          <h5>Work</h5>
-          <i class="fa fa-plus" aria-hidden="true"></i><a href="#">Add a workplace</a>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-          <button type="button" class="btn btn-danger" id="confirmDelete">Yes</button>
-        </div>
+        <div class="modal-body"></div>
       </div>
     </div>
   </div>
-
+  <div class="img-clone">
+    <img src="images/marvel-studios.png" alt="story">
+  </div>
   <script src="https://code.jquery.com/jquery-3.6.1.min.js"
     integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
-    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-    crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"
     integrity="sha512-rstIgDs0xPgmG6RX1Aba4KV5cWJbAMcvRCVmglpam9SoHZiUCyQVDdH2LPlxoHtrv17XWblE/V/PP+Tr04hbtA=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>

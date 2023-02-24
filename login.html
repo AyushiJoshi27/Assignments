@@ -20,48 +20,37 @@
 <body>
   <nav class="navbar navbar-expand-sm">
     <a class="navbar-brand" href="#"><img src="images/fb-logo.png" height="40px"></a>
-    <form action="#" class="bg-light">
-      <button type="submit" class="border-0 p-0 bg-light text-muted"> <i class="fa fa-search"></i></button>
-      <input type="search" class="border-0 bg-light search-data input-search" placeholder="Search Facebook"
-        requiredinput>
+    <form>
+      <button type="submit"> <i class="fa fa-search"></i></button>
+      <input type="search" placeholder="Search Facebook">
     </form>
     <div class="collapse navbar-collapse" id="my-nav-bar">
       <ul class="navbar-nav header-nav-extra">
-        <li class="nav-item px-3">
-          <a class="nav-link p-0" href="#"><i class="fa fa-home" aria-hidden="true"></i></a>
+        <li class="nav-item">
+          <a class="nav-link" href="#"><i class="fa fa-home" aria-hidden="true"></i></a>
         </li>
-        <li class="nav-item px-3">
-          <a class="nav-link p-0" href="#"><i class="fa fa-television" aria-hidden="true"></i></a>
+        <li class="nav-item">
+          <a class="nav-link" href="#"><i class="fa fa-television" aria-hidden="true"></i></a>
         </li>
-        <li class="nav-item px-3">
-          <a class="nav-link p-0" href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+        <li class="nav-item">
+          <a class="nav-link" href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
         </li>
-        <li class="nav-item px-3">
-          <a class="nav-link p-0" href="#"><i class="fa fa-users" aria-hidden="true"></i></a>
+        <li class="nav-item">
+          <a class="nav-link" href="#"><i class="fa fa-users" aria-hidden="true"></i></a>
         </li>
       </ul>
     </div>
-    <ul class="nav navbar-nav navbar-right mx-2 justify-content-between header-nav-account">
-      <li class="rounded-circle bg-light px-2 nav-item">
-        <a class="nav-link p-1" href="#"><i class="fa fa-th" aria-hidden="true"></i></a>
-      </li>
-      <li class="rounded-circle bg-light px-2 nav-item">
-        <a class="nav-link p-1" href="#"><i class='fab fa-facebook-messenger'></i></a>
-      </li>
-      <li class="rounded-circle bg-light px-2 nav-item">
-        <a class="nav-link p-1" href="#"><i class='fa fa-bell'></i></a>
-      </li>
-      <li class="rounded-circle bg-light px-2 nav-item dropdown" id="user-account">
-        <a class="nav-link p-1" href="#" data-toggle="dropdown">
-          <i class="fa fa-user" aria-hidden="true"></i>
-        </a>
-        <ul class="dropdown-menu" id="log-in">
-          <li><a class="dropdown-item in out" href="#"></a></li>
-        </ul>
+    <ul class="nav navbar-nav navbar-right header-nav-account">
+      <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-th" aria-hidden="true"></i></a></li>
+      <li class="nav-item"><a class="nav-link" href="#"><i class='fab fa-facebook-messenger'></i></a></li>
+      <li class="nav-item"><a class="nav-link" href="#"><i class='fa fa-bell'></i></a></li>
+      <li class="nav-item dropdown" id="user-account">
+        <a class="nav-link" href="#" data-toggle="dropdown"><i class="fa fa-user" aria-hidden="true"></i></a>
+        <ul class="dropdown-menu" id="log-in"><li><a class="dropdown-item in out" href="#"></a></li></ul>
       </li>
     </ul>
   </nav>
-  <div class="bg-light login-content">
+  <div class="login-content">
     <div class="login-wrapper">
       <div class="login-info">
         <h2 class="text-primary">facebook</h2>
@@ -69,8 +58,8 @@
       </div>
       <div class="login-block">
         <form id="register-form">
-          <input type="text" placeholder="Email address or phone number" class="user-name">
-          <input type="password" placeholder="password" class="user-password">
+          <input type="text" placeholder="Username" class="user-name">
+          <input type="password" placeholder="Password" class="user-password">
           <div class="user-error password-error"></div>
           <button type="button" form="register-form" class="btn btn-primary submit-btn">Log in</button>
         </form>

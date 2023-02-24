@@ -1,14 +1,13 @@
 $(document).ready(function () {
-  $('.in').html(localStorage.getItem('username') ? 'LOGOUT' : 'LOGIN');
+  var userName = localStorage.getItem('name');
+  $('.in').html(userName ? 'LOGOUT' : 'LOGIN');
   var regex = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{7,9}/;
-  var password = $('.user-password').val();
-    if (password && !regex.test((localStorage.getItem('username')))) {
-      $('.user-error').html("Enter your correct password here!");
-    }
 
-  if (localStorage.getItem('username')) {
+  if (userName) {
+    $('.name-info h3 strong, .user').html(userName);
+
     $('.out').click(function() {
-      localStorage.removeItem('username');
+      localStorage.removeItem('name');
       window.open('login.html', '_self');
     });
   };
@@ -18,50 +17,60 @@ $(document).ready(function () {
       url: 'txt.json',
       type: 'GET',
       success: function(data) {
-        console.log(data);
-        for (let i = 0; i < data.length; i++) {
+        var len = data.length;
+        for (let i = 0; i < len; i++) {
           var dataArr = {name : $('.user-name').val(), pwrd : $('.user-password').val()};
-          if (data[i].username == dataArr.name && data[i].password == dataArr.pwrd) {
-            localStorage.setItem('username', dataArr.pwrd);
+          if (data[i].username == dataArr.name && data[i].password == dataArr.pwrd && regex.test(dataArr.pwrd)) {
+            localStorage.setItem('name', dataArr.name);
             window.open('index.html', '_self');
-          } else {
-            $('.user-error').html("Enter correct username & password here!");
-          }
+          };
+          if (dataArr.pwrd != data[i].password && i == len-1) {
+            $('.user-error').html("Enter correct password!");
+          };
+          if (dataArr.name != data[i].username && i == len-1) {
+            $('.user-error').html("Enter correct name!");
+          };
+          if (!regex.test(dataArr.name)) {
+            $('.user-password').html('Password should contain at least 7 characters with at least one uppercase, lowercase, numbers and special signs');
+          };
         }
       }
     });
   });
 
-  $('#bio').click(function() {
-    $('.text-area').removeClass('d-none');
-    $('#bio').hide();
+  $('#bio, .add-bio').click(function() {
+    $(this).attr('class') != 'btn add-bio' ? $('#bio').show() && $('.text-area').addClass('d-none') : $('.text-area').removeClass('d-none') && $('#bio').hide();
   })
 
-  $('.share-icon:first').click(function() {
-    $(this).addClass('liked');
+  $('.likes, .liked').click(function() {
+    $(this).attr('class') == 'likes' ? $(this).addClass('liked') : $(this).removeClass('liked');
+  });
+
+
+  $('.friends-list img, .see-all-photo img').click(function() {
+    var obj = $(this).attr('src');
+    $('.img-modal .modal-body').html(`<img src="${obj}" alt="${obj}">`);
+    $('#example-modal.modal').addClass('d-block');
   });
 
   //story add
-  $('.story-edit, button, .close, .user-details').click(function() {
-    ($(this).attr('class') == 'story-edit') ? ($('#confirmModal').show()) : ($('#confirmModal').hide());
-    $(this).attr('class') == 'user-details' ? $('#edit-details').show() : $('#edit-details').hide();
-
+  $('.story-edit, .btn.btn-secondary, .close').click(function() {
+    $(this).attr('class') == 'story-edit' ? $('#confirm-modal').show() : $('#confirm-modal').hide() && $('#example-modal').removeClass('d-block');
   });
 
-  $('.features, .user-hobbies').click(function() {
-    var obj = $(this).attr('class');
-    if (obj == 'btn features') {
-      $('.edit-feature').removeClass('d-none');
-    }
+  $('#confirm-delete').click(function() {
+    $('.img-clone').addClass('story-block');
+    $('#confirm-modal').hide();
+    $('.img-clone').clone().appendTo('.stories');
   });
 
   $('.in').click(function() {
-    localStorage.getItem('username') ? window.open('index.html', '_self') : window.open('login.html', '_self');
-  })
+    userName ? window.open('index.html', '_self') : window.open('login.html', '_self');
+  });
 
-  $('#confirm-modal btn-seconday, .text-area .bg-light, #details').click(function() {
+  $('#confirm-modal btn-seconday, .text-area .bg-light').click(function() {
     $('#confirm-modal').hide();
-    $('.text-area').hide() && $('#bio').show();
-    $(this).attr('id') == 'details' ? $('#edit-details').show() : false;
+    $('.text-area').hide();
+    $('#bio').show();
   });
 });

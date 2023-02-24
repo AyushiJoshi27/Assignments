@@ -2,17 +2,20 @@ $myfont: 15px;
 $head-nav-width: 20%;
 $intro-font-weight: 600;
 $date-posting: 13px;
-
-@mixin b-bottom {
-  border-bottom: 1px solid lightgray;
-}
+$black: #000000;
+$inactive: #6c757d;
+$white: #ffffff;
+$primary: #0d6efd;
+$l-grey: #d3d3d3;
+$bt-border: 1px solid #d3d3d3;
+$info-bg: #f8f9fa;
 
 @mixin b-top {
-  border-top: 1px solid lightgray;
+  border-top: 1px solid $l-grey;
 }
 
 @mixin b-shadow {
-  box-shadow: 0 0px 6px 0 lightgrey;
+  box-shadow: 0 0px 6px 0 $l-grey;
 }
 
 @mixin for-photos {
@@ -21,12 +24,12 @@ $date-posting: 13px;
 }
 
 @mixin box-shade {
-  box-shadow: 0px 2px 3px 0px lightgrey;
+  box-shadow: 0px 2px 3px 0px $l-grey;
 }
 
 nav.navbar {
-  background-color: white  ;
-  box-shadow: 0px 2px 3px 0px lightgrey;
+  background-color: $white;
+  box-shadow: 0px 2px 3px 0px $l-grey;
   padding: 2px 12px;
   position: sticky;
   top: 0;
@@ -34,29 +37,29 @@ nav.navbar {
   z-index: 1;
 
   i {
-    color: #6c757d; 
+    color: $inactive; 
 
     &:hover {
-      color: black;
+      color: $black;
     }
   }
 
   form {
-    background-color: #f8f9fa;
+    background-color: $info-bg;
     border-radius: 50px;
     padding: 8px 16px;
     width: $head-nav-width;
 
     button {
-      background-color: #f8f9fa;
+      background-color: $info-bg;
       border: none;
-      color: #6c757d;
+      color: $inactive;
       padding: 0;
     }
 
     input {
       border: none;
-      background-color: #f8f9fa;
+      background-color: $info-bg;
     }
   }
 
@@ -86,16 +89,17 @@ nav.navbar {
     justify-content: space-between;
     width: 14%;
 
-    li {
+    .nav-item {
+      background-color: $info-bg;
       border-radius: 50%;
       padding: 0 5px;
     }
 
     #user-account {
-      color: black;
+      color: $black;
 
       &:hover {
-        color: black;
+        color: $black;
 
         #log-in {
           border: none;
@@ -114,7 +118,7 @@ nav.navbar {
             width: 100px;
 
             &:hover {
-              background-color: white;
+              background-color: $white;
               border: 2px solid rgb(255 16 16);
             }
           }
@@ -133,31 +137,38 @@ nav.navbar {
 }
 
 .fb-full-body {
-
-  @include b-top;
+  background-color: $info-bg;
+  border-top: $bt-border;
   font-size: 18px;
+  padding: 0;
   
   .main-body {
     margin: 0 auto;
+    padding: 15px 0;
     width: 83.5%;
 
     .introduction {
       @include box-shade;
-      background-color: white;
+      background-color: $white;
       border-radius: 5px;
       padding: 16px;
 
       button {
-        background-color: #f8f9fa;
-        border: 1px solid #f1f6fa;
+        background-color: $info-bg;
+        border: 1px solid $info-bg;
         font-weight: $intro-font-weight;
         font-size: $myfont;
         margin: 10px 0;
         width: 100%;
 
+        a {
+          text-decoration: none;
+          color: $black;
+        }
+
         &:hover {
           background-color: #ebf0f5;
-          border: 1px solid #f8f9fa;
+          border: 1px solid $info-bg;
         }
       }
 
@@ -174,7 +185,7 @@ nav.navbar {
       }
 
       .fa {
-        color: #6c757d;
+        color: $inactive;
         text-align: center;
         width: 22px;
       }
@@ -182,6 +193,7 @@ nav.navbar {
       .text-area {
         
         p {
+          color: $l-grey;
           font-size: 12px;
           text-align: end;
           margin: 0;
@@ -189,6 +201,10 @@ nav.navbar {
 
         .fa-globe {
           width: 22px;
+        }
+
+        .bg-primary {
+          color: $white;
         }
 
         button {
@@ -204,7 +220,7 @@ nav.navbar {
 
     .friends-list {
       @include box-shade;
-      background-color: white;
+      background-color: $white;
       border-radius: 5px;
       padding: 16px;
 
@@ -219,7 +235,7 @@ nav.navbar {
       }
 
       a.counts {
-        color: #6c757d;
+        color: $inactive;
         display: block;
         float: none;
         margin-bottom: 5px;
@@ -230,7 +246,7 @@ nav.navbar {
     .see-all-photo {
       @include for-photos;
       @include box-shade;
-      background-color: white;
+      background-color: $white;
       border-radius: 5px;
       margin: 16px 0;
       padding: 16px;
@@ -265,6 +281,113 @@ nav.navbar {
         @include for-photos;
       }
 
+      #details {
+        background-color: #ffffff;
+        border-radius: 5px;
+        box-shadow: 0px 2px 3px 0px lightgrey;
+        margin: 16px 0;
+
+        .head {
+          text-align: center;
+          font-weight: 700;
+          font-size: 20px;
+          border-bottom: 1px solid lightgrey;
+          padding: 16px;
+        }
+
+        .details-body {
+          padding: 16px;
+
+          h5 {
+            font-size: 18px;
+            margin: 25px 0 0 0;
+          }
+
+          p {
+            margin: 10px 0 15px 0;
+
+            a {
+              text-decoration: none;
+              font-weight: 300;
+              font-size: 15px;
+            }
+
+            i {
+              border-radius: 50%;
+              border: 2px solid #0d6efd;
+              color: #0d6efd;
+              margin-right: 12px;
+              padding: 2px;
+              text-align: center;
+              width: 25px;
+            }
+          }
+
+          .txt-info {
+            color: $inactive;
+            font-size: 14px;
+            margin: 0;
+          }
+
+          .website {
+
+            h5 {
+              display: inline;
+            }
+            
+            span {
+              color: $inactive;
+              font-size: 13px;
+              font-weight: 300;
+              line-height: 16px;
+              margin: 0;
+            }
+
+            button {
+              border: 1px solid #f8f9fa;
+              border-radius: 5px;
+              font-size: 16px;
+              float: right;
+              padding: 5px 15px;
+
+              i {
+                margin-right: 5px;
+              }
+            }
+          }
+        }
+
+        .details-foot {
+          border-top: 1px solid #d3d3d3;
+          padding: 15px;
+
+          .update-info {
+            background-color: $white;
+            border: 1px solid $white;
+            border-radius: 5px;
+            color: $primary;
+            font-size: 16px;
+            font-weight: 300;
+            padding: 8px 15px;
+
+            &:hover {
+              background-color: $info-bg;
+            }
+          }
+
+          .save {
+            background-color: $primary;
+            border: 1px solid $primary;
+            border-radius: 5px;
+            color: $white;
+            font-size: 16px;
+            float: right;
+            padding: 5px 10px;
+            width: 140px;
+          }
+        }
+      }
+
       .grid-container {
         column-gap: 10px;
         display: grid;
@@ -283,9 +406,10 @@ nav.navbar {
           }
 
           img {
-            border: 1px solid #f8f9fa;
+            border: 1px solid $info-bg;
             border-radius: 10px;
             object-fit: contain;
+            padding: 10px;
             height: 140px; 
             width: 130px; 
           }
@@ -293,21 +417,29 @@ nav.navbar {
       }
 
       .edit-feature {
-        background-color: white;
+        background-color: $white;
         box-shadow: 0px 2px 3px 0px lightgrey;
         border-radius: 5px;
-        height: 174px;
-        margin: 15px 0;
+        height: 253px;
+        margin: 16px 0;
 
         button {
           background-color: #ECF3FF;
-          border: 18px solid white;
+          border: 20px solid $white;
           border-radius: 5px;
-          bottom: 55px;
-          color: #0d6efd;
-          padding: 8px;
-          width: 100%;
+          bottom: 42px;
+          color: $primary;
+          padding: 10px;
           position: relative;
+          width: 100%;
+        }
+
+        .feature-head {
+          border-bottom: 1px solid #d3d3d3;
+          font-weight: 600;
+          font-size: 18px;
+          padding: 15px;
+          text-align: center;
         }
 
         .edit-img {
@@ -322,11 +454,11 @@ nav.navbar {
         }
       }
 
-      .hobbies {
-        background-color: white;
+      #hobby {
+        background-color: $white;
         border-radius: 5px;
         box-shadow: 0px 2px 3px 0px lightgrey;
-        margin: 15px 0;
+        margin: 16px 0;
 
         .img-wrapper {
           background-color: #c0edfa;
@@ -344,7 +476,7 @@ nav.navbar {
 
           span {
             color: grey;
-            font-size: 13px;
+            font-size: 12px;
             font-weight: 400;
           }
         }
@@ -360,7 +492,7 @@ nav.navbar {
           text-align: center;
 
           button {
-            background-color: #ffffff;
+            background-color: $white;
             border: 1px solid #eae7e7;
             border-radius: 20px;
             margin: 5px 2px;
@@ -379,7 +511,7 @@ nav.navbar {
         }
 
         .hobby-foot {
-          color: black;
+          color: $black;
           font-size: 16px;
           font-weight: 300;
           padding: 15px;
@@ -399,7 +531,7 @@ nav.navbar {
       width: 57.8%;
 
       .add-status{
-        background-color: white;
+        background-color: $white;
         border-radius: 5px;
         @include box-shade;
 
@@ -414,8 +546,8 @@ nav.navbar {
         }
 
         input {
-          background-color: #f8f9fa;
-          border: 1px solid #f8f9fa;
+          background-color: $info-bg;
+          border: 1px solid $info-bg;
           border-radius: 30px;
           display: inline-block;
           padding: 5px 20px;
@@ -428,6 +560,27 @@ nav.navbar {
       }
     }
   }
+
+  .stories {
+    @include box-shade;
+    background-color: $white;
+    border-radius: 5px;
+    margin-bottom: 15px;
+
+    .story-block {
+      display: inline-block;
+      margin: 15px;
+
+      img {
+        border: 2px solid #e3e3e3;
+        border-radius: 5px;
+        height: 170px;
+        object-fit: contain;
+        padding: 10px;
+        width: 150px;
+      }
+    }
+  }
 }
 
 .profile {
@@ -435,9 +588,16 @@ nav.navbar {
   width: 87%;
 
   .camera {
+    background-color: $info-bg;
+    border-radius: 50%;
+    display: inline-block;
     position: relative;
     right: 58px;
     top: 38px;
+
+    i {
+      padding: 8px;
+    }
   }
 
   .dp-parent {
@@ -448,17 +608,6 @@ nav.navbar {
     width: 25px;
   }
 
-  .name-info {
-    right: 30px;
-    position: relative;
-    top: -40px;
-
-    .img-stack {
-      position: relative;
-      right: 10%;
-    }
-  }
-
   .nav-content {
     margin: 0 24px;
     padding: 0;
@@ -467,7 +616,7 @@ nav.navbar {
       margin: 0 auto 0 0; 
 
       .page {
-        border-bottom: 3px solid #0d6efd;
+        border-bottom: 3px solid $primary;
         margin: 0;
         padding: 16px;
       }
@@ -479,7 +628,7 @@ nav.navbar {
           color: #212529;
 
           &:hover {
-            color: black;
+            color: $black;
           }
         }
       }
@@ -506,41 +655,87 @@ nav.navbar {
   }
 
   .profile-intro {
-    @include b-bottom;
+    border-bottom: $bt-border;
     height: 160px;
+    margin: 0px 24px;
 
     .fb-dp {
+      border-radius: 50%;
+      border: 5px solid $white;
+      display: inline-block;
       position: relative;
       bottom: 30px;
+
+      img {
+        border-radius: 50%;
+        height: 170px;
+        object-fit: contain;
+        width: 170px;
+      }
     }
 
     .story-edit {
+      float: right;
       position: relative;
-      left: 40%;
-      top: 15px;
-      display: inline-block;
+      top: 85px;
 
       button {
+        background-color: $info-bg;
+        border: none;
+        display: inline-block;
 
         .fa {
           margin-right: 10px;
         }
       }
+
+      .story-add {
+        background-color: $primary;
+        color: $white;
+        border: none;
+
+        i {
+          background-color: $white;
+          border-radius: 50%;
+          color: $primary;
+          padding: 4px;
+        }
+      }
+    }
+
+    .name-info {
+      display: inline-block;
+      position: relative;
+      right: 30px;
+      top: -40px; 
+      vertical-align: bottom;
+
+      h6 {
+        color: $inactive;
+      }
+
+      img {
+        background-color: $l-grey;
+      }
+
+      .img-stack {
+        position: relative;
+        right: 10%;
+      }
     }
   }
-  
 }
 
 .templet-posts {
 
   .flags {
-    @include b-top;
+    border-top: $bt-border;
     display: flex;
     justify-content: space-around;
     padding: 10px 0;
 
     p {
-      color: #6c757d;
+      color: $inactive;
       margin: 0;
     }
 
@@ -560,13 +755,13 @@ nav.navbar {
   }
 
   .posts-setting {
-    background-color: white;
+    background-color: $white;
     border-radius: 5px;
     margin: 16px 0;
 
     button {
       border: none;
-      background-color: #f8f9fa;
+      background-color: $info-bg;
       float: right;
       font-size: $myfont;
       font-weight: $intro-font-weight;
@@ -578,7 +773,7 @@ nav.navbar {
     }
 
     .view-opt {
-      border-top: 1px solid lightgray;
+      border-top: 1px solid $l-grey;
       font-size: $myfont;
       font-weight: $intro-font-weight; 
 
@@ -588,15 +783,15 @@ nav.navbar {
         width: 100%;
 
         div {
-          color: #6c757d;
+          color: $inactive;
           margin: 0 2px;
           padding: 10px;
           text-align: center;
         }
 
         div:first-child {
-          border-bottom: 3px solid #0d6efd;
-          color: #0d6efd;
+          border-bottom: 3px solid $primary;
+          color: $primary;
         }
       }
     }
@@ -615,11 +810,11 @@ nav.navbar {
 
   .post-block {
     @include box-shade;
-    background-color: white;
+    background-color: $white;
     border-radius: 5px;
 
     header {
-      @include b-bottom;
+      border-bottom: $bt-border;
       font-size: $myfont;
       font-weight: 500;
       padding: 10px 15px;
@@ -639,20 +834,24 @@ nav.navbar {
       div:nth-child(2) {
         display: inline-block; 
 
-        i, 
-        span {
-          color: #6c757d;
+        .user {
+          color: $black;
         }
 
-        .fa-ellipsis-h {
-          float: right;
-          margin-top: 10px;
+        i, 
+        span {
+          color: $inactive;
         }
       }
 
       p {
         font-weight: 400;
         line-height: $date-posting;
+      }
+
+      .fa-ellipsis-h {
+        float: right;
+        margin-top: 10px;
       }
 
       .post-date {
@@ -668,7 +867,7 @@ nav.navbar {
     .post-image-block {
       display: flex;
       height: 560px;
-      @include b-bottom;
+      border-bottom: $bt-border;
   
       img {
         height: auto;
@@ -678,15 +877,15 @@ nav.navbar {
     }
 
     div:nth-child(3) {
-      color: #6c757d;
+      color: $inactive;
       font-size: 15px;
       font-weight: 300;
       padding: 10px 16px;
   
       i {
-        background-color: #0d6efd;
+        background-color: $primary;
         border-radius: 50%;
-        color: #ffffff;
+        color: $white;
         font-size: $date-posting;
         padding: 4px;
       }
@@ -697,7 +896,7 @@ nav.navbar {
     }
 
     table {
-      @include b-top;
+      border-top: $bt-border;
       height: 45px;
       margin: 0 auto;
       width: 95.5%;
@@ -708,10 +907,10 @@ nav.navbar {
         text-align: center;
     
         .fa-thumbs-up {
-          background: #ffffff;
-          border: 1px solid #0d6efd;
+          background: $white;
+          border: 1px solid $primary;
           border-radius: 50%;
-          color: #0d6efd;
+          color: $primary;
           font-size: $date-posting;
           padding: 3px;
         }
@@ -724,18 +923,32 @@ nav.navbar {
       .liked {
     
         .fa-thumbs-up {
-          background: #0d6efd;
+          background: $primary;
           border-radius: 50%;
           color: white;
           font-size: $date-posting;
           padding: 3px;
+          -moz-transition: all .2s ease-in-out;
+          -webkit-transition: all .2s ease-in-out;
+          transition: all .2s ease-in-out;
+
+          &:hover {
+            -moz-transform:rotate(30deg);
+            -webkit-transform:rotate(30deg);
+            transform:rotate(30deg);
+          }
         }
       }
     }    
   }
 }
 
+.img-clone {
+  display: none;
+}
+
 .login-content {
+  background-color: $info-bg;
   height: 650px;
   padding: 40px; 
 
@@ -766,9 +979,9 @@ nav.navbar {
       width: 40%;
 
       form {
-        background-color: white;
+        background-color: $white;
         border-radius: 5px;
-        box-shadow: 0px 0px 5px 0px lightgrey;
+        box-shadow: 0px 0px 5px 0px $l-grey;
         height: 250px;
         margin: 30px 0 10px;
         padding: 15px;
@@ -779,13 +992,13 @@ nav.navbar {
         }
 
         div {
-          color: red;
+          color: #ff0000;
           font-size: 14px;
         }
 
         .user-name, 
         .user-password {
-          border: 1px solid lightgray;
+          border: 1px solid $l-grey;
           border-radius: 5px;
           margin-bottom: 15px;
           padding: 14px 8px;
@@ -800,34 +1013,28 @@ nav.navbar {
   }
 }
 
-#edit-details {
+.modal {
+  .close {
+    border: 2px solid $info-bg;
 
-  .modal-body {
-
-    p {
-      font-size: 18px;
-      line-height: 20px;
-      
-      span {
-        color: #212529;
-        font-size: 14px;
-      }
-    }
-
-    a {
-      text-decoration: none;
-
-      &:hover {
-        text-decoration: #0d6efd underline;
-      }
-    }
-
-    .fa-plus {
-      border: 2px solid #0d6efd;
-      border-radius: 50%;
-      color: #0d6efd;
-      margin-right: 20px;
-      padding: 6px;
+    &:hover {
+      background-color: $info-bg;
     }
   }
 }
+
+.img-modal {
+  
+  .modal-body {
+    text-align: center;
+
+    img {
+      height: 300px;
+      object-fit: contain;
+      width: 300px;
+    }
+  }
+}
+
+
+

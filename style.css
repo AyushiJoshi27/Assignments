@@ -1,6 +1,6 @@
 nav.navbar {
-  background-color: white;
-  box-shadow: 0px 2px 3px 0px lightgrey;
+  background-color: #ffffff;
+  box-shadow: 0px 2px 3px 0px #d3d3d3;
   padding: 2px 12px;
   position: sticky;
   top: 0;
@@ -11,7 +11,7 @@ nav.navbar i {
   color: #6c757d;
 }
 nav.navbar i:hover {
-  color: black;
+  color: #000000;
 }
 nav.navbar form {
   background-color: #f8f9fa;
@@ -49,15 +49,16 @@ nav.navbar .header-nav-account {
   justify-content: space-between;
   width: 14%;
 }
-nav.navbar .header-nav-account li {
+nav.navbar .header-nav-account .nav-item {
+  background-color: #f8f9fa;
   border-radius: 50%;
   padding: 0 5px;
 }
 nav.navbar .header-nav-account #user-account {
-  color: black;
+  color: #000000;
 }
 nav.navbar .header-nav-account #user-account:hover {
-  color: black;
+  color: #000000;
 }
 nav.navbar .header-nav-account #user-account:hover #log-in {
   border: none;
@@ -76,7 +77,7 @@ nav.navbar .header-nav-account #user-account:hover #log-in li a {
   width: 100px;
 }
 nav.navbar .header-nav-account #user-account:hover #log-in li a:hover {
-  background-color: white;
+  background-color: #ffffff;
   border: 2px solid rgb(255, 16, 16);
 }
 nav.navbar .input-search {
@@ -87,26 +88,33 @@ nav.navbar .top-nav-setting {
 }
 
 .fb-full-body {
-  border-top: 1px solid lightgray;
+  background-color: #f8f9fa;
+  border-top: 1px solid #d3d3d3;
   font-size: 18px;
+  padding: 0;
 }
 .fb-full-body .main-body {
   margin: 0 auto;
+  padding: 15px 0;
   width: 83.5%;
 }
 .fb-full-body .main-body .introduction {
-  box-shadow: 0px 2px 3px 0px lightgrey;
-  background-color: white;
+  box-shadow: 0px 2px 3px 0px #d3d3d3;
+  background-color: #ffffff;
   border-radius: 5px;
   padding: 16px;
 }
 .fb-full-body .main-body .introduction button {
   background-color: #f8f9fa;
-  border: 1px solid #f1f6fa;
+  border: 1px solid #f8f9fa;
   font-weight: 600;
   font-size: 15px;
   margin: 10px 0;
   width: 100%;
+}
+.fb-full-body .main-body .introduction button a {
+  text-decoration: none;
+  color: #000000;
 }
 .fb-full-body .main-body .introduction button:hover {
   background-color: #ebf0f5;
@@ -127,12 +135,16 @@ nav.navbar .top-nav-setting {
   width: 22px;
 }
 .fb-full-body .main-body .introduction .text-area p {
+  color: #d3d3d3;
   font-size: 12px;
   text-align: end;
   margin: 0;
 }
 .fb-full-body .main-body .introduction .text-area .fa-globe {
   width: 22px;
+}
+.fb-full-body .main-body .introduction .text-area .bg-primary {
+  color: #ffffff;
 }
 .fb-full-body .main-body .introduction .text-area button {
   border: 1px solid #dff1ff;
@@ -143,8 +155,8 @@ nav.navbar .top-nav-setting {
   width: 80px;
 }
 .fb-full-body .main-body .friends-list {
-  box-shadow: 0px 2px 3px 0px lightgrey;
-  background-color: white;
+  box-shadow: 0px 2px 3px 0px #d3d3d3;
+  background-color: #ffffff;
   border-radius: 5px;
   padding: 16px;
 }
@@ -166,8 +178,8 @@ nav.navbar .top-nav-setting {
 .fb-full-body .main-body .see-all-photo {
   font-weight: 400;
   font-size: 16px;
-  box-shadow: 0px 2px 3px 0px lightgrey;
-  background-color: white;
+  box-shadow: 0px 2px 3px 0px #d3d3d3;
+  background-color: #ffffff;
   border-radius: 5px;
   margin: 16px 0;
   padding: 16px;
@@ -197,6 +209,94 @@ nav.navbar .top-nav-setting {
   font-weight: 400;
   font-size: 16px;
 }
+.fb-full-body .main-body .templet-about #details {
+  background-color: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0px 2px 3px 0px lightgrey;
+  margin: 16px 0;
+}
+.fb-full-body .main-body .templet-about #details .head {
+  text-align: center;
+  font-weight: 700;
+  font-size: 20px;
+  border-bottom: 1px solid lightgrey;
+  padding: 16px;
+}
+.fb-full-body .main-body .templet-about #details .details-body {
+  padding: 16px;
+}
+.fb-full-body .main-body .templet-about #details .details-body h5 {
+  font-size: 18px;
+  margin: 25px 0 0 0;
+}
+.fb-full-body .main-body .templet-about #details .details-body p {
+  margin: 10px 0 15px 0;
+}
+.fb-full-body .main-body .templet-about #details .details-body p a {
+  text-decoration: none;
+  font-weight: 300;
+  font-size: 15px;
+}
+.fb-full-body .main-body .templet-about #details .details-body p i {
+  border-radius: 50%;
+  border: 2px solid #0d6efd;
+  color: #0d6efd;
+  margin-right: 12px;
+  padding: 2px;
+  text-align: center;
+  width: 25px;
+}
+.fb-full-body .main-body .templet-about #details .details-body .txt-info {
+  color: #6c757d;
+  font-size: 14px;
+  margin: 0;
+}
+.fb-full-body .main-body .templet-about #details .details-body .website h5 {
+  display: inline;
+}
+.fb-full-body .main-body .templet-about #details .details-body .website span {
+  color: #6c757d;
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 16px;
+  margin: 0;
+}
+.fb-full-body .main-body .templet-about #details .details-body .website button {
+  border: 1px solid #f8f9fa;
+  border-radius: 5px;
+  font-size: 16px;
+  float: right;
+  padding: 5px 15px;
+}
+.fb-full-body .main-body .templet-about #details .details-body .website button i {
+  margin-right: 5px;
+}
+.fb-full-body .main-body .templet-about #details .details-foot {
+  border-top: 1px solid #d3d3d3;
+  padding: 15px;
+}
+.fb-full-body .main-body .templet-about #details .details-foot .update-info {
+  background-color: #ffffff;
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+  color: #0d6efd;
+  font-size: 16px;
+  font-weight: 300;
+  padding: 8px 15px;
+}
+.fb-full-body .main-body .templet-about #details .details-foot .update-info:hover {
+  background-color: #f8f9fa;
+}
+.fb-full-body .main-body .templet-about #details .details-foot .save {
+  background-color: #0d6efd;
+  border: 1px solid #0d6efd;
+  border-radius: 5px;
+  color: #ffffff;
+  font-size: 16px;
+  float: right;
+  padding: 5px 10px;
+  width: 140px;
+}
 .fb-full-body .main-body .templet-about .grid-container {
   -moz-column-gap: 10px;
        column-gap: 10px;
@@ -219,25 +319,33 @@ nav.navbar .top-nav-setting {
   border-radius: 10px;
   -o-object-fit: contain;
      object-fit: contain;
+  padding: 10px;
   height: 140px;
   width: 130px;
 }
 .fb-full-body .main-body .templet-about .edit-feature {
-  background-color: white;
+  background-color: #ffffff;
   box-shadow: 0px 2px 3px 0px lightgrey;
   border-radius: 5px;
-  height: 174px;
-  margin: 15px 0;
+  height: 253px;
+  margin: 16px 0;
 }
 .fb-full-body .main-body .templet-about .edit-feature button {
   background-color: #ECF3FF;
-  border: 18px solid white;
+  border: 20px solid #ffffff;
   border-radius: 5px;
-  bottom: 55px;
+  bottom: 42px;
   color: #0d6efd;
-  padding: 8px;
-  width: 100%;
+  padding: 10px;
   position: relative;
+  width: 100%;
+}
+.fb-full-body .main-body .templet-about .edit-feature .feature-head {
+  border-bottom: 1px solid #d3d3d3;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 15px;
+  text-align: center;
 }
 .fb-full-body .main-body .templet-about .edit-feature .edit-img {
   text-align: center;
@@ -248,61 +356,61 @@ nav.navbar .top-nav-setting {
   padding-top: 15px;
   width: auto;
 }
-.fb-full-body .main-body .templet-about .hobbies {
-  background-color: white;
+.fb-full-body .main-body .templet-about #hobby {
+  background-color: #ffffff;
   border-radius: 5px;
   box-shadow: 0px 2px 3px 0px lightgrey;
-  margin: 15px 0;
+  margin: 16px 0;
 }
-.fb-full-body .main-body .templet-about .hobbies .img-wrapper {
+.fb-full-body .main-body .templet-about #hobby .img-wrapper {
   background-color: #c0edfa;
   margin-bottom: 10px;
   text-align: center;
 }
-.fb-full-body .main-body .templet-about .hobbies .img-wrapper img {
+.fb-full-body .main-body .templet-about #hobby .img-wrapper img {
   height: 188px;
 }
-.fb-full-body .main-body .templet-about .hobbies .heading {
+.fb-full-body .main-body .templet-about #hobby .heading {
   font-weight: 700;
   text-align: center;
 }
-.fb-full-body .main-body .templet-about .hobbies .heading span {
+.fb-full-body .main-body .templet-about #hobby .heading span {
   color: grey;
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 400;
 }
-.fb-full-body .main-body .templet-about .hobbies p {
+.fb-full-body .main-body .templet-about #hobby p {
   font-size: 13px;
   font-weight: 500;
   text-align: center;
 }
-.fb-full-body .main-body .templet-about .hobbies .hobby-varity {
+.fb-full-body .main-body .templet-about #hobby .hobby-varity {
   padding: 20px;
   text-align: center;
 }
-.fb-full-body .main-body .templet-about .hobbies .hobby-varity button {
+.fb-full-body .main-body .templet-about #hobby .hobby-varity button {
   background-color: #ffffff;
   border: 1px solid #eae7e7;
   border-radius: 20px;
   margin: 5px 2px;
   padding: 5px 15px;
 }
-.fb-full-body .main-body .templet-about .hobbies .hobby-varity button i {
+.fb-full-body .main-body .templet-about #hobby .hobby-varity button i {
   font-size: 16px;
   width: 25px;
 }
-.fb-full-body .main-body .templet-about .hobbies .hobby-varity button:hover {
+.fb-full-body .main-body .templet-about #hobby .hobby-varity button:hover {
   background-color: #F2F3F5;
   border: 1px solid #F2F3F5;
 }
-.fb-full-body .main-body .templet-about .hobbies .hobby-foot {
-  color: black;
+.fb-full-body .main-body .templet-about #hobby .hobby-foot {
+  color: #000000;
   font-size: 16px;
   font-weight: 300;
   padding: 15px;
   text-align: start;
 }
-.fb-full-body .main-body .templet-about .hobbies .hobby-foot i {
+.fb-full-body .main-body .templet-about #hobby .hobby-foot i {
   font-size: 20px;
   margin-bottom: 15px;
   width: 25px;
@@ -312,9 +420,9 @@ nav.navbar .top-nav-setting {
   width: 57.8%;
 }
 .fb-full-body .main-body .templet-posts .add-status {
-  background-color: white;
+  background-color: #ffffff;
   border-radius: 5px;
-  box-shadow: 0px 2px 3px 0px lightgrey;
+  box-shadow: 0px 2px 3px 0px #d3d3d3;
 }
 .fb-full-body .main-body .templet-posts .add-status .py-2 img {
   border-radius: 50%;
@@ -331,7 +439,26 @@ nav.navbar .top-nav-setting {
   width: 88%;
 }
 .fb-full-body .main-body .templet-posts .posts-setting {
-  box-shadow: 0px 2px 3px 0px lightgrey;
+  box-shadow: 0px 2px 3px 0px #d3d3d3;
+}
+.fb-full-body .stories {
+  box-shadow: 0px 2px 3px 0px #d3d3d3;
+  background-color: #ffffff;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+.fb-full-body .stories .story-block {
+  display: inline-block;
+  margin: 15px;
+}
+.fb-full-body .stories .story-block img {
+  border: 2px solid #e3e3e3;
+  border-radius: 5px;
+  height: 170px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  padding: 10px;
+  width: 150px;
 }
 
 .profile {
@@ -339,9 +466,15 @@ nav.navbar .top-nav-setting {
   width: 87%;
 }
 .profile .camera {
+  background-color: #f8f9fa;
+  border-radius: 50%;
+  display: inline-block;
   position: relative;
   right: 58px;
   top: 38px;
+}
+.profile .camera i {
+  padding: 8px;
 }
 .profile .dp-parent {
   border-radius: 50%;
@@ -350,15 +483,6 @@ nav.navbar .top-nav-setting {
   -o-object-fit: contain;
      object-fit: contain;
   width: 25px;
-}
-.profile .name-info {
-  right: 30px;
-  position: relative;
-  top: -40px;
-}
-.profile .name-info .img-stack {
-  position: relative;
-  right: 10%;
 }
 .profile .nav-content {
   margin: 0 24px;
@@ -379,7 +503,7 @@ nav.navbar .top-nav-setting {
   color: #212529;
 }
 .profile .nav-content ul li a:hover {
-  color: black;
+  color: #000000;
 }
 .profile .nav-content ul .dropdown .dropdown-menu {
   margin: 10px;
@@ -392,25 +516,68 @@ nav.navbar .top-nav-setting {
   padding: 10px;
 }
 .profile .profile-intro {
-  border-bottom: 1px solid lightgray;
+  border-bottom: 1px solid #d3d3d3;
   height: 160px;
+  margin: 0px 24px;
 }
 .profile .profile-intro .fb-dp {
+  border-radius: 50%;
+  border: 5px solid #ffffff;
+  display: inline-block;
   position: relative;
   bottom: 30px;
 }
+.profile .profile-intro .fb-dp img {
+  border-radius: 50%;
+  height: 170px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  width: 170px;
+}
 .profile .profile-intro .story-edit {
+  float: right;
   position: relative;
-  left: 40%;
-  top: 15px;
+  top: 85px;
+}
+.profile .profile-intro .story-edit button {
+  background-color: #f8f9fa;
+  border: none;
   display: inline-block;
 }
 .profile .profile-intro .story-edit button .fa {
   margin-right: 10px;
 }
+.profile .profile-intro .story-edit .story-add {
+  background-color: #0d6efd;
+  color: #ffffff;
+  border: none;
+}
+.profile .profile-intro .story-edit .story-add i {
+  background-color: #ffffff;
+  border-radius: 50%;
+  color: #0d6efd;
+  padding: 4px;
+}
+.profile .profile-intro .name-info {
+  display: inline-block;
+  position: relative;
+  right: 30px;
+  top: -40px;
+  vertical-align: bottom;
+}
+.profile .profile-intro .name-info h6 {
+  color: #6c757d;
+}
+.profile .profile-intro .name-info img {
+  background-color: #d3d3d3;
+}
+.profile .profile-intro .name-info .img-stack {
+  position: relative;
+  right: 10%;
+}
 
 .templet-posts .flags {
-  border-top: 1px solid lightgray;
+  border-top: 1px solid #d3d3d3;
   display: flex;
   justify-content: space-around;
   padding: 10px 0;
@@ -430,7 +597,7 @@ nav.navbar .top-nav-setting {
   width: 92.9%;
 }
 .templet-posts .posts-setting {
-  background-color: white;
+  background-color: #ffffff;
   border-radius: 5px;
   margin: 16px 0;
 }
@@ -446,7 +613,7 @@ nav.navbar .top-nav-setting {
   width: 24px;
 }
 .templet-posts .posts-setting .view-opt {
-  border-top: 1px solid lightgray;
+  border-top: 1px solid #d3d3d3;
   font-size: 15px;
   font-weight: 600;
 }
@@ -475,12 +642,12 @@ nav.navbar .top-nav-setting {
   padding-top: 8px;
 }
 .templet-posts .post-block {
-  box-shadow: 0px 2px 3px 0px lightgrey;
-  background-color: white;
+  box-shadow: 0px 2px 3px 0px #d3d3d3;
+  background-color: #ffffff;
   border-radius: 5px;
 }
 .templet-posts .post-block header {
-  border-bottom: 1px solid lightgray;
+  border-bottom: 1px solid #d3d3d3;
   font-size: 15px;
   font-weight: 500;
   padding: 10px 15px;
@@ -498,17 +665,20 @@ nav.navbar .top-nav-setting {
 .templet-posts .post-block header div:nth-child(2) {
   display: inline-block;
 }
+.templet-posts .post-block header div:nth-child(2) .user {
+  color: #000000;
+}
 .templet-posts .post-block header div:nth-child(2) i,
 .templet-posts .post-block header div:nth-child(2) span {
   color: #6c757d;
 }
-.templet-posts .post-block header div:nth-child(2) .fa-ellipsis-h {
-  float: right;
-  margin-top: 10px;
-}
 .templet-posts .post-block header p {
   font-weight: 400;
   line-height: 13px;
+}
+.templet-posts .post-block header .fa-ellipsis-h {
+  float: right;
+  margin-top: 10px;
 }
 .templet-posts .post-block header .post-date {
   font-size: 13px;
@@ -520,7 +690,7 @@ nav.navbar .top-nav-setting {
 .templet-posts .post-block .post-image-block {
   display: flex;
   height: 560px;
-  border-bottom: 1px solid lightgray;
+  border-bottom: 1px solid #d3d3d3;
 }
 .templet-posts .post-block .post-image-block img {
   height: auto;
@@ -544,7 +714,7 @@ nav.navbar .top-nav-setting {
   float: right;
 }
 .templet-posts .post-block table {
-  border-top: 1px solid lightgray;
+  border-top: 1px solid #d3d3d3;
   height: 45px;
   margin: 0 auto;
   width: 95.5%;
@@ -571,9 +741,18 @@ nav.navbar .top-nav-setting {
   color: white;
   font-size: 13px;
   padding: 3px;
+  transition: all 0.2s ease-in-out;
+}
+.templet-posts .post-block table .liked .fa-thumbs-up:hover {
+  transform: rotate(30deg);
+}
+
+.img-clone {
+  display: none;
 }
 
 .login-content {
+  background-color: #f8f9fa;
   height: 650px;
   padding: 40px;
 }
@@ -601,9 +780,9 @@ nav.navbar .top-nav-setting {
   width: 40%;
 }
 .login-content .login-wrapper .login-block form {
-  background-color: white;
+  background-color: #ffffff;
   border-radius: 5px;
-  box-shadow: 0px 0px 5px 0px lightgrey;
+  box-shadow: 0px 0px 5px 0px #d3d3d3;
   height: 250px;
   margin: 30px 0 10px;
   padding: 15px;
@@ -613,12 +792,12 @@ nav.navbar .top-nav-setting {
   width: 100%;
 }
 .login-content .login-wrapper .login-block form div {
-  color: red;
+  color: #ff0000;
   font-size: 14px;
 }
 .login-content .login-wrapper .login-block form .user-name,
 .login-content .login-wrapper .login-block form .user-password {
-  border: 1px solid lightgray;
+  border: 1px solid #d3d3d3;
   border-radius: 5px;
   margin-bottom: 15px;
   padding: 14px 8px;
@@ -628,25 +807,19 @@ nav.navbar .top-nav-setting {
   font-size: 13px;
 }
 
-#edit-details .modal-body p {
-  font-size: 18px;
-  line-height: 20px;
+.modal .close {
+  border: 2px solid #f8f9fa;
 }
-#edit-details .modal-body p span {
-  color: #212529;
-  font-size: 14px;
+.modal .close:hover {
+  background-color: #f8f9fa;
 }
-#edit-details .modal-body a {
-  text-decoration: none;
+
+.img-modal .modal-body {
+  text-align: center;
 }
-#edit-details .modal-body a:hover {
-  -webkit-text-decoration: #0d6efd underline;
-          text-decoration: #0d6efd underline;
-}
-#edit-details .modal-body .fa-plus {
-  border: 2px solid #0d6efd;
-  border-radius: 50%;
-  color: #0d6efd;
-  margin-right: 20px;
-  padding: 6px;
+.img-modal .modal-body img {
+  height: 300px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  width: 300px;
 }/*# sourceMappingURL=style.css.map */
