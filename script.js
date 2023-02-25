@@ -2,7 +2,6 @@ $(document).ready(function () {
   var userName = localStorage.getItem('name');
   $('.in').html(userName ? 'LOGOUT' : 'LOGIN');
   var regex = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{7,9}/;
-
   if (userName) {
     $('.name-info h3 strong, .user').html(userName);
 
@@ -13,10 +12,12 @@ $(document).ready(function () {
   };
 
   $('.submit-btn').click(function() {
+    /*
     $.ajax({
       url: 'txt.json',
       type: 'GET',
       success: function(data) {
+        var obj = data;
         var len = data.length;
         for (let i = 0; i < len; i++) {
           var dataArr = {name : $('.user-name').val(), pwrd : $('.user-password').val()};
@@ -24,15 +25,50 @@ $(document).ready(function () {
             localStorage.setItem('name', dataArr.name);
             window.open('index.html', '_self');
           };
-          if (dataArr.pwrd != data[i].password && i == len-1) {
-            $('.user-error').html("Enter correct password!");
+          if (dataArr.pwrd != data[i].password) {
+            if (i == len-1) {
+              $('.user-error').html("Enter correct password!");
+            }
           };
-          if (dataArr.name != data[i].username && i == len-1) {
-            $('.user-error').html("Enter correct name!");
+          if (dataArr.name != data[i].username) {
+            if (i == len-1) {
+              $('.user-error').html("Enter correct name!");
+            }
           };
-          if (!regex.test(dataArr.name)) {
-            $('.user-password').html('Password should contain at least 7 characters with at least one uppercase, lowercase, numbers and special signs');
-          };
+          if (dataArr.pwrd == data[i].password || dataArr.pwrd == data[i].password) {
+            console.log(dataArr.pwrd == data[i].password, dataArr.pwrd == data[i].password);
+          }
+        }
+      }
+    });
+    */
+
+    $.ajax({
+      url: 'txt.json',
+      type: 'GET',
+      success: function(data) {
+        var len = data.length;
+        var foundName = false;
+        var foundPwrd = false;
+        for (let i = 0; i < len; i++) {
+          var dataArr = {name : $('.user-name').val(), pwrd : $('.user-password').val()};
+          if (data[i].username == dataArr.name && data[i].password == dataArr.pwrd && regex.test(dataArr.pwrd)) {
+            localStorage.setItem('name', dataArr.name);
+            window.open('index.html', '_self');
+            foundName = true;
+            foundPwrd = true;
+            break;
+          } else if (data[i].username == dataArr.name) {
+            foundName = true;
+          } else if (data[i].password == dataArr.pwrd && regex.test(dataArr.pwrd)) {
+            foundPwrd = true;
+          }
+        }
+        if (!foundName) { 
+          $('.user-error').html("Username not found.");
+        } 
+        if (!foundPwrd) { 
+          $('.password-error').html("Password not found or does not meet the requirements.");
         }
       }
     });

@@ -87,24 +87,24 @@ nav.navbar .top-nav-setting {
   width: 20%;
 }
 
-.fb-full-body {
+.main-content {
   background-color: #f8f9fa;
   border-top: 1px solid #d3d3d3;
   font-size: 18px;
   padding: 0;
 }
-.fb-full-body .main-body {
+.main-content .main-body {
   margin: 0 auto;
   padding: 15px 0;
   width: 83.5%;
 }
-.fb-full-body .main-body .introduction {
+.main-content .main-body .introduction {
   box-shadow: 0px 2px 3px 0px #d3d3d3;
   background-color: #ffffff;
   border-radius: 5px;
   padding: 16px;
 }
-.fb-full-body .main-body .introduction button {
+.main-content .main-body .introduction button {
   background-color: #f8f9fa;
   border: 1px solid #f8f9fa;
   font-weight: 600;
@@ -112,41 +112,41 @@ nav.navbar .top-nav-setting {
   margin: 10px 0;
   width: 100%;
 }
-.fb-full-body .main-body .introduction button a {
+.main-content .main-body .introduction button a {
   text-decoration: none;
   color: #000000;
 }
-.fb-full-body .main-body .introduction button:hover {
+.main-content .main-body .introduction button:hover {
   background-color: #ebf0f5;
   border: 1px solid #f8f9fa;
 }
-.fb-full-body .main-body .introduction span {
+.main-content .main-body .introduction span {
   font-size: 15px;
 }
-.fb-full-body .main-body .introduction span a {
+.main-content .main-body .introduction span a {
   font-weight: 600;
 }
-.fb-full-body .main-body .introduction p {
+.main-content .main-body .introduction p {
   margin: 8px 0;
 }
-.fb-full-body .main-body .introduction .fa {
+.main-content .main-body .introduction .fa {
   color: #6c757d;
   text-align: center;
   width: 22px;
 }
-.fb-full-body .main-body .introduction .text-area p {
+.main-content .main-body .introduction .text-area p {
   color: #d3d3d3;
   font-size: 12px;
   text-align: end;
   margin: 0;
 }
-.fb-full-body .main-body .introduction .text-area .fa-globe {
+.main-content .main-body .introduction .text-area .fa-globe {
   width: 22px;
 }
-.fb-full-body .main-body .introduction .text-area .bg-primary {
+.main-content .main-body .introduction .text-area .bg-primary {
   color: #ffffff;
 }
-.fb-full-body .main-body .introduction .text-area button {
+.main-content .main-body .introduction .text-area button {
   border: 1px solid #dff1ff;
   border-radius: 5px;
   float: right;
@@ -154,28 +154,28 @@ nav.navbar .top-nav-setting {
   padding: 5px 10px;
   width: 80px;
 }
-.fb-full-body .main-body .friends-list {
+.main-content .main-body .friends-list {
   box-shadow: 0px 2px 3px 0px #d3d3d3;
   background-color: #ffffff;
   border-radius: 5px;
   padding: 16px;
 }
-.fb-full-body .main-body .friends-list h5 {
+.main-content .main-body .friends-list h5 {
   margin: 0;
   display: inline-block;
 }
-.fb-full-body .main-body .friends-list a {
+.main-content .main-body .friends-list a {
   float: right;
   text-decoration: none;
 }
-.fb-full-body .main-body .friends-list a.counts {
+.main-content .main-body .friends-list a.counts {
   color: #6c757d;
   display: block;
   float: none;
   margin-bottom: 5px;
   text-decoration: none;
 }
-.fb-full-body .main-body .see-all-photo {
+.main-content .main-body .see-all-photo {
   font-weight: 400;
   font-size: 16px;
   box-shadow: 0px 2px 3px 0px #d3d3d3;
@@ -184,60 +184,60 @@ nav.navbar .top-nav-setting {
   margin: 16px 0;
   padding: 16px;
 }
-.fb-full-body .main-body .see-all-photo h5 {
+.main-content .main-body .see-all-photo h5 {
   display: inline-block;
   margin: 0;
 }
-.fb-full-body .main-body .see-all-photo a {
+.main-content .main-body .see-all-photo a {
   float: right;
   text-decoration: none;
 }
-.fb-full-body .main-body .see-all-photo div {
+.main-content .main-body .see-all-photo div {
   display: flex;
   justify-content: space-between;
   margin-top: 15px;
 }
-.fb-full-body .main-body .see-all-photo div img {
+.main-content .main-body .see-all-photo div img {
   border-radius: 5px;
   height: 85px;
 }
-.fb-full-body .main-body .templet-about {
+.main-content .main-body .templet-about {
   display: inline-block;
   width: 40.8%;
 }
-.fb-full-body .main-body .templet-about a {
+.main-content .main-body .templet-about a {
   font-weight: 400;
   font-size: 16px;
 }
-.fb-full-body .main-body .templet-about #details {
+.main-content .main-body .templet-about #details {
   background-color: #ffffff;
   border-radius: 5px;
-  box-shadow: 0px 2px 3px 0px lightgrey;
+  box-shadow: 0px 2px 3px 0px #d3d3d3;
   margin: 16px 0;
 }
-.fb-full-body .main-body .templet-about #details .head {
+.main-content .main-body .templet-about #details .head {
   text-align: center;
   font-weight: 700;
   font-size: 20px;
-  border-bottom: 1px solid lightgrey;
+  border-bottom: 1px solid #d3d3d3;
   padding: 16px;
 }
-.fb-full-body .main-body .templet-about #details .details-body {
+.main-content .main-body .templet-about #details .details-body {
   padding: 16px;
 }
-.fb-full-body .main-body .templet-about #details .details-body h5 {
+.main-content .main-body .templet-about #details .details-body h5 {
   font-size: 18px;
   margin: 25px 0 0 0;
 }
-.fb-full-body .main-body .templet-about #details .details-body p {
+.main-content .main-body .templet-about #details .details-body p {
   margin: 10px 0 15px 0;
 }
-.fb-full-body .main-body .templet-about #details .details-body p a {
+.main-content .main-body .templet-about #details .details-body p a {
   text-decoration: none;
   font-weight: 300;
   font-size: 15px;
 }
-.fb-full-body .main-body .templet-about #details .details-body p i {
+.main-content .main-body .templet-about #details .details-body p i {
   border-radius: 50%;
   border: 2px solid #0d6efd;
   color: #0d6efd;
@@ -246,36 +246,36 @@ nav.navbar .top-nav-setting {
   text-align: center;
   width: 25px;
 }
-.fb-full-body .main-body .templet-about #details .details-body .txt-info {
+.main-content .main-body .templet-about #details .details-body .txt-info {
   color: #6c757d;
   font-size: 14px;
   margin: 0;
 }
-.fb-full-body .main-body .templet-about #details .details-body .website h5 {
+.main-content .main-body .templet-about #details .details-body .website h5 {
   display: inline;
 }
-.fb-full-body .main-body .templet-about #details .details-body .website span {
+.main-content .main-body .templet-about #details .details-body .website span {
   color: #6c757d;
   font-size: 13px;
   font-weight: 300;
   line-height: 16px;
   margin: 0;
 }
-.fb-full-body .main-body .templet-about #details .details-body .website button {
+.main-content .main-body .templet-about #details .details-body .website button {
   border: 1px solid #f8f9fa;
   border-radius: 5px;
   font-size: 16px;
   float: right;
   padding: 5px 15px;
 }
-.fb-full-body .main-body .templet-about #details .details-body .website button i {
+.main-content .main-body .templet-about #details .details-body .website button i {
   margin-right: 5px;
 }
-.fb-full-body .main-body .templet-about #details .details-foot {
+.main-content .main-body .templet-about #details .details-foot {
   border-top: 1px solid #d3d3d3;
   padding: 15px;
 }
-.fb-full-body .main-body .templet-about #details .details-foot .update-info {
+.main-content .main-body .templet-about #details .details-foot .update-info {
   background-color: #ffffff;
   border: 1px solid #ffffff;
   border-radius: 5px;
@@ -284,10 +284,10 @@ nav.navbar .top-nav-setting {
   font-weight: 300;
   padding: 8px 15px;
 }
-.fb-full-body .main-body .templet-about #details .details-foot .update-info:hover {
+.main-content .main-body .templet-about #details .details-foot .update-info:hover {
   background-color: #f8f9fa;
 }
-.fb-full-body .main-body .templet-about #details .details-foot .save {
+.main-content .main-body .templet-about #details .details-foot .save {
   background-color: #0d6efd;
   border: 1px solid #0d6efd;
   border-radius: 5px;
@@ -297,24 +297,24 @@ nav.navbar .top-nav-setting {
   padding: 5px 10px;
   width: 140px;
 }
-.fb-full-body .main-body .templet-about .grid-container {
+.main-content .main-body .templet-about .grid-container {
   -moz-column-gap: 10px;
        column-gap: 10px;
   display: grid;
   grid-template-columns: auto auto auto;
   row-gap: 10px;
 }
-.fb-full-body .main-body .templet-about .grid-container .grid-item {
+.main-content .main-body .templet-about .grid-container .grid-item {
   margin-bottom: 15px;
   text-align: start;
 }
-.fb-full-body .main-body .templet-about .grid-container .grid-item a {
+.main-content .main-body .templet-about .grid-container .grid-item a {
   color: #212529;
   float: none;
   font-size: 13px;
   font-weight: 600;
 }
-.fb-full-body .main-body .templet-about .grid-container .grid-item img {
+.main-content .main-body .templet-about .grid-container .grid-item img {
   border: 1px solid #f8f9fa;
   border-radius: 10px;
   -o-object-fit: contain;
@@ -323,14 +323,14 @@ nav.navbar .top-nav-setting {
   height: 140px;
   width: 130px;
 }
-.fb-full-body .main-body .templet-about .edit-feature {
+.main-content .main-body .templet-about .edit-feature {
   background-color: #ffffff;
   box-shadow: 0px 2px 3px 0px lightgrey;
   border-radius: 5px;
   height: 253px;
   margin: 16px 0;
 }
-.fb-full-body .main-body .templet-about .edit-feature button {
+.main-content .main-body .templet-about .edit-feature button {
   background-color: #ECF3FF;
   border: 20px solid #ffffff;
   border-radius: 5px;
@@ -340,97 +340,97 @@ nav.navbar .top-nav-setting {
   position: relative;
   width: 100%;
 }
-.fb-full-body .main-body .templet-about .edit-feature .feature-head {
+.main-content .main-body .templet-about .edit-feature .feature-head {
   border-bottom: 1px solid #d3d3d3;
   font-weight: 600;
   font-size: 18px;
   padding: 15px;
   text-align: center;
 }
-.fb-full-body .main-body .templet-about .edit-feature .edit-img {
+.main-content .main-body .templet-about .edit-feature .edit-img {
   text-align: center;
   height: 150px;
 }
-.fb-full-body .main-body .templet-about .edit-feature .edit-img img {
+.main-content .main-body .templet-about .edit-feature .edit-img img {
   height: 175px;
   padding-top: 15px;
   width: auto;
 }
-.fb-full-body .main-body .templet-about #hobby {
+.main-content .main-body .templet-about #hobby {
   background-color: #ffffff;
   border-radius: 5px;
   box-shadow: 0px 2px 3px 0px lightgrey;
   margin: 16px 0;
 }
-.fb-full-body .main-body .templet-about #hobby .img-wrapper {
+.main-content .main-body .templet-about #hobby .img-wrapper {
   background-color: #c0edfa;
   margin-bottom: 10px;
   text-align: center;
 }
-.fb-full-body .main-body .templet-about #hobby .img-wrapper img {
+.main-content .main-body .templet-about #hobby .img-wrapper img {
   height: 188px;
 }
-.fb-full-body .main-body .templet-about #hobby .heading {
+.main-content .main-body .templet-about #hobby .heading {
   font-weight: 700;
   text-align: center;
 }
-.fb-full-body .main-body .templet-about #hobby .heading span {
+.main-content .main-body .templet-about #hobby .heading span {
   color: grey;
   font-size: 12px;
   font-weight: 400;
 }
-.fb-full-body .main-body .templet-about #hobby p {
+.main-content .main-body .templet-about #hobby p {
   font-size: 13px;
   font-weight: 500;
   text-align: center;
 }
-.fb-full-body .main-body .templet-about #hobby .hobby-varity {
+.main-content .main-body .templet-about #hobby .hobby-varity {
   padding: 20px;
   text-align: center;
 }
-.fb-full-body .main-body .templet-about #hobby .hobby-varity button {
+.main-content .main-body .templet-about #hobby .hobby-varity button {
   background-color: #ffffff;
   border: 1px solid #eae7e7;
   border-radius: 20px;
   margin: 5px 2px;
   padding: 5px 15px;
 }
-.fb-full-body .main-body .templet-about #hobby .hobby-varity button i {
+.main-content .main-body .templet-about #hobby .hobby-varity button i {
   font-size: 16px;
   width: 25px;
 }
-.fb-full-body .main-body .templet-about #hobby .hobby-varity button:hover {
+.main-content .main-body .templet-about #hobby .hobby-varity button:hover {
   background-color: #F2F3F5;
   border: 1px solid #F2F3F5;
 }
-.fb-full-body .main-body .templet-about #hobby .hobby-foot {
+.main-content .main-body .templet-about #hobby .hobby-foot {
   color: #000000;
   font-size: 16px;
   font-weight: 300;
   padding: 15px;
   text-align: start;
 }
-.fb-full-body .main-body .templet-about #hobby .hobby-foot i {
+.main-content .main-body .templet-about #hobby .hobby-foot i {
   font-size: 20px;
   margin-bottom: 15px;
   width: 25px;
 }
-.fb-full-body .main-body .templet-posts {
+.main-content .main-body .templet-posts {
   float: right;
   width: 57.8%;
 }
-.fb-full-body .main-body .templet-posts .add-status {
+.main-content .main-body .templet-posts .add-status {
   background-color: #ffffff;
   border-radius: 5px;
   box-shadow: 0px 2px 3px 0px #d3d3d3;
 }
-.fb-full-body .main-body .templet-posts .add-status .py-2 img {
+.main-content .main-body .templet-posts .add-status .py-2 img {
   border-radius: 50%;
   height: 38px;
   margin: 0 10px 0 15px;
   width: 38px;
 }
-.fb-full-body .main-body .templet-posts .add-status input {
+.main-content .main-body .templet-posts .add-status input {
   background-color: #f8f9fa;
   border: 1px solid #f8f9fa;
   border-radius: 30px;
@@ -438,20 +438,20 @@ nav.navbar .top-nav-setting {
   padding: 5px 20px;
   width: 88%;
 }
-.fb-full-body .main-body .templet-posts .posts-setting {
+.main-content .main-body .templet-posts .posts-setting {
   box-shadow: 0px 2px 3px 0px #d3d3d3;
 }
-.fb-full-body .stories {
+.main-content .stories {
   box-shadow: 0px 2px 3px 0px #d3d3d3;
   background-color: #ffffff;
   border-radius: 5px;
   margin-bottom: 15px;
 }
-.fb-full-body .stories .story-block {
+.main-content .stories .story-block {
   display: inline-block;
   margin: 15px;
 }
-.fb-full-body .stories .story-block img {
+.main-content .stories .story-block img {
   border: 2px solid #e3e3e3;
   border-radius: 5px;
   height: 170px;
@@ -783,13 +783,16 @@ nav.navbar .top-nav-setting {
   background-color: #ffffff;
   border-radius: 5px;
   box-shadow: 0px 0px 5px 0px #d3d3d3;
-  height: 250px;
+  height: 265px;
   margin: 30px 0 10px;
-  padding: 15px;
+  padding: 16px;
+  position: relative;
 }
 .login-content .login-wrapper .login-block form button {
+  bottom: 0px;
   margin: 10px 0;
-  width: 100%;
+  position: absolute;
+  width: 350px;
 }
 .login-content .login-wrapper .login-block form div {
   color: #ff0000;

@@ -1,6 +1,5 @@
 [
   {"username": "johnd", "password": "Alpha@12"},
-  {"username": "mor_2314", "password": "Beta@1"},
   {"username": "kevinryan", "password": "Gamma@123"},
   {"username": "donero", "password": "Theeta@12"},
   {"username": "derek", "password": "Delta@123"},
@@ -8,5 +7,6 @@
   {"username": "snyder", "password": "Sita@145"},
   {"username": "hopkins", "password": "Chiranjivi@145"},
   {"username": "kate_h", "password": "Hello@134"},
+  {"username": "mor_2314", "password": "Beta@1"},
   {"username": "jimmie_k", "password": "Ralph@24"}
 ]

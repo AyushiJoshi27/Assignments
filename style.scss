@@ -9,14 +9,9 @@ $primary: #0d6efd;
 $l-grey: #d3d3d3;
 $bt-border: 1px solid #d3d3d3;
 $info-bg: #f8f9fa;
-
-@mixin b-top {
-  border-top: 1px solid $l-grey;
-}
-
-@mixin b-shadow {
-  box-shadow: 0 0px 6px 0 $l-grey;
-}
+$border-curve: 5px;
+$wrapper-gap: 16px;
+$center: center;
 
 @mixin for-photos {
   font-weight: 400;
@@ -114,7 +109,7 @@ nav.navbar {
             border-radius: 11px;
             margin: 0 auto;
             padding: 3px 8px;
-            text-align: center;
+            text-align: $center;
             width: 100px;
 
             &:hover {
@@ -136,7 +131,7 @@ nav.navbar {
   }
 }
 
-.fb-full-body {
+.main-content {
   background-color: $info-bg;
   border-top: $bt-border;
   font-size: 18px;
@@ -150,8 +145,8 @@ nav.navbar {
     .introduction {
       @include box-shade;
       background-color: $white;
-      border-radius: 5px;
-      padding: 16px;
+      border-radius: $border-curve;
+      padding: $wrapper-gap;
 
       button {
         background-color: $info-bg;
@@ -186,7 +181,7 @@ nav.navbar {
 
       .fa {
         color: $inactive;
-        text-align: center;
+        text-align: $center;
         width: 22px;
       }
 
@@ -209,7 +204,7 @@ nav.navbar {
 
         button {
           border: 1px solid #dff1ff;
-          border-radius: 5px;
+          border-radius: $border-curve;
           float: right;
           margin: 0 5px;
           padding: 5px 10px;
@@ -221,8 +216,8 @@ nav.navbar {
     .friends-list {
       @include box-shade;
       background-color: $white;
-      border-radius: 5px;
-      padding: 16px;
+      border-radius: $border-curve;
+      padding: $wrapper-gap;
 
       h5 {
         margin: 0;
@@ -247,9 +242,9 @@ nav.navbar {
       @include for-photos;
       @include box-shade;
       background-color: $white;
-      border-radius: 5px;
+      border-radius: $border-curve;
       margin: 16px 0;
-      padding: 16px;
+      padding: $wrapper-gap;
 
       h5 {
         display: inline-block;
@@ -267,7 +262,7 @@ nav.navbar {
         margin-top: 15px;
 
         img {
-          border-radius: 5px;
+          border-radius: $border-curve;
           height: 85px;
         }
       }
@@ -282,21 +277,21 @@ nav.navbar {
       }
 
       #details {
-        background-color: #ffffff;
-        border-radius: 5px;
-        box-shadow: 0px 2px 3px 0px lightgrey;
+        background-color: $white;
+        border-radius: $border-curve;
+        box-shadow: 0px 2px 3px 0px #d3d3d3;
         margin: 16px 0;
 
         .head {
-          text-align: center;
+          text-align: $center;
           font-weight: 700;
           font-size: 20px;
-          border-bottom: 1px solid lightgrey;
-          padding: 16px;
+          border-bottom: $bt-border;
+          padding: $wrapper-gap;
         }
 
         .details-body {
-          padding: 16px;
+          padding: $wrapper-gap;
 
           h5 {
             font-size: 18px;
@@ -318,7 +313,7 @@ nav.navbar {
               color: #0d6efd;
               margin-right: 12px;
               padding: 2px;
-              text-align: center;
+              text-align: $center;
               width: 25px;
             }
           }
@@ -339,14 +334,14 @@ nav.navbar {
               color: $inactive;
               font-size: 13px;
               font-weight: 300;
-              line-height: 16px;
+              line-height: $wrapper-gap;
               margin: 0;
             }
 
             button {
               border: 1px solid #f8f9fa;
-              border-radius: 5px;
-              font-size: 16px;
+              border-radius: $border-curve;
+              font-size: $wrapper-gap;
               float: right;
               padding: 5px 15px;
 
@@ -358,15 +353,15 @@ nav.navbar {
         }
 
         .details-foot {
-          border-top: 1px solid #d3d3d3;
+          border-top: $bt-border;
           padding: 15px;
 
           .update-info {
             background-color: $white;
             border: 1px solid $white;
-            border-radius: 5px;
+            border-radius: $border-curve;
             color: $primary;
-            font-size: 16px;
+            font-size: $wrapper-gap;
             font-weight: 300;
             padding: 8px 15px;
 
@@ -378,9 +373,9 @@ nav.navbar {
           .save {
             background-color: $primary;
             border: 1px solid $primary;
-            border-radius: 5px;
+            border-radius: $border-curve;
             color: $white;
-            font-size: 16px;
+            font-size: $wrapper-gap;
             float: right;
             padding: 5px 10px;
             width: 140px;
@@ -419,14 +414,14 @@ nav.navbar {
       .edit-feature {
         background-color: $white;
         box-shadow: 0px 2px 3px 0px lightgrey;
-        border-radius: 5px;
+        border-radius: $border-curve;
         height: 253px;
         margin: 16px 0;
 
         button {
           background-color: #ECF3FF;
           border: 20px solid $white;
-          border-radius: 5px;
+          border-radius: $border-curve;
           bottom: 42px;
           color: $primary;
           padding: 10px;
@@ -435,15 +430,15 @@ nav.navbar {
         }
 
         .feature-head {
-          border-bottom: 1px solid #d3d3d3;
+          border-bottom: $bt-border;
           font-weight: 600;
           font-size: 18px;
           padding: 15px;
-          text-align: center;
+          text-align: $center;
         }
 
         .edit-img {
-          text-align: center;
+          text-align: $center;
           height: 150px;
 
           img {
@@ -456,14 +451,14 @@ nav.navbar {
 
       #hobby {
         background-color: $white;
-        border-radius: 5px;
+        border-radius: $border-curve;
         box-shadow: 0px 2px 3px 0px lightgrey;
         margin: 16px 0;
 
         .img-wrapper {
           background-color: #c0edfa;
           margin-bottom: 10px;
-          text-align: center;
+          text-align: $center;
 
           img {
             height: 188px;
@@ -472,7 +467,7 @@ nav.navbar {
 
         .heading {
           font-weight: 700;
-          text-align: center;
+          text-align: $center;
 
           span {
             color: grey;
@@ -484,12 +479,12 @@ nav.navbar {
         p {
           font-size: 13px;
           font-weight: 500;
-          text-align: center;
+          text-align: $center;
         }
 
         .hobby-varity {
           padding: 20px;
-          text-align: center;
+          text-align: $center;
 
           button {
             background-color: $white;
@@ -499,7 +494,7 @@ nav.navbar {
             padding: 5px 15px;
 
             i {
-              font-size: 16px;
+              font-size: $wrapper-gap;
               width: 25px;
             }
 
@@ -512,7 +507,7 @@ nav.navbar {
 
         .hobby-foot {
           color: $black;
-          font-size: 16px;
+          font-size: $wrapper-gap;
           font-weight: 300;
           padding: 15px;
           text-align: start;
@@ -532,7 +527,7 @@ nav.navbar {
 
       .add-status{
         background-color: $white;
-        border-radius: 5px;
+        border-radius: $border-curve;
         @include box-shade;
 
         .py-2 {
@@ -564,7 +559,7 @@ nav.navbar {
   .stories {
     @include box-shade;
     background-color: $white;
-    border-radius: 5px;
+    border-radius: $border-curve;
     margin-bottom: 15px;
 
     .story-block {
@@ -573,7 +568,7 @@ nav.navbar {
 
       img {
         border: 2px solid #e3e3e3;
-        border-radius: 5px;
+        border-radius: $border-curve;
         height: 170px;
         object-fit: contain;
         padding: 10px;
@@ -618,7 +613,7 @@ nav.navbar {
       .page {
         border-bottom: 3px solid $primary;
         margin: 0;
-        padding: 16px;
+        padding: $wrapper-gap;
       }
 
       li {
@@ -649,7 +644,7 @@ nav.navbar {
     }
 
     a.nav-item.text-muted.bg-light {
-      border-radius: 5px;
+      border-radius: $border-curve;
       padding: 10px
     }
   }
@@ -748,7 +743,7 @@ nav.navbar {
     .onmind {
       border: none;
       border-radius: 40px;
-      font-size: 16px;
+      font-size: $wrapper-gap;
       padding: 8px 15px;
       width: 92.9%;
     }
@@ -756,7 +751,7 @@ nav.navbar {
 
   .posts-setting {
     background-color: $white;
-    border-radius: 5px;
+    border-radius: $border-curve;
     margin: 16px 0;
 
     button {
@@ -786,7 +781,7 @@ nav.navbar {
           color: $inactive;
           margin: 0 2px;
           padding: 10px;
-          text-align: center;
+          text-align: $center;
         }
 
         div:first-child {
@@ -811,7 +806,7 @@ nav.navbar {
   .post-block {
     @include box-shade;
     background-color: $white;
-    border-radius: 5px;
+    border-radius: $border-curve;
 
     header {
       border-bottom: $bt-border;
@@ -827,7 +822,7 @@ nav.navbar {
           border-radius: 50%;
           display: inline-block;
           position: relative;
-          text-align: center;
+          text-align: $center;
         }
       }
 
@@ -904,7 +899,7 @@ nav.navbar {
       td {
         font-size: $myfont;
         font-weight: 500;
-        text-align: center;
+        text-align: $center;
     
         .fa-thumbs-up {
           background: $white;
@@ -980,15 +975,18 @@ nav.navbar {
 
       form {
         background-color: $white;
-        border-radius: 5px;
+        border-radius: $border-curve;
         box-shadow: 0px 0px 5px 0px $l-grey;
-        height: 250px;
+        height: 265px;
         margin: 30px 0 10px;
-        padding: 15px;
+        padding: $wrapper-gap;
+        position: relative;
 
         button {
+          bottom: 0px;
           margin: 10px 0;
-          width: 100%;
+          position: absolute;
+          width: 350px;
         }
 
         div {
@@ -999,7 +997,7 @@ nav.navbar {
         .user-name, 
         .user-password {
           border: 1px solid $l-grey;
-          border-radius: 5px;
+          border-radius: $border-curve;
           margin-bottom: 15px;
           padding: 14px 8px;
           width: 100%;
@@ -1026,7 +1024,7 @@ nav.navbar {
 .img-modal {
   
   .modal-body {
-    text-align: center;
+    text-align: $center;
 
     img {
       height: 300px;
